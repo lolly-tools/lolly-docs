@@ -139,6 +139,8 @@ Có hai điều các phép toán này cố tình không làm. Chúng **từ ch�
 
 ## Dòng thời gian (Sequence Studio)
 
+![The timeline with the music clip selected: its strip runs along the bottom with Speed, Fades, Volume, Pan, EQ, Pitch, Normalize volume and the Effect slot](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dvideo%26_sel%3Dbed&width=1440&height=900&dpi=192&waitMs=5000&waitSelector=.tl-clip&css=.tl-panel%7Bheight%3A300px!important%7D&cropSelector=.tl-panel&walker=1&format=svg&dark=1&filename=tl-audio-strip)
+
 **Sequence Studio** thêm *thời gian* vào canvas tự do. Mỗi khối có thể bắt đầu ở một thời điểm, chạy trong một khoảng và có hiệu ứng vào ra, còn dòng thời gian gắn dưới khung tranh là nơi bạn sắp xếp chúng. Mở lên là đã có sẵn một chuỗi đang chạy - một thẻ tiêu đề, một clip, một thẻ kết, một dòng chữ dưới màn hình và một nền nhạc - nên mô hình hiện ra trước mắt trước khi bạn thay đổi bất cứ thứ gì.
 
 ![Dòng thời gian của Sequence Studio: thanh điều khiển vận chuyển, thước đo, một lane overlay, hàng chuỗi có nam châm với các clip và các chip nối liền, cùng dải Always on](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D11dZBb5swFADgX8MOiRYZB0J76GFpNO2wnbr7ZMwDrBg7s01C8usngmNwSqJszaT2aD8_G54_PUgJXRdK1iJ7CvAcpSHG6FMqG9BPQbwMkmWAMcsCjIP5lwDjUsp1O8DPAcZrJvpIKhsXaLpZ1I323mjXjcJHbCdKO4Ee7ISSxsvQJdmAO0cBNe6gtHDzQbKkkks101ARYRidaaBSZETtg2TlMgw0xuX8LBXANCN7PTVyWki3Kr-6b61yQmG4ay6FeWEHOL1K1E0TzgrhdqIgDCiXs_WjFcsyDi66A1aU_ZMuEPIOcwFNhHYRzgR8GySGs9CW0BDlFzWrVTe2qdCwftOcZP2TtJEfuovFyKZzIvor0fD7WKhVGzsXo2ALhH8UMxvFqmtiXmQFpmSimArYBfGzYHpKZcVEcS87-OHedpK72cHndmYWunu6rtxM-3wuwGqTXskacov-nhs15KNYG7HgWZtMvpNa0LJtUJNJi-2rYhnZ3ybtuNUVZuj9MotOrAbQFmPQbuB0uxwud4NX9-ycrmWIJw59Pg9h5AF6RGd-5vgWPhvG-2b5xs8bl5zvZ0ZK3tf_bd0pxu_lw2YDG2Jv6VRdj9Hi__WrKB7pV3OELuBKIRunReqM9f8d1tbnKPFsJVHs2Zqf9SaMLrSmASCjiNAbokD0lD0t_95Wxu-MVaQ4uT6WQ8ta0V46Z6lq9br1fVEOh7ypju-FFyjBC7fmVy0UaMm3YBcbVYMt-dhfTlUbe2BOuD6ujFd_AA&width=1440&height=900&dpi=192&waitMs=7000&waitSelector=.tl-clip&css=.tl-panel%7Bheight%3A252px!important%7D&cropSelector=.tl-panel&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-timeline)
@@ -172,6 +174,8 @@ Vài giới hạn cần nhớ: một chuỗi bị chặn ở một giờ, GIF v�
 Công cụ Design có cùng dòng thời gian đó, nên bạn định thời cho một bố cục mà không phải chuyển sang công cụ khác, và nó cũng xuất được chuyển động.
 
 ## Trình chiếu
+
+![The inspector's Document section: Voice, Blend with, Speed, Lead-in, Tail and Show captions when presenting](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dfeature-tour&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.fc-insp&walker=1&format=svg&dark=1&filename=design-narration)
 
 Một tài liệu Design gồm nhiều **khung tranh** vốn đã là một bộ slide. Mở **menu Lolly** trên thanh công cụ rồi chọn **Present** - dòng cuối cùng - và mỗi khung tranh thành một slide toàn màn hình, theo đúng thứ tự các khung tranh nằm trên canvas. Bộ slide chạy trên một bản sao của các khung tranh đã render, nên trình chỉnh sửa bên dưới không hề bị đụng tới và khi thoát ra bạn quay lại đúng chỗ cũ.
 

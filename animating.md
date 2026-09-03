@@ -1,6 +1,6 @@
 # Animating: keyframes, depth and a camera
 
-**Design** puts a timeline under the free canvas, and **Sequence Studio** is the same timeline with a video composition already in it. [Using Lolly](/info/using.html#timeline-sequence-studio) describes the timeline itself - the magnetic sequence row, the overlay lanes, the Always on strip, transitions and rendering - and [The sequence editor](/info/sequence-editor.html) covers editing in time. This page is about the layer above that: posing a box at one instant, lifting it off the page and flying a camera over the result.
+**Design** puts a timeline under the free canvas - **Sequence** is its name when a video composition is on it. [Using Lolly](/info/using.html#timeline-sequence) describes the timeline itself - the magnetic sequence row, the overlay lanes, the Always on strip, transitions and rendering - and [The sequence editor](/info/sequence-editor.html) covers editing in time. This page is about the layer above that: posing a box at one instant, lifting it off the page and flying a camera over the result.
 
 Everything here runs on your device. Nothing plays on its own: the preview moves when you press play or drag the playhead, and what you see at any instant is exactly what an export of that instant contains.
 
@@ -142,6 +142,8 @@ Boxes with no timeline yet are given one: each becomes a clip from the start of 
 ## Text that arrives in pieces
 
 A text box can enter and leave as a whole, or a piece at a time. In the timeline's **Animate** section, **Text** chooses the tier - **Whole text**, **Letter**, **Word** or **Line** - and every piece then plays the box's own **Enter** and **Exit** with its curve. **Offset starts by** is the gap between one piece starting and the next, in milliseconds, so a heading can drop in letter by letter or a list can fade in line by line. **Text order** decides who goes first: **First to last**, **Last to first**, **From the centre** or **Random**.
+
+![The timeline with a text clip selected: its strip carries Time, Speed and the Motion group, where Text chooses the split tier and Offset starts by, Text order and While on screen follow](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dfeature-tour%26_sel%3Dfeat1&width=1440&height=900&dpi=192&waitMs=4500&waitSelector=.tl-clip&css=.tl-panel%7Bheight%3A300px!important%7D&cropSelector=.tl-panel&walker=1&format=svg&dark=1&filename=tl-split-text)
 
 Pieces are shaped glyphs, not a span per character, so a letter that kerns into its neighbour keeps that kerning while it moves, and the exported video, animated SVG and PowerPoint deck all play the same split. In PowerPoint the split becomes native per-letter, per-word or per-paragraph animation, so a deck stays editable in PowerPoint and still moves.
 

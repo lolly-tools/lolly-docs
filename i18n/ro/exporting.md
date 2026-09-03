@@ -113,6 +113,8 @@ Regulă practică: rânduri ale aceluiași design care aparțin într-**un docum
 
 ## PowerPoint (PPTX)
 
+![The export panel with PowerPoint chosen: one slide per page, text and shapes kept editable](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio%3Foptions&width=1440&height=900&dpi=192&waitMs=2500&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22pptx%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-pptx)
+
 Tool-urile multi-pagină și de layout (Carousel, Doc Studio, Multi-Page PDF, tool-urile de grafice și tool-urile de card/layout pe un singur canvas) pot exporta un **deck PowerPoint** - un slide per pagină. Scopul nu e o captură pixel-perfectă; e să oferi unui coleg un deck pe care chiar poate să-l **editeze și să scoată active din el**. Așa că fiecare pagină e descompusă în obiecte native:
 
 - <!--i:font--> **Textul** devine casete de text PowerPoint reale, **editabile** - cu dimensiunea fontului, culoarea, grosimea, cursivele și alinierea din layout - ca să poți corecta o greșeală de tipar sau restiliza direct în PowerPoint.
@@ -126,6 +128,8 @@ PowerPoint este și o cale de **intrare** - formatul se poate parcurge în ambel
 
 ## DXF (fișiere de tăiere)
 
+![The export panel with Penpot chosen: the .penpot file, and Send to Penpot beside the download](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22penpot%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-penpot)
+
 Instrumentele vectoriale (Brand Lockup, QR Code, Street Map, Wayfinding Signage, Pose Geeko, variantele de logo, Diagram Builder) pot exporta în **DXF** - formatul de schimb AutoCAD R12 pe care îl citesc mașinile de tăiat laser, plotterele de vinil și software-ul CNC/CAD. Geometria este scrisă ca **căi de contur în milimetri** (curbele sunt aplatizate cu o toleranță fină), textul este transformat în căi de contur, iar culoarea se mapează la cel mai apropiat AutoCAD Color Index (care de obicei controlează instrumentul/operația pe o mașină de tăiat). DXF este doar grafică de linie - o regiune fotografică sau filtrată nu are o formă de cale de tăiere și este eliminată (Lolly avertizează), așa că folosește SVG/PDF când trebuie să păstrezi conținut raster.
 
 Street Map este cazul cel mai clar: întregul design este deja format din trasee, așa că fiecare drum și canal devine o cale de tăiere, fără nimic de eliminat.
@@ -137,6 +141,8 @@ Derulează, iar camera se retrage prin geometria efectivă: șapte căi, fără 
 :::
 
 ## SVG animat
+
+![The export panel on a Design deck with SCORM (LMS) chosen](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dfeature-tour%26format%3Dscorm%26options&width=1440&height=900&dpi=192&waitMs=3500&css=.fc-insp%7Bdisplay%3Anone!important%7D.edge-dock-slot--fill%7Bflex%3A1%201%20auto!important%3Bheight%3Aauto!important%3Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D.export-popup.is-floating%7Bheight%3Aauto!important%7D.export-popup-body%7Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-scorm)
 
 Uneltele de mișcare (Animated Ad, Lottie Ad) pot exporta **SVG animat** - o animație *vectorială* de sine stătătoare. Spre deosebire de GIF/APNG/WebP (care eșantionează fiecare cadru în pixeli), un SVG animat stivuiește instantanee vectoriale cu keyframe-uri CSS încorporate, deci **se scalează la orice dimensiune fără codec și fără runtime extern** - rulează într-un tab de browser sau într-un `<img>`. Textul rămâne conturat, ca să se randeze oriunde. Împarte controalele de **Durată** / rată de cadre cu celelalte formate animate și (fiind mai greu per cadru decât un bitmap) folosește o rată de cadre implicită mai mică.
 

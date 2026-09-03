@@ -113,6 +113,8 @@ Share відкривається поверх інструмента, з уже 
 
 ## PowerPoint (PPTX)
 
+![The export panel with PowerPoint chosen: one slide per page, text and shapes kept editable](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio%3Foptions&width=1440&height=900&dpi=192&waitMs=2500&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22pptx%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-pptx)
+
 Багатосторінкові інструменти та інструменти макетів (Carousel, Doc Studio, Multi-Page PDF, інструменти графіків та інструменти карток/макетів на одному полотні) можуть експортувати **презентацію PowerPoint** - один слайд на сторінку. Мета не в пікселідеальному знімку екрана; вона в тому, щоб дати колезі презентацію, яку той дійсно зможе **редагувати й діставати з неї активи**. Тож кожна сторінка розкладається на нативні об'єкти:
 
 - <!--i:font--> **Текст** стає справжніми, **редагованими текстовими полями PowerPoint** - з розміром шрифту, кольором, накресленням, курсивом і вирівнюванням з макета - тож ви можете виправити одруківку чи змінити стиль просто в PowerPoint.
@@ -126,6 +128,8 @@ PowerPoint - це також шлях **всередину** - формат пі
 
 ## DXF (файли для різання)
 
+![The export panel with Penpot chosen: the .penpot file, and Send to Penpot beside the download](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22penpot%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-penpot)
+
 Векторні інструменти (Brand Lockup, QR Code, Street Map, Wayfinding Signage, Pose Geeko, зв’язки логотипів, Diagram Builder) можуть експортувати у **DXF** - формат обміну AutoCAD R12, який читають лазерні різаки, вінілові плотери й ПЗ ЧПК/САПР. Геометрія записується як контурні **шляхи в міліметрах** (криві сплощені з тонким допуском), текст перетворюється на контури-шляхи, а колір зіставляється з найближчим індексом кольору AutoCAD (який зазвичай визначає інструмент/операцію на різаку). DXF - це лише лінійна графіка - фотографічна чи фільтрована область не має форми шляху різання і відкидається (Lolly попереджає), тож використовуйте SVG/PDF, коли потрібно зберегти растровий вміст.
 
 Street Map - найпростіший приклад: увесь дизайн вже складається зі штрихів, тож кожна дорога і канал стають шляхом для різання без нічого зайвого.
@@ -137,6 +141,8 @@ Street Map - найпростіший приклад: увесь дизайн в
 :::
 
 ## Анімований SVG
+
+![The export panel on a Design deck with SCORM (LMS) chosen](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dfeature-tour%26format%3Dscorm%26options&width=1440&height=900&dpi=192&waitMs=3500&css=.fc-insp%7Bdisplay%3Anone!important%7D.edge-dock-slot--fill%7Bflex%3A1%201%20auto!important%3Bheight%3Aauto!important%3Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D.export-popup.is-floating%7Bheight%3Aauto!important%7D.export-popup-body%7Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-scorm)
 
 Інструменти анімації (Animated Ad, Lottie Ad) можуть експортувати **Animated SVG** - самодостатню *векторну* анімацію. На відміну від GIF/APNG/WebP (які растеризують кожен кадр у пікселі), анімований SVG складає векторні знімки з вбудованими CSS keyframes, тож він **масштабується до будь-якого розміру без кодека і без зовнішнього середовища виконання** - він циклічно відтворюється у вкладці браузера чи в `<img>`. Текст лишається контурним, тож рендериться будь-де. Він поділяє з анімованими форматами елементи керування **тривалістю** / частотою кадрів, і (будучи важчим на кадр, ніж растр) використовує нижчу типову частоту кадрів.
 

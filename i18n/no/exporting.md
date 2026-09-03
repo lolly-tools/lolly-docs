@@ -113,6 +113,8 @@ Tommelfingerregel: rader av samme design som hører hjemme i **ett dokument** �
 
 ## PowerPoint (PPTX)
 
+![The export panel with PowerPoint chosen: one slide per page, text and shapes kept editable](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio%3Foptions&width=1440&height=900&dpi=192&waitMs=2500&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22pptx%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-pptx)
+
 Flersidige og oppsettverktøy (Carousel, Doc Studio, Multi-Page PDF, diagramverktøyene og enkeltlerret-kort-/oppsettverktøyene) kan eksportere en **PowerPoint-fil** - ett lysbilde per side. Poenget er ikke et pikselperfekt skjermbilde; det er å gi en kollega en fil de faktisk kan **redigere og hente ressurser ut av**. Så hver side dekomponeres til native objekter:
 
 - <!--i:font--> **Tekst** blir til ekte, **redigerbare PowerPoint-tekstbokser** - med skriftstørrelse, farge, vekt, kursiv og justering fra layouten - slik at du kan rette en skrivefeil eller omstilere i PowerPoint.
@@ -126,6 +128,8 @@ PowerPoint er også en vei **inn** - formatet går begge veier. **Deck Builder**
 
 ## DXF (kuttfiler)
 
+![The export panel with Penpot chosen: the .penpot file, and Send to Penpot beside the download](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22penpot%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-penpot)
+
 Vektorverktøy (Brand Lockup, QR Code, Street Map, Wayfinding Signage, Pose Geeko, logolåsene, Diagram Builder) kan eksportere **DXF** - AutoCAD R12-utvekslingsformatet som laserkuttere, vinylplottere og CNC-/CAD-programvare leser. Geometri skrives som omriss-**baner i millimeter** (kurver flatet ut til en fin toleranse), tekst omrisses til baner, og farge kartlegges til nærmeste AutoCAD Color Index (som typisk styrer verktøyet/operasjonen på en kutter). DXF er kun strektegning - et fotografisk eller filtrert område har ingen kuttbaneform og blir droppet (Lolly varsler), så bruk SVG/PDF når du trenger å beholde rasterinnhold.
 
 Street Map er det klareste tilfellet: hele designet er allerede streker, så hver vei og kanal blir en kuttbane uten noe å droppe.
@@ -137,6 +141,8 @@ Skroll, og kameraet trekker seg tilbake gjennom selve geometrien: sju baner, ing
 :::
 
 ## Animert SVG
+
+![The export panel on a Design deck with SCORM (LMS) chosen](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dfeature-tour%26format%3Dscorm%26options&width=1440&height=900&dpi=192&waitMs=3500&css=.fc-insp%7Bdisplay%3Anone!important%7D.edge-dock-slot--fill%7Bflex%3A1%201%20auto!important%3Bheight%3Aauto!important%3Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D.export-popup.is-floating%7Bheight%3Aauto!important%7D.export-popup-body%7Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-scorm)
 
 Bevegelsesverktøy (Animated Ad, Lottie Ad) kan eksportere **Animert SVG** - en selvstendig, *vektor*-animasjon. I motsetning til GIF/APNG/WebP (som samplinger hver ramme til piksler), stabler en animert SVG vektorøyeblikksbilder med innebygde CSS-nøkkelrammer, slik at den **skalerer til enhver størrelse uten kodek og uten ekstern kjøretid** - den løkker i en nettleserfane eller en `<img>`. Tekst forblir konturlagt slik at den rendres overalt. Den deler de animerte formatenes **Duration**-/bildefrekvenskontroller, og (siden den er tyngre per bilderute enn en bitmap) bruker en lavere standard bildefrekvens.
 

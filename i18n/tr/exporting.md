@@ -113,6 +113,8 @@ Genel kural: **tek bir belgeye** ait aynı tasarımın satırları → tablo tab
 
 ## PowerPoint (PPTX)
 
+![The export panel with PowerPoint chosen: one slide per page, text and shapes kept editable](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio%3Foptions&width=1440&height=900&dpi=192&waitMs=2500&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22pptx%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-pptx)
+
 Çok sayfalı ve düzen araçları (Carousel, Doc Studio, Çok Sayfalı PDF, grafik araçları ve tek tuvalli kart/düzen araçları) bir **PowerPoint destesi** dışa aktarabilir - sayfa başına bir slayt. Amaç piksel mükemmelliğinde bir ekran görüntüsü değildir; amaç bir meslektaşına gerçekten **düzenleyebileceği ve varlıklarını çıkarabileceği** bir deste vermektir. Bu yüzden her sayfa yerel nesnelere ayrıştırılır:
 
 - <!--i:font--> **Metin**, düzendeki yazı tipi boyutu, rengi, kalınlığı, italiği ve hizalamasıyla gerçek, **düzenlenebilir PowerPoint metin kutularına** dönüşür - böylece PowerPoint'te bir yazım hatasını düzeltebilir veya stili yeniden ayarlayabilirsin.
@@ -126,6 +128,8 @@ PowerPoint aynı zamanda içeri **giriş** yoludur - format gidiş-dönüş yapa
 
 ## DXF (kesim dosyaları)
 
+![The export panel with Penpot chosen: the .penpot file, and Send to Penpot beside the download](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22penpot%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-penpot)
+
 Vektör araçları (Brand Lockup, QR Code, Street Map, Wayfinding Signage, Pose Geeko, logo varyantları, Diagram Builder) **DXF** olarak dışa aktarabilir - lazer kesicilerin, vinil plotterların ve CNC/CAD yazılımının okuduğu AutoCAD R12 değişim formatı. Geometri, **milimetre cinsinden kontur yolları** olarak yazılır (eğriler ince bir toleransla düzleştirilir), metin kontur yollarına dönüştürülür ve renk en yakın AutoCAD Color Index'e eşlenir (bu genellikle bir kesicideki aracı/işlemi yönlendirir). DXF yalnızca çizgi sanatıdır - fotoğrafik veya filtrelenmiş bir bölgenin kesim yolu formu yoktur ve atlanır (Lolly uyarır), bu yüzden raster içeriği korumak gerektiğinde SVG/PDF kullan.
 
 Street Map en net örnektir: tüm tasarım zaten çizgilerden oluşur, yani her yol ve kanal, düşecek hiçbir şey olmadan bir kesim yoluna dönüşür.
@@ -137,6 +141,8 @@ Kaydır, ve kamera gerçek geometrinin içinden geri çekilir: yedi yol, hiçbir
 :::
 
 ## Animasyonlu SVG
+
+![The export panel on a Design deck with SCORM (LMS) chosen](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dfeature-tour%26format%3Dscorm%26options&width=1440&height=900&dpi=192&waitMs=3500&css=.fc-insp%7Bdisplay%3Anone!important%7D.edge-dock-slot--fill%7Bflex%3A1%201%20auto!important%3Bheight%3Aauto!important%3Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D.export-popup.is-floating%7Bheight%3Aauto!important%7D.export-popup-body%7Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-scorm)
 
 Hareket araçları (Animated Ad, Lottie Ad) **Animasyonlu SVG** dışa aktarabilir - kendi kendine yeten, *vektör* bir animasyon. Her kareyi piksellere örnekleyen GIF/APNG/WebP'nin aksine, animasyonlu bir SVG, gömülü CSS anahtar kareleriyle vektör anlık görüntülerini üst üste yığar, böylece **hiçbir kodek ve harici çalışma zamanı olmadan her boyuta ölçeklenir** - bir tarayıcı sekmesinde veya bir `<img>` içinde döngüye girer. Metin anahatlı kalır, böylece her yerde işlenir. Animasyonlu formatların **Süre** / kare hızı denetimlerini paylaşır ve (kare başına bir bitmap'ten daha ağır olduğu için) daha düşük bir varsayılan kare hızı kullanır.
 

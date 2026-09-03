@@ -139,6 +139,8 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 
 ## 时间轴（Sequence Studio）
 
+![The timeline with the music clip selected: its strip runs along the bottom with Speed, Fades, Volume, Pan, EQ, Pitch, Normalize volume and the Effect slot](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dvideo%26_sel%3Dbed&width=1440&height=900&dpi=192&waitMs=5000&waitSelector=.tl-clip&css=.tl-panel%7Bheight%3A300px!important%7D&cropSelector=.tl-panel&walker=1&format=svg&dark=1&filename=tl-audio-strip)
+
 **Sequence Studio** 为自由画布加上了*时间*。每个方框都可以在某个时刻开始、持续一段时长、带入场和出场动画，而停靠在画板下方的时间轴就是你排布它们的地方。打开它，已经有一段序列在播放——标题卡、一段片段、片尾卡、下三分之一字幕和一条背景音乐——因此在你动手改动之前，这套模型就已一目了然。
 
 ![Sequence Studio 的时间线:传输控制条、标尺、一条叠加轨道、带片段与接缝标记的吸附序列行,以及常驻的 Always on 条](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D11dZBb5swFADgX8MOiRYZB0J76GFpNO2wnbr7ZMwDrBg7s01C8usngmNwSqJszaT2aD8_G54_PUgJXRdK1iJ7CvAcpSHG6FMqG9BPQbwMkmWAMcsCjIP5lwDjUsp1O8DPAcZrJvpIKhsXaLpZ1I323mjXjcJHbCdKO4Ee7ISSxsvQJdmAO0cBNe6gtHDzQbKkkks101ARYRidaaBSZETtg2TlMgw0xuX8LBXANCN7PTVyWki3Kr-6b61yQmG4ay6FeWEHOL1K1E0TzgrhdqIgDCiXs_WjFcsyDi66A1aU_ZMuEPIOcwFNhHYRzgR8GySGs9CW0BDlFzWrVTe2qdCwftOcZP2TtJEfuovFyKZzIvor0fD7WKhVGzsXo2ALhH8UMxvFqmtiXmQFpmSimArYBfGzYHpKZcVEcS87-OHedpK72cHndmYWunu6rtxM-3wuwGqTXskacov-nhs15KNYG7HgWZtMvpNa0LJtUJNJi-2rYhnZ3ybtuNUVZuj9MotOrAbQFmPQbuB0uxwud4NX9-ycrmWIJw59Pg9h5AF6RGd-5vgWPhvG-2b5xs8bl5zvZ0ZK3tf_bd0pxu_lw2YDG2Jv6VRdj9Hi__WrKB7pV3OELuBKIRunReqM9f8d1tbnKPFsJVHs2Zqf9SaMLrSmASCjiNAbokD0lD0t_95Wxu-MVaQ4uT6WQ8ta0V46Z6lq9br1fVEOh7ypju-FFyjBC7fmVy0UaMm3YBcbVYMt-dhfTlUbe2BOuD6ujFd_AA&width=1440&height=900&dpi=192&waitMs=7000&waitSelector=.tl-clip&css=.tl-panel%7Bheight%3A252px!important%7D&cropSelector=.tl-panel&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-timeline)
@@ -172,6 +174,8 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 Design 工具拥有同一条时间轴，因此你不必换到另一个工具就能为版面设定时间，它同样可以导出动态。
 
 ## 演示
+
+![The inspector's Document section: Voice, Blend with, Speed, Lead-in, Tail and Show captions when presenting](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dfeature-tour&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.fc-insp&walker=1&format=svg&dark=1&filename=design-narration)
 
 由多个**画板**组成的 Design 文档本身就是一套幻灯片。打开工具栏上的 **Lolly 菜单**并选择**演示**（最后一行），每个画板就会变成一张全屏幻灯片，顺序与画板在画布上的排列一致。演示运行在渲染后画板的副本上，因此底下的编辑器不会被碰到，退出后你会回到原来的位置。
 

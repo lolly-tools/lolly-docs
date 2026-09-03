@@ -113,6 +113,8 @@ Lolly میں بڑی مقدار میں کام کرنے کے تین الگ الگ 
 
 ## PowerPoint (PPTX)
 
+![The export panel with PowerPoint chosen: one slide per page, text and shapes kept editable](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio%3Foptions&width=1440&height=900&dpi=192&waitMs=2500&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22pptx%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-pptx)
+
 ملٹی پیج اور لے آؤٹ ٹولز (Carousel، Doc Studio، Multi-Page PDF، چارٹ ٹولز اور سنگل کینوس کارڈ/لے آؤٹ ٹولز) ایک **PowerPoint ڈیک** ایکسپورٹ کر سکتے ہیں - فی صفحہ ایک سلائیڈ۔ مقصد پکسل پرفیکٹ اسکرین شاٹ نہیں ہے؛ مقصد کسی ساتھی کو ایسا ڈیک دینا ہے جسے وہ واقعی **ایڈٹ کر سکے اور اس سے اثاثے نکال سکے**۔ اس لیے ہر صفحہ نیٹو آبجیکٹس میں تحلیل کیا جاتا ہے:
 
 - <!--i:font--> **متن** حقیقی، **قابلِ ترمیم PowerPoint ٹیکسٹ باکسز** بن جاتا ہے - لے آؤٹ کے فونٹ سائز، رنگ، وزن، ترچھے پن (italics) اور ترتیب کے ساتھ - تاکہ آپ PowerPoint میں کوئی ٹائپو درست کر سکیں یا ری اسٹائل کر سکیں۔
@@ -126,6 +128,8 @@ PowerPoint اندر آنے کا راستہ بھی ہے - یہ فارمیٹ را�
 
 ## DXF (کٹ فائلیں)
 
+![The export panel with Penpot chosen: the .penpot file, and Send to Penpot beside the download](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22penpot%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-penpot)
+
 Vector tools (Brand Lockup، QR Code، Street Map، Wayfinding Signage، Pose Geeko، لوگو lockups، Diagram Builder) **DXF** export کر سکتے ہیں - AutoCAD R12 interchange فارمیٹ جسے laser cutters، vinyl plotters اور CNC/CAD سافٹ ویئر پڑھتے ہیں۔ جیومیٹری outline **paths ملی میٹرز میں** لکھی جاتی ہے (curves ایک باریک tolerance پر flatten کیے جاتے ہیں)، متن کو paths میں outline کیا جاتا ہے اور رنگ قریب ترین AutoCAD Color Index سے میپ ہوتا ہے (جو عام طور پر cutter پر tool/operation چلاتا ہے)۔ DXF صرف line-art ہے - کوئی photographic یا filtered علاقہ کسی cut-path شکل کا حامل نہیں ہوتا اور گرا دیا جاتا ہے (Lolly خبردار کرتی ہے)، اس لیے جب raster مواد رکھنا ضروری ہو تو SVG/PDF استعمال کریں۔
 
 Street Map سب سے واضح مثال ہے: پوری ڈیزائن پہلے ہی اسٹروکس پر مشتمل ہے، اس لیے ہر سڑک اور نہر ایک کٹ پاتھ بن جاتی ہے اور کچھ بھی چھوڑنے کی ضرورت نہیں پڑتی۔
@@ -137,6 +141,8 @@ Street Map سب سے واضح مثال ہے: پوری ڈیزائن پہلے ہی
 :::
 
 ## اینیمیٹڈ SVG
+
+![The export panel on a Design deck with SCORM (LMS) chosen](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dfeature-tour%26format%3Dscorm%26options&width=1440&height=900&dpi=192&waitMs=3500&css=.fc-insp%7Bdisplay%3Anone!important%7D.edge-dock-slot--fill%7Bflex%3A1%201%20auto!important%3Bheight%3Aauto!important%3Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D.export-popup.is-floating%7Bheight%3Aauto!important%7D.export-popup-body%7Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-scorm)
 
 موشن ٹولز (Animated Ad، Lottie Ad) **اینیمیٹڈ SVG** ایکسپورٹ کر سکتے ہیں - ایک خود کفیل، *ویکٹر* اینیمیشن۔ GIF/APNG/WebP کے برعکس (جو ہر فریم کو پکسلز میں سیمپل کرتے ہیں)، ایک اینیمیٹڈ SVG ایمبیڈڈ CSS کی فریمز کے ساتھ ویکٹر اسنیپ شاٹس کو اسٹیک کرتا ہے، اس لیے یہ **بغیر کسی کوڈیک اور بغیر کسی خارجی رن ٹائم کے کسی بھی سائز پر اسکیل ہوتا ہے** - یہ کسی براؤزر ٹیب یا `<img>` میں لوپ ہوتا ہے۔ متن آؤٹ لائنڈ رہتا ہے تاکہ یہ ہر جگہ رینڈر ہو سکے۔ یہ اینیمیٹڈ فارمیٹس کے **Duration** / فریم ریٹ کنٹرولز شیئر کرتا ہے، اور (بٹ میپ کے مقابلے میں فی فریم بھاری ہونے کی وجہ سے) کم ڈیفالٹ فریم ریٹ استعمال کرتا ہے۔
 

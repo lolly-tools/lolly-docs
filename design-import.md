@@ -20,7 +20,7 @@ Several file kinds go in - a native Figma binary, a Penpot export, an Illustrato
 | **`.idml`** | An InDesign layout (*File → Export → InDesign Markup*). A raw `.indd` can't be read directly - export IDML first. |
 | **`.svg`** | Any SVG - Figma and Penpot SVG exports, or hand-written markup. *Tip: for editable text from a Figma SVG, untick "Outline text" on Figma's export dialog.* |
 
-Bringing a **PowerPoint deck** instead? Decks have their own doors - edit in Deck Builder, rebrand in place or file slides as assets. See [Decks and documents](#decks-and-documents) below.
+Bringing a **PowerPoint deck** instead? Decks have their own doors - file slides as assets, rebrand in place, or write a new deck in Markdown Slides. See [Decks and documents](#decks-and-documents) below.
 
 ### What each app is for
 
@@ -53,11 +53,11 @@ An imported design exports exactly like a native one: **SVG, PDF, print CMYK PDF
 
 ## Frames become a video
 
-The same files open in **Sequence Studio** - and there the import means something different: **every frame becomes a scene on the timeline**. A Figma file's top-level frames, a Penpot file's boards, a PDF's pages - each arrives as its own timed clip, already playing through in order. From that first play-through you're in an ordinary sequence session: drag clips to reorder, trim and retime them, add a music bed, record a voiceover, drop text overlays on top and export **MP4, WebM, GIF or APNG** through the same deterministic pipeline.
+The same files open on **Design's timeline** - and there the import means something different: **every frame becomes a scene on the timeline**. A Figma file's top-level frames, a Penpot file's boards, a PDF's pages - each arrives as its own timed clip, already playing through in order. From that first play-through you're in an ordinary sequence session: drag clips to reorder, trim and retime them, add a music bed, record a voiceover, drop text overlays on top and export **MP4, WebM, GIF or APNG** through the same deterministic pipeline.
 
 Two ways in:
 
-- In **Sequence Studio**, open **Import a design** in the canvas toolbar and choose the file.
+- In **Design**, open **Import a design** from the canvas menu and choose the file.
 - Drop the file anywhere on the gallery or dashboard and pick **Make a video from its frames**.
 
 Each frame is baked through the Design tool's own renderer into a crisp vector still (text as outlines, images embedded), so scenes stay sharp at any export size and need no fonts at playback. A storyboard drawn in Penpot or Figma becomes a finished cut - titles, soundtrack, provenance and all - without a video editor in sight.
@@ -104,7 +104,7 @@ Drop a photo or graphic into any image picker or your **My images** library.
 
 | Format | Notes |
 |---|---|
-| **`pptx`** (PowerPoint) | Three ways in, all on-device. **Deck Builder**'s Load panel opens a deck as *editable slides* - text, shapes, images, tables and speaker notes become freeform objects, with colours snapped to your brand - ready to re-export as PPTX, PDF or video. The **Rebrand a Deck** utility re-themes a deck *without* re-authoring it: the theme palette, hardcoded colours and fonts swap to your brand while charts, SmartArt and animations pass through untouched, and you get a `.pptx` back. And dropping a `.pptx` on any upload area asks which slides to keep - each is stored as an SVG asset in your library. |
+| **`pptx`** (PowerPoint) | Three ways in, all on-device. Drop a deck on any upload surface and pick the slides you want - each becomes an SVG asset (text, shapes, images and tables drawn; charts and SmartArt as labelled placeholders) to place in a layout or grade. **Markdown Slides** writes a new branded deck from Markdown. The **Rebrand** utility re-themes a deck *without* re-authoring it: the theme palette, hardcoded colours and fonts swap to your brand while charts, SmartArt and animations pass through untouched, and you get a `.pptx` back. And dropping a `.pptx` on any upload area asks which slides to keep - each is stored as an SVG asset in your library. |
 | **`pdf` / `.ai`** | Besides the Design import above, dropping a PDF on an upload area asks which pages to keep - each page becomes a self-contained SVG asset (vector paint, text and images preserved). |
 
 ### Data

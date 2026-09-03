@@ -80,7 +80,7 @@ Example: width `210`, height `297`, unit `mm` → an A4 page.
 
 ## Stills from a timed composition
 
-A **timed composition** - a [Sequence Studio](/info/using.html#timeline-sequence-studio) stage, or any timeline-driven artboard - is a moving thing, so a still export has to answer "which moment?". The rule is what you'd expect: **the frame at the playhead**. Park the playhead where you want the picture and export; what you see is what comes out.
+A **timed composition** - a [Sequence](/info/using.html#timeline-sequence) timeline in Design, or any timeline-driven artboard - is a moving thing, so a still export has to answer "which moment?". The rule is what you'd expect: **the frame at the playhead**. Park the playhead where you want the picture and export; what you see is what comes out.
 
 When you want more than one moment, the **Frames** field appears beside the output size (only for a timed composition, and only for a still format - PNG, JPG, WebP, SVG or PDF). Leave it at `1` for the playhead frame. Raise it and you get that many stills sampled at equal intervals across the whole sequence:
 
@@ -95,12 +95,12 @@ The **Frames** field is the way to get a sheet today. The engine reserves a matc
 
 ## Multi-page PDF
 
-Some tools build a **multi-page PDF document** instead of a single artwork - a cover, content that flows onto as many pages as it needs and a back page, all in one file (see the *Multi-Page PDF* tool). Each page is a **true PDF page** sized to that page's box, so readers and printers get real pages, not one tall image.
+Some tools build a **multi-page PDF document** instead of a single artwork - a cover, content that flows onto as many pages as it needs and a back page, all in one file (see the *Booklet* tool). Each page is a **true PDF page** sized to that page's box, so readers and printers get real pages, not one tall image.
 
 - **Pages from content.** Add blocks of text and images; new pages are created automatically as the blocks fill, and you can force any block to start a new page.
 - **Real page sizes.** Choose A4, US Letter or A5 (portrait - the two-column layout is built for it) - every page, and the exported PDF, renders at exactly that size.
 
-Multi-page PDFs are RGB documents and don't carry crop/bleed marks - those belong to the single-page **Print PDF** path above. They do carry the same **PDF/X-4 metadata** as every PDF export (page boxes, XMP, document ID, an sRGB output intent with embedded profile), and they offer **Content Credentials** (below) - on the *Multi-Page PDF* tool the option comes pre-selected.
+Multi-page PDFs are RGB documents and don't carry crop/bleed marks - those belong to the single-page **Print PDF** path above. They do carry the same **PDF/X-4 metadata** as every PDF export (page boxes, XMP, document ID, an sRGB output intent with embedded profile), and they offer **Content Credentials** (below) - on the *Booklet* tool the option comes pre-selected.
 
 ## Making many things at once
 
@@ -114,16 +114,18 @@ Rule of thumb: rows of the same design that belong in **one document** → a tab
 
 ## PowerPoint (PPTX)
 
-Multi-page and layout tools (Carousel, Doc Studio, Multi-Page PDF, the chart tools and the single-canvas card/layout tools) can export a **PowerPoint deck** - one slide per page. The point isn't a pixel-perfect screenshot; it's to hand a colleague a deck they can actually **edit and take assets out of**. So each page is decomposed into native objects:
+Design, Markdown Slides, Booklet, Doc Studio, Chart and Diagrams can export a **PowerPoint deck** - one slide per page. The point isn't a pixel-perfect screenshot; it's to hand a colleague a deck they can actually **edit and take assets out of**. So each page is decomposed into native objects:
 
 - <!--i:font--> **Text** becomes real, **editable PowerPoint text boxes** - with the font size, colour, weight, italics and alignment from the layout - so you can fix a typo or restyle in PowerPoint.
 - <!--i:pentool--> **Vectors** (logos, icons, the SUSE mark) are embedded as **real SVG pictures** - they stay crisp at any size, and PowerPoint can even *Convert to Shape* on them.
 - <!--i:photos--> **Images** come through at their native resolution as their own extractable pictures (a `cover`-cropped hero keeps the full image behind the crop, so you can re-frame it), with any on-image treatment (filters, blends) baked in faithfully.
 - <!--i:layers--> **Backgrounds, borders and rules** become real rectangle/line shapes.
 
+![The export panel with PowerPoint chosen: one slide per page, text and shapes kept editable](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio%3Foptions&width=1440&height=900&dpi=192&waitMs=2500&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22pptx%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-pptx)
+
 Layout is approximate by design - the goal is faithful, reusable **content**, not a locked screenshot. Anything the walker can't express natively (a complex filtered or masked region) is embedded as a picture so nothing is lost. A deck has a single slide size, taken from the first page.
 
-PowerPoint is also a way **in** - the format round-trips. **Deck Builder** opens an existing `.pptx` as editable slides, snapped to your brand, and the **Rebrand a Deck** utility re-themes a deck in place - theme palette, hardcoded colours and fonts - without touching its charts, SmartArt or animations, handing back a `.pptx`. See [Import a design → Decks and documents](/info/design-import.html#decks-and-documents).
+PowerPoint is also a way **in**. Drop a `.pptx` on any upload surface and pick the slides you want - each becomes an asset to place, grade or build on. **Markdown Slides** writes a fresh deck from Markdown (and hands out a branded `.pptx` template), and the **Rebrand** utility re-themes an existing deck in place - theme palette, hardcoded colours and fonts - without touching its charts, SmartArt or animations, handing back a `.pptx`. See [Import a design → Decks and documents](/info/design-import.html#decks-and-documents).
 
 ## Penpot
 
@@ -133,6 +135,8 @@ Any tool that can export SVG can also export a **Penpot file** (`.penpot`) - the
 - <!--i:pentool--> From a tool whose render is **plain geometry** - the vector tools such as QR Code, Street Map, Wordmark and Palette Lab - every path, rectangle, text run and gradient carries over the same way, as its own editable shape.
 - <!--i:layers--> A tool that lays its render out in **HTML** usually comes across as **one picture** instead. One clip path, filter, pattern, mask, `<use>` or inline `<style>` anywhere in the render puts the whole thing on the board as a single image, and an HTML layout reaches for those readily: a rounded box that clips its content, a cropped photo, a blurred text shadow. The picture is the full render at full fidelity, so nothing is dropped. It is simply not separable into shapes in Penpot.
 - <!--i:palette--> The brand's colours and typographies land in the file's **Assets** panel, and the brand's design tokens land in its **Tokens** panel - the same DTCG token set Lolly's own palette uses. Penpot keeps its own copy from there: an edit made in its Tokens panel comes back into the brand through [Brand Studio's import](/info/design-import.html), not on its own.
+
+![The export panel with Penpot chosen: the .penpot file, and Send to Penpot beside the download](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22penpot%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-penpot)
 
 To open it, start Penpot, pick a project and choose **Import**. Signed in to Penpot from the export panel, **Send to Penpot** does that step for you - pick a project there and the file goes straight into it.
 
@@ -144,6 +148,8 @@ A Design deck can leave as a **SCORM package** - the zip a learning management s
 - <!--i:play--> **The narrated film** with its caption track - the speaker notes read by an on-device voice, exactly as [Presenting](/info/create/using.html#presenting) plays them.
 - <!--i:file--> **A launch page** that steps through the slides, plays the film and reports completion back to the LMS through the SCORM 1.2 runtime, the version every LMS accepts.
 - <!--i:font--> The fonts the deck uses, so the launch page renders the same offline.
+
+![The export panel on a Design deck with SCORM (LMS) chosen](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dfeature-tour%26format%3Dscorm%26options&width=1440&height=900&dpi=192&waitMs=3500&css=.fc-insp%7Bdisplay%3Anone!important%7D.edge-dock-slot--fill%7Bflex%3A1%201%20auto!important%3Bheight%3Aauto!important%3Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D.export-popup.is-floating%7Bheight%3Aauto!important%7D.export-popup-body%7Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-scorm)
 
 Nothing in the package calls home: it is files in a zip, and it runs inside the LMS with no bundler, no CDN and no account. The web and desktop apps build it; the CLI does not, because photographing the artboards and encoding the film need the browser.
 

@@ -113,6 +113,8 @@ Lolly के पास बड़ी मात्रा में काम क�
 
 ## PowerPoint (PPTX)
 
+![The export panel with PowerPoint chosen: one slide per page, text and shapes kept editable](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio%3Foptions&width=1440&height=900&dpi=192&waitMs=2500&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22pptx%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-pptx)
+
 मल्टी-पेज और लेआउट टूल (Carousel, Doc Studio, Multi-Page PDF, चार्ट टूल और सिंगल-कैनवस कार्ड/लेआउट टूल) एक **PowerPoint डेक** एक्सपोर्ट कर सकते हैं - प्रति पेज एक स्लाइड। मुद्दा पिक्सल-परफ़ेक्ट स्क्रीनशॉट नहीं है; यह सहकर्मी को एक ऐसा डेक देना है जिसे वे वाकई **संपादित कर सकें और एसेट्स निकाल सकें**। इसलिए हर पेज को नेटिव ऑब्जेक्ट्स में तोड़ा जाता है:
 
 - <!--i:font--> **टेक्स्ट** असली, **एडिटेबल PowerPoint टेक्स्ट बॉक्स** बन जाता है - लेआउट के फ़ॉन्ट साइज़, रंग, वेट, इटैलिक्स और अलाइनमेंट के साथ - ताकि आप PowerPoint में टाइपो ठीक कर सकें या रीस्टाइल कर सकें।
@@ -126,6 +128,8 @@ PowerPoint अंदर आने का एक तरीका भी है - 
 
 ## DXF (कट फ़ाइलें)
 
+![The export panel with Penpot chosen: the .penpot file, and Send to Penpot beside the download](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22penpot%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-penpot)
+
 वेक्टर टूल (Brand Lockup, QR Code, Street Map, Wayfinding Signage, Pose Geeko, लोगो लॉकअप, Diagram Builder) **DXF** एक्सपोर्ट कर सकते हैं - वह AutoCAD R12 इंटरचेंज फ़ॉर्मेट जिसे लेज़र कटर, विनाइल प्लॉटर और CNC/CAD सॉफ़्टवेयर पढ़ते हैं। ज्यामिति को आउटलाइन **पाथ के रूप में मिलीमीटर में** लिखा जाता है (कर्व को एक बारीक टॉलरेंस तक फ़्लैट किया जाता है), टेक्स्ट को पाथ में आउटलाइन किया जाता है और रंग निकटतम AutoCAD Color Index से मैप होता है (जो आमतौर पर कटर पर टूल/ऑपरेशन तय करता है)। DXF सिर्फ़ लाइन-आर्ट के लिए है - किसी फ़ोटोग्राफ़िक या फ़िल्टर किए गए क्षेत्र का कोई cut-path रूप नहीं होता और उसे छोड़ दिया जाता है (Lolly चेतावनी देता है), इसलिए रास्टर कंटेंट रखना हो तो SVG/PDF का उपयोग करें।
 
 Street Map सबसे साफ़ मामला है: पूरा डिज़ाइन पहले से ही स्ट्रोक्स है, इसलिए हर सड़क और नहर एक कट पाथ बन जाती है जिसमें कुछ भी छोड़ना नहीं पड़ता।
@@ -137,6 +141,8 @@ Street Map सबसे साफ़ मामला है: पूरा डि
 :::
 
 ## एनिमेटेड SVG
+
+![The export panel on a Design deck with SCORM (LMS) chosen](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dfeature-tour%26format%3Dscorm%26options&width=1440&height=900&dpi=192&waitMs=3500&css=.fc-insp%7Bdisplay%3Anone!important%7D.edge-dock-slot--fill%7Bflex%3A1%201%20auto!important%3Bheight%3Aauto!important%3Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D.export-popup.is-floating%7Bheight%3Aauto!important%7D.export-popup-body%7Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-scorm)
 
 मोशन टूल (Animated Ad, Lottie Ad) **Animated SVG** एक्सपोर्ट कर सकते हैं - एक सेल्फ़-कंटेन्ड, *वेक्टर* एनिमेशन। GIF/APNG/WebP के विपरीत (जो हर फ्रेम को पिक्सल में सैंपल करते हैं), एक एनिमेटेड SVG एम्बेडेड CSS कीफ़्रेम के साथ वेक्टर स्नैपशॉट को स्टैक करता है, इसलिए यह **बिना किसी कोडेक और बिना किसी बाहरी रनटाइम के किसी भी साइज़ तक स्केल होता है** - यह ब्राउज़र टैब या `<img>` में लूप होता है। टेक्स्ट आउटलाइन ही रहता है ताकि यह कहीं भी रेंडर हो सके। यह एनिमेटेड फ़ॉर्मैट्स के **Duration** / फ्रेम-रेट कंट्रोल शेयर करता है, और (प्रति फ्रेम बिटमैप से भारी होने के कारण) कम डिफ़ॉल्ट फ्रेम रेट का उपयोग करता है।
 

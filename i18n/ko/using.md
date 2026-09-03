@@ -139,6 +139,8 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 
 ## 타임라인(Sequence Studio)
 
+![The timeline with the music clip selected: its strip runs along the bottom with Speed, Fades, Volume, Pan, EQ, Pitch, Normalize volume and the Effect slot](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dvideo%26_sel%3Dbed&width=1440&height=900&dpi=192&waitMs=5000&waitSelector=.tl-clip&css=.tl-panel%7Bheight%3A300px!important%7D&cropSelector=.tl-panel&walker=1&format=svg&dark=1&filename=tl-audio-strip)
+
 **Sequence Studio**는 자유 캔버스에 *시간*을 더해요. 상자마다 시작 시점과 지속 길이를 갖고 들어오고 나가는 애니메이션을 붙일 수 있고, 아트보드 아래에 붙은 타임라인이 그것들을 배치하는 자리예요. 열어 보면 이미 시퀀스가 재생되고 있어요 - 제목 카드, 클립, 엔딩 카드, 하단 자막, 배경 음악까지 - 그래서 아무것도 바꾸기 전에 구조가 눈에 들어와요.
 
 ![시퀀스 스튜디오의 타임라인: 트랜스포트, 눈금자, 오버레이 레인, 클립과 이음매 칩이 있는 자석형 시퀀스 행, Always on 스트립](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D11dZBb5swFADgX8MOiRYZB0J76GFpNO2wnbr7ZMwDrBg7s01C8usngmNwSqJszaT2aD8_G54_PUgJXRdK1iJ7CvAcpSHG6FMqG9BPQbwMkmWAMcsCjIP5lwDjUsp1O8DPAcZrJvpIKhsXaLpZ1I323mjXjcJHbCdKO4Ee7ISSxsvQJdmAO0cBNe6gtHDzQbKkkks101ARYRidaaBSZETtg2TlMgw0xuX8LBXANCN7PTVyWki3Kr-6b61yQmG4ay6FeWEHOL1K1E0TzgrhdqIgDCiXs_WjFcsyDi66A1aU_ZMuEPIOcwFNhHYRzgR8GySGs9CW0BDlFzWrVTe2qdCwftOcZP2TtJEfuovFyKZzIvor0fD7WKhVGzsXo2ALhH8UMxvFqmtiXmQFpmSimArYBfGzYHpKZcVEcS87-OHedpK72cHndmYWunu6rtxM-3wuwGqTXskacov-nhs15KNYG7HgWZtMvpNa0LJtUJNJi-2rYhnZ3ybtuNUVZuj9MotOrAbQFmPQbuB0uxwud4NX9-ycrmWIJw59Pg9h5AF6RGd-5vgWPhvG-2b5xs8bl5zvZ0ZK3tf_bd0pxu_lw2YDG2Jv6VRdj9Hi__WrKB7pV3OELuBKIRunReqM9f8d1tbnKPFsJVHs2Zqf9SaMLrSmASCjiNAbokD0lD0t_95Wxu-MVaQ4uT6WQ8ta0V46Z6lq9br1fVEOh7ypju-FFyjBC7fmVy0UaMm3YBcbVYMt-dhfTlUbe2BOuD6ujFd_AA&width=1440&height=900&dpi=192&waitMs=7000&waitSelector=.tl-clip&css=.tl-panel%7Bheight%3A252px!important%7D&cropSelector=.tl-panel&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-timeline)
@@ -172,6 +174,8 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 Design 도구에도 같은 타임라인이 있어요. 그래서 다른 도구로 옮기지 않고도 레이아웃에 시간을 입힐 수 있고, 모션으로 내보내기도 해요.
 
 ## 발표하기
+
+![The inspector's Document section: Voice, Blend with, Speed, Lead-in, Tail and Show captions when presenting](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dfeature-tour&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.fc-insp&walker=1&format=svg&dark=1&filename=design-narration)
 
 **아트보드**로 이루어진 Design 문서는 그 자체로 이미 슬라이드 덱이에요. 도구 막대의 **Lolly menu**를 열고 맨 아래 줄의 **Present**를 고르면, 캔버스에 놓인 순서 그대로 아트보드마다 전체 화면 슬라이드가 돼요. 덱은 렌더링된 아트보드의 사본으로 돌아가니 아래의 편집기는 전혀 건드리지 않고, 나가면 있던 자리로 정확히 돌아와요.
 

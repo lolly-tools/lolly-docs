@@ -113,6 +113,8 @@ Vuistregel: rijen van hetzelfde ontwerp die in **één document** horen → een 
 
 ## PowerPoint (PPTX)
 
+![The export panel with PowerPoint chosen: one slide per page, text and shapes kept editable](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio%3Foptions&width=1440&height=900&dpi=192&waitMs=2500&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22pptx%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-pptx)
+
 Tools voor meerdere pagina's en layouts (Carousel, Doc Studio, Multi-Page PDF, de charttools en de single-canvas kaart-/layouttools) kunnen een **PowerPoint-deck** exporteren - één slide per pagina. Het punt is geen pixelperfecte screenshot; het is om een collega een deck te geven dat ze echt kunnen **bewerken en waaruit ze assets kunnen halen**. Daarom wordt elke pagina ontleed in native objecten:
 
 - <!--i:font--> **Tekst** wordt echte, **bewerkbare PowerPoint-tekstvakken** - met de lettergrootte, kleur, gewicht, cursivering en uitlijning uit de layout - zodat je een typfout kunt herstellen of kunt herstijlen in PowerPoint.
@@ -126,6 +128,8 @@ PowerPoint is ook een weg **naar binnen** - het formaat gaat beide kanten op. **
 
 ## DXF (snijbestanden)
 
+![The export panel with Penpot chosen: the .penpot file, and Send to Penpot beside the download](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22penpot%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-penpot)
+
 Vectortools (Brand Lockup, QR Code, Street Map, Wayfinding Signage, Pose Geeko, de logo-lockups, Diagram Builder) kunnen exporteren naar **DXF** - het AutoCAD R12-uitwisselingsformaat dat lasersnijders, vinylplotters en CNC/CAD-software lezen. Geometrie wordt geschreven als **paden in millimeters** met omtrek (curven afgevlakt tot een fijne tolerantie), tekst wordt omgezet naar paden en kleur wordt gemapt naar de dichtstbijzijnde AutoCAD Color Index (die doorgaans de tool/bewerking op een snijmachine aanstuurt). DXF is alleen lijntekening - een fotografisch of gefilterd gebied heeft geen snijpadvorm en wordt weggelaten (Lolly waarschuwt), dus gebruik SVG/PDF wanneer je rastercontent moet behouden.
 
 Street Map is het duidelijkste geval: het hele ontwerp bestaat al uit lijnen, dus elke weg en elk kanaal wordt een snijpad zonder iets om weg te laten.
@@ -137,6 +141,8 @@ Scroll, en de camera zoomt terug door de daadwerkelijke geometrie: zeven paden, 
 :::
 
 ## Geanimeerde SVG
+
+![The export panel on a Design deck with SCORM (LMS) chosen](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dfeature-tour%26format%3Dscorm%26options&width=1440&height=900&dpi=192&waitMs=3500&css=.fc-insp%7Bdisplay%3Anone!important%7D.edge-dock-slot--fill%7Bflex%3A1%201%20auto!important%3Bheight%3Aauto!important%3Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D.export-popup.is-floating%7Bheight%3Aauto!important%7D.export-popup-body%7Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-scorm)
 
 Bewegingstools (Animated Ad, Lottie Ad) kunnen **Geanimeerde SVG** exporteren - een op zichzelf staande, *vectoriële* animatie. In tegenstelling tot GIF/APNG/WebP (die elk frame naar pixels bemonsteren), stapelt een geanimeerde SVG vectorsnapshots met ingesloten CSS-keyframes, zodat ze **op elke grootte schaalt zonder codec en zonder externe runtime** - ze loopt in een browsertab of een `<img>`. Tekst blijft omlijnd zodat het overal wordt weergegeven. Ze deelt de **Duration**/framerate-besturing van de geanimeerde formaten, en gebruikt (omdat ze per frame zwaarder is dan een bitmap) een lagere standaardframerate.
 

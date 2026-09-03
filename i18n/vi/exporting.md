@@ -113,6 +113,8 @@ Quy tắc chung: các hàng cùng một thiết kế thuộc về **một tài l
 
 ## PowerPoint (PPTX)
 
+![The export panel with PowerPoint chosen: one slide per page, text and shapes kept editable](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio%3Foptions&width=1440&height=900&dpi=192&waitMs=2500&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22pptx%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-pptx)
+
 Các công cụ nhiều trang và bố cục (Carousel, Doc Studio, Multi-Page PDF, các công cụ biểu đồ và các công cụ thẻ/bố cục canvas đơn) có thể xuất ra **bộ slide PowerPoint** - mỗi trang một slide. Mục đích không phải là ảnh chụp màn hình chính xác từng pixel; mà là để đưa cho đồng nghiệp một bộ slide họ thực sự có thể **chỉnh sửa và lấy tài sản ra**. Vì vậy mỗi trang được phân giải thành các đối tượng gốc:
 
 - <!--i:font--> **Văn bản** trở thành **hộp văn bản PowerPoint có thể chỉnh sửa** thực sự - với cỡ chữ, màu sắc, độ đậm, in nghiêng và căn chỉnh lấy từ bố cục - nên bạn có thể sửa lỗi gõ hoặc đổi kiểu ngay trong PowerPoint.
@@ -126,6 +128,8 @@ PowerPoint cũng là một lối **vào** - định dạng này hoạt động h
 
 ## DXF (tệp cắt)
 
+![The export panel with Penpot chosen: the .penpot file, and Send to Penpot beside the download](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22penpot%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-penpot)
+
 Các công cụ vector (Brand Lockup, QR Code, Street Map, Wayfinding Signage, Pose Geeko, các logo lockup, Diagram Builder) có thể xuất **DXF** - định dạng trao đổi AutoCAD R12 mà máy cắt laser, máy plot vinyl và phần mềm CNC/CAD đọc được. Hình học được ghi thành các **path viền theo milimét** (đường cong được làm phẳng đến một dung sai mịn), văn bản được viền thành path và màu sắc được ánh xạ tới AutoCAD Color Index gần nhất (thường quyết định công cụ/thao tác trên máy cắt). DXF chỉ là line-art - một vùng ảnh chụp hoặc đã lọc filter không có dạng đường cắt và sẽ bị loại bỏ (Lolly sẽ cảnh báo), vì vậy hãy dùng SVG/PDF khi bạn cần giữ lại nội dung raster.
 
 Street Map là trường hợp rõ ràng nhất: toàn bộ thiết kế vốn đã là các nét vẽ, nên mỗi con đường và kênh đào trở thành một đường cắt mà không có gì bị bỏ đi.
@@ -137,6 +141,8 @@ Cuộn xuống, và góc nhìn kéo lùi xuyên qua chính hình học đó: b�
 :::
 
 ## SVG hoạt hình
+
+![The export panel on a Design deck with SCORM (LMS) chosen](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dfeature-tour%26format%3Dscorm%26options&width=1440&height=900&dpi=192&waitMs=3500&css=.fc-insp%7Bdisplay%3Anone!important%7D.edge-dock-slot--fill%7Bflex%3A1%201%20auto!important%3Bheight%3Aauto!important%3Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D.export-popup.is-floating%7Bheight%3Aauto!important%7D.export-popup-body%7Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-scorm)
 
 Các công cụ chuyển động (Animated Ad, Lottie Ad) có thể xuất ra **SVG hoạt hình** - một hoạt ảnh *vector* độc lập, tự chứa. Khác với GIF/APNG/WebP (lấy mẫu từng khung hình thành pixel), một SVG hoạt hình xếp chồng các ảnh chụp vector với keyframe CSS nhúng sẵn, nên nó **thu phóng ở mọi kích cỡ mà không cần codec hay runtime bên ngoài** - nó lặp trong một tab trình duyệt hoặc một thẻ `<img>`. Văn bản vẫn được vẽ đường viền nên hiển thị được ở mọi nơi. Nó dùng chung các tùy chỉnh **Thời lượng**/tốc độ khung hình của các định dạng hoạt hình khác, và (do nặng hơn trên mỗi khung so với bitmap) dùng tốc độ khung hình mặc định thấp hơn.
 

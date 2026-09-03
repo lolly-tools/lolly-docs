@@ -113,6 +113,8 @@ Základní pravidlo: řádky stejného návrhu, které patří do **jednoho doku
 
 ## PowerPoint (PPTX)
 
+![The export panel with PowerPoint chosen: one slide per page, text and shapes kept editable](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio%3Foptions&width=1440&height=900&dpi=192&waitMs=2500&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22pptx%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-pptx)
+
 Vícestránkové nástroje a nástroje pro rozvržení (Carousel, Doc Studio, Multi-Page PDF, nástroje pro grafy a nástroje pro kartu/rozvržení s jedním plátnem) dokážou exportovat **prezentaci PowerPoint** - jedna stránka jako jeden snímek. Smyslem není pixelově přesný snímek obrazovky; jde o to předat kolegovi prezentaci, kterou skutečně dokáže **upravovat a vytahovat z ní assety**. Proto se každá stránka rozloží na nativní objekty:
 
 - <!--i:font--> **Text** se stane skutečným, **editovatelným textovým polem PowerPointu** - s velikostí písma, barvou, řezem, kurzívou a zarovnáním z rozvržení - takže si můžeš opravit překlep nebo přestylovat přímo v PowerPointu.
@@ -126,6 +128,8 @@ PowerPoint je také cesta **dovnitř** - formát funguje obousměrně. **Deck Bu
 
 ## DXF (řezací soubory)
 
+![The export panel with Penpot chosen: the .penpot file, and Send to Penpot beside the download](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22penpot%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-penpot)
+
 Vektorové nástroje (Brand Lockup, QR Code, Street Map, Wayfinding Signage, Pose Geeko, varianty loga, Diagram Builder) umí exportovat do **DXF** - výměnného formátu AutoCAD R12, který čtou laserové řezačky, vinylové plotry a software CNC/CAD. Geometrie se zapisuje jako obrysové **cesty v milimetrech** (křivky zploštěné s jemnou tolerancí), text se převádí na obrysové cesty a barva se mapuje na nejbližší AutoCAD Color Index (který obvykle řídí nástroj/operaci na řezačce). DXF je čistě liniová grafika - fotografická nebo filtrovaná oblast nemá formu řezací cesty a je vynechána (Lolly na to upozorní), takže pro zachování rastrového obsahu použij SVG/PDF.
 
 Street Map je nejjasnější případ: celý návrh už je tahy, takže se každá silnice a kanál stanou řezací cestou a nic se nevynechává.
@@ -137,6 +141,8 @@ Přejeď a kamera se vzdálí skrz skutečnou geometrii: sedm cest, nikde žádn
 :::
 
 ## Animované SVG
+
+![The export panel on a Design deck with SCORM (LMS) chosen](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dfeature-tour%26format%3Dscorm%26options&width=1440&height=900&dpi=192&waitMs=3500&css=.fc-insp%7Bdisplay%3Anone!important%7D.edge-dock-slot--fill%7Bflex%3A1%201%20auto!important%3Bheight%3Aauto!important%3Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D.export-popup.is-floating%7Bheight%3Aauto!important%7D.export-popup-body%7Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-scorm)
 
 Nástroje pro pohyb (Animated Ad, Lottie Ad) dokážou exportovat **Animované SVG** - samostatnou *vektorovou* animaci. Na rozdíl od GIF/APNG/WebP (které vzorkují každý snímek do pixelů) animované SVG skládá vektorové snímky s vloženými klíčovými snímky CSS, takže se **škáluje do jakékoli velikosti bez kodeku a bez externího runtime** - přehraje se na kartě prohlížeče nebo v `<img>`. Text zůstává obrysovaný, takže se vykreslí kdekoli. Sdílí ovládací prvky **Duration**/snímková frekvence s ostatními animovanými formáty a (protože je na snímek těžší než bitmapa) používá nižší výchozí snímkovou frekvenci.
 

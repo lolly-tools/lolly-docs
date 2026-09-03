@@ -113,6 +113,8 @@ Zasada praktyczna: wiersze tego samego projektu, które powinny trafić do **jed
 
 ## PowerPoint (PPTX)
 
+![The export panel with PowerPoint chosen: one slide per page, text and shapes kept editable](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio%3Foptions&width=1440&height=900&dpi=192&waitMs=2500&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22pptx%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-pptx)
+
 Narzędzia wielostronicowe i do układów (Carousel, Doc Studio, Multi-Page PDF, narzędzia do wykresów oraz jednopłócienne narzędzia kart/układów) mogą eksportować **prezentację PowerPoint** - jeden slajd na stronę. Nie chodzi o zrzut ekranu piksel w piksel; chodzi o przekazanie współpracownikowi prezentacji, którą naprawdę może **edytować i z której może wyodrębniać zasoby**. Dlatego każda strona jest rozkładana na natywne obiekty:
 
 - <!--i:font--> **Tekst** staje się prawdziwymi, **edytowalnymi polami tekstowymi PowerPoint** - z rozmiarem czcionki, kolorem, grubością, kursywą i wyrównaniem z układu - dzięki czemu możesz poprawić literówkę lub zmienić styl w PowerPoincie.
@@ -126,6 +128,8 @@ PowerPoint to także sposób na **wejście** - format działa w obie strony. **D
 
 ## DXF (pliki do cięcia)
 
+![The export panel with Penpot chosen: the .penpot file, and Send to Penpot beside the download](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22penpot%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-penpot)
+
 Narzędzia wektorowe (Brand Lockup, QR Code, Street Map, Wayfinding Signage, Pose Geeko, warianty logo, Diagram Builder) mogą eksportować do **DXF** - formatu wymiany AutoCAD R12, który odczytują plotery laserowe, plotery winylowe i oprogramowanie CNC/CAD. Geometria jest zapisywana jako **ścieżki konturu w milimetrach** (krzywe spłaszczone z dużą dokładnością), tekst jest zamieniany na ścieżki konturowe, a kolor jest mapowany na najbliższy indeks kolorów AutoCAD (który zwykle steruje narzędziem/operacją na ploterze tnącym). DXF to wyłącznie grafika liniowa - obszar fotograficzny lub filtrowany nie ma formy ścieżki cięcia i zostaje pominięty (Lolly ostrzega), więc gdy trzeba zachować treść rastrową, użyj SVG/PDF.
 
 Street Map to najbardziej oczywisty przypadek: cały projekt to już same kontury, więc każda droga i każdy kanał stają się ścieżką do cięcia i nic nie trzeba pomijać.
@@ -137,6 +141,8 @@ Przewiń, a kamera oddala się przez rzeczywistą geometrię: siedem ścieżek, 
 :::
 
 ## Animowany SVG
+
+![The export panel on a Design deck with SCORM (LMS) chosen](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dfeature-tour%26format%3Dscorm%26options&width=1440&height=900&dpi=192&waitMs=3500&css=.fc-insp%7Bdisplay%3Anone!important%7D.edge-dock-slot--fill%7Bflex%3A1%201%20auto!important%3Bheight%3Aauto!important%3Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D.export-popup.is-floating%7Bheight%3Aauto!important%7D.export-popup-body%7Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-scorm)
 
 Narzędzia animacji (Animated Ad, Lottie Ad) mogą eksportować **Animowany SVG** - samodzielną animację *wektorową*. W przeciwieństwie do GIF/APNG/WebP (które próbkują każdą klatkę do pikseli), animowany SVG układa migawki wektorowe z osadzonymi klatkami kluczowymi CSS, dzięki czemu **skaluje się do dowolnego rozmiaru bez kodeka i bez zewnętrznego środowiska uruchomieniowego** - zapętla się w karcie przeglądarki lub w `<img>`. Tekst pozostaje zamieniony na ścieżki konturowe, więc renderuje się wszędzie. Współdzieli z formatami animowanymi ustawienia **Duration** / liczby klatek na sekundę, i (będąc cięższy na klatkę niż bitmapa) używa niższej domyślnej liczby klatek.
 

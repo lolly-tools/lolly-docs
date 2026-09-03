@@ -139,6 +139,8 @@ Due cose che queste operazioni deliberatamente non fanno. **Rifiutano invece di 
 
 ## Timeline (Sequence Studio)
 
+![The timeline with the music clip selected: its strip runs along the bottom with Speed, Fades, Volume, Pan, EQ, Pitch, Normalize volume and the Effect slot](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dvideo%26_sel%3Dbed&width=1440&height=900&dpi=192&waitMs=5000&waitSelector=.tl-clip&css=.tl-panel%7Bheight%3A300px!important%7D&cropSelector=.tl-panel&walker=1&format=svg&dark=1&filename=tl-audio-strip)
+
 **Sequence Studio** aggiunge il *tempo* al canvas libero. Ogni riquadro può iniziare in un momento preciso, durare per una certa lunghezza e animarsi in entrata e in uscita, e una timeline agganciata sotto l'area di disegno è dove li disponi. Aprilo e c'è già una sequenza in riproduzione - una card di titolo, una clip, una card finale, un lower-third e un tappeto musicale - così il modello è visibile prima ancora che tu cambi qualcosa.
 
 ![La timeline di Sequence Studio: il transport, il righello, una corsia di overlay, la riga di sequenza magnetica con le sue clip e chip di giunzione e la striscia Always on](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D11dZBb5swFADgX8MOiRYZB0J76GFpNO2wnbr7ZMwDrBg7s01C8usngmNwSqJszaT2aD8_G54_PUgJXRdK1iJ7CvAcpSHG6FMqG9BPQbwMkmWAMcsCjIP5lwDjUsp1O8DPAcZrJvpIKhsXaLpZ1I323mjXjcJHbCdKO4Ee7ISSxsvQJdmAO0cBNe6gtHDzQbKkkks101ARYRidaaBSZETtg2TlMgw0xuX8LBXANCN7PTVyWki3Kr-6b61yQmG4ay6FeWEHOL1K1E0TzgrhdqIgDCiXs_WjFcsyDi66A1aU_ZMuEPIOcwFNhHYRzgR8GySGs9CW0BDlFzWrVTe2qdCwftOcZP2TtJEfuovFyKZzIvor0fD7WKhVGzsXo2ALhH8UMxvFqmtiXmQFpmSimArYBfGzYHpKZcVEcS87-OHedpK72cHndmYWunu6rtxM-3wuwGqTXskacov-nhs15KNYG7HgWZtMvpNa0LJtUJNJi-2rYhnZ3ybtuNUVZuj9MotOrAbQFmPQbuB0uxwud4NX9-ycrmWIJw59Pg9h5AF6RGd-5vgWPhvG-2b5xs8bl5zvZ0ZK3tf_bd0pxu_lw2YDG2Jv6VRdj9Hi__WrKB7pV3OELuBKIRunReqM9f8d1tbnKPFsJVHs2Zqf9SaMLrSmASCjiNAbokD0lD0t_95Wxu-MVaQ4uT6WQ8ta0V46Z6lq9br1fVEOh7ypju-FFyjBC7fmVy0UaMm3YBcbVYMt-dhfTlUbe2BOuD6ujFd_AA&width=1440&height=900&dpi=192&waitMs=7000&waitSelector=.tl-clip&css=.tl-panel%7Bheight%3A252px!important%7D&cropSelector=.tl-panel&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-timeline)
@@ -172,6 +174,8 @@ Qualche limite da tenere a mente: una sequenza è limitata a un'ora, GIF e PNG a
 Lo strumento Design ha la stessa timeline, così puoi temporizzare un layout senza passare a un altro strumento, ed esporta anche il movimento.
 
 ## Presentare
+
+![The inspector's Document section: Voice, Blend with, Speed, Lead-in, Tail and Show captions when presenting](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dfeature-tour&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.fc-insp&walker=1&format=svg&dark=1&filename=design-narration)
 
 Un documento Design fatto di **aree di disegno** è già una presentazione. Apri il **menu Lolly** sulla barra degli strumenti e scegli **Presenta** - l'ultima voce - e ogni area di disegno diventa una slide a schermo intero, nell'ordine in cui le aree di disegno stanno sul canvas. La presentazione gira su una copia delle aree di disegno renderizzate, quindi l'editor sottostante non viene mai toccato e uscendo torni esattamente dov'eri.
 

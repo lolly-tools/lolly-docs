@@ -113,6 +113,8 @@ Lolly 有三种不同的批量作业方式，分别解决不同的任务 - 批�
 
 ## PowerPoint（PPTX）
 
+![The export panel with PowerPoint chosen: one slide per page, text and shapes kept editable](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio%3Foptions&width=1440&height=900&dpi=192&waitMs=2500&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22pptx%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-pptx)
+
 多页与布局类工具（Carousel、Doc Studio、多页 PDF、图表工具以及单画布卡片／布局工具）可以导出为一份 **PowerPoint 演示文稿** - 每页对应一张幻灯片。这样做的目的不是像素级完美的截图，而是交给同事一份他们真正能够**编辑并从中取出素材**的演示文稿。因此每一页都会被分解为原生对象：
 
 - <!--i:font--> **文本**会变成真正的、**可编辑的 PowerPoint 文本框** - 保留版式中的字号、颜色、字重、斜体和对齐方式 - 因此你可以在 PowerPoint 中修正拼写或重新设计样式。
@@ -126,6 +128,8 @@ PowerPoint 同样是一种**导入**方式 - 该格式可双向转换。**Deck B
 
 ## DXF(切割文件)
 
+![The export panel with Penpot chosen: the .penpot file, and Send to Penpot beside the download](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22penpot%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-penpot)
+
 矢量工具(Brand Lockup、QR Code、Street Map、Wayfinding Signage、Pose Geeko、各种徽标组合、Diagram Builder)可以导出 **DXF**——这是激光切割机、乙烯基绘图仪和 CNC/CAD 软件都能读取的 AutoCAD R12 交换格式。几何图形以**毫米为单位的轮廓路径**写出(曲线被展平到很细的容差范围内),文字会被轮廓化为路径,颜色则映射到最接近的 AutoCAD 颜色索引(通常用来驱动切割机上对应的刀具/操作)。DXF 只是线稿格式——照片或经过滤镜处理的区域没有对应的切割路径形式,会被丢弃(Lolly 会给出警告),因此如果需要保留位图内容,请改用 SVG/PDF。
 
 Street Map 是最典型的例子:整个设计本身已经是描边线条,因此每条道路和运河都会变成一条切割路径,不会丢失任何内容。
@@ -137,6 +141,8 @@ Street Map 是最典型的例子:整个设计本身已经是描边线条,因此�
 :::
 
 ## 动画 SVG
+
+![The export panel on a Design deck with SCORM (LMS) chosen](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dfeature-tour%26format%3Dscorm%26options&width=1440&height=900&dpi=192&waitMs=3500&css=.fc-insp%7Bdisplay%3Anone!important%7D.edge-dock-slot--fill%7Bflex%3A1%201%20auto!important%3Bheight%3Aauto!important%3Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D.export-popup.is-floating%7Bheight%3Aauto!important%7D.export-popup-body%7Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-scorm)
 
 动效工具(Animated Ad、Lottie Ad)可以导出**动画 SVG** - 一种自包含的*矢量*动画。与逐帧采样为像素的 GIF/APNG/WebP 不同,动画 SVG 通过嵌入的 CSS 关键帧堆叠矢量快照,因此**可缩放到任意尺寸,无需编解码器,也无需外部运行时** - 它可以在浏览器标签页中循环播放,也可以放进 `<img>`。文本会保持轮廓化,因此可在任何地方渲染。它与其他动画格式共享**时长**/帧率控制项,并且(因为每帧比位图更重)默认使用较低的帧率。
 

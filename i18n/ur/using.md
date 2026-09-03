@@ -139,6 +139,8 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 
 ## ٹائم لائن (Sequence Studio)
 
+![The timeline with the music clip selected: its strip runs along the bottom with Speed, Fades, Volume, Pan, EQ, Pitch, Normalize volume and the Effect slot](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dvideo%26_sel%3Dbed&width=1440&height=900&dpi=192&waitMs=5000&waitSelector=.tl-clip&css=.tl-panel%7Bheight%3A300px!important%7D&cropSelector=.tl-panel&walker=1&format=svg&dark=1&filename=tl-audio-strip)
+
 **Sequence Studio** آزاد کینوس میں *وقت* شامل کرتا ہے۔ ہر باکس کسی لمحے شروع ہو سکتا ہے، ایک مدت تک چل سکتا ہے اور آتے جاتے متحرک ہو سکتا ہے، اور آرٹ بورڈ کے نیچے لگی ٹائم لائن وہ جگہ ہے جہاں آپ انہیں ترتیب دیتے ہیں۔ اسے کھولیں تو ایک سلسلہ پہلے سے چل رہا ہوتا ہے - ایک ٹائٹل کارڈ، ایک کلپ، ایک اختتامی کارڈ، ایک لوئر تھرڈ اور ایک میوزک بیڈ - تاکہ کچھ بدلنے سے پہلے ہی ماڈل نظر آ جائے۔
 
 ![Sequence Studio کی ٹائم لائن: ٹرانسپورٹ، رولر، ایک اوورلے لین، کلپس اور سیم چپس کے ساتھ میگنیٹک سیکوئنس قطار اور Always on پٹی](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D11dZBb5swFADgX8MOiRYZB0J76GFpNO2wnbr7ZMwDrBg7s01C8usngmNwSqJszaT2aD8_G54_PUgJXRdK1iJ7CvAcpSHG6FMqG9BPQbwMkmWAMcsCjIP5lwDjUsp1O8DPAcZrJvpIKhsXaLpZ1I323mjXjcJHbCdKO4Ee7ISSxsvQJdmAO0cBNe6gtHDzQbKkkks101ARYRidaaBSZETtg2TlMgw0xuX8LBXANCN7PTVyWki3Kr-6b61yQmG4ay6FeWEHOL1K1E0TzgrhdqIgDCiXs_WjFcsyDi66A1aU_ZMuEPIOcwFNhHYRzgR8GySGs9CW0BDlFzWrVTe2qdCwftOcZP2TtJEfuovFyKZzIvor0fD7WKhVGzsXo2ALhH8UMxvFqmtiXmQFpmSimArYBfGzYHpKZcVEcS87-OHedpK72cHndmYWunu6rtxM-3wuwGqTXskacov-nhs15KNYG7HgWZtMvpNa0LJtUJNJi-2rYhnZ3ybtuNUVZuj9MotOrAbQFmPQbuB0uxwud4NX9-ycrmWIJw59Pg9h5AF6RGd-5vgWPhvG-2b5xs8bl5zvZ0ZK3tf_bd0pxu_lw2YDG2Jv6VRdj9Hi__WrKB7pV3OELuBKIRunReqM9f8d1tbnKPFsJVHs2Zqf9SaMLrSmASCjiNAbokD0lD0t_95Wxu-MVaQ4uT6WQ8ta0V46Z6lq9br1fVEOh7ypju-FFyjBC7fmVy0UaMm3YBcbVYMt-dhfTlUbe2BOuD6ujFd_AA&width=1440&height=900&dpi=192&waitMs=7000&waitSelector=.tl-clip&css=.tl-panel%7Bheight%3A252px!important%7D&cropSelector=.tl-panel&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-timeline)
@@ -172,6 +174,8 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 Design ٹول میں بھی وہی ٹائم لائن ہے، تو آپ کسی دوسرے ٹول پر گئے بغیر لے آؤٹ کو وقت دے سکتے ہیں، اور یہ موشن بھی ایکسپورٹ کرتا ہے۔
 
 ## پیشکش کرنا
+
+![The inspector's Document section: Voice, Blend with, Speed, Lead-in, Tail and Show captions when presenting](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dfeature-tour&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.fc-insp&walker=1&format=svg&dark=1&filename=design-narration)
 
 **آرٹ بورڈز** سے بنی Design دستاویز پہلے ہی ایک ڈیک ہے۔ ٹول ریل پر **Lolly menu** کھولیں اور **Present** چنیں - آخری قطار - اور ہر آرٹ بورڈ پوری اسکرین کی سلائیڈ بن جاتا ہے، اسی ترتیب سے جس میں آرٹ بورڈز کینوس پر رکھے ہیں۔ ڈیک رینڈر شدہ آرٹ بورڈز کی نقل پر چلتا ہے، تو نیچے موجود ایڈیٹر کو کچھ نہیں ہوتا اور باہر نکلنے پر آپ بالکل وہیں واپس آ جاتے ہیں جہاں تھے۔
 

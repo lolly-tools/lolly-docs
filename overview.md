@@ -287,8 +287,8 @@ Rows are listed in gallery section order. The `utility` section always renders *
 
 | Category | Examples | Planned |
 |---|---|---|
-| `everyone` | QR Code Generator, Quote Card, Email Signature, Logo, Wordmark, Audiogram, Battlecards, Sequence Studio, Record | Employee Image Stationery |
-| `designer` | Brand Lockup, Design, Chart, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
+| `everyone` | QR Code Generator, Quote Card, Email Signature, Logo, Wordmark, Audiogram, Battlecards, Sequence, Record | Employee Image Stationery |
+| `designer` | Brand Lockup, Design, Chart, Darkroom, Filter, Pose Geeko, Booklet | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS, Booth Studio | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
 | `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Unit/format converters, more on-device privacy utilities |
@@ -299,7 +299,7 @@ Tools are also classified by status: `official` (brand approved, no watermark), 
 
 **Design** is the first tool built on the `render.layout: "editor"` free-canvas mode - a chromeless, direct-manipulation surface where you drag, resize, rotate and snap boxes of text, shapes and images, then export through the same render path as every other tool.
 
-**Strip Hidden Data** is the first **on-device utility** (`privacy: "on-device"`): a content-transform tool that takes a file *you* supply, processes it entirely in the browser and hands back a clean copy - never uploaded, never watermarked, no provenance stamped. **Text Helper** is the second - an on-device workbench for everyday paste-into-a-website jobs (JSON format, JWT decode, Base64, URL encode/decode, SHA hashing). **Compress PDF** is the third - it shrinks a PDF by recompressing its images, again entirely on-device. The marker and its badge text "Runs on your device - nothing is uploaded" now cover the whole transform set: Strip Hidden Data, Text Helper, Compress PDF, **Convert Image** (HEIC/TIFF/AVIF → WebP/JPG/PNG), **Convert Font**, **Redact** (destroy regions of an image, SVG or PDF), **Prompt to Image** and **Rebrand a Deck** (re-theme a `.pptx` in place) where the profile mounts it. This is a privacy-utility category that replaces handing confidential files to single-purpose websites.
+**Strip Hidden Data** is the first **on-device utility** (`privacy: "on-device"`): a content-transform tool that takes a file *you* supply, processes it entirely in the browser and hands back a clean copy - never uploaded, never watermarked, no provenance stamped. **Text Helper** is the second - an on-device workbench for everyday paste-into-a-website jobs (JSON format, JWT decode, Base64, URL encode/decode, SHA hashing). **Compress PDF** is the third - it shrinks a PDF by recompressing its images, again entirely on-device. The marker and its badge text "Runs on your device - nothing is uploaded" now cover the whole transform set: Strip Hidden Data, Text Helper, Compress PDF, **Convert Image** (HEIC/TIFF/AVIF → WebP/JPG/PNG), **Convert Font**, **Redact** (destroy regions of an image, SVG or PDF), **Prompt Card** and **Rebrand** (re-theme a `.pptx` in place) where the profile mounts it. This is a privacy-utility category that replaces handing confidential files to single-purpose websites.
 
 ![The Utilities drawer, where every card is a tool that transforms a file you already have](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=aud-utilities)
 

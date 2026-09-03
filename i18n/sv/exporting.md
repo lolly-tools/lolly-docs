@@ -113,6 +113,8 @@ Tumregel: rader av samma design som hör hemma i **ett dokument** → ett tabell
 
 ## PowerPoint (PPTX)
 
+![The export panel with PowerPoint chosen: one slide per page, text and shapes kept editable](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio%3Foptions&width=1440&height=900&dpi=192&waitMs=2500&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22pptx%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-pptx)
+
 Flersides- och layoutverktyg (Carousel, Doc Studio, Multi-Page PDF, diagramverktygen och verktygen för enskild arbetsyta/kort/layout) kan exportera ett **PowerPoint-bildspel** - en bild per sida. Poängen är inte en pixelperfekt skärmdump; det är att ge en kollega ett bildspel de faktiskt kan **redigera och ta ut tillgångar från**. Så varje sida delas upp i nativa objekt:
 
 - <!--i:font--> **Text** blir riktiga, **redigerbara textrutor i PowerPoint** - med typsnittsstorlek, färg, vikt, kursiv stil och justering från layouten - så du kan rätta ett stavfel eller omstajla i PowerPoint.
@@ -126,6 +128,8 @@ PowerPoint är också en väg **in** - formatet går att gå tur och retur. **De
 
 ## DXF (skärfiler)
 
+![The export panel with Penpot chosen: the .penpot file, and Send to Penpot beside the download](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22penpot%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-penpot)
+
 Vektorverktyg (Brand Lockup, QR Code, Street Map, Wayfinding Signage, Pose Geeko, logotyplåsningarna, Diagram Builder) kan exportera **DXF** - AutoCAD R12-utbytesformatet som laserskärare, vinylplottrar och CNC/CAD-program läser. Geometri skrivs som konturbanor **i millimeter** (kurvor plattas ut till en fin tolerans), text konturbanas till banor och färg mappas till närmaste AutoCAD Color Index (som vanligtvis styr verktyget/operationen på en skärmaskin). DXF är enbart linjekonst - ett fotografiskt eller filtrerat område har ingen skärbaneform och tas bort (Lolly varnar), så använd SVG/PDF när du behöver behålla rasterinnehåll.
 
 Street Map är det tydligaste exemplet: hela designen är redan streck, så varje väg och kanal blir en skärbana utan något att slänga.
@@ -137,6 +141,8 @@ Scrolla, och kameran dras tillbaka genom den faktiska geometrin: sju banor, inga
 :::
 
 ## Animerad SVG
+
+![The export panel on a Design deck with SCORM (LMS) chosen](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dfeature-tour%26format%3Dscorm%26options&width=1440&height=900&dpi=192&waitMs=3500&css=.fc-insp%7Bdisplay%3Anone!important%7D.edge-dock-slot--fill%7Bflex%3A1%201%20auto!important%3Bheight%3Aauto!important%3Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D.export-popup.is-floating%7Bheight%3Aauto!important%7D.export-popup-body%7Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-scorm)
 
 Rörelseverktyg (Animated Ad, Lottie Ad) kan exportera **Animerad SVG** - en fristående, *vektorbaserad* animation. Till skillnad från GIF/APNG/WebP (som samplar varje bildruta till pixlar) staplar en animerad SVG vektorögonblicksbilder med inbäddade CSS-nyckelbilder, så den **skalar till valfri storlek utan kodek och utan extern körtidsmiljö** - den loopar i en webbläsarflik eller en `<img>`. Text förblir konturad så att den renderas överallt. Den delar de animerade formatens **Duration**-/bildfrekvenskontroller, och (eftersom den är tyngre per bildruta än en bitmapp) använder en lägre standardbildfrekvens.
 

@@ -1,6 +1,6 @@
 # The sequence editor
 
-**Sequence Studio** puts a timeline under the free canvas: every box can start at a moment, run for a length and animate in and out. [Using Lolly](/info/using.html#timeline-sequence-studio) covers the layout of the timeline - the magnetic sequence row, the free overlay lanes, the Always on strip, transitions and rendering. This page is about the four things that decide whether editing in time feels *predictable*: what a canvas click edits, seeing what is about to arrive or leave, cutting a clip and trimming one.
+**Sequence**, Design's timeline, puts time under the free canvas: every box can start at a moment, run for a length and animate in and out. [Using Lolly](/info/using.html#timeline-sequence) covers the layout of the timeline - the magnetic sequence row, the free overlay lanes, the Always on strip, transitions and rendering. This page is about the four things that decide whether editing in time feels *predictable*: what a canvas click edits, seeing what is about to arrive or leave, cutting a clip and trimming one.
 
 Everything here happens on your device, and none of it changes what a render produces. The chrome described below - ghosts, badges, banners, outlines - lives outside the exported node, so a file exported with onion skin on is byte-identical to the same file exported with it off.
 

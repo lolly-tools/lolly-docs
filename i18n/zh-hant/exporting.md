@@ -113,6 +113,8 @@ Lolly 有三種不同的方式可用來大量處理，各自解決不同的工�
 
 ## PowerPoint（PPTX）
 
+![The export panel with PowerPoint chosen: one slide per page, text and shapes kept editable](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio%3Foptions&width=1440&height=900&dpi=192&waitMs=2500&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22pptx%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-pptx)
+
 多頁與版面配置工具（Carousel、Doc Studio、Multi-Page PDF、圖表工具，以及單一畫布的卡片／版面工具）可以匯出成 **PowerPoint 簡報** - 每頁一張投影片。重點不在於像素完美的截圖，而是要交給同事一份他們能夠真正**編輯並取出資產**的簡報。因此每一頁都會被拆解成原生物件：
 
 - <!--i:font--> **文字**會變成真正、**可編輯的 PowerPoint 文字方塊** - 保留版面配置的字型大小、顏色、粗細、斜體與對齊方式 - 讓你能在 PowerPoint 中修正錯字或重新調整樣式。
@@ -126,6 +128,8 @@ PowerPoint 也是一種**匯入**方式 - 這個格式可雙向轉換。**Deck B
 
 ## DXF(切割檔)
 
+![The export panel with Penpot chosen: the .penpot file, and Send to Penpot beside the download](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22penpot%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-penpot)
+
 向量工具(Brand Lockup、QR Code、Street Map、Wayfinding Signage、Pose Geeko、標誌組合、Diagram Builder)可以匯出 **DXF**——雷射切割機、貼紙繪圖機與 CNC/CAD 軟體都能讀取的 AutoCAD R12 交換格式。幾何圖形會以**毫米為單位的外框路徑**寫入(曲線會以精細的容許誤差攤平),文字會轉換為外框路徑,色彩則對應到最接近的 AutoCAD 色彩索引(通常用來驅動切割機上的工具/作業)。DXF 僅支援線稿——照片或套用濾鏡的區域沒有可供切割的路徑形式,會被捨棄(Lolly 會提出警告),因此若需要保留點陣內容,請改用 SVG/PDF。
 
 Street Map 是最清楚的例子:整個設計本來就都是線條,因此每一條道路與運河都能變成切割路徑,沒有任何東西需要捨棄。
@@ -137,6 +141,8 @@ Street Map 是最清楚的例子:整個設計本來就都是線條,因此每一�
 :::
 
 ## 動態 SVG
+
+![The export panel on a Design deck with SCORM (LMS) chosen](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dfeature-tour%26format%3Dscorm%26options&width=1440&height=900&dpi=192&waitMs=3500&css=.fc-insp%7Bdisplay%3Anone!important%7D.edge-dock-slot--fill%7Bflex%3A1%201%20auto!important%3Bheight%3Aauto!important%3Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D.export-popup.is-floating%7Bheight%3Aauto!important%7D.export-popup-body%7Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-scorm)
 
 動態工具(Animated Ad、Lottie Ad)可匯出**動態 SVG** - 一種自成一體的*向量*動畫。與 GIF/APNG/WebP(逐格取樣為像素)不同,動態 SVG 是以內嵌 CSS 關鍵影格堆疊向量快照,因此**可縮放至任意尺寸,不需要編解碼器,也不需要外部執行環境** - 在瀏覽器分頁或 `<img>` 中即可循環播放。文字仍保持輪廓化,因此在任何地方都能正常呈現。它沿用動態格式共通的**時長**/影格率控制項,且(因每格比點陣圖更重)預設影格率較低。
 

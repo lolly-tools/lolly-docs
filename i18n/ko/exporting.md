@@ -113,6 +113,8 @@ Lolly에는 대량으로 작업하는 세 가지 뚜렷한 방법이 있고, 각
 
 ## PowerPoint (PPTX)
 
+![The export panel with PowerPoint chosen: one slide per page, text and shapes kept editable](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio%3Foptions&width=1440&height=900&dpi=192&waitMs=2500&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22pptx%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-pptx)
+
 다중 페이지 및 레이아웃 도구(Carousel, Doc Studio, Multi-Page PDF, 차트 도구들, 단일 캔버스 카드/레이아웃 도구)는 **PowerPoint 덱**으로 내보낼 수 있어요 - 페이지당 슬라이드 하나. 요점은 픽셀 단위로 완벽한 스크린샷이 아니라, 동료에게 실제로 **편집하고 에셋을 꺼내 쓸 수 있는** 덱을 건네주는 거예요. 그래서 각 페이지는 네이티브 객체로 분해돼요.
 
 - <!--i:font--> **텍스트**는 실제 **편집 가능한 PowerPoint 텍스트 상자**가 됩니다 - 레이아웃의 글꼴 크기, 색상, 굵기, 기울임꼴, 정렬이 그대로 반영되어 PowerPoint에서 오타를 고치거나 스타일을 다시 지정할 수 있습니다.
@@ -126,6 +128,8 @@ PowerPoint는 **들어오는** 통로이기도 합니다 - 이 형식은 왕복 
 
 ## DXF (재단 파일)
 
+![The export panel with Penpot chosen: the .penpot file, and Send to Penpot beside the download](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22penpot%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-penpot)
+
 벡터 도구(Brand Lockup, QR Code, Street Map, Wayfinding Signage, Pose Geeko, 로고 락업, Diagram Builder)는 **DXF**로 내보낼 수 있어요 - 레이저 커터, 비닐 플로터, CNC/CAD 소프트웨어가 읽는 AutoCAD R12 교환 형식이에요. 기하 정보는 **밀리미터 단위의 윤곽 패스**로 기록되고(곡선은 세밀한 허용 오차로 평탄화돼요), 텍스트는 패스로 윤곽선화되며, 색상은 가장 가까운 AutoCAD Color Index로 매핑돼요(이는 보통 커터의 도구/작업을 결정해요). DXF는 선화(line-art) 전용이에요 - 사진이나 필터가 적용된 영역은 절단 경로 형태가 없어서 제외되며(Lolly가 경고해요), 래스터 콘텐츠를 유지해야 한다면 SVG/PDF를 사용하세요.
 
 Street Map은 가장 명확한 사례입니다: 전체 디자인이 이미 선(strokes)이므로 모든 도로와 운하가 손실 없이 재단 경로가 됩니다.
@@ -137,6 +141,8 @@ Street Map은 가장 명확한 사례입니다: 전체 디자인이 이미 선(s
 :::
 
 ## 애니메이션 SVG
+
+![The export panel on a Design deck with SCORM (LMS) chosen](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dfeature-tour%26format%3Dscorm%26options&width=1440&height=900&dpi=192&waitMs=3500&css=.fc-insp%7Bdisplay%3Anone!important%7D.edge-dock-slot--fill%7Bflex%3A1%201%20auto!important%3Bheight%3Aauto!important%3Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D.export-popup.is-floating%7Bheight%3Aauto!important%7D.export-popup-body%7Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-scorm)
 
 모션 도구(Animated Ad, Lottie Ad)는 **애니메이션 SVG**를 내보낼 수 있습니다 - 독립적인 *벡터* 애니메이션입니다. 각 프레임을 픽셀로 샘플링하는 GIF/APNG/WebP와 달리, 애니메이션 SVG는 벡터 스냅샷을 CSS 키프레임과 함께 쌓아 올리므로 **코덱이나 외부 런타임 없이 어떤 크기로도 확대**됩니다 - 브라우저 탭이나 `<img>`에서 재생됩니다. 텍스트는 윤곽선으로 유지되어 어디서나 렌더링됩니다. 애니메이션 형식과 동일한 **Duration**/프레임 속도 컨트롤을 공유하며, (프레임당 비트맵보다 무거우므로) 기본 프레임 속도가 더 낮습니다.
 

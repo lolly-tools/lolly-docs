@@ -60,7 +60,7 @@ Finished work in **Figma, Penpot, Illustrator, InDesign or any SVG app** doesn't
 
 The whole import happens **on your device** - the file is parsed in your browser and nothing is uploaded. Full details, and exactly what carries over, are in [Import a design](/info/design-import.html).
 
-Got a **PowerPoint deck** instead? Drop the `.pptx` on **Deck Builder** to edit it slide by slide, already snapped to your brand - or run **Rebrand a Deck** to get the same deck back re-themed, charts and animations intact.
+Got a **PowerPoint deck** instead? Drop the `.pptx` on any upload surface to file its slides as assets, write a new deck from Markdown in **Markdown Slides**, or run **Rebrand** to get the same deck back re-themed, charts and animations intact.
 
 ### From a one-off to a template
 

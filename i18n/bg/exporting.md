@@ -113,6 +113,8 @@ Lolly има три отделни начина за работа в обем, �
 
 ## PowerPoint (PPTX)
 
+![The export panel with PowerPoint chosen: one slide per page, text and shapes kept editable](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio%3Foptions&width=1440&height=900&dpi=192&waitMs=2500&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22pptx%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-pptx)
+
 Инструментите за много страници и оформление (Carousel, Doc Studio, Multi-Page PDF, инструментите за диаграми и инструментите за карти/оформление с едно платно) могат да експортират **PowerPoint презентация** - един слайд на страница. Целта не е пиксел-съвършена снимка на екрана; тя е да предадеш на колега презентация, която той действително може да **редактира и да извади активи от нея**. Затова всяка страница се разлага на нативни обекти:
 
 - <!--i:font--> **Текстът** се превръща в истински, **редактируеми текстови полета на PowerPoint** - с размера на шрифта, цвета, дебелината, курсива и подравняването от оформлението - така че можеш да коригираш печатна грешка или да преоформиш в PowerPoint.
@@ -126,6 +128,8 @@ PowerPoint е и начин да **влезеш** - форматът се изп
 
 ## DXF (файлове за рязане)
 
+![The export panel with Penpot chosen: the .penpot file, and Send to Penpot beside the download](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22penpot%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-penpot)
+
 Векторните инструменти (Brand Lockup, QR Code, Street Map, Wayfinding Signage, Pose Geeko, връзките с логото, Diagram Builder) могат да експортират **DXF** - форматът за обмен AutoCAD R12, който четат лазерни резачки, винилови плотери и CNC/CAD софтуер. Геометрията се записва като контурни **пътища в милиметри** (кривите се изравняват с фин толеранс), текстът се превръща в контурни пътища, а цветът се съпоставя с най-близкия индекс на цвят на AutoCAD (който обикновено задвижва инструмента/операцията на резачка). DXF е само линейна графика - фотографска или филтрирана област няма форма на път за рязане и се изпуска (Lolly предупреждава), затова използвай SVG/PDF, когато трябва да запазиш растерно съдържание.
 
 Street Map е най-ясният случай: целият дизайн вече е линии, така че всеки път и канал се превръща в път за рязане без нищо за пропускане.
@@ -137,6 +141,8 @@ Street Map е най-ясният случай: целият дизайн веч
 :::
 
 ## Анимиран SVG
+
+![The export panel on a Design deck with SCORM (LMS) chosen](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dfeature-tour%26format%3Dscorm%26options&width=1440&height=900&dpi=192&waitMs=3500&css=.fc-insp%7Bdisplay%3Anone!important%7D.edge-dock-slot--fill%7Bflex%3A1%201%20auto!important%3Bheight%3Aauto!important%3Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D.export-popup.is-floating%7Bheight%3Aauto!important%7D.export-popup-body%7Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-scorm)
 
 Инструментите за анимация (Animated Ad, Lottie Ad) могат да експортират **Анимиран SVG** - самостоятелна, *векторна* анимация. За разлика от GIF/APNG/WebP (които семплират всеки кадър в пиксели), анимираният SVG наслагва векторни снимки с вградени CSS keyframes, така че **се мащабира до всякакъв размер без кодек и без външна среда за изпълнение** - върти се в раздел на браузъра или в `<img>`. Текстът остава очертан, за да се рендира навсякъде. Той споделя контролите за **Продължителност**/честота на кадрите на анимираните формати и (бидейки по-тежък на кадър от растерно изображение) използва по-ниска честота на кадрите по подразбиране.
 

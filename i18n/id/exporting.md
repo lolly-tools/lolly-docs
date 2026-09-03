@@ -113,6 +113,8 @@ Aturan praktis: baris dari desain yang sama yang termasuk dalam **satu dokumen**
 
 ## PowerPoint (PPTX)
 
+![The export panel with PowerPoint chosen: one slide per page, text and shapes kept editable](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio%3Foptions&width=1440&height=900&dpi=192&waitMs=2500&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22pptx%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-pptx)
+
 Alat multi-halaman dan tata letak (Carousel, Doc Studio, Multi-Page PDF, alat-alat chart, dan alat kartu/tata letak kanvas tunggal) dapat mengekspor **deck PowerPoint** - satu slide per halaman. Intinya bukan screenshot yang pixel-perfect; melainkan memberikan kolega Anda deck yang benar-benar dapat mereka **edit dan ambil asetnya**. Jadi setiap halaman diuraikan menjadi objek native:
 
 - <!--i:font--> **Teks** menjadi **kotak teks PowerPoint yang benar-benar dapat diedit** - dengan ukuran font, warna, ketebalan, kemiringan dan perataan dari tata letak - sehingga Anda dapat memperbaiki typo atau mengubah gaya di PowerPoint.
@@ -126,6 +128,8 @@ PowerPoint juga menjadi jalan **masuk** - format ini bersifat bolak-balik. **Dec
 
 ## DXF (file potong)
 
+![The export panel with Penpot chosen: the .penpot file, and Send to Penpot beside the download](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22penpot%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-penpot)
+
 Alat vektor (Brand Lockup, QR Code, Street Map, Wayfinding Signage, Pose Geeko, logo lockup, Diagram Builder) dapat mengekspor **DXF** - format interchange AutoCAD R12 yang dibaca oleh laser cutter, vinyl plotter dan software CNC/CAD. Geometri ditulis sebagai outline **path dalam milimeter** (kurva diratakan hingga toleransi halus), teks di-outline menjadi path dan warna dipetakan ke AutoCAD Color Index terdekat (yang biasanya menentukan alat/operasi pada sebuah cutter). DXF hanya untuk line-art - sebuah area fotografis atau yang difilter tidak memiliki bentuk cut-path dan akan dihilangkan (Lolly memperingatkan), jadi gunakan SVG/PDF saat Anda perlu mempertahankan konten raster.
 
 Street Map adalah kasus paling jelas: seluruh desain sudah berupa stroke, sehingga setiap jalan dan kanal menjadi cut path tanpa ada yang perlu dibuang.
@@ -137,6 +141,8 @@ Gulir, dan kamera mundur menembus geometri sebenarnya: tujuh path, tidak ada pik
 :::
 
 ## SVG Animasi
+
+![The export panel on a Design deck with SCORM (LMS) chosen](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dfeature-tour%26format%3Dscorm%26options&width=1440&height=900&dpi=192&waitMs=3500&css=.fc-insp%7Bdisplay%3Anone!important%7D.edge-dock-slot--fill%7Bflex%3A1%201%20auto!important%3Bheight%3Aauto!important%3Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D.export-popup.is-floating%7Bheight%3Aauto!important%7D.export-popup-body%7Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-scorm)
 
 Alat gerak (Animated Ad, Lottie Ad) dapat mengekspor **SVG Animasi** - animasi *vektor* yang mandiri. Berbeda dengan GIF/APNG/WebP (yang mengambil sampel setiap frame menjadi piksel), SVG animasi menumpuk snapshot vektor dengan keyframe CSS yang disematkan, sehingga **berskala ke ukuran berapa pun tanpa codec dan tanpa runtime eksternal** - animasi ini berputar di tab browser atau `<img>`. Teks tetap di-outline sehingga dapat dirender di mana saja. Format ini berbagi kontrol **Durasi** / frame rate dengan format animasi lainnya, dan (karena lebih berat per frame dibanding bitmap) menggunakan frame rate default yang lebih rendah.
 

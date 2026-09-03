@@ -113,6 +113,8 @@ Panuntunan: mga row ng parehong disenyo na dapat nasa **isang dokumento** → is
 
 ## PowerPoint (PPTX)
 
+![The export panel with PowerPoint chosen: one slide per page, text and shapes kept editable](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio%3Foptions&width=1440&height=900&dpi=192&waitMs=2500&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22pptx%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-pptx)
+
 Ang mga multi-page at layout tool (Carousel, Doc Studio, Multi-Page PDF, ang mga chart tool at ang mga single-canvas na card/layout tool) ay maaaring mag-export ng **PowerPoint deck** - isang slide kada page. Ang punto ay hindi isang pixel-perfect na screenshot; ito ay para bigyan ang isang kasamahan ng deck na talagang kaya nilang **i-edit at kunan ng mga asset**. Kaya bawat page ay nadidekomposisyon sa native objects:
 
 - <!--i:font--> Ang **Text** ay nagiging tunay, **naeeditang PowerPoint text boxes** - kasama ang font size, kulay, weight, italics at alignment mula sa layout - kaya puwede kang mag-ayos ng typo o mag-restyle sa PowerPoint.
@@ -126,6 +128,8 @@ Ang PowerPoint ay isa ring paraan pasok - ang format ay round-trips. Binubuksan 
 
 ## DXF (cut files)
 
+![The export panel with Penpot chosen: the .penpot file, and Send to Penpot beside the download](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22penpot%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-penpot)
+
 Ang mga vector tool (Brand Lockup, QR Code, Street Map, Wayfinding Signage, Pose Geeko, ang mga logo lockup, Diagram Builder) ay maaaring mag-export ng **DXF** - ang AutoCAD R12 interchange format na binabasa ng mga laser cutter, vinyl plotter, at CNC/CAD software. Ang geometry ay isinusulat bilang mga outline **path sa millimeters** (pinapatag ang mga curve hanggang sa isang pinong tolerance), ang text ay naka-outline sa mga path, at ang kulay ay mina-map sa pinakamalapit na AutoCAD Color Index (na karaniwang nagtatakda ng tool/operation sa isang cutter). Line-art lang ang DXF - ang isang photographic o na-filter na rehiyon ay walang cut-path na anyo at itinatapon (nagbabala ang Lolly), kaya gamitin ang SVG/PDF kapag kailangan mong itago ang raster na content.
 
 Ang Street Map ang pinakamalinaw na kaso: ang buong disenyo ay strokes na, kaya bawat kalsada at kanal ay nagiging cut path na walang idi-drop.
@@ -137,6 +141,8 @@ Mag-scroll, at bumabalik ang camera papasok sa tunay na geometry: pitong paths, 
 :::
 
 ## Animated SVG
+
+![The export panel on a Design deck with SCORM (LMS) chosen](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dfeature-tour%26format%3Dscorm%26options&width=1440&height=900&dpi=192&waitMs=3500&css=.fc-insp%7Bdisplay%3Anone!important%7D.edge-dock-slot--fill%7Bflex%3A1%201%20auto!important%3Bheight%3Aauto!important%3Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D.export-popup.is-floating%7Bheight%3Aauto!important%7D.export-popup-body%7Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-scorm)
 
 Ang mga motion tool (Animated Ad, Lottie Ad) ay kayang mag-export ng **Animated SVG** - isang self-contained, *vector* na animation. Kaiba sa GIF/APNG/WebP (na nagsa-sample ng bawat frame sa pixels), ang isang animated SVG ay nagtatambak ng vector snapshots na may embedded CSS keyframes, kaya ito ay **sumusukat sa kahit anong laki na walang codec at walang external runtime** - umuulit ito sa isang browser tab o sa isang `<img>`. Nananatiling naka-outline ang text para mag-render ito kahit saan. Nagbabahagi ito ng **Duration** / frame-rate controls ng mga animated format, at (dahil mas mabigat kada frame kaysa sa isang bitmap) gumagamit ito ng mas mababang default na frame rate.
 

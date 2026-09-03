@@ -139,6 +139,8 @@ Twee dingen doen deze bewerkingen bewust niet. Ze **weigeren liever dan dat ze v
 
 ## Tijdlijn (Sequence Studio)
 
+![The timeline with the music clip selected: its strip runs along the bottom with Speed, Fades, Volume, Pan, EQ, Pitch, Normalize volume and the Effect slot](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dvideo%26_sel%3Dbed&width=1440&height=900&dpi=192&waitMs=5000&waitSelector=.tl-clip&css=.tl-panel%7Bheight%3A300px!important%7D&cropSelector=.tl-panel&walker=1&format=svg&dark=1&filename=tl-audio-strip)
+
 **Sequence Studio** voegt *tijd* toe aan het vrije canvas. Elk vak kan op een moment beginnen, een tijd lang lopen en in- en uitanimeren, en een tijdlijn onder het tekenvlak is waar je ze ordent. Open hem en er speelt al een sequentie - een titelkaart, een clip, een eindkaart, een lower third en een muziekbed - zodat het model zichtbaar is voordat je iets verandert.
 
 ![De tijdlijn van Sequence Studio: het transport, de liniaal, een overlaylaan, de magnetische sequence-rij met zijn clips en naadchips en de Always on-strook](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D11dZBb5swFADgX8MOiRYZB0J76GFpNO2wnbr7ZMwDrBg7s01C8usngmNwSqJszaT2aD8_G54_PUgJXRdK1iJ7CvAcpSHG6FMqG9BPQbwMkmWAMcsCjIP5lwDjUsp1O8DPAcZrJvpIKhsXaLpZ1I323mjXjcJHbCdKO4Ee7ISSxsvQJdmAO0cBNe6gtHDzQbKkkks101ARYRidaaBSZETtg2TlMgw0xuX8LBXANCN7PTVyWki3Kr-6b61yQmG4ay6FeWEHOL1K1E0TzgrhdqIgDCiXs_WjFcsyDi66A1aU_ZMuEPIOcwFNhHYRzgR8GySGs9CW0BDlFzWrVTe2qdCwftOcZP2TtJEfuovFyKZzIvor0fD7WKhVGzsXo2ALhH8UMxvFqmtiXmQFpmSimArYBfGzYHpKZcVEcS87-OHedpK72cHndmYWunu6rtxM-3wuwGqTXskacov-nhs15KNYG7HgWZtMvpNa0LJtUJNJi-2rYhnZ3ybtuNUVZuj9MotOrAbQFmPQbuB0uxwud4NX9-ycrmWIJw59Pg9h5AF6RGd-5vgWPhvG-2b5xs8bl5zvZ0ZK3tf_bd0pxu_lw2YDG2Jv6VRdj9Hi__WrKB7pV3OELuBKIRunReqM9f8d1tbnKPFsJVHs2Zqf9SaMLrSmASCjiNAbokD0lD0t_95Wxu-MVaQ4uT6WQ8ta0V46Z6lq9br1fVEOh7ypju-FFyjBC7fmVy0UaMm3YBcbVYMt-dhfTlUbe2BOuD6ujFd_AA&width=1440&height=900&dpi=192&waitMs=7000&waitSelector=.tl-clip&css=.tl-panel%7Bheight%3A252px!important%7D&cropSelector=.tl-panel&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-timeline)
@@ -172,6 +174,8 @@ Een paar grenzen om in gedachten te houden: een sequentie is gemaximeerd op éé
 De Design-tool heeft dezelfde tijdlijn, dus je kunt een layout van timing voorzien zonder naar een andere tool te gaan, en hij exporteert ook beweging.
 
 ## Presenteren
+
+![The inspector's Document section: Voice, Blend with, Speed, Lead-in, Tail and Show captions when presenting](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dfeature-tour&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.fc-insp&walker=1&format=svg&dark=1&filename=design-narration)
 
 Een Design-document dat uit **tekenvlakken** bestaat, is al een presentatie. Open het **Lolly-menu** op de gereedschapsbalk en kies **Presenteren** - de onderste rij - en elk tekenvlak wordt een schermvullende dia, in de volgorde waarin de tekenvlakken op het canvas staan. De presentatie draait op een kopie van de gerenderde tekenvlakken, dus de editor eronder wordt nooit aangeraakt en bij het verlaten sta je precies waar je was.
 

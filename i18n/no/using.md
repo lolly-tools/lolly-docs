@@ -139,6 +139,8 @@ To ting gjør disse operasjonene bevisst ikke. De **nekter i stedet for å ødel
 
 ## Tidslinje (Sequence Studio)
 
+![The timeline with the music clip selected: its strip runs along the bottom with Speed, Fades, Volume, Pan, EQ, Pitch, Normalize volume and the Effect slot](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dvideo%26_sel%3Dbed&width=1440&height=900&dpi=192&waitMs=5000&waitSelector=.tl-clip&css=.tl-panel%7Bheight%3A300px!important%7D&cropSelector=.tl-panel&walker=1&format=svg&dark=1&filename=tl-audio-strip)
+
 **Sequence Studio** legger *tid* til det frie canvaset. Hver boks kan starte på et gitt tidspunkt, vare en viss lengde og animeres inn og ut, og en tidslinje forankret under tegnebrettet er der du ordner dem. Åpne det, og en sekvens spiller allerede - et tittelkort, et klipp, et sluttkort, en navnestripe og en musikkbunn - så modellen er synlig før du endrer noe.
 
 ![Sequence Studios tidslinje: transporten, linjalen, et overleggsspor, den magnetiske sekvensraden med klippene og skjøtebrikkene, og Always on-stripen](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D11dZBb5swFADgX8MOiRYZB0J76GFpNO2wnbr7ZMwDrBg7s01C8usngmNwSqJszaT2aD8_G54_PUgJXRdK1iJ7CvAcpSHG6FMqG9BPQbwMkmWAMcsCjIP5lwDjUsp1O8DPAcZrJvpIKhsXaLpZ1I323mjXjcJHbCdKO4Ee7ISSxsvQJdmAO0cBNe6gtHDzQbKkkks101ARYRidaaBSZETtg2TlMgw0xuX8LBXANCN7PTVyWki3Kr-6b61yQmG4ay6FeWEHOL1K1E0TzgrhdqIgDCiXs_WjFcsyDi66A1aU_ZMuEPIOcwFNhHYRzgR8GySGs9CW0BDlFzWrVTe2qdCwftOcZP2TtJEfuovFyKZzIvor0fD7WKhVGzsXo2ALhH8UMxvFqmtiXmQFpmSimArYBfGzYHpKZcVEcS87-OHedpK72cHndmYWunu6rtxM-3wuwGqTXskacov-nhs15KNYG7HgWZtMvpNa0LJtUJNJi-2rYhnZ3ybtuNUVZuj9MotOrAbQFmPQbuB0uxwud4NX9-ycrmWIJw59Pg9h5AF6RGd-5vgWPhvG-2b5xs8bl5zvZ0ZK3tf_bd0pxu_lw2YDG2Jv6VRdj9Hi__WrKB7pV3OELuBKIRunReqM9f8d1tbnKPFsJVHs2Zqf9SaMLrSmASCjiNAbokD0lD0t_95Wxu-MVaQ4uT6WQ8ta0V46Z6lq9br1fVEOh7ypju-FFyjBC7fmVy0UaMm3YBcbVYMt-dhfTlUbe2BOuD6ujFd_AA&width=1440&height=900&dpi=192&waitMs=7000&waitSelector=.tl-clip&css=.tl-panel%7Bheight%3A252px!important%7D&cropSelector=.tl-panel&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-timeline)
@@ -172,6 +174,8 @@ Noen grenser å ha i bakhodet: en sekvens er begrenset til én time, GIF og anim
 Design-verktøyet har den samme tidslinjen, så du kan tidsette en layout uten å bytte verktøy, og det eksporterer bevegelse også.
 
 ## Presentere
+
+![The inspector's Document section: Voice, Blend with, Speed, Lead-in, Tail and Show captions when presenting](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dfeature-tour&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.fc-insp&walker=1&format=svg&dark=1&filename=design-narration)
 
 Et Design-dokument som består av **tegnebrett** er allerede en presentasjon. Åpne **Lolly-menyen** på verktøylinjen og velg **Presenter** - den siste raden - så blir hvert tegnebrett et lysbilde i fullskjerm, i den rekkefølgen tegnebrettene ligger på canvaset. Presentasjonen kjører på en kopi av de rendrede tegnebrettene, så editoren under røres aldri, og går du ut, er du tilbake nøyaktig der du var.
 

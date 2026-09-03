@@ -139,6 +139,8 @@ Dos cosas que estas operaciones deliberadamente no hacen. **Se niegan en vez de 
 
 ## Línea de tiempo (Sequence Studio)
 
+![The timeline with the music clip selected: its strip runs along the bottom with Speed, Fades, Volume, Pan, EQ, Pitch, Normalize volume and the Effect slot](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dvideo%26_sel%3Dbed&width=1440&height=900&dpi=192&waitMs=5000&waitSelector=.tl-clip&css=.tl-panel%7Bheight%3A300px!important%7D&cropSelector=.tl-panel&walker=1&format=svg&dark=1&filename=tl-audio-strip)
+
 **Sequence Studio** añade *tiempo* al lienzo libre. Cada caja puede empezar en un momento, durar un tiempo y animarse al entrar y al salir, y una línea de tiempo acoplada bajo el área de diseño es donde las organizas. Ábrelo y ya hay una secuencia en marcha - una tarjeta de título, un clip, una tarjeta final, un rótulo inferior y una base musical - así que el modelo se ve antes de que cambies nada.
 
 ![La línea de tiempo de Sequence Studio: el transporte, la regla, una pista de superposición, la fila de secuencia magnética con sus clips y fichas de costura, y la franja Always on](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D11dZBb5swFADgX8MOiRYZB0J76GFpNO2wnbr7ZMwDrBg7s01C8usngmNwSqJszaT2aD8_G54_PUgJXRdK1iJ7CvAcpSHG6FMqG9BPQbwMkmWAMcsCjIP5lwDjUsp1O8DPAcZrJvpIKhsXaLpZ1I323mjXjcJHbCdKO4Ee7ISSxsvQJdmAO0cBNe6gtHDzQbKkkks101ARYRidaaBSZETtg2TlMgw0xuX8LBXANCN7PTVyWki3Kr-6b61yQmG4ay6FeWEHOL1K1E0TzgrhdqIgDCiXs_WjFcsyDi66A1aU_ZMuEPIOcwFNhHYRzgR8GySGs9CW0BDlFzWrVTe2qdCwftOcZP2TtJEfuovFyKZzIvor0fD7WKhVGzsXo2ALhH8UMxvFqmtiXmQFpmSimArYBfGzYHpKZcVEcS87-OHedpK72cHndmYWunu6rtxM-3wuwGqTXskacov-nhs15KNYG7HgWZtMvpNa0LJtUJNJi-2rYhnZ3ybtuNUVZuj9MotOrAbQFmPQbuB0uxwud4NX9-ycrmWIJw59Pg9h5AF6RGd-5vgWPhvG-2b5xs8bl5zvZ0ZK3tf_bd0pxu_lw2YDG2Jv6VRdj9Hi__WrKB7pV3OELuBKIRunReqM9f8d1tbnKPFsJVHs2Zqf9SaMLrSmASCjiNAbokD0lD0t_95Wxu-MVaQ4uT6WQ8ta0V46Z6lq9br1fVEOh7ypju-FFyjBC7fmVy0UaMm3YBcbVYMt-dhfTlUbe2BOuD6ujFd_AA&width=1440&height=900&dpi=192&waitMs=7000&waitSelector=.tl-clip&css=.tl-panel%7Bheight%3A252px!important%7D&cropSelector=.tl-panel&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-timeline)
@@ -172,6 +174,8 @@ Unos límites que conviene tener presentes: una secuencia está limitada a una h
 La herramienta Design tiene la misma línea de tiempo, así que puedes dar tiempos a una composición sin cambiar de herramienta, y también exporta movimiento.
 
 ## Presentar
+
+![The inspector's Document section: Voice, Blend with, Speed, Lead-in, Tail and Show captions when presenting](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dfeature-tour&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.fc-insp&walker=1&format=svg&dark=1&filename=design-narration)
 
 Un documento de Design hecho de **áreas de diseño** ya es una presentación. Abre el **menú de Lolly** en la barra de herramientas y elige **Presentar** - la última fila - y cada área de diseño se convierte en una diapositiva a pantalla completa, en el orden en que las áreas están colocadas en el lienzo. La presentación funciona sobre una copia de las áreas renderizadas, así que nunca se toca el editor de debajo y al salir vuelves exactamente a donde estabas.
 

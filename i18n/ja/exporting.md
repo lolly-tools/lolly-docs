@@ -113,6 +113,8 @@ Lollyには大量作業のための3つの異なる方法があり、それぞ�
 
 ## PowerPoint (PPTX)
 
+![The export panel with PowerPoint chosen: one slide per page, text and shapes kept editable](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio%3Foptions&width=1440&height=900&dpi=192&waitMs=2500&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22pptx%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-pptx)
+
 複数ページ・レイアウトツール(Carousel、Doc Studio、Multi-Page PDF、チャートツール、単一キャンバスのカード/レイアウトツール)は**PowerPointデッキ**を書き出せます - 1ページにつき1スライド。ポイントはピクセル完璧なスクリーンショットではなく、同僚に実際に**編集してアセットを取り出せる**デッキを渡すことです。そのため、各ページはネイティブなオブジェクトに分解されます。
 
 - <!--i:font--> **テキスト**は実際に**編集可能なPowerPointのテキストボックス**になります - フォントサイズ、色、太さ、斜体、配置はレイアウトのものがそのまま反映されるため、PowerPoint上で誤字を直したりスタイルを変更したりできます。
@@ -126,6 +128,8 @@ PowerPointは**取り込み**の手段でもあります - このフォーマッ
 
 ## DXF(カットファイル)
 
+![The export panel with Penpot chosen: the .penpot file, and Send to Penpot beside the download](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22penpot%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-penpot)
+
 ベクターツール(Brand Lockup、QR Code、Street Map、Wayfinding Signage、Pose Geeko、ロゴロックアップ各種、Diagram Builder)は**DXF**を書き出せます - これはレーザーカッター、ビニールプロッター、CNC/CADソフトウェアが読み取れるAutoCAD R12交換形式です。ジオメトリはアウトラインの**パス(ミリメートル単位)**として書き出され(曲線は精細な許容誤差でフラット化されます)、テキストはパスにアウトライン化され、色は最も近いAutoCAD Color Indexへマッピングされます(これは通常、カッター上のツール/操作を決定します)。DXFはラインアートのみに対応しており、写真やフィルター処理された領域にはカットパス形式が存在しないため除外されます(Lollyが警告します)。ラスターコンテンツを保持する必要がある場合はSVG/PDFを使用してください。
 
 Street Mapは最も分かりやすい例です。デザイン全体がすでにストロークでできているため、すべての道路と運河がカットパスとなり、何も除外されません。
@@ -137,6 +141,8 @@ Street Mapは最も分かりやすい例です。デザイン全体がすでに�
 :::
 
 ## アニメーションSVG
+
+![The export panel on a Design deck with SCORM (LMS) chosen](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dfeature-tour%26format%3Dscorm%26options&width=1440&height=900&dpi=192&waitMs=3500&css=.fc-insp%7Bdisplay%3Anone!important%7D.edge-dock-slot--fill%7Bflex%3A1%201%20auto!important%3Bheight%3Aauto!important%3Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D.export-popup.is-floating%7Bheight%3Aauto!important%7D.export-popup-body%7Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-scorm)
 
 モーションツール(Animated Ad、Lottie Ad)は**アニメーションSVG**を書き出せます - 自己完結型の*ベクター*アニメーションです。各フレームをピクセルにサンプリングするGIF/APNG/WebPとは異なり、アニメーションSVGは埋め込みCSSキーフレームでベクタースナップショットを積み重ねるため、**コーデックも外部ランタイムも不要でどんなサイズにも拡大できます** - ブラウザのタブや`<img>`内でループ再生されます。テキストはアウトライン化されたままなので、どこでもレンダリングされます。アニメーションフォーマットと同じ**Duration**/フレームレートのコントロールを共有し、(フレームあたりビットマップより重いため)デフォルトのフレームレートは低めです。
 

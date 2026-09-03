@@ -113,6 +113,8 @@ Lolly-তে বড় পরিমাণে কাজ করার তিনট
 
 ## PowerPoint (PPTX)
 
+![The export panel with PowerPoint chosen: one slide per page, text and shapes kept editable](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio%3Foptions&width=1440&height=900&dpi=192&waitMs=2500&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22pptx%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-pptx)
+
 Multi-page ও layout টুল (Carousel, Doc Studio, Multi-Page PDF, chart টুল এবং single-canvas card/layout টুল) একটি **PowerPoint ডেক** এক্সপোর্ট করতে পারে - প্রতি পেজে একটি স্লাইড। এর উদ্দেশ্য pixel-perfect স্ক্রিনশট নয়; বরং সহকর্মীকে এমন একটি ডেক দেওয়া যা তিনি সত্যিই **সম্পাদনা করতে এবং তা থেকে অ্যাসেট বের করে নিতে** পারেন। তাই প্রতিটি পেজ নেটিভ অবজেক্টে বিভক্ত করা হয়:
 
 - <!--i:font--> **টেক্সট** প্রকৃত, **এডিটযোগ্য PowerPoint টেক্সট বক্স** হয়ে যায় - লেআউট থেকে পাওয়া ফন্ট সাইজ, রং, ওয়েট, ইটালিক ও অ্যালাইনমেন্ট সহ - যাতে আপনি PowerPoint-এ টাইপো ঠিক করতে বা রিস্টাইল করতে পারেন।
@@ -126,6 +128,8 @@ PowerPoint একটি প্রবেশপথও বটে - এই ফরম
 
 ## DXF (কাট ফাইল)
 
+![The export panel with Penpot chosen: the .penpot file, and Send to Penpot beside the download](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22penpot%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-penpot)
+
 ভেক্টর টুল (Brand Lockup, QR Code, Street Map, Wayfinding Signage, Pose Geeko, লোগো লকআপ, Diagram Builder) **DXF** এক্সপোর্ট করতে পারে - সেই AutoCAD R12 ইন্টারচেঞ্জ ফরম্যাট যা লেজার কাটার, ভিনাইল প্লটার এবং CNC/CAD সফটওয়্যার পড়ে। জ্যামিতি আউটলাইন **পাথ হিসেবে মিলিমিটারে** লেখা হয় (কার্ভগুলো একটি সূক্ষ্ম টলারেন্স পর্যন্ত ফ্ল্যাট করা), টেক্সট পাথে আউটলাইন করা হয় এবং রঙ নিকটতম AutoCAD Color Index-এ ম্যাপ হয় (যা সাধারণত কাটারে টুল/অপারেশন নির্ধারণ করে)। DXF শুধু লাইন-আর্টের জন্য - কোনো ফটোগ্রাফিক বা ফিল্টার করা অংশের কোনো cut-path রূপ নেই এবং এটি বাদ দেওয়া হয় (Lolly সতর্ক করে), তাই রাস্টার কনটেন্ট রাখতে হলে SVG/PDF ব্যবহার করুন।
 
 Street Map সবচেয়ে স্পষ্ট উদাহরণ: পুরো ডিজাইনটি ইতিমধ্যেই স্ট্রোক, তাই প্রতিটি রাস্তা ও খাল একটি কাট পাথ হয়ে যায় এবং কিছুই বাদ পড়ে না।
@@ -137,6 +141,8 @@ Street Map সবচেয়ে স্পষ্ট উদাহরণ: পু�
 :::
 
 ## অ্যানিমেটেড SVG
+
+![The export panel on a Design deck with SCORM (LMS) chosen](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dfeature-tour%26format%3Dscorm%26options&width=1440&height=900&dpi=192&waitMs=3500&css=.fc-insp%7Bdisplay%3Anone!important%7D.edge-dock-slot--fill%7Bflex%3A1%201%20auto!important%3Bheight%3Aauto!important%3Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D.export-popup.is-floating%7Bheight%3Aauto!important%7D.export-popup-body%7Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-scorm)
 
 মোশন টুল (Animated Ad, Lottie Ad) **অ্যানিমেটেড SVG** এক্সপোর্ট করতে পারে - একটি স্বয়ংসম্পূর্ণ, *ভেক্টর* অ্যানিমেশন। GIF/APNG/WebP-এর বিপরীতে (যা প্রতিটি ফ্রেমকে পিক্সেলে স্যাম্পল করে), একটি অ্যানিমেটেড SVG এমবেডেড CSS কীফ্রেম সহ ভেক্টর স্ন্যাপশট স্ট্যাক করে, ফলে এটি **কোনো কোডেক বা এক্সটার্নাল রানটাইম ছাড়াই যেকোনো সাইজে স্কেল হয়** - এটি একটি ব্রাউজার ট্যাবে বা `<img>`-এ লুপ করে। টেক্সট আউটলাইনড থাকে যাতে এটি যেকোনো জায়গায় রেন্ডার হয়। এটি অ্যানিমেটেড ফরম্যাটগুলোর **Duration** / ফ্রেম-রেট নিয়ন্ত্রণ শেয়ার করে, এবং (প্রতি ফ্রেমে বিটম্যাপের চেয়ে ভারী হওয়ায়) একটি কম ডিফল্ট ফ্রেম রেট ব্যবহার করে।
 

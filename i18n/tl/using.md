@@ -139,6 +139,8 @@ May dalawang bagay na sadyang hindi ginagawa ng mga operasyong ito. **Tumatanggi
 
 ## Timeline (Sequence Studio)
 
+![The timeline with the music clip selected: its strip runs along the bottom with Speed, Fades, Volume, Pan, EQ, Pitch, Normalize volume and the Effect slot](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dvideo%26_sel%3Dbed&width=1440&height=900&dpi=192&waitMs=5000&waitSelector=.tl-clip&css=.tl-panel%7Bheight%3A300px!important%7D&cropSelector=.tl-panel&walker=1&format=svg&dark=1&filename=tl-audio-strip)
+
 Nagdaragdag ang **Sequence Studio** ng *oras* sa free canvas. Bawat box ay puwedeng magsimula sa isang sandali, tumakbo nang may haba at mag-animate papasok at palabas, at ang timeline na nakadock sa ilalim ng artboard ang pinag-aayusan mo sa kanila. Buksan mo ito at may tumutugtog nang sequence - isang title card, isang clip, isang end card, isang lower-third at isang music bed - kaya nakikita ang modelo bago ka pa magbago ng kahit ano.
 
 ![Ang timeline ng Sequence Studio: ang transport, ang ruler, isang overlay lane, ang magnetic sequence row kasama ang mga clip at seam chip nito, at ang Always on strip](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D11dZBb5swFADgX8MOiRYZB0J76GFpNO2wnbr7ZMwDrBg7s01C8usngmNwSqJszaT2aD8_G54_PUgJXRdK1iJ7CvAcpSHG6FMqG9BPQbwMkmWAMcsCjIP5lwDjUsp1O8DPAcZrJvpIKhsXaLpZ1I323mjXjcJHbCdKO4Ee7ISSxsvQJdmAO0cBNe6gtHDzQbKkkks101ARYRidaaBSZETtg2TlMgw0xuX8LBXANCN7PTVyWki3Kr-6b61yQmG4ay6FeWEHOL1K1E0TzgrhdqIgDCiXs_WjFcsyDi66A1aU_ZMuEPIOcwFNhHYRzgR8GySGs9CW0BDlFzWrVTe2qdCwftOcZP2TtJEfuovFyKZzIvor0fD7WKhVGzsXo2ALhH8UMxvFqmtiXmQFpmSimArYBfGzYHpKZcVEcS87-OHedpK72cHndmYWunu6rtxM-3wuwGqTXskacov-nhs15KNYG7HgWZtMvpNa0LJtUJNJi-2rYhnZ3ybtuNUVZuj9MotOrAbQFmPQbuB0uxwud4NX9-ycrmWIJw59Pg9h5AF6RGd-5vgWPhvG-2b5xs8bl5zvZ0ZK3tf_bd0pxu_lw2YDG2Jv6VRdj9Hi__WrKB7pV3OELuBKIRunReqM9f8d1tbnKPFsJVHs2Zqf9SaMLrSmASCjiNAbokD0lD0t_95Wxu-MVaQ4uT6WQ8ta0V46Z6lq9br1fVEOh7ypju-FFyjBC7fmVy0UaMm3YBcbVYMt-dhfTlUbe2BOuD6ujFd_AA&width=1440&height=900&dpi=192&waitMs=7000&waitSelector=.tl-clip&css=.tl-panel%7Bheight%3A252px!important%7D&cropSelector=.tl-panel&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-timeline)
@@ -172,6 +174,8 @@ Ilang limitasyong dapat tandaan: may hangganang isang oras ang isang sequence, n
 May parehong timeline ang Design na tool, kaya puwede mong bigyan ng timing ang isang layout nang hindi lumilipat sa ibang tool, at nag-e-export din ito ng motion.
 
 ## Pagpepresenta
+
+![The inspector's Document section: Voice, Blend with, Speed, Lead-in, Tail and Show captions when presenting](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dfeature-tour&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.fc-insp&walker=1&format=svg&dark=1&filename=design-narration)
 
 Ang isang Design na dokumentong binubuo ng mga **artboard** ay deck na. Buksan ang **Lolly menu** sa tool rail at piliin ang **Present** - ang huling row - at magiging full-screen na slide ang bawat artboard, ayon sa pagkakasunod-sunod ng mga artboard sa canvas. Tumatakbo ang deck sa isang kopya ng mga na-render na artboard, kaya hindi nagagalaw ang editor sa ilalim at ibinabalik ka nang eksakto sa pinanggalingan mo kapag umalis ka.
 

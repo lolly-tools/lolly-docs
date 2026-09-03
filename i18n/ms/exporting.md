@@ -113,6 +113,8 @@ Petua umum: baris reka bentuk yang sama yang tergolong dalam **satu dokumen** â†
 
 ## PowerPoint (PPTX)
 
+![The export panel with PowerPoint chosen: one slide per page, text and shapes kept editable](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio%3Foptions&width=1440&height=900&dpi=192&waitMs=2500&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22pptx%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-pptx)
+
 Alat berbilang halaman dan susun atur (Carousel, Doc Studio, Multi-Page PDF, alat carta dan alat kad/susun atur kanvas tunggal) boleh mengeksport **dek PowerPoint** - satu slaid bagi setiap halaman. Intinya bukan tangkapan skrin yang sempurna piksel; sebaliknya untuk menyerahkan kepada rakan sekerja dek yang mereka benar-benar boleh **sunting dan keluarkan aset daripadanya**. Jadi setiap halaman diuraikan menjadi objek asli:
 
 - <!--i:font--> **Teks** menjadi kotak teks **PowerPoint sebenar yang boleh disunting** - dengan saiz fon, warna, ketebalan, italik dan penjajaran daripada susun atur - jadi anda boleh membetulkan taip salah atau menggaya semula dalam PowerPoint.
@@ -126,6 +128,8 @@ PowerPoint juga adalah laluan **masuk** - format ini boleh pergi-balik. **Deck B
 
 ## DXF (fail potong)
 
+![The export panel with Penpot chosen: the .penpot file, and Send to Penpot beside the download](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&drive=click%3A%5Bdata-fmt-trigger%5D%3Bwait%3A400%3Bclick%3A%5Bdata-fmt%3D%22penpot%22%5D%3Bwait%3A800&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-penpot)
+
 Alat vektor (Brand Lockup, QR Code, Street Map, Wayfinding Signage, Pose Geeko, logo lockup, Diagram Builder) boleh mengeksport **DXF** - format pertukaran AutoCAD R12 yang dibaca oleh pemotong laser, plotter vinil dan perisian CNC/CAD. Geometri ditulis sebagai laluan outline **dalam milimeter** (lengkung diratakan kepada toleransi halus), teks di-outline menjadi laluan dan warna dipetakan kepada AutoCAD Color Index yang terdekat (yang biasanya menentukan alat/operasi pada sesuatu pemotong). DXF hanya untuk line-art - kawasan fotografik atau yang ditapis tiada bentuk cut-path dan akan digugurkan (Lolly memberi amaran), jadi gunakan SVG/PDF apabila anda perlu mengekalkan kandungan raster.
 
 Street Map adalah kes paling jelas: keseluruhan reka bentuk sudah pun berupa lejang, jadi setiap jalan dan terusan menjadi laluan potong tanpa apa-apa untuk digugurkan.
@@ -137,6 +141,8 @@ Tatal, dan kamera menarik diri kembali melalui geometri sebenar: tujuh laluan, t
 :::
 
 ## SVG Beranimasi
+
+![The export panel on a Design deck with SCORM (LMS) chosen](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dfeature-tour%26format%3Dscorm%26options&width=1440&height=900&dpi=192&waitMs=3500&css=.fc-insp%7Bdisplay%3Anone!important%7D.edge-dock-slot--fill%7Bflex%3A1%201%20auto!important%3Bheight%3Aauto!important%3Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D.export-popup.is-floating%7Bheight%3Aauto!important%7D.export-popup-body%7Bmax-height%3Anone!important%3Boverflow%3Avisible!important%7D&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=exp-scorm)
 
 Alat gerakan (Animated Ad, Lottie Ad) boleh mengeksport **SVG Beranimasi** - animasi *vektor* yang lengkap dengan sendirinya. Tidak seperti GIF/APNG/WebP (yang mensampel setiap bingkai kepada piksel), SVG beranimasi menyusun tangkapan vektor bertindan dengan keyframe CSS terbenam, jadi ia **berskala kepada sebarang saiz tanpa kodek dan tanpa masa jalan luaran** - ia mengulang dalam tab pelayar atau `<img>`. Teks kekal bergaris supaya ia dipaparkan di mana-mana. Ia berkongsi kawalan **Duration**/kadar bingkai formats beranimasi, dan (kerana lebih berat per bingkai berbanding bitmap) menggunakan kadar bingkai lalai yang lebih rendah.
 

@@ -139,6 +139,8 @@ Duas coisas que essas operações deliberadamente não fazem. Elas **recusam em 
 
 ## Linha do tempo (Sequence Studio)
 
+![The timeline with the music clip selected: its strip runs along the bottom with Speed, Fades, Volume, Pan, EQ, Pitch, Normalize volume and the Effect slot](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dvideo%26_sel%3Dbed&width=1440&height=900&dpi=192&waitMs=5000&waitSelector=.tl-clip&css=.tl-panel%7Bheight%3A300px!important%7D&cropSelector=.tl-panel&walker=1&format=svg&dark=1&filename=tl-audio-strip)
+
 O **Sequence Studio** acrescenta *tempo* à tela livre. Cada caixa pode começar em um momento, durar um tempo e animar na entrada e na saída, e uma linha do tempo acoplada abaixo da prancheta é onde você as organiza. Abra-o e já há uma sequência tocando - um cartão de título, um clipe, um cartão final, um lower-third e uma trilha musical - de modo que o modelo fica visível antes de você mudar qualquer coisa.
 
 ![Linha do tempo do Sequence Studio: o transporte, a régua, uma trilha de sobreposição, a linha de sequência magnética com seus clipes e chips de emenda e a faixa Always on](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D11dZBb5swFADgX8MOiRYZB0J76GFpNO2wnbr7ZMwDrBg7s01C8usngmNwSqJszaT2aD8_G54_PUgJXRdK1iJ7CvAcpSHG6FMqG9BPQbwMkmWAMcsCjIP5lwDjUsp1O8DPAcZrJvpIKhsXaLpZ1I323mjXjcJHbCdKO4Ee7ISSxsvQJdmAO0cBNe6gtHDzQbKkkks101ARYRidaaBSZETtg2TlMgw0xuX8LBXANCN7PTVyWki3Kr-6b61yQmG4ay6FeWEHOL1K1E0TzgrhdqIgDCiXs_WjFcsyDi66A1aU_ZMuEPIOcwFNhHYRzgR8GySGs9CW0BDlFzWrVTe2qdCwftOcZP2TtJEfuovFyKZzIvor0fD7WKhVGzsXo2ALhH8UMxvFqmtiXmQFpmSimArYBfGzYHpKZcVEcS87-OHedpK72cHndmYWunu6rtxM-3wuwGqTXskacov-nhs15KNYG7HgWZtMvpNa0LJtUJNJi-2rYhnZ3ybtuNUVZuj9MotOrAbQFmPQbuB0uxwud4NX9-ycrmWIJw59Pg9h5AF6RGd-5vgWPhvG-2b5xs8bl5zvZ0ZK3tf_bd0pxu_lw2YDG2Jv6VRdj9Hi__WrKB7pV3OELuBKIRunReqM9f8d1tbnKPFsJVHs2Zqf9SaMLrSmASCjiNAbokD0lD0t_95Wxu-MVaQ4uT6WQ8ta0V46Z6lq9br1fVEOh7ypju-FFyjBC7fmVy0UaMm3YBcbVYMt-dhfTlUbe2BOuD6ujFd_AA&width=1440&height=900&dpi=192&waitMs=7000&waitSelector=.tl-clip&css=.tl-panel%7Bheight%3A252px!important%7D&cropSelector=.tl-panel&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-timeline)
@@ -172,6 +174,8 @@ Alguns limites a ter em mente: uma sequência é limitada a uma hora, GIF e PNG 
 A ferramenta Design tem a mesma linha do tempo, então você pode dar tempo a um layout sem trocar de ferramenta, e ela também exporta movimento.
 
 ## Apresentando
+
+![The inspector's Document section: Voice, Blend with, Speed, Lead-in, Tail and Show captions when presenting](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3Dfeature-tour&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.fc-insp&walker=1&format=svg&dark=1&filename=design-narration)
 
 Um documento do Design feito de **pranchetas** já é uma apresentação. Abra o **menu do Lolly** na barra de ferramentas e escolha **Apresentar** - a última linha - e cada prancheta vira um slide em tela cheia, na ordem em que as pranchetas estão na tela. A apresentação roda sobre uma cópia das pranchetas renderizadas, então o editor por baixo nunca é tocado e sair coloca você de volta exatamente onde estava.
 
