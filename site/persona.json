@@ -50,7 +50,7 @@
         ],
         "doc": { "label": "For Operators", "slug": "operators" } }
     ] },
-    { "id": "operators", "name": "Operators", "sub": "I answer for it", "mascot": "echidna", "lanes": [
+    { "id": "operators", "name": "Operators", "sub": "I answer for it", "mascot": "platypus", "lanes": [
       { "tab": "AI", "mascot": "bin-chicken",
         "pitch": "Agents are first-class users. Anything a person can make in the app, an agent can make through the MCP server or the CLI: the same tools, the same brand rules, the same render path, and the file still says who made it.",
         "links": [
@@ -75,7 +75,7 @@
         "pitch": "Live data into charts, maps and tables that match the house style. Build the story format once, reuse it every time it runs.",
         "cta": { "label": "Open Chart ↗", "href": "#/tool/chart" },
         "doc": { "label": "For the newsroom", "slug": "press" } },
-      { "tab": "Legal",
+      { "tab": "Legal", "mascot": "echidna",
         "pitch": "Names, faces and hidden metadata come out before a file travels, without the file going anywhere first. Redaction, anonymising, verification and compression run with nothing sent anywhere, and the licence and the EU AI Act position are stated plainly, with what is not claimed stated too.",
         "links": [
           { "label": "Redact", "href": "#/tool/redact", "note": "pdf · png · svg" },
