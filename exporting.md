@@ -192,6 +192,7 @@ Ordinary exports are sRGB: white is white, and a saturated brand colour is as br
 - **Where you'll see it.** Colour-managed viewers on an HDR display: Preview / Quick Look / Safari on Apple devices, Chrome on an HDR monitor. On an ordinary SDR screen the file still shows as a normal image.
 - **Know before you ship it.** Many platforms **re-encode** what you upload and strip the HDR signal - social networks, messaging apps, some CMSes - which can leave the image looking dark or washed out. Use HDR where you control the destination (a site you build, a video wall, a deck on a bright panel), not as a default for everything.
 - **Transparency.** PNG and AVIF keep their alpha; JPG is opaque as always. The **TIFF** path flattens onto **black**, not the SDR path's white - in PQ, white is the 10,000-nit code, so flattening onto it would ring every edge with a blinding halo.
+- **The same bytes from the terminal.** `--hdr=1` with `--export=png` or `--export=jpg` writes the 16-bit Rec.2100 PQ PNG and the ISO 21496-1 gain-map JPEG on the [CLI](/info/cli.html) too, out of the same engine encoders rather than a browser - so an `<svg>`-native tool produces an HDR file with no Chromium anywhere in the path, and the PNG is byte-identical to the web shell's. AVIF and TIFF stay web-shell exports for now.
 
 ## Video
 

@@ -2,7 +2,7 @@
   "title": "Who is it for?",
   "doors": [
     { "id": "creators", "name": "Creators", "sub": "I make things", "mascot": "quokka", "lanes": [
-      { "tab": "Make",
+      { "tab": "Make", "mascot": "bandicoot",
         "pitch": "Pick a tool and fill in a few fields, or lay it out yourself on an open canvas. The finished file comes out right either way: colours, fonts and layout are already sorted.",
         "cta": { "label": "Open the app ↗", "href": "#/" },
         "doc": { "label": "Make something", "slug": "make-something" } },
@@ -24,7 +24,7 @@
         "doc": { "label": "Exporting", "slug": "exporting" } }
     ] },
     { "id": "builders", "name": "Builders", "sub": "I set up the system", "mascot": "koala", "lanes": [
-      { "tab": "Designers",
+      { "tab": "Designers", "mascot": "lorikeet",
         "pitch": "Bring finished work in, set the rules once, keep the tools you already use.",
         "links": [
           { "label": "Importing from other tools", "slug": "design-import", "note": ".fig .penpot .ai .idml svg" },
@@ -33,7 +33,7 @@
         ],
         "cta": { "label": "Set up a design system ↗", "href": "#/start" },
         "doc": { "label": "For Builders", "slug": "builders" } },
-      { "tab": "Developers",
+      { "tab": "Developers", "mascot": "kookaburra-lolly",
         "pitch": "One render path. The GUI, the CLI and an agent all make the same file.",
         "links": [
           { "label": "CLI", "slug": "cli", "note": "lolly qr-code --url=…" },

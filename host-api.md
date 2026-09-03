@@ -180,7 +180,7 @@ An animated source flattens to its first frame. Read the *result's* `mime`/`widt
 
 ## `host.raster` *(pixel work in a hook - optional, v1.105)*
 
-The sibling of `host.images` for tools that composite, sample or mutate pixels *themselves* (Darkroom, the Filter tool, the logo composers, Redact). Where `images` is the convert path - encoded bytes in, encoded bytes out, no pixel access - this hands back drawable pixels. Not a gated capability; feature-detect `host.raster` (undefined on the headless CLI/jsdom shell, which has no canvas) and degrade to the existing placeholder.
+The sibling of `host.images` for tools that composite, sample or mutate pixels *themselves* (Darkroom, the Filter tool, the logo composers, Redact). Where `images` is the convert path - encoded bytes in, encoded bytes out, no pixel access - this hands back drawable pixels. Not a gated capability; feature-detect `host.raster` and degrade to the existing placeholder where it is absent. The headless CLI provides it when the optional Skia canvas (`@napi-rs/canvas`) resolves, which is what makes `lolly redact` repaint pixels locally; on a lean install without it the member stays undefined, as it always did.
 
 | Method | Returns | Notes |
 |---|---|---|
@@ -312,7 +312,7 @@ The read side is deliberately **not** here: PSD/XCF *import* is a shell ingest f
 
 ## `host.upscale` *(on-device AI upscaling - optional, v1.101)*
 
-Enlarge a low-resolution raster on the device, with no upload. For the person whose headshot is 400px beside colleagues' 2000px photos, this enlarges it offline. The added pixels are model-inferred, so the output carries a C2PA credential that names the model. The runtime discloses it as the IPTC `compositeWithTrainedAlgorithmicMedia` source type - a real photo, AI-enhanced, never claimed as fully generated. Not a gated capability. Feature-detect `host.upscale` and hide the affordance where it is absent. The headless CLI provides none for now.
+Enlarge a low-resolution raster on the device, with no upload. For the person whose headshot is 400px beside colleagues' 2000px photos, this enlarges it offline. The added pixels are model-inferred, so the output carries a C2PA credential that names the model. The runtime discloses it as the IPTC `compositeWithTrainedAlgorithmicMedia` source type - a real photo, AI-enhanced, never claimed as fully generated. Not a gated capability. Feature-detect `host.upscale` and hide the affordance where it is absent. The headless CLI provides it too - onnxruntime-node and sharp in place of the browser's runtime and canvas - so a hook that upscales renders headlessly; the member stays undefined on a lean install that carries neither, and a model that is not staged refuses by name rather than downloading itself. Same for `host.matte`.
 
 The shell owns the model runtime (onnxruntime-web, with WebGPU where present and a WASM fallback), the backend choice, the one-time consented weight download and the memory-bounded tiling. The tool only ever sees pixels. An **`UpscaleFrame`** is `{ width, height, data: Uint8ClampedArray }` - RGBA, 8-bit, straight alpha, the shape a canvas `getImageData` gives and `putImageData` takes. The run can take many seconds on a weak device, so it is never driven from a time-boxed hook. A shell offers it as an explicit, cancellable, progress-bearing action whose result becomes an asset.
 
@@ -352,7 +352,7 @@ Two models tier the picker: `u2netp` (U²-Net lite, ~4.5 MB - the default, and t
 
 ## `host.speech` *(speech synthesis + transcription - optional, v1.96)*
 
-Turn a tool's own text into spoken audio on the device, with no upload. On-device Kokoro TTS returns mono PCM plus word timings. This is the dual of `host.audio`: where `analyse` turns a finished clip into numbers a tool can draw, `synthesize` turns text into a clip. A shell can play that clip, mix it under a video export or hand it straight back to `audio.analyse`. The word timings are what a caption or karaoke-highlight tool keys off, so they ride in the same result. Not a gated capability. Feature-detect `host.speech` and hide the voiceover affordance where it is absent. The headless CLI provides none for now.
+Turn a tool's own text into spoken audio on the device, with no upload. On-device Kokoro TTS returns mono PCM plus word timings. This is the dual of `host.audio`: where `analyse` turns a finished clip into numbers a tool can draw, `synthesize` turns text into a clip. A shell can play that clip, mix it under a video export or hand it straight back to `audio.analyse`. The word timings are what a caption or karaoke-highlight tool keys off, so they ride in the same result. Not a gated capability. Feature-detect `host.speech` and hide the voiceover affordance where it is absent. The headless CLI provides it as well, over the same models on onnxruntime-node, so a hook that speaks its own text renders headlessly. `lolly speak` and `lolly transcribe` are its discovery surface there, and a model that is not staged refuses by name instead of downloading itself.
 
 | Method | Returns | Notes |
 |---|---|---|
