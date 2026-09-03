@@ -130,12 +130,12 @@
       "alt": "The Catalogue's swatches in a magenta brand"
     },
     {
-      "img": "covers/gallery.webp",
+      "img": "covers/utilities.svg",
       "hue": 337.5,
-      "name": "Tools",
-      "href": "#/",
-      "promise": "Every tool on one shelf, each preview already in your colours",
-      "alt": "The tool gallery with its previews recoloured to a rose brand"
+      "name": "Utilities",
+      "href": "#/utilities",
+      "promise": "Use offline, files never leave your device",
+      "alt": "The Utilities shelf in a rose brand: Scan, Verify, Unpack and Spreadsheet among the tiles, captured as vector"
     }
   ]
 }
