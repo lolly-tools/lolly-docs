@@ -60,9 +60,11 @@ Overview는 처음 도착하는 룸이며, 두 가지 얼굴을 갖고 있습니
 
 ## Colours
 
+![The Colours room after one colour - the two panes back, the generate offer, roles reading in three registers and the pane at one colour](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=840&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A900&format=svg&walker=1&dark=1&filename=bs-colour-first)
+
 가장 풍부한 룸으로, 두 개의 창으로 나뉩니다. 왼쪽은 작업 공간이고 오른쪽은 **실시간 팔레트**입니다. 둘 사이의 구분선을 드래그해 크기를 조절할 수 있습니다(그 위에서 Enter를 누르면 팔레트를 접어 치워둡니다).
 
-![Colours 룸 - 기본 색상에서 램프를 유도하고, 대비 비율이 표시된 표본 카드와 실시간 팔레트](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![Colours 룸 - 기본 색상에서 램프를 유도하고, 대비 비율이 표시된 표본 카드와 실시간 팔레트](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 ### Add a colour, then give it a job
 
@@ -91,13 +93,13 @@ Overview는 처음 도착하는 룸이며, 두 가지 얼굴을 갖고 있습니
 
 기본 색상 아래에서 실시간 **Primary / Neutral / Secondary / Blend** 램프와 각각 자체 대비 값(WCAG 비율과 그 옆의 APCA `Lc` 수치)을 담은 Light와 Dark 표본 카드를 볼 수 있습니다. **Neutral 또는 Secondary 램프의 한 단계를 클릭**하면 유도된 기본값 대신 해당 음영을 고정합니다.
 
-![네 개의 램프가 밝은 색과 어두운 색 견본 카드 위에 쌓여 있고, 각 카드는 자체 WCAG 대비 비율을 갖습니다](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
+![네 개의 램프가 밝은 색과 어두운 색 견본 카드 위에 쌓여 있고, 각 카드는 자체 WCAG 대비 비율을 갖습니다](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
 
 ### 팔레트 만들기 (하모니 생성기)
 
 같은 구역에서, **팔레트 만들기**는 기본 색상에서 어울리는 강조 색상을 생성합니다. **하모니**를 선택하세요 - **보색**, **인접색**, **삼색조**, **사색조** 또는 **유사색**(각각 2~5개의 **강조색** 수와 10°에서 45°까지의 색상 **각도**를 갖습니다) - 각 후보는 자동 생성된 읽기 쉬운 이름과 **+ 추가** 버튼과 함께 제공됩니다. 하나를 추가하면 그 색상이 즉시 팔레트에 들어갑니다, 한 번의 누름이 하나의 토큰이 됩니다. *"적용된 내 팔레트"*는 전체 세트를 실제 그래픽에 미리 보여줍니다.
 
-![생성된 강조 색상들, 각각 견본, 자동 생성된 이름, 헥스 값과 추가 버튼을 갖춤](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
+![생성된 강조 색상들, 각각 견본, 자동 생성된 이름, 헥스 값과 추가 버튼을 갖춤](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
 
 ### 생성된 팔레트 적용하기
 
@@ -109,9 +111,9 @@ Overview는 처음 도착하는 룸이며, 두 가지 얼굴을 갖고 있습니
 
 오른쪽 패널에는 브랜드가 가진 모든 색상이 그룹별(기본, 중립, 보조, 스펙트럼, 사용자 지정, 역할)로 나열되며, 각 그룹은 자체 **+ 추가** 버튼과 함께 접고 펼 수 있습니다. 그 아래 **색상 차트**는 같은 견본들을 두 가지 보기로 펼쳐 보여줍니다: **휠**(OKLCH 휠 - 점을 드래그해 색을 바꾸거나, 점을 클릭해 편집하거나, 빈 공간을 클릭해 새 견본을 추가할 수 있습니다)과 표시 가능한 범위가 실제로 어디서 끝나는지 보여주는 **색역** 차트입니다. `#/start?area=color&focus=chart`는 이 카드를 바로 열며, `?wheel`도 늘 그래왔습니다.
 
-![팔레트 패널, 모든 그룹을 접고 펼 수 있으며, 하단 가장자리에 다운로드 필이 고정되어 있음](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
+![팔레트 패널, 모든 그룹을 접고 펼 수 있으며, 하단 가장자리에 다운로드 필이 고정되어 있음](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=1000&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
 
-![OKLCH 휠 - 각도는 색상, 바깥쪽 거리는 채도이며 회색은 옆쪽의 명도 레일을 따라 배치됨](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor%26wheel&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
+![OKLCH 휠 - 각도는 색상, 바깥쪽 거리는 채도이며 회색은 옆쪽의 명도 레일을 따라 배치됨](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400%3Bclick%3A%5Bdata-be-chart%5D%20summary%3Bwait%3A900&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
 
 견본을 클릭하면 편집기가 열립니다:
 
@@ -138,6 +140,8 @@ Overview는 처음 도착하는 룸이며, 두 가지 얼굴을 갖고 있습니
 
 ## 타입
 
+![The compare stage open under its card, with the search row, the pinned families and the cards folded to a one-line strip](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dtype%26focus%3Dstage&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=bs-type-stage)
+
 이 방은 **네 개의 역할 카드**로 시작합니다 - 앱, 도구, 그리고 모든 내보내기가 실제로 읽어들이는 네 가지 서체입니다. 각 카드는 지금 그 역할을 담당하는 서체를 그 서체로 표시하고, 그 아래에 실제 문구 한 줄을 보여줍니다:
 
 - **기본** - 본문, 버튼, 모든 도구.
@@ -147,7 +151,7 @@ Overview는 처음 도착하는 룸이며, 두 가지 얼굴을 갖고 있습니
 
 제목, 코드, 이탤릭은 지정하기 전까지 각각 기본 서체로 대체되므로, 폰트 하나만 쓰는 브랜드는 여기서 아무것도 결정할 필요가 없습니다. 카드에서 무엇을 눌러도 바로 적용되지는 않습니다: **변경**(빈 역할에서는 **서체 선택**)을 누르면 해당 역할로 범위가 좁혀진 **비교 스테이지**가 열립니다.
 
-![타입 방 - 역할 카드와 각 서체가 실제로 작동하는 실시간 견본](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+![타입 방 - 역할 카드와 각 서체가 실제로 작동하는 실시간 견본](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
 
 ### 비교 스테이지
 
@@ -162,13 +166,13 @@ Overview는 처음 도착하는 룸이며, 두 가지 얼굴을 갖고 있습니
 
 하단의 **타입 역할** 패널은 각 역할의 실시간 견본을 보여줍니다 - 기본 서체로 된 본문과 UI, 상위 제목용 선택적 디스플레이 서체, 강조용 이탤릭, 코드와 데이터용 모노 서체 - 전체 세트가 함께 작동하는 모습을 볼 수 있습니다.
 
-![타입 역할 견본 - 제목, 본문, 이탤릭, 코드가 각 역할이 해석되는 서체로 표시되며, 옆에 서체 이름이 함께 있음](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2600&css=.start-head%2C.be-custom-fonts%2C.be-fonts%7Bdisplay%3Anone%7D&walker=1&format=svg&dark=1&filename=bs-type-specimen)
+![타입 역할 견본 - 제목, 본문, 이탤릭, 코드가 각 역할이 해석되는 서체로 표시되며, 옆에 서체 이름이 함께 있음](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=1000&dpi=192&waitMs=2600&drive=click%3A%5Bdata-be-typemore-toggle%5D%3Bwait%3A600&cropSelector=.be-typecard-grid&walker=1&format=svg&dark=1&filename=bs-type-specimen)
 
 ## 토큰
 
 코드를 건드리지 않고도 편집할 수 있는 디자인 시스템의 나머지 부분:
 
-![토큰 방 - 모서리 반경 슬라이더와 간격, 크기, 그림자, 그리고 시스템의 나머지 요소들](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+![토큰 방 - 모서리 반경 슬라이더와 간격, 크기, 그림자, 그리고 시스템의 나머지 요소들](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=740&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
 
 - **둥근 모서리** - 앱 전체의 카드, 버튼, 패널이 따르는 단일 반경 슬라이더(0–1.5rem).
 - **추가 토큰** - **간격**, **크기**, **선 두께**, **불투명도**, **회전**, 일반 **숫자**, **그림자**를 추가하고 편집합니다. 유형을 고르고 이름을 붙인 뒤(*Gutter, Card shadow…*) 값을 설정하세요. 이들은 표준 [디자인 토큰](/info/design-tokens.html)(DTCG)으로 저장되어 브랜드와 함께 이동합니다.

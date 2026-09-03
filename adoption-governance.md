@@ -1,19 +1,19 @@
 # Adoption & Governance
 
-> Lolly is an internal prototype in a closed pilot - a fast-moving behavioural experiment inside the enterprise, not a finished product. This page is the honest account of who it's for, how people are meant to adopt it, how we'll know if it's working and who governs what it produces.
+> Lolly shipped as open source in August 2026, and SUSE is its first customer. This page is the honest account of who it is for, how people are meant to adopt it, how we know whether it is working and who governs what it produces.
 
-Most of this platform's documentation describes what Lolly *can do*. This page describes what Lolly is *doing right now*: running a pilot, gathering evidence and trying to change a behaviour - how ordinary, non-designer colleagues get an on-brand file made.
+Most of this platform's documentation describes what Lolly *can do*. This page describes what Lolly is *doing right now*: running SUSE's own rollout as the first pilot, gathering evidence and trying to change a behaviour - how ordinary, non-designer colleagues get an on-brand file made.
 
 ## Status
 
-**Lolly is a closed-pilot prototype. Treat it as one.**
+**Lolly is released, and its evidence is young.**
 
-- **It hasn't finished its pilot.** The pilot is in progress and has not completed. Features, defaults, claims and even the tool catalog can still change as we learn. There is more to share on **29 August 2026**.
-- **Its security is hardening for enterprise scale.** Lolly's cryptography and file-parsing engines - including the C2PA provenance seals, the X.509 identity handling and on-device PDF/ZIP/link encryption - are currently undergoing SUSE's strict infrastructure hardening, preparing for enterprise scale. We're really good at this. They are strong *by design*; while that hardening completes, don't rely on them where an independent assurance is contractually required.
-- **It is arithmetically sound and evidentially empty.** The engine is deterministic and the maths is sound, but the product was, in effect, born yesterday. **SUSE is customer number one.** There is very little real-world adoption data. This too is by-design. We collect stories from the public voluntarily, never data invisibly. 
+- **Version 1.0 is public.** The engine, every shell, the schemas and the docs shipped under MPL-2.0 on 30 August 2026, with installers for macOS, Linux, Android and iOS and the hosted app at lolly.tools. SUSE runs the same code on its own instance. Features, defaults and the tool catalog still move between releases as we learn.
+- **Its security is strong by design and not yet independently audited.** The C2PA provenance seals, the X.509 identity handling and the on-device PDF, ZIP and link encryption are built on standard algorithms, covered by fuzz targets and a written [threat model](/info/threat-model.html), and hardened inside SUSE's own security practice. An independent audit has not been done. Where a contract requires that assurance, it does not exist yet.
+- **The maths is settled; the adoption data is not.** The engine is deterministic and a render reproduces byte for byte. Real-world adoption evidence is a few months old, most of it SUSE's own. That is by design: we collect stories from people voluntarily, never data invisibly.
 - **If you're using it, we need your story.** The architecture is done; the evidence is not. What actually improves Lolly from here is real usage - what worked, what didn't and what you managed to make. See [We need your story](#we-need-your-story).
 
-This experimental framing is deliberate: Judged as a finished marvel, Lolly could disappoint you at the fringes. Judged as a pilot trying to prove a specific behavioural change - routine asset creation work, done safely and professionally, without a designer in the loop - it's job and success are clear.
+The framing matters: judged as a finished marvel, Lolly could disappoint you at the fringes. Judged as a platform proving a specific behavioural change - routine asset creation, done safely and professionally, without a designer in the loop - its job and its measure of success are clear.
 
 ## Who Lolly is for
 
@@ -71,7 +71,7 @@ The Dashboard's capability map is the inventory to scope that decision against: 
 ### IT & security
 
 1. Confirm the **data posture**: no telemetry, nothing uploaded by default and no backend in the core render/verify path - the two optional server components are inventoried on [Server Surface](/info/server-surface.html).
-2. Scope the **pilot** to a low-risk context while the hardening described in [Status](#status) completes.
+2. Scope a first rollout to a low-risk context; the independent assurance described in [Status](#status) is still open.
 3. Decide who owns **governance** - see [Governance](#governance) below.
 
 ## Measuring adoption
@@ -147,8 +147,8 @@ If you are piloting Lolly, the most valuable thing you can contribute is a concr
 
 To keep the framing straight, the things Lolly is *not* yet:
 
-- **Not yet independently certified.** See [Status](#status). The cryptography and parsers are undergoing SUSE's strict infrastructure hardening for enterprise scale, not yet certified by an independent party.
-- **Not a finished product.** It's a pilot; expect rough edges and change.
+- **Not yet independently certified.** See [Status](#status). The cryptography and parsers are fuzzed, threat-modelled and hardened inside SUSE; no independent party has certified them.
+- **Not finished.** Version 1.0 is the start of the public record; expect rough edges and change between releases.
 - **Not a turnkey pack of your templates.** Lolly is a platform - someone has to author the catalog and the tools before producers can self-serve.
 - **Not for hero content.** It's for operationalised, recurring, massive-scale asset generation. Judged against Figma or Canva it will look narrow - that narrowness is the point.
-- **Not yet backed by evidence.** The maths is sound; the track record is a day old. Help us change that.
+- **Not yet backed by much evidence.** The maths is sound; the track record is months old. Help us change that.

@@ -661,6 +661,22 @@ Three rules hold everywhere below, and they are what make the links safe to past
 2. **Never persisted.** A param that overrides a saved preference - sort order, view mode, theme - does so *for that page load only*. Opening someone's link never rewrites your own settings.
 3. **Unknown values are ignored.** A param naming something that doesn't exist (a retired category, a typo'd section) is dropped and the view opens normally. Links don't break; they just stop steering.
 
+### The `lolly://` scheme
+
+The installed apps register `lolly://` as their own URL scheme, so anything that can open a URL can open Lolly at an exact place: a launcher's "open URL" action (Raycast, Alfred, PowerToys Run), a macOS Shortcut, a `.desktop` Action, a GNOME Shell or KRunner result, a link in a note or a QR code on a slide, or a terminal:
+
+```bash
+open      "lolly://t/qr-code?url=https://suse.com"     # macOS
+xdg-open  "lolly://t/qr-code?url=https://suse.com"     # Linux
+start     "lolly://t/qr-code?url=https://suse.com"     # Windows
+```
+
+The grammar is the web address with the site name taken for granted: `lolly://<route>` is `https://lolly.tools/<route>`. Every tool form works (`lolly://t/<id>?…`, `lolly://tool/<id>?…`, a bare `lolly://<id>?…`, and the embed form `lolly://tool/<id>.svg?…`, whose extension becomes `format=`), with the same inputs, reserved parameters and packed `z=` links as the https form. Any app route works too (`lolly://lab`, `lolly://verify?asset=lolly/logo/primary`, `lolly://docs/build/authoring-tools`). A copied https link with `https://` swapped for `lolly://` keeps working - the `lolly.tools` host segment is dropped rather than read as a tool id.
+
+A link that names no route the app owns is refused, not guessed at: the OS hands the app an untrusted string, so the mapper only ever opens a tool id that parses or a word from the app's frozen route vocabulary. Pasting a `lolly://` link anywhere the app already accepts a Lolly link (the asset picker, the pasted-link paths, the CLI's `Lolly <link>` form) works the same way.
+
+Where it is registered: the macOS and Windows installers and the Linux `.desktop` entries all declare the scheme, as do the Android and iOS apps. A `tauri dev` build registers itself on Windows and Linux at launch; on macOS only the installed `.app` can receive the scheme. Spotlight itself opens web addresses, not custom schemes - on a Mac, reach the scheme through `open`, a Shortcut or a launcher. The MCP server's resource URIs (`lolly://catalog`, `lolly://tool/{id}`) share the prefix but are a different namespace: resources an agent reads, not routes the app opens.
+
 ### App-wide
 
 | Param | Description |

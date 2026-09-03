@@ -60,9 +60,11 @@ Itu delapan slot opsional. Klik sebuah slot untuk menambahkan PNG, SVG, JPEG ata
 
 ## Colours
 
+![The Colours room after one colour - the two panes back, the generate offer, roles reading in three registers and the pane at one colour](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=840&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A900&format=svg&walker=1&dark=1&filename=bs-colour-first)
+
 Ruang paling kaya, dalam dua panel. Yang kiri tempat Anda bekerja; yang kanan adalah **palet langsung** Anda. Seret pembatas di antara keduanya untuk mengubah ukuran (Enter di atasnya melipat palet menyingkir).
 
-![Ruang Colours - warna primer menurunkan ramp, kartu spesimen dengan rasio kontras dan palet langsung](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![Ruang Colours - warna primer menurunkan ramp, kartu spesimen dengan rasio kontras dan palet langsung](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 ### Tambahkan warna, lalu beri tugas
 
@@ -91,13 +93,13 @@ Tidak ada apa pun di sayap ini yang menulis apa pun ke brand Anda. Ini pratinjau
 
 Di bawah warna primer Anda akan melihat ramp **Primary / Neutral / Secondary / Blend** langsung serta kartu spesimen Light dan Dark, masing-masing membawa pembacaan kontrasnya sendiri - rasio WCAG dengan angka APCA `Lc` di sampingnya. **Klik sebuah langkah pada ramp Neutral atau Secondary** untuk menjangkarkan shade itu sebagai pengganti default turunan.
 
-![Empat ramp bertumpuk di atas kartu spesimen terang dan gelap, masing-masing kartu membawa rasio kontras WCAG-nya sendiri](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
+![Empat ramp bertumpuk di atas kartu spesimen terang dan gelap, masing-masing kartu membawa rasio kontras WCAG-nya sendiri](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
 
 ### Bangun palet Anda (generator harmoni)
 
 Masih di sayap yang sama, **Build your palette** menghasilkan warna aksen yang cocok dari warna primer Anda. Pilih **Harmony** - **Complementary**, **Adjacent**, **Triad**, **Tetrad** atau **Analogous** (yang membawa jumlah **Accents** sendiri, 2 hingga 5, dan **Angle** hue dari 10° hingga 45°) - dan setiap kandidat hadir dengan nama yang mudah dibaca yang dibuat otomatis serta tombol **+ Add**. Menambahkan satu langsung memasukkan warna itu ke palet Anda, satu tekan untuk satu token. *"Your palette, applied"* menampilkan pratinjau seluruh set pada grafik nyata.
 
-![Aksen yang dihasilkan, masing-masing dengan swatch, nama yang dibuat otomatis, kode hex-nya, dan tombol Add](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
+![Aksen yang dihasilkan, masing-masing dengan swatch, nama yang dibuat otomatis, kode hex-nya, dan tombol Add](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
 
 ### Menerapkan palet yang dihasilkan
 
@@ -109,9 +111,9 @@ Masih di sayap yang sama, **Build your palette** menghasilkan warna aksen yang c
 
 Panel kanan mencantumkan setiap warna yang dimiliki brand Anda, dikelompokkan (Primary, Neutral, Secondary, Spectrum, Custom, Roles), setiap kelompok dapat dilipat dengan **+ Add** miliknya sendiri. Di bawahnya, **Colour chart** terbuka pada dua tampilan dari swatch yang sama: **Wheel** (roda OKLCH - seret titik untuk mengubah warnanya, klik titik untuk mengeditnya atau klik ruang kosong untuk menjatuhkan swatch baru) dan bagan **Gamut**, yang menunjukkan di mana rentang yang dapat ditampilkan sebenarnya berakhir. `#/start?area=color&focus=chart` membuka kartu itu secara langsung, seperti yang selalu dilakukan `?wheel`.
 
-![Panel palet, setiap kelompok dapat dilipat, dengan pil unduh terparkir di tepi bawahnya](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
+![Panel palet, setiap kelompok dapat dilipat, dengan pil unduh terparkir di tepi bawahnya](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=1000&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
 
-![Roda OKLCH - sudut adalah hue, jarak keluar adalah chroma, dan abu-abu berjalan di sepanjang rel lightness di sisinya](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor%26wheel&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
+![Roda OKLCH - sudut adalah hue, jarak keluar adalah chroma, dan abu-abu berjalan di sepanjang rel lightness di sisinya](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400%3Bclick%3A%5Bdata-be-chart%5D%20summary%3Bwait%3A900&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
 
 Klik swatch mana pun untuk membuka editornya:
 
@@ -138,6 +140,8 @@ Pil mengambang yang terparkir di tepi bawah panel palet mengunduh seluruh palet 
 
 ## Type
 
+![The compare stage open under its card, with the search row, the pinned families and the cards folded to a one-line strip](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dtype%26focus%3Dstage&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=bs-type-stage)
+
 Ruang ini dibuka dengan **empat kartu peran** - empat wajah yang benar-benar dibaca oleh aplikasi, tools Anda, dan setiap ekspor. Setiap kartu menunjukkan apa yang saat ini melayani peran itu, disetel dalam wajah tersebut, dengan satu baris teks nyata di bawahnya:
 
 - **Primary** - teks isi, tombol, dan setiap tool.
@@ -147,7 +151,7 @@ Ruang ini dibuka dengan **empat kartu peran** - empat wajah yang benar-benar dib
 
 Headings, code, dan italic masing-masing kembali ke primary sampai Anda menetapkannya, sehingga brand dengan satu font tidak memerlukan keputusan apa pun di sini. Tidak ada yang di kartu langsung menerapkan apa pun: **Change** (atau **Choose a face** pada peran yang kosong) membuka **compare stage** yang dibatasi pada peran itu.
 
-![Ruang Type - kartu peran dan spesimen langsung dari setiap wajah yang menjalankan tugasnya](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+![Ruang Type - kartu peran dan spesimen langsung dari setiap wajah yang menjalankan tugasnya](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
 
 ### Compare stage
 
@@ -162,13 +166,13 @@ Bagaimanapun caranya, wajah font ini tetap di perangkat ini, dirender di aplikas
 
 Panel **Type roles** di bagian bawah menampilkan spesimen langsung dari setiap peran - body dan UI dalam primary, wajah tampilan opsional untuk heading teratas, italic untuk penekanan, mono untuk kode dan data - sehingga Anda dapat melihat seluruh set bekerja bersama.
 
-![Spesimen Type roles - heading, body, italic dan code, masing-masing disetel dalam wajah yang menjadi resolusi peran tersebut, dengan nama wajah di sampingnya](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2600&css=.start-head%2C.be-custom-fonts%2C.be-fonts%7Bdisplay%3Anone%7D&walker=1&format=svg&dark=1&filename=bs-type-specimen)
+![Spesimen Type roles - heading, body, italic dan code, masing-masing disetel dalam wajah yang menjadi resolusi peran tersebut, dengan nama wajah di sampingnya](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=1000&dpi=192&waitMs=2600&drive=click%3A%5Bdata-be-typemore-toggle%5D%3Bwait%3A600&cropSelector=.be-typecard-grid&walker=1&format=svg&dark=1&filename=bs-type-specimen)
 
 ## Tokens
 
 Sisa dari sistem desain, dapat diedit tanpa menyentuh kode:
 
-![Ruang Tokens - slider corner-radius ditambah spacing, sizing, shadows, dan sisa sistem lainnya](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+![Ruang Tokens - slider corner-radius ditambah spacing, sizing, shadows, dan sisa sistem lainnya](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=740&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
 
 - **Rounded corners** - satu slider radius (0–1.5rem) yang diikuti oleh kartu, tombol, dan panel di seluruh aplikasi.
 - **More tokens** - tambah dan edit **spacing**, **sizing**, **stroke width**, **opacity**, **rotation**, **numbers** biasa, dan **shadows**. Pilih jenisnya, beri nama (*Gutter, Card shadow…*) dan atur nilainya. Ini disimpan sebagai [design tokens](/info/design-tokens.html) (DTCG) standar dan ikut bersama brand Anda.

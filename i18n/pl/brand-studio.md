@@ -60,9 +60,11 @@ To osiem opcjonalnych slotów. Kliknij slot, aby dodać PNG, SVG, JPEG lub WebP;
 
 ## Colours
 
+![The Colours room after one colour - the two panes back, the generate offer, roles reading in three registers and the pane at one colour](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=840&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A900&format=svg&walker=1&dark=1&filename=bs-colour-first)
+
 Najbogatszy pokój, w dwóch panelach. Lewy to miejsce pracy; prawy to Twoja **paleta na żywo**. Przeciągnij dzielnik między nimi, aby zmienić rozmiar (Enter na nim zwija paletę z drogi).
 
-![Pokój Colours - kolor podstawowy wyprowadza rampy, karty próbek ze współczynnikami kontrastu i paleta na żywo](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![Pokój Colours - kolor podstawowy wyprowadza rampy, karty próbek ze współczynnikami kontrastu i paleta na żywo](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 ### Dodaj kolor, a potem nadaj mu rolę
 
@@ -91,13 +93,13 @@ Nic w tym skrzydle nie zapisuje niczego w Twojej marce. To podgląd, na żywo w 
 
 Pod kolorem podstawowym zobaczysz rampy **Primary / Neutral / Secondary / Blend** na żywo oraz karty próbek Light i Dark, każda z własnym odczytem kontrastu - współczynnikiem WCAG wraz z liczbą APCA `Lc` obok. **Kliknij krok na rampie Neutral lub Secondary**, aby zakotwiczyć ten odcień zamiast domyślnego, wyprowadzonego.
 
-![Cztery rampy ułożone nad kartami wzorcowymi w jasnym i ciemnym motywie, każda karta ze swoim współczynnikiem kontrastu WCAG](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
+![Cztery rampy ułożone nad kartami wzorcowymi w jasnym i ciemnym motywie, każda karta ze swoim współczynnikiem kontrastu WCAG](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
 
 ### Zbuduj swoją paletę (generator harmonii)
 
 W tym samym skrzydle **Build your palette** generuje pasujące kolory akcentów na podstawie koloru podstawowego. Wybierz **Harmony** - **Complementary**, **Adjacent**, **Triad**, **Tetrad** lub **Analogous** (co dodaje własną liczbę **Accents**, od 2 do 5, oraz kąt odcienia **Angle** od 10° do 45°) - a każdy kandydat pojawia się z automatycznie wygenerowaną, czytelną nazwą i przyciskiem **+ Add**. Dodanie koloru od razu umieszcza go w palecie, jedno naciśnięcie na jeden token. *"Your palette, applied"* pokazuje podgląd całego zestawu na prawdziwych grafikach.
 
-![Wygenerowane akcenty, każdy z próbką koloru, automatycznie wygenerowaną nazwą, kodem hex i przyciskiem Add](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
+![Wygenerowane akcenty, każdy z próbką koloru, automatycznie wygenerowaną nazwą, kodem hex i przyciskiem Add](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
 
 ### Zatwierdzanie wygenerowanej palety
 
@@ -109,9 +111,9 @@ W tym samym skrzydle **Build your palette** generuje pasujące kolory akcentów 
 
 Prawy panel wyświetla wszystkie kolory Twojej marki, pogrupowane (Primary, Neutral, Secondary, Spectrum, Custom, Roles), każda grupa zwijalna, z własnym przyciskiem **+ Add**. Poniżej **Colour chart** rozwija się w dwa widoki tych samych próbek: **Wheel** (koło OKLCH - przeciągnij kropkę, by zmienić jej kolor, kliknij kropkę, by ją edytować, lub kliknij puste miejsce, by dodać nową próbkę) oraz wykres **Gamut**, który pokazuje, gdzie faktycznie kończy się zakres możliwy do wyświetlenia. `#/start?area=color&focus=chart` otwiera tę kartę bezpośrednio, tak jak zawsze robi to `?wheel`.
 
-![Panel palety, każda grupa zwijalna, z pigułką pobierania umieszczoną przy dolnej krawędzi](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
+![Panel palety, każda grupa zwijalna, z pigułką pobierania umieszczoną przy dolnej krawędzi](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=1000&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
 
-![Koło OKLCH - kąt to odcień, odległość od środka to nasycenie, a szarości poruszają się po pasku jasności z boku](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor%26wheel&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
+![Koło OKLCH - kąt to odcień, odległość od środka to nasycenie, a szarości poruszają się po pasku jasności z boku](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400%3Bclick%3A%5Bdata-be-chart%5D%20summary%3Bwait%3A900&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
 
 Kliknij dowolną próbkę, aby otworzyć jej edytor:
 
@@ -138,6 +140,8 @@ Pływająca pigułka umieszczona przy dolnej krawędzi panelu palety pozwala pob
 
 ## Typografia
 
+![The compare stage open under its card, with the search row, the pinned families and the cards folded to a one-line strip](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dtype%26focus%3Dstage&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=bs-type-stage)
+
 Ten pokój zaczyna się od **czterech kart ról** - czterech krojów, które faktycznie odczytuje aplikacja, Twoje narzędzia i każdy eksport. Każda karta pokazuje, co obecnie pełni daną rolę, zapisane w tym kroju, z linijką prawdziwego tekstu pod spodem:
 
 - **Primary** - treść, przyciski i każde narzędzie.
@@ -147,7 +151,7 @@ Ten pokój zaczyna się od **czterech kart ról** - czterech krojów, które fak
 
 Headings, code i italic domyślnie sięgają do kroju primary, dopóki ich nie przypiszesz, więc marka z jednym krojem nie wymaga tu żadnych decyzji. Żaden element na karcie niczego nie zatwierdza: **Change** (albo **Choose a face** przy pustej roli) otwiera **etap porównania** ograniczony do tej roli.
 
-![Pokój Type - karty ról i żywy wzorzec każdego kroju w akcji](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+![Pokój Type - karty ról i żywy wzorzec każdego kroju w akcji](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
 
 ### Etap porównania
 
@@ -162,13 +166,13 @@ Tak czy inaczej krój pozostaje na tym urządzeniu, renderuje się w aplikacji, 
 
 Panel **Type roles** na dole pokazuje żywy wzorzec każdej roli - treść i UI w kroju primary, opcjonalny krój wyświetlnikowy dla nagłówków górnych, kursywę do wyróżnień, krój mono do kodu i danych - dzięki czemu widzisz cały zestaw działający razem.
 
-![Wzorzec Type roles - nagłówek, treść, kursywa i kod, każdy zapisany w kroju, do którego dana rola się rozwiązuje, z nazwą kroju obok](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2600&css=.start-head%2C.be-custom-fonts%2C.be-fonts%7Bdisplay%3Anone%7D&walker=1&format=svg&dark=1&filename=bs-type-specimen)
+![Wzorzec Type roles - nagłówek, treść, kursywa i kod, każdy zapisany w kroju, do którego dana rola się rozwiązuje, z nazwą kroju obok](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=1000&dpi=192&waitMs=2600&drive=click%3A%5Bdata-be-typemore-toggle%5D%3Bwait%3A600&cropSelector=.be-typecard-grid&walker=1&format=svg&dark=1&filename=bs-type-specimen)
 
 ## Tokeny
 
 Reszta systemu projektowego, edytowalna bez dotykania kodu:
 
-![Pokój Tokens - suwak promienia zaokrąglenia rogów oraz odstępy, rozmiary, cienie i reszta systemu](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+![Pokój Tokens - suwak promienia zaokrąglenia rogów oraz odstępy, rozmiary, cienie i reszta systemu](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=740&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
 
 - **Rounded corners** - pojedynczy suwak promienia (0–1.5rem), za którym podążają karty, przyciski i panele w całej aplikacji.
 - **More tokens** - dodawaj i edytuj **spacing**, **sizing**, **stroke width**, **opacity**, **rotation**, zwykłe **numbers** i **shadows**. Wybierz typ, nadaj mu nazwę (*Gutter, Card shadow…*) i ustaw wartość. Są one zapisywane jako standardowe [tokeny projektowe](/info/design-tokens.html) (DTCG) i podróżują razem z Twoją marką.

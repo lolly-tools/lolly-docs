@@ -60,9 +60,11 @@ Cela fait huit emplacements optionnels. Clique sur un emplacement pour ajouter u
 
 ## Colours
 
+![The Colours room after one colour - the two panes back, the generate offer, roles reading in three registers and the pane at one colour](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=840&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A900&format=svg&walker=1&dark=1&filename=bs-colour-first)
+
 La salle la plus riche, en deux volets. Celui de gauche est où tu travailles ; celui de droite est ta **palette en direct**. Fais glisser le séparateur entre les deux pour redimensionner (Entrée dessus replie la palette hors du chemin).
 
-![La salle Colours - une couleur primaire dérive des rampes, des cartes spécimen avec des ratios de contraste et une palette en direct](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![La salle Colours - une couleur primaire dérive des rampes, des cartes spécimen avec des ratios de contraste et une palette en direct](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 ### Ajoute une couleur, puis donne-lui un rôle
 
@@ -91,13 +93,13 @@ Rien dans cette aile n'écrit quoi que ce soit dans ta marque. C'est un aperçu,
 
 Sous la couleur primaire, tu verras en direct les rampes **Primary / Neutral / Secondary / Blend** et des cartes spécimen Light et Dark, chacune portant sa propre mesure de contraste - le ratio WCAG avec le chiffre APCA `Lc` à côté. **Clique sur une étape de la rampe Neutral ou Secondary** pour ancrer cette nuance à la place de la valeur dérivée par défaut.
 
-![Les quatre rampes empilées au-dessus des cartes de spécimens clairs et sombres, chaque carte portant son propre ratio de contraste WCAG](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
+![Les quatre rampes empilées au-dessus des cartes de spécimens clairs et sombres, chaque carte portant son propre ratio de contraste WCAG](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
 
 ### Construis ta palette (générateur d'harmonies)
 
 Toujours dans la même aile, **Construis ta palette** génère des couleurs d'accent assorties à partir de ta couleur primaire. Choisis une **Harmonie** - **Complémentaire**, **Adjacente**, **Triade**, **Tétrade** ou **Analogue** (qui apporte son propre nombre d'**Accents**, de 2 à 5, et un **Angle** de teinte de 10° à 45°) - et chaque candidate arrive avec un nom lisible généré automatiquement et un bouton **+ Ajouter**. En ajouter une place cette couleur dans ta palette immédiatement, une pression pour un token. *"Ta palette, appliquée"* prévisualise l'ensemble sur de vrais graphiques.
 
-![Accents générés, chacun avec un échantillon, un nom généré automatiquement, son code hexadécimal et un bouton Ajouter](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
+![Accents générés, chacun avec un échantillon, un nom généré automatiquement, son code hexadécimal et un bouton Ajouter](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
 
 ### Valider une palette générée
 
@@ -109,9 +111,9 @@ Toujours dans la même aile, **Construis ta palette** génère des couleurs d'ac
 
 Le panneau de droite liste toutes les couleurs que porte ta marque, groupées (Primaire, Neutre, Secondaire, Spectre, Personnalisé, Rôles), chaque groupe étant repliable avec son propre **+ Ajouter**. En dessous, **Graphique de couleur** se déplie sur deux vues des mêmes échantillons : la **Roue** (la roue OKLCH - fais glisser un point pour le recolorer, clique sur un point pour l'éditer ou clique sur un espace vide pour déposer un nouvel échantillon) et le graphique **Gamme**, qui montre où s'arrête réellement la plage affichable. `#/start?area=color&focus=chart` ouvre directement la carte, comme `?wheel` l'a toujours fait.
 
-![Le panneau de palette, chaque groupe repliable, avec la pastille de téléchargement calée sur son bord inférieur](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
+![Le panneau de palette, chaque groupe repliable, avec la pastille de téléchargement calée sur son bord inférieur](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=1000&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
 
-![La roue OKLCH - l'angle est la teinte, la distance vers l'extérieur est la chroma et les gris suivent un rail de luminosité sur le côté](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor%26wheel&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
+![La roue OKLCH - l'angle est la teinte, la distance vers l'extérieur est la chroma et les gris suivent un rail de luminosité sur le côté](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400%3Bclick%3A%5Bdata-be-chart%5D%20summary%3Bwait%3A900&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
 
 Clique sur n'importe quel échantillon pour ouvrir son éditeur :
 
@@ -138,6 +140,8 @@ La pastille flottante calée sur le bord inférieur du panneau de palette télé
 
 ## Typographie
 
+![The compare stage open under its card, with the search row, the pinned families and the cards folded to a one-line strip](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dtype%26focus%3Dstage&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=bs-type-stage)
+
 La salle s'ouvre sur **quatre cartes de rôle** - les quatre polices que l'application, tes outils et chaque export lisent réellement. Chaque carte montre ce qui sert ce rôle en ce moment, composé dans cette police, avec une ligne de vrai texte en dessous :
 
 - **Primaire** - le texte courant, les boutons et chaque outil.
@@ -147,7 +151,7 @@ La salle s'ouvre sur **quatre cartes de rôle** - les quatre polices que l'appli
 
 Titres, code et italique retombent chacun sur la primaire tant que tu ne les as pas attribués, donc une marque à une seule police n'a ici aucune décision à prendre. Rien sur une carte ne valide quoi que ce soit : **Changer** (ou **Choisir une police** sur un rôle vide) ouvre la **scène de comparaison** limitée à ce rôle.
 
-![La salle Typographie - les cartes de rôle et un spécimen vivant de chaque police en action](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+![La salle Typographie - les cartes de rôle et un spécimen vivant de chaque police en action](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
 
 ### La scène de comparaison
 
@@ -162,13 +166,13 @@ Dans les deux cas, la police reste sur cet appareil, s'affiche dans l'applicatio
 
 Le panneau **Rôles typographiques** en bas montre un spécimen vivant de chaque rôle - le texte courant et l'interface dans la primaire, une police d'affichage optionnelle pour les titres principaux, une italique pour l'emphase, une police à chasse fixe pour le code et les données - pour que tu voies l'ensemble fonctionner ensemble.
 
-![Le spécimen Rôles typographiques - titre, texte courant, italique et code, chacun composé dans la police vers laquelle ce rôle se résout, avec le nom de la police à côté](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2600&css=.start-head%2C.be-custom-fonts%2C.be-fonts%7Bdisplay%3Anone%7D&walker=1&format=svg&dark=1&filename=bs-type-specimen)
+![Le spécimen Rôles typographiques - titre, texte courant, italique et code, chacun composé dans la police vers laquelle ce rôle se résout, avec le nom de la police à côté](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=1000&dpi=192&waitMs=2600&drive=click%3A%5Bdata-be-typemore-toggle%5D%3Bwait%3A600&cropSelector=.be-typecard-grid&walker=1&format=svg&dark=1&filename=bs-type-specimen)
 
 ## Tokens
 
 Le reste du système de design, éditable sans toucher au code :
 
-![La salle Tokens - un curseur de rayon d'angle plus l'espacement, le dimensionnement, les ombres et le reste du système](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+![La salle Tokens - un curseur de rayon d'angle plus l'espacement, le dimensionnement, les ombres et le reste du système](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=740&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
 
 - **Coins arrondis** - un curseur de rayon unique (0-1,5rem) que suivent les cartes, boutons et panneaux dans toute l'application.
 - **Plus de tokens** - ajoute et édite l'**espacement**, le **dimensionnement**, l'**épaisseur de trait**, l'**opacité**, la **rotation**, des **nombres** simples et des **ombres**. Choisis un type, nomme-le (*Gouttière, Ombre de carte...*) et définis sa valeur. Ce sont des [design tokens](/info/design-tokens.html) standards (DTCG) stockés ainsi, qui voyagent avec ta marque.

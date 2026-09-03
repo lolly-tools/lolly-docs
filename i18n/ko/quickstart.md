@@ -16,7 +16,7 @@ Lolly에서 여러분의 브랜드는 작은 **디자인 토큰** 문서예요 -
 
 처음 실행하면 **갤러리**가 열리고, 그 위에 짧은 환영 대화상자가 세 가지 시작 방법을 안내해요 - **Make it yours**(`#/start`의 Brand Studio), **Bring your design**(Figma, Penpot, InDesign, PDF 파일을 끌어다 놓으면 편집 가능한 레이아웃으로 열려요 - 아래 [이미 가진 것 가져오기](#2-bring-in-what-you-already-have)로 가는 가장 빠른 길이에요), 그리고 **Explore the community tools**예요. 영어가 모국어가 아니라면 언어 목록도 함께 나와요. 첫 번째 카드를 고르면 [**Brand Studio**](/info/brand-studio.html)로 이동해요. 이름과 기본 색상만 정하면 Lolly가 거기에서 완전하고 접근성 있는 팔레트를 *도출*해요 - 밝은/어두운 표면, 텍스트, 강조색까지 - 엔진이 다른 곳에서도 쓰는 것과 같은 색상 계산으로요.
 
-![Brand Studio의 Colours 룸 - 기본 색상, 그리고 Lolly가 거기에서 도출한 접근성 팔레트](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours) 폰트를 고르면 1분도 안 되어 쓸 수 있는 브랜드가 완성돼요. 그다음부터는 스튜디오의 여섯 개 룸 - Overview, Colours, Type, Logos, Tokens, Files - 에서 원하는 만큼, 원하는 순서로 다듬을 수 있고, 다시 돌아올 때마다 언제든 고칠 수 있어요. 대시보드의 **Design system** 탭(`#/d`)은 그 결과를 읽기 전용으로 보여 주고, 편집이 이뤄지는 `#/start`를 가리켜요(브랜드가 고정된 brand-locked 빌드를 쓰고 있다면 브랜드는 잠겨 있어 바꿀 것이 없어요).
+![Brand Studio의 Colours 룸 - 기본 색상, 그리고 Lolly가 거기에서 도출한 접근성 팔레트](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours) 폰트를 고르면 1분도 안 되어 쓸 수 있는 브랜드가 완성돼요. 그다음부터는 스튜디오의 여섯 개 룸 - Overview, Colours, Type, Logos, Tokens, Files - 에서 원하는 만큼, 원하는 순서로 다듬을 수 있고, 다시 돌아올 때마다 언제든 고칠 수 있어요. 대시보드의 **Design system** 탭(`#/d`)은 그 결과를 읽기 전용으로 보여 주고, 편집이 이뤄지는 `#/start`를 가리켜요(브랜드가 고정된 brand-locked 빌드를 쓰고 있다면 브랜드는 잠겨 있어 바꿀 것이 없어요).
 
 ### 이미 가진 브랜드 가져오기
 

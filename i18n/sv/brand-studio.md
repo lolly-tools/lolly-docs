@@ -60,9 +60,11 @@ Det är åtta valfria platser. Klicka på en plats för att lägga till en PNG, 
 
 ## Färger
 
+![The Colours room after one colour - the two panes back, the generate offer, roles reading in three registers and the pane at one colour](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=840&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A900&format=svg&walker=1&dark=1&filename=bs-colour-first)
+
 Det rikaste rummet, i två paneler. Den vänstra är där du arbetar; den högra är din **levande palett**. Dra avdelaren mellan dem för att ändra storlek (Enter på den fäller ihop paletten ur vägen).
 
-![Färger-rummet - en primärfärg härleder ramper, provkort med kontrastförhållanden och en levande palett](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![Färger-rummet - en primärfärg härleder ramper, provkort med kontrastförhållanden och en levande palett](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 ### Lägg till en färg, ge den sedan ett jobb
 
@@ -91,13 +93,13 @@ Inget i denna flygel skriver något till ditt varumärke. Det är en förhandsvi
 
 Under primärfärgen ser du levande ramper för **Primär / Neutral / Sekundär / Blandning** och provkort för Ljus och Mörk, var och en med sin egen kontrastavläsning - WCAG-förhållandet med APCA-talet `Lc` bredvid. **Klicka på ett steg i Neutral- eller Sekundär-rampen** för att förankra den nyansen i stället för det härledda standardvärdet.
 
-![De fyra rampstegen staplade ovanför ljusa och mörka exempelkort, där varje kort har sitt eget WCAG-kontrastförhållande](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
+![De fyra rampstegen staplade ovanför ljusa och mörka exempelkort, där varje kort har sitt eget WCAG-kontrastförhållande](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
 
 ### Skapa din palett (harmonigenerator)
 
 Fortfarande i samma flygel genererar **Build your palette** matchande accentfärger utifrån din primärfärg. Välj en **Harmony** - **Complementary**, **Adjacent**, **Triad**, **Tetrad** eller **Analogous** (som har ett eget antal **Accents**, 2 till 5, och en nyansvinkel, **Angle**, från 10° till 45°) - och varje kandidat kommer med ett automatiskt genererat, läsbart namn och en **+ Add**-knapp. Att lägga till en placerar den färgen direkt i din palett, ett tryck till en token. *"Your palette, applied"* förhandsgranskar hela uppsättningen på riktig grafik.
 
-![Genererade accenter, var och en med ett färgprov, ett automatgenererat namn, dess hex-kod och en Add-knapp](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
+![Genererade accenter, var och en med ett färgprov, ett automatgenererat namn, dess hex-kod och en Add-knapp](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
 
 ### Att spara en genererad palett
 
@@ -109,9 +111,9 @@ Fortfarande i samma flygel genererar **Build your palette** matchande accentfär
 
 Den högra panelen listar alla färger ditt varumärke har, grupperade (Primary, Neutral, Secondary, Spectrum, Custom, Roles), där varje grupp kan fällas ihop och har sin egen **+ Add**. Nedanför fälls **Colour chart** ut till två vyer av samma färgprov: **Wheel** (OKLCH-hjulet - dra en punkt för att ändra dess färg, klicka på en punkt för att redigera den eller klicka på tomt utrymme för att släppa ett nytt färgprov) och **Gamut**-diagrammet, som visar var det visningsbara intervallet faktiskt tar slut. `#/start?area=color&focus=chart` öppnar kortet direkt, precis som `?wheel` alltid har gjort.
 
-![Färgpaletten, varje grupp fällbar, med nedladdningspillret placerat längs nederkanten](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
+![Färgpaletten, varje grupp fällbar, med nedladdningspillret placerat längs nederkanten](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=1000&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
 
-![OKLCH-hjulet - vinkeln är nyans, avståndet ut är mättnad (chroma) och gråtonerna följer en ljushetsskala nedför sidan](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor%26wheel&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
+![OKLCH-hjulet - vinkeln är nyans, avståndet ut är mättnad (chroma) och gråtonerna följer en ljushetsskala nedför sidan](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400%3Bclick%3A%5Bdata-be-chart%5D%20summary%3Bwait%3A900&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
 
 Klicka på valfritt färgprov för att öppna dess redigerare:
 
@@ -138,6 +140,8 @@ Pillret som flyter längs nederkanten av palettpanelen laddar ner hela paletten 
 
 ## Typsnitt
 
+![The compare stage open under its card, with the search row, the pinned families and the cards folded to a one-line strip](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dtype%26focus%3Dstage&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=bs-type-stage)
+
 Rummet inleds med **fyra rollkort** - de fyra typsnitt som appen, dina verktyg och varje export faktiskt läser av. Varje kort visar vad som just nu fyller den rollen, satt i det typsnittet, med en rad riktig text under:
 
 - **Primary** - brödtext, knappar och alla verktyg.
@@ -147,7 +151,7 @@ Rummet inleds med **fyra rollkort** - de fyra typsnitt som appen, dina verktyg o
 
 Headings, code och italic faller alla tillbaka på primary tills du tilldelar dem, så ett varumärke med ett enda typsnitt behöver inte fatta några beslut här alls. Inget på ett kort genomför något: **Change** (eller **Choose a face** på en tom roll) öppnar **jämförelsevyn**, avgränsad till den rollen.
 
-![Typsnittsrummet - rollkorten och ett levande exempel på varje typsnitt i arbete](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+![Typsnittsrummet - rollkorten och ett levande exempel på varje typsnitt i arbete](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
 
 ### Jämförelsevyn
 
@@ -162,13 +166,13 @@ Oavsett vilket stannar typsnittet på den här enheten, renderas i appen, i dina
 
 **Type roles**-panelen längst ner visar ett levande exempel för varje roll - brödtext och gränssnitt i primary, ett valfritt visningstypsnitt för de översta rubrikerna, en kursiv för betoning, ett typsnitt med fast breddsteg för kod och data - så att du kan se hela uppsättningen fungera tillsammans.
 
-![Type roles-exemplet - rubrik, brödtext, kursiv och kod, var och en satt i det typsnitt rollen slår upp, med typsnittets namn bredvid](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2600&css=.start-head%2C.be-custom-fonts%2C.be-fonts%7Bdisplay%3Anone%7D&walker=1&format=svg&dark=1&filename=bs-type-specimen)
+![Type roles-exemplet - rubrik, brödtext, kursiv och kod, var och en satt i det typsnitt rollen slår upp, med typsnittets namn bredvid](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=1000&dpi=192&waitMs=2600&drive=click%3A%5Bdata-be-typemore-toggle%5D%3Bwait%3A600&cropSelector=.be-typecard-grid&walker=1&format=svg&dark=1&filename=bs-type-specimen)
 
 ## Tokens
 
 Resten av designsystemet, redigerbart utan att röra kod:
 
-![Tokens-rummet - ett reglage för hörnradie plus spacing, sizing, shadows och resten av systemet](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+![Tokens-rummet - ett reglage för hörnradie plus spacing, sizing, shadows och resten av systemet](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=740&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
 
 - **Rounded corners** - ett enda radiereglage (0–1.5rem) som kort, knappar och paneler i hela appen följer.
 - **More tokens** - lägg till och redigera **spacing**, **sizing**, **stroke width**, **opacity**, **rotation**, vanliga **numbers** och **shadows**. Välj en typ, namnge den (*Gutter, Card shadow…*) och ange dess värde. De lagras som standardiserade [design tokens](/info/design-tokens.html) (DTCG) och följer med i ditt varumärke.

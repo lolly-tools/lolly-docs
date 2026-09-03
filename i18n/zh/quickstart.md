@@ -16,7 +16,7 @@ Lolly 把你的规则（配色、字体、版式、逻辑）变成任何人都�
 
 首次运行会把你带到**图库**，上面浮着一个简短的欢迎对话框，提供三条入口：**Make it yours**（位于 `#/start` 的 Brand Studio）、**Bring your design**（拖入一个 Figma、Penpot、InDesign 或 PDF 文件，它会作为可编辑的版面打开，这是通往下文[带入你已有的东西](#2-bring-in-what-you-already-have)最快的路径），以及 **Explore the community tools**，如果英语不是你的语言，下面还有一排语言可选。选第一张卡片，你就落到了[**Brand Studio**](/info/brand-studio.html)。给它起个名字、选一个主色，Lolly 就会由此*推导*出一整套无障碍调色板，包括明暗表面、文字和强调色，用的正是引擎在别处使用的同一套色彩数学。
 
-![Brand Studio 的 Colours 房间：一个主色，以及 Lolly 由它推导出的无障碍调色板](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours) 再选一款字体，不到一分钟你就有了一个能用的品牌。从这里开始，工作室的六个房间（Overview、Colours、Type、Logos、Tokens、Files）让你按任意顺序把它做到你想要的程度，随时回来继续打磨。仪表板的 **Design system** 标签页（`#/d`）以只读方式显示结果，并指回 `#/start`，编辑就发生在那里（除非你用的是品牌锁定版的 Lolly，那里的品牌是固定的，没有什么可改）。
+![Brand Studio 的 Colours 房间：一个主色，以及 Lolly 由它推导出的无障碍调色板](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours) 再选一款字体，不到一分钟你就有了一个能用的品牌。从这里开始，工作室的六个房间（Overview、Colours、Type、Logos、Tokens、Files）让你按任意顺序把它做到你想要的程度，随时回来继续打磨。仪表板的 **Design system** 标签页（`#/d`）以只读方式显示结果，并指回 `#/start`，编辑就发生在那里（除非你用的是品牌锁定版的 Lolly，那里的品牌是固定的，没有什么可改）。
 
 ### 导入你已有的品牌
 

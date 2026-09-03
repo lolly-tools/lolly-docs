@@ -60,9 +60,11 @@ São oito slots opcionais. Clique num slot para adicionar um PNG, SVG, JPEG ou W
 
 ## Colours
 
+![The Colours room after one colour - the two panes back, the generate offer, roles reading in three registers and the pane at one colour](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=840&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A900&format=svg&walker=1&dark=1&filename=bs-colour-first)
+
 A sala mais rica, em dois painéis. O da esquerda é onde você trabalha; o da direita é sua **paleta ao vivo**. Arraste o divisor entre eles para redimensionar (Enter nele recolhe a paleta para fora do caminho).
 
-![A sala Colours - uma cor primária deriva rampas, cartões de espécime com razões de contraste e uma paleta ao vivo](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![A sala Colours - uma cor primária deriva rampas, cartões de espécime com razões de contraste e uma paleta ao vivo](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 ### Adicione uma cor, depois dê a ela uma função
 
@@ -91,13 +93,13 @@ Nada nesta ala grava algo na sua marca. É uma pré-visualização, ao vivo em t
 
 Abaixo da primária você verá rampas ao vivo **Primary / Neutral / Secondary / Blend** e cartões de espécime Light e Dark, cada um trazendo sua própria leitura de contraste - a razão WCAG com o valor APCA `Lc` ao lado. **Clique num passo na rampa Neutral ou Secondary** para fixar aquele tom em vez do padrão derivado.
 
-![As quatro rampas empilhadas acima de cartões de amostra claros e escuros, cada cartão trazendo sua própria taxa de contraste WCAG](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
+![As quatro rampas empilhadas acima de cartões de amostra claros e escuros, cada cartão trazendo sua própria taxa de contraste WCAG](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
 
 ### Monte sua paleta (gerador de harmonia)
 
 Ainda na mesma ala, **Monte sua paleta** gera cores de destaque combinando com sua cor primária. Escolha uma **Harmonia** - **Complementar**, **Adjacente**, **Tríade**, **Tétrade** ou **Análoga** (que traz sua própria contagem de **Destaques**, de 2 a 5, e um **Ângulo** de matiz de 10° a 45°) - e cada candidata chega com um nome legível gerado automaticamente e um botão **+ Adicionar**. Adicionar uma coloca essa cor na sua paleta imediatamente, um clique para um token. *"Sua paleta, aplicada"* mostra o conjunto inteiro em prévia sobre gráficos reais.
 
-![Destaques gerados, cada um com uma amostra, um nome gerado automaticamente, seu hex e um botão Adicionar](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
+![Destaques gerados, cada um com uma amostra, um nome gerado automaticamente, seu hex e um botão Adicionar](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
 
 ### Confirmando uma paleta gerada
 
@@ -109,9 +111,9 @@ Ainda na mesma ala, **Monte sua paleta** gera cores de destaque combinando com s
 
 O painel direito lista todas as cores da sua marca, agrupadas (Primária, Neutra, Secundária, Espectro, Personalizada, Papéis), cada grupo dobrável com seu próprio **+ Adicionar**. Abaixo dele, **Gráfico de cores** se expande em duas visões das mesmas amostras: a **Roda** (a roda OKLCH - arraste um ponto para recolori-lo, clique num ponto para editá-lo ou clique num espaço vazio para soltar uma nova amostra) e o gráfico de **Gama**, que mostra onde a faixa exibível realmente termina. `#/start?area=color&focus=chart` abre o cartão diretamente, assim como `?wheel` sempre faz.
 
-![O painel de paleta, cada grupo dobrável, com a pílula de download fixada na borda inferior](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
+![O painel de paleta, cada grupo dobrável, com a pílula de download fixada na borda inferior](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=1000&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
 
-![A roda OKLCH - o ângulo é o matiz, a distância do centro é a croma e os cinzas seguem um trilho de luminosidade na lateral](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor%26wheel&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
+![A roda OKLCH - o ângulo é o matiz, a distância do centro é a croma e os cinzas seguem um trilho de luminosidade na lateral](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400%3Bclick%3A%5Bdata-be-chart%5D%20summary%3Bwait%3A900&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
 
 Clique em qualquer amostra para abrir seu editor:
 
@@ -138,6 +140,8 @@ A pílula flutuante fixada na borda inferior do painel de paleta baixa a paleta 
 
 ## Tipografia
 
+![The compare stage open under its card, with the search row, the pinned families and the cards folded to a one-line strip](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dtype%26focus%3Dstage&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=bs-type-stage)
+
 A sala começa com **quatro cartões de papel** - as quatro fontes que o app, suas ferramentas e toda exportação de fato leem. Cada cartão mostra o que atende esse papel agora, definido nessa fonte, com uma linha de texto real embaixo:
 
 - **Primária** - texto do corpo, botões e todas as ferramentas.
@@ -147,7 +151,7 @@ A sala começa com **quatro cartões de papel** - as quatro fontes que o app, su
 
 Títulos, código e itálico caem de volta na primária até você atribuí-los, então uma marca de fonte única não exige nenhuma decisão aqui. Nada num cartão grava algo: **Trocar** (ou **Escolher uma fonte** num papel vazio) abre o **palco de comparação** restrito a esse papel.
 
-![A sala Tipografia - os cartões de papel e uma amostra ao vivo de cada fonte em ação](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+![A sala Tipografia - os cartões de papel e uma amostra ao vivo de cada fonte em ação](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
 
 ### O palco de comparação
 
@@ -162,13 +166,13 @@ De qualquer forma a fonte permanece neste dispositivo, é renderizada no app, na
 
 O painel **Papéis de tipografia** no rodapé mostra uma amostra ao vivo de cada papel - corpo e interface na primária, uma fonte de destaque opcional para os títulos principais, um itálico para ênfase, uma monoespaçada para código e dados - assim você vê o conjunto inteiro funcionando junto.
 
-![A amostra de Papéis de tipografia - título, corpo, itálico e código, cada um na fonte para a qual esse papel resolve, com o nome da fonte ao lado](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2600&css=.start-head%2C.be-custom-fonts%2C.be-fonts%7Bdisplay%3Anone%7D&walker=1&format=svg&dark=1&filename=bs-type-specimen)
+![A amostra de Papéis de tipografia - título, corpo, itálico e código, cada um na fonte para a qual esse papel resolve, com o nome da fonte ao lado](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=1000&dpi=192&waitMs=2600&drive=click%3A%5Bdata-be-typemore-toggle%5D%3Bwait%3A600&cropSelector=.be-typecard-grid&walker=1&format=svg&dark=1&filename=bs-type-specimen)
 
 ## Tokens
 
 O restante do sistema de design, editável sem tocar em código:
 
-![A sala Tokens - um controle deslizante de raio de canto mais espaçamento, dimensionamento, sombras e o resto do sistema](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+![A sala Tokens - um controle deslizante de raio de canto mais espaçamento, dimensionamento, sombras e o resto do sistema](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=740&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
 
 - **Cantos arredondados** - um único controle deslizante de raio (0-1,5rem) que cartões, botões e painéis no app inteiro seguem.
 - **Mais tokens** - adicione e edite **espaçamento**, **dimensionamento**, **espessura de traço**, **opacidade**, **rotação**, **números** simples e **sombras**. Escolha um tipo, dê um nome (*Espaçamento, Sombra do cartão...*) e defina seu valor. Eles são armazenados como [tokens de design](/info/design-tokens.html) padrão (DTCG) e viajam com sua marca.

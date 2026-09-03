@@ -60,9 +60,11 @@ Overview - це кімната, у яку ви потрапляєте одраз
 
 ## Colours (Кольори)
 
+![The Colours room after one colour - the two panes back, the generate offer, roles reading in three registers and the pane at one colour](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=840&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A900&format=svg&walker=1&dark=1&filename=bs-colour-first)
+
 Найбагатша кімната, у двох панелях. Ліва - місце, де ви працюєте; права - ваша **жива палітра**. Перетягніть роздільник між ними, щоб змінити розмір (Enter на ньому згортає палітру з дороги).
 
-![Кімната Colours - основний колір породжує градації, зразкові картки з коефіцієнтами контрасту та жива палітра](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![Кімната Colours - основний колір породжує градації, зразкові картки з коефіцієнтами контрасту та жива палітра](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 ### Додайте колір, а тоді дайте йому роль
 
@@ -91,13 +93,13 @@ Overview - це кімната, у яку ви потрапляєте одраз
 
 Під основним кольором ви побачите живі градації **Primary / Neutral / Secondary / Blend** та зразкові картки Light і Dark, кожна з власним показником контрасту - коефіцієнт WCAG із показником APCA `Lc` поруч. **Клацніть крок у градації Neutral або Secondary**, щоб закріпити цей відтінок замість похідного типового.
 
-![Чотири рампи, розташовані над картками зразків у світлому й темному варіантах, кожна картка з власним коефіцієнтом контрастності WCAG](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
+![Чотири рампи, розташовані над картками зразків у світлому й темному варіантах, кожна картка з власним коефіцієнтом контрастності WCAG](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
 
 ### Створіть свою палітру (генератор гармоній)
 
 Ще в тому самому крилі **Build your palette** генерує відповідні акцентні кольори на основі вашого основного. Оберіть **Harmony** - **Complementary**, **Adjacent**, **Triad**, **Tetrad** або **Analogous** (який має власну кількість **Accents**, від 2 до 5, і **Angle** відтінку від 10° до 45°) - і кожен варіант надходить із автоматично згенерованою зрозумілою назвою та кнопкою **+ Add**. Додавання одразу додає цей колір до вашої палітри, одне натискання - один токен. *"Your palette, applied"* показує весь набір у дії на реальній графіці.
 
-![Згенеровані акценти, кожен зі зразком кольору, автоматично згенерованою назвою, hex-кодом і кнопкою Add](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
+![Згенеровані акценти, кожен зі зразком кольору, автоматично згенерованою назвою, hex-кодом і кнопкою Add](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
 
 ### Застосування згенерованої палітри
 
@@ -109,9 +111,9 @@ Overview - це кімната, у яку ви потрапляєте одраз
 
 Права панель перелічує кожен колір вашого бренду, згруповані (Primary, Neutral, Secondary, Spectrum, Custom, Roles), кожна група згортається і має власну кнопку **+ Add**. Нижче панель **Colour chart** розгортається у два перегляди тих самих зразків: **Wheel** (колесо OKLCH - перетягніть точку, щоб перефарбувати її, натисніть точку, щоб редагувати, або натисніть порожнє місце, щоб додати новий зразок) і діаграму **Gamut**, яка показує, де насправді закінчується діапазон кольорів, що відображаються. `#/start?area=color&focus=chart` відкриває картку напряму, як і завжди робить `?wheel`.
 
-![Панель палітри, кожна група згортається, з таблеткою завантаження, закріпленою внизу](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
+![Панель палітри, кожна група згортається, з таблеткою завантаження, закріпленою внизу](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=1000&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
 
-![Колесо OKLCH - кут відповідає відтінку, відстань від центру - насиченості, а сірі кольори рухаються вздовж напрямної яскравості збоку](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor%26wheel&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
+![Колесо OKLCH - кут відповідає відтінку, відстань від центру - насиченості, а сірі кольори рухаються вздовж напрямної яскравості збоку](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400%3Bclick%3A%5Bdata-be-chart%5D%20summary%3Bwait%3A900&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
 
 Натисніть будь-який зразок, щоб відкрити його редактор:
 
@@ -138,6 +140,8 @@ Overview - це кімната, у яку ви потрапляєте одраз
 
 ## Шрифти
 
+![The compare stage open under its card, with the search row, the pinned families and the cards folded to a one-line strip](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dtype%26focus%3Dstage&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=bs-type-stage)
+
 У цьому розділі на першому місці **чотири рольові картки** - чотири гарнітури, які насправді читає застосунок, ваші інструменти та кожен експорт. Кожна картка показує, що зараз обслуговує цю роль, набране цією гарнітурою, з рядком реального тексту під нею:
 
 - **Primary** - основний текст, кнопки та кожен інструмент.
@@ -147,7 +151,7 @@ Overview - це кімната, у яку ви потрапляєте одраз
 
 Headings, code та italic за замовчуванням успадковують primary, доки ви їх не призначите, тож бренду з одним шрифтом тут узагалі не потрібно нічого вирішувати. Ніщо на картці нічого не застосовує одразу: **Change** (або **Choose a face** для порожньої ролі) відкриває **сцену порівняння**, обмежену цією роллю.
 
-![Розділ Type - рольові картки та живий зразок кожної гарнітури в дії](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+![Розділ Type - рольові картки та живий зразок кожної гарнітури в дії](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
 
 ### Сцена порівняння
 
@@ -162,13 +166,13 @@ Headings, code та italic за замовчуванням успадковую�
 
 Панель **Type roles** внизу показує живий зразок кожної ролі - основний текст та інтерфейс у primary, необов'язкова гарнітура для верхніх заголовків, курсив для виділення, моно для коду й даних - тож можна побачити весь набір у роботі разом.
 
-![Зразок Type roles - заголовок, основний текст, курсив і код, кожен набраний гарнітурою, до якої розв'язується ця роль, з назвою гарнітури поруч](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2600&css=.start-head%2C.be-custom-fonts%2C.be-fonts%7Bdisplay%3Anone%7D&walker=1&format=svg&dark=1&filename=bs-type-specimen)
+![Зразок Type roles - заголовок, основний текст, курсив і код, кожен набраний гарнітурою, до якої розв'язується ця роль, з назвою гарнітури поруч](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=1000&dpi=192&waitMs=2600&drive=click%3A%5Bdata-be-typemore-toggle%5D%3Bwait%3A600&cropSelector=.be-typecard-grid&walker=1&format=svg&dark=1&filename=bs-type-specimen)
 
 ## Токени
 
 Решта дизайн-системи, яку можна редагувати без звернення до коду:
 
-![Розділ Tokens - повзунок радіуса кутів плюс відступи, розміри, тіні та решта системи](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+![Розділ Tokens - повзунок радіуса кутів плюс відступи, розміри, тіні та решта системи](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=740&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
 
 - **Rounded corners** - один повзунок радіуса (0–1.5rem), якому підпорядковуються картки, кнопки й панелі в усьому застосунку.
 - **More tokens** - додавайте та редагуйте **spacing**, **sizing**, **stroke width**, **opacity**, **rotation**, звичайні **numbers** і **shadows**. Оберіть тип, дайте йому назву (*Gutter, Card shadow…*) і встановіть значення. Вони зберігаються як стандартні [дизайн-токени](/info/design-tokens.html) (DTCG) і подорожують разом із вашим брендом.

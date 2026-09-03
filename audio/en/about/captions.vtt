@@ -12,608 +12,692 @@ Deterministic, fast, open-source platform
 00:00:11.224 --> 00:00:13.269
 - bring your own brand.
 
-00:00:14.415 --> 00:00:16.741
+00:00:14.038 --> 00:00:15.843
+Try it now.
+
+00:00:16.638 --> 00:00:19.068
+lolly-tools runs in the browser and
+
+00:00:19.124 --> 00:00:21.569
+installs as an app.
+
+00:00:22.367 --> 00:00:25.125
+Nothing you make ever leaves your device
+
+00:00:25.183 --> 00:00:26.969
+without your say.
+
+00:00:27.767 --> 00:00:30.522
+lolly-art is the same app on a blank
+
+00:00:30.584 --> 00:00:31.719
+brand.
+
+00:00:32.489 --> 00:00:35.366
+Desktop, mobile and command-line builds
+
+00:00:35.476 --> 00:00:37.919
+are on the releases page.
+
+00:00:38.714 --> 00:00:40.468
+Read first.
+
+00:00:41.239 --> 00:00:43.181
+The platform is explained at
+
+00:00:43.242 --> 00:00:46.948
+lolly-tools/info, with one door each for
+
+00:00:47.009 --> 00:00:50.101
+creators, builders and operators, a
+
+00:00:50.163 --> 00:00:53.309
+quickstart, and the trust pages that back
+
+00:00:53.395 --> 00:00:55.544
+each claim with the mechanism that
+
+00:00:55.604 --> 00:00:57.294
+enforces it.
+
+00:00:58.084 --> 00:01:01.193
+We built Lolly for ourselves.
+
+00:01:01.993 --> 00:01:05.329
+SUSE needed thousands of on-brand files,
+
+00:01:05.398 --> 00:01:08.552
+each with its name sealed inside, made
+
+00:01:08.588 --> 00:01:10.903
+without handing anything to outside
+
+00:01:10.967 --> 00:01:12.345
+services.
+
+00:01:13.136 --> 00:01:16.088
+So we built a tool that does all of it on
+
+00:01:16.140 --> 00:01:19.418
+the device, and released it as open
+
+00:01:19.529 --> 00:01:22.370
+source, like everything else we make.
+
+00:01:23.146 --> 00:01:26.286
+We keep maintaining it because we use it
+
+00:01:26.349 --> 00:01:27.694
+every day.
+
+00:01:28.469 --> 00:01:31.317
+There is no obligation: everything here
+
+00:01:31.380 --> 00:01:33.919
+works with or without us.
+
+00:01:35.065 --> 00:01:37.391
 What is Lolly Tools
 
-00:00:17.681 --> 00:00:20.950
+00:01:38.331 --> 00:01:41.600
 A platform that hosts a library of small,
 
-00:00:21.039 --> 00:00:24.208
+00:01:41.689 --> 00:01:44.858
 focused tools that produce deterministic
 
-00:00:24.269 --> 00:00:26.094
+00:01:44.919 --> 00:01:46.744
 creative assets.
 
-00:00:26.882 --> 00:00:29.893
+00:01:47.532 --> 00:01:50.543
 Users need no design skill, no vendor
 
-00:00:29.954 --> 00:00:33.242
+00:01:50.604 --> 00:01:53.892
 lock-in and no internet to render, and the
 
-00:00:33.304 --> 00:00:36.132
+00:01:53.954 --> 00:01:56.782
 platform is designed to add premium
 
-00:00:36.192 --> 00:00:39.138
+00:01:56.842 --> 00:01:59.788
 production-quality rendering certainty to
 
-00:00:39.206 --> 00:00:40.995
+00:01:59.856 --> 00:02:01.645
 variable data.
 
-00:00:41.749 --> 00:00:45.161
+00:02:02.399 --> 00:02:05.811
 It's also your personal DAM - every logo,
 
-00:00:45.235 --> 00:00:47.976
+00:02:05.885 --> 00:02:08.626
 palette, font and upload lives in an
 
-00:00:48.058 --> 00:00:50.863
+00:02:08.708 --> 00:02:11.513
 on-device catalog, hydrated and
 
-00:00:50.968 --> 00:00:53.568
+00:02:11.618 --> 00:02:14.218
 supercharged by your design system and
 
-00:00:53.632 --> 00:00:54.819
+00:02:14.282 --> 00:02:15.469
 tools.
 
-00:00:55.598 --> 00:00:58.718
+00:02:16.248 --> 00:02:19.368
 Tools can be used via a:
 
-00:00:59.510 --> 00:01:02.538
+00:02:20.160 --> 00:02:23.188
 Web app - installable offline progressive
 
-00:01:02.606 --> 00:01:03.546
+00:02:23.256 --> 00:02:24.196
 web app
 
-00:01:04.588 --> 00:01:08.843
+00:02:25.238 --> 00:02:29.493
 Mobile and Desktop installable packages.
 
-00:01:09.225 --> 00:01:15.400
+00:02:29.875 --> 00:02:36.050
 and of course, the Command Line - plus a full-screen terminal UI «TUI».
 
-00:01:16.507 --> 00:01:20.443
+00:02:37.157 --> 00:02:41.093
 Why deploy Lolly in your organization?
 
-00:01:21.228 --> 00:01:23.905
+00:02:41.878 --> 00:02:44.555
 Hard-coded constraints of design
 
-00:01:23.961 --> 00:01:25.418
+00:02:44.611 --> 00:02:46.068
 decisions.
 
-00:01:25.800 --> 00:01:34.450
+00:02:46.450 --> 00:02:55.100
 Free, open-source platform - the engine, every shell, the schemas and docs are MPL-2 point 0.
 
-00:01:34.800 --> 00:01:46.125
+00:02:55.450 --> 00:03:06.775
 Tools and assets are just data: bring your own brand content «SUSE's tool & asset packs are proprietary - see Licensing & structure».
 
-00:01:46.872 --> 00:01:50.220
+00:03:07.522 --> 00:03:10.870
 Unlimited scale, No SaaS fees.
 
-00:01:51.023 --> 00:01:54.849
+00:03:11.673 --> 00:03:15.499
 Low-or-Zero server costs: Lolly uses local
 
-00:01:54.911 --> 00:01:56.669
+00:03:15.561 --> 00:03:17.319
 device compute.
 
-00:01:57.419 --> 00:02:00.671
+00:03:18.069 --> 00:03:21.321
 Builds for Mac, Windows, Linux, iOS,
 
-00:02:00.731 --> 00:02:03.395
+00:03:21.381 --> 00:03:24.045
 Android, web and the command line.
 
-00:02:03.775 --> 00:02:09.850
+00:03:24.425 --> 00:03:30.500
 Huge format support - 37 in, 40 out «21 round-trip».
 
-00:02:10.200 --> 00:02:37.775
+00:03:30.850 --> 00:03:58.425
 Export: SVG · EPS · CMYK EPS · EMF · DXF · PDF · Print PDF «CMYK» · PPTX · PNG · Animated PNG · JPEG · WebP · Animated WebP · AVIF · TIFF · CMYK TIFF · ICO · PSD · EXR · Radiance HDR · MP4 · WebM · GIF · Animated SVG · MP3 · M4A · WAV · Opus · HTML · MD · TXT · CSV · JSON · ICS · VCF · ZIP.
 
-00:02:38.125 --> 00:02:53.550
+00:03:58.775 --> 00:04:14.200
 Import adds layered PSD · PSB · XCF, HEIC, MOV · Lottie, GLB · glTF, audio & tracker «OGG · FLAC · MIDI · MOD» and live designs from Illustrator · InDesign · Figma · Penpot.
 
-00:02:53.900 --> 00:03:00.950
+00:04:14.550 --> 00:04:21.600
 EXR and Radiance HDR are floating-point HDR masters «via host-codec».
 
-00:03:01.300 --> 00:03:12.725
+00:04:21.950 --> 00:04:33.375
 Plus design tokens & palettes - import DTCG and Tokens Studio; export DTCG · ASE · GPL · CSS variables.
 
-00:03:13.075 --> 00:03:24.950
+00:04:33.725 --> 00:04:45.600
 Print-ready output: CMYK PDF & TIFF, physical units, bleed, crop/registration marks, colour bars and press «FOGRA/SWOP» profiles.
 
-00:03:25.686 --> 00:03:29.594
+00:04:46.336 --> 00:04:50.244
 Infinite deterministic media creation.
 
-00:03:29.975 --> 00:03:37.775
+00:04:50.625 --> 00:04:58.425
 Renders and exports 100% offline - the shells need no network at render time.
 
-00:03:38.125 --> 00:03:49.975
+00:04:58.775 --> 00:05:10.625
 «The optional hosted services - MCP agent endpoint, Content Credentials CA - are separate opt-ins; see docs/server-surface-md.»
 
-00:03:50.737 --> 00:03:53.568
+00:05:11.387 --> 00:05:14.218
 Full command-line support.
 
-00:03:54.345 --> 00:03:57.417
+00:05:14.995 --> 00:05:18.067
 Save tokens, tell your model to try Lolly
 
-00:03:57.510 --> 00:03:58.595
+00:05:18.160 --> 00:05:19.245
 first!
 
-00:03:59.726 --> 00:04:01.637
+00:05:20.376 --> 00:05:22.287
 What this is not
 
-00:04:02.597 --> 00:04:05.726
+00:05:23.247 --> 00:05:26.376
 A general-purpose design tool
 
-00:04:06.618 --> 00:04:09.095
+00:05:27.268 --> 00:05:29.745
 It does include an open canvas - the
 
-00:04:09.153 --> 00:04:12.240
+00:05:29.803 --> 00:05:32.890
 Design tool - but even there, colours,
 
-00:04:12.305 --> 00:04:14.829
+00:05:32.955 --> 00:05:35.479
 type and assets conform to the brand
 
-00:04:14.889 --> 00:04:18.186
+00:05:35.539 --> 00:05:38.836
 globals, so free arrangement never becomes
 
-00:04:18.276 --> 00:04:20.120
+00:05:38.926 --> 00:05:40.770
 off-brand output.
 
-00:04:20.915 --> 00:04:24.115
+00:05:41.565 --> 00:05:44.765
 See docs/positioning-md for the full
 
-00:04:24.177 --> 00:04:26.069
+00:05:44.827 --> 00:05:46.719
 market comparison.
 
-00:04:27.204 --> 00:04:29.443
+00:05:47.854 --> 00:05:50.093
 Repository layout
 
-00:04:30.438 --> 00:04:33.586
+00:05:51.088 --> 00:05:54.236
 lolly is an umbrella repo: the app core
 
-00:04:33.646 --> 00:04:36.682
+00:05:54.296 --> 00:05:57.332
 lives here, and each shippable unit is a
 
-00:04:36.753 --> 00:04:38.554
+00:05:57.403 --> 00:05:59.204
 git submodule hosted under
 
-00:04:38.617 --> 00:04:41.245
+00:05:59.267 --> 00:06:01.895
 github-com/lolly-tools.
 
-00:04:42.010 --> 00:04:45.212
+00:06:02.660 --> 00:06:05.862
 Every submodule is mounted at its original
 
-00:04:45.290 --> 00:04:48.635
+00:06:05.940 --> 00:06:09.285
 path, so the monorepo builds and runs
 
-00:04:48.701 --> 00:04:50.844
+00:06:09.351 --> 00:06:11.494
 exactly as before.
 
-00:04:51.622 --> 00:04:54.443
+00:06:12.272 --> 00:06:15.093
 Code example omitted.
 
-00:04:54.825 --> 00:05:00.500
+00:06:15.475 --> 00:06:21.150
 Critical separation: engine/ knows nothing about SUSE.
 
-00:05:00.850 --> 00:05:19.325
+00:06:21.500 --> 00:06:39.975
 Brand-specific content lives in brand packs «brands/suse - private; brands/lolly-start - the blank starter brand», brand-agnostic tools in community/; the shells, services, engine and docs are MPL-2 point 0.
 
-00:05:19.675 --> 00:05:39.000
+00:06:40.325 --> 00:06:59.650
 The repo-root tools/ and catalog/ paths every script and shell consumes are profile views built by scripts/use-profile-ts from profiles-json - switch brands with npm run profile:suse / npm run profile:start.
 
-00:05:39.350 --> 00:05:48.875
+00:07:00.000 --> 00:07:09.525
 Keeping each unit in its own repo lets it ship on its own cadence while the umbrella pins a known-good combination.
 
-00:05:49.980 --> 00:05:52.306
+00:07:10.630 --> 00:07:12.956
 Architectural commitments
 
-00:05:53.230 --> 00:05:56.219
+00:07:13.880 --> 00:07:16.869
 These decisions are settled.
 
-00:05:56.981 --> 00:05:59.755
+00:07:17.631 --> 00:07:20.405
 Changing any of them is a major
 
-00:05:59.834 --> 00:06:04.475
+00:07:20.484 --> 00:07:25.125
 undertaking: Declarative tools.
 
-00:06:04.825 --> 00:06:09.750
+00:07:25.475 --> 00:07:30.400
 A tool is a manifest + template + assets.
 
-00:06:10.100 --> 00:06:16.400
+00:07:30.750 --> 00:07:37.050
 Inputs are declared in the manifest, not inferred from template tokens.
 
-00:06:16.750 --> 00:06:26.575
+00:07:37.400 --> 00:07:47.225
 hooks-js is an optional escape hatch for tools that need imperative behavior «chart-js rendering, QR encoding».
 
-00:06:27.320 --> 00:06:30.459
+00:07:47.970 --> 00:07:51.109
 Tools and assets are data, not bundled
 
-00:06:30.543 --> 00:06:31.668
+00:07:51.193 --> 00:07:52.318
 code.
 
-00:06:32.442 --> 00:06:35.504
+00:07:53.092 --> 00:07:56.154
 Clients sync them from a signed manifest
 
-00:06:35.586 --> 00:06:36.993
+00:07:56.236 --> 00:07:57.643
 URL.
 
-00:06:37.801 --> 00:06:40.912
+00:07:58.451 --> 00:08:01.562
 New tools and assets don't require app
 
-00:06:40.954 --> 00:06:42.218
+00:08:01.604 --> 00:08:02.868
 updates.
 
-00:06:42.986 --> 00:06:45.343
+00:08:03.636 --> 00:08:05.993
 Capability bridge.
 
-00:06:46.121 --> 00:06:49.453
+00:08:06.771 --> 00:08:10.103
 Tools never touch the filesystem, network
 
-00:06:49.500 --> 00:06:52.718
+00:08:10.150 --> 00:08:13.368
 or DOM-outside-template directly.
 
-00:06:53.495 --> 00:06:56.418
+00:08:14.145 --> 00:08:17.068
 They call a versioned host.
 
-00:06:57.195 --> 00:06:59.744
+00:08:17.845 --> 00:08:20.394
 * API.
 
-00:07:00.500 --> 00:07:03.131
+00:08:21.150 --> 00:08:23.781
 This is what makes the same tool work in
 
-00:07:03.190 --> 00:07:05.795
+00:08:23.840 --> 00:08:26.445
 browser, Tauri and CLI.
 
-00:07:06.585 --> 00:07:09.843
+00:08:27.235 --> 00:08:30.493
 Stable asset ID'S forever.
 
-00:07:10.642 --> 00:07:15.144
+00:08:31.292 --> 00:08:35.794
 suse/logo/primary is a contract.
 
-00:07:15.947 --> 00:07:18.894
+00:08:36.597 --> 00:08:39.544
 Never reuse, never rename.
 
-00:07:19.689 --> 00:07:22.423
+00:08:40.339 --> 00:08:43.073
 Version in the manifest, never in the
 
-00:07:22.498 --> 00:07:23.544
+00:08:43.148 --> 00:08:44.194
 path.
 
-00:07:23.925 --> 00:07:27.575
+00:08:44.575 --> 00:08:48.225
 URL mode is first-class.
 
-00:07:27.925 --> 00:07:32.925
+00:08:48.575 --> 00:08:53.575
 Every input must be expressible as URL params.
 
-00:07:33.275 --> 00:07:40.225
+00:08:53.925 --> 00:09:00.875
 CLI mode = headless DOM «jsdom» + URL mode + file output.
 
-00:07:40.575 --> 00:07:43.200
+00:09:01.225 --> 00:09:03.850
 One render path.
 
-00:07:43.550 --> 00:07:46.675
+00:09:04.200 --> 00:09:07.325
 Storage via the bridge.
 
-00:07:47.025 --> 00:07:51.700
+00:09:07.675 --> 00:09:12.350
 Tools call host-state-save«» / host-state-load«».
 
-00:07:52.050 --> 00:07:58.125
+00:09:12.700 --> 00:09:18.775
 The bridge picks IndexedDB «web», filesystem «Tauri» or memory «CLI».
 
-00:07:58.475 --> 00:08:01.500
+00:09:19.125 --> 00:09:22.150
 Tools never know which.
 
-00:08:02.252 --> 00:08:04.643
+00:09:22.902 --> 00:09:25.293
 Maturity tags.
 
-00:08:05.422 --> 00:08:08.308
+00:09:26.072 --> 00:09:28.958
 Every tool declares status: official |
 
-00:08:08.371 --> 00:08:10.943
+00:09:29.021 --> 00:09:31.593
 community | experimental.
 
-00:08:11.719 --> 00:08:14.283
+00:09:32.369 --> 00:09:34.933
 Experimental tools watermark their
 
-00:08:14.345 --> 00:08:15.669
+00:09:34.995 --> 00:09:36.319
 exports.
 
-00:08:16.435 --> 00:08:18.952
+00:09:37.085 --> 00:09:39.602
 This is the structural answer to the
 
-00:08:19.007 --> 00:08:21.994
+00:09:39.657 --> 00:09:42.644
 "brand approved by default" risk.
 
-00:08:23.129 --> 00:08:24.964
+00:09:43.779 --> 00:09:45.614
 Getting started
 
-00:08:25.959 --> 00:08:29.993
+00:09:46.609 --> 00:09:50.643
 Fresh macOS or openSUSE machine?
 
-00:08:30.787 --> 00:08:33.518
+00:09:51.437 --> 00:09:54.168
 One command does it all:
 
-00:08:34.297 --> 00:08:37.118
+00:09:54.947 --> 00:09:57.768
 Code example omitted.
 
-00:08:37.500 --> 00:08:51.400
+00:09:58.150 --> 00:10:12.050
 /setup-sh installs the prerequisites «git, Node», checks out the submodules, runs npm install and builds a content profile - then tells you what to run next.
 
-00:08:51.750 --> 00:08:56.725
+00:10:12.400 --> 00:10:17.375
 SUSE devs add --suse to mount the private brand pack.
 
-00:08:57.075 --> 00:09:03.250
+00:10:17.725 --> 00:10:23.900
 Full details, the manual path and troubleshooting are in INSTALL-md.
 
-00:09:03.982 --> 00:09:07.068
+00:10:24.632 --> 00:10:27.718
 Prefer to do it by hand?
 
-00:09:07.830 --> 00:09:09.875
+00:10:28.480 --> 00:10:30.525
 Because the shippable units are
 
-00:09:09.964 --> 00:09:12.844
+00:10:30.614 --> 00:10:33.494
 submodules, clone recursively:
 
-00:09:13.622 --> 00:09:16.443
+00:10:34.272 --> 00:10:37.093
 Code example omitted.
 
-00:09:16.825 --> 00:09:32.425
+00:10:37.475 --> 00:10:53.075
 Once it is running, docs/make-something-md walks a first render in about 60 seconds «no account, nothing to configure», and docs/quickstart-md covers making Lolly wear your own brand.
 
-00:09:32.775 --> 00:09:35.600
+00:10:53.425 --> 00:10:56.250
 Content profiles.
 
-00:09:35.950 --> 00:09:55.675
+00:10:56.600 --> 00:11:16.325
 tools/ and catalog/ are gitignored views assembled from the mounted packs «profiles-json»: the private brands/suse pack «skipped automatically on clone if you don't have access - it's update = none» plus the public community/ tools.
 
-00:09:56.025 --> 00:10:04.025
+00:11:16.675 --> 00:11:24.675
 Without SUSE access you land on the blank lolly-start brand and everything still builds and runs.
 
-00:10:04.375 --> 00:10:06.975
+00:11:25.025 --> 00:11:27.625
 Switch explicitly:
 
-00:10:07.722 --> 00:10:10.543
+00:11:28.372 --> 00:11:31.193
 Code example omitted.
 
-00:10:10.925 --> 00:10:19.925
+00:11:31.575 --> 00:11:40.575
 See docs/authoring-tools-md to build your first tool, and Development below for the submodule workflow.
 
-00:10:20.275 --> 00:10:24.625
+00:11:40.925 --> 00:11:45.275
 Writing a tool without cloning the platform?
 
-00:10:24.975 --> 00:10:44.050
+00:11:45.625 --> 00:12:04.700
 npm i -D @lolly-tools/core installs the tool-author SDK from npm: the HostV1 contract types, the manifest validator and a mock host for testing hooks headlessly «see packages/core/README-md».
 
-00:10:44.400 --> 00:10:56.925
+00:12:05.050 --> 00:12:17.575
 A new brand pack can be generated from design tokens with npm run ingest:brand «DTCG / Tokens Studio / Penpot exports».
 
-00:10:58.033 --> 00:10:59.145
+00:12:18.683 --> 00:12:19.795
 The CLI
 
-00:11:00.115 --> 00:11:02.516
+00:12:20.765 --> 00:12:23.166
 lolly runs any tool from the terminal
 
-00:11:02.614 --> 00:11:05.173
+00:12:23.264 --> 00:12:25.823
 through the same engine and the same
 
-00:11:05.233 --> 00:11:08.838
+00:12:25.883 --> 00:12:29.488
 render path as the web shell - it is URL
 
-00:11:08.914 --> 00:11:11.811
+00:12:29.564 --> 00:12:32.461
 mode under a different transport, so
 
-00:11:11.876 --> 00:11:16.295
+00:12:32.526 --> 00:12:36.945
 --url=x is the value the app reads from ?
 
-00:11:17.105 --> 00:11:19.768
+00:12:37.755 --> 00:12:40.418
 url=x.
 
-00:11:20.540 --> 00:11:23.209
+00:12:41.190 --> 00:12:43.859
 That makes it the build-pipeline, CI and
 
-00:11:23.271 --> 00:11:26.903
+00:12:43.921 --> 00:12:47.553
 scripting surface: generate an OG card at
 
-00:11:26.964 --> 00:11:31.716
+00:12:47.614 --> 00:12:52.366
 build time, fan a CSV out into 400 badges,
 
-00:11:31.782 --> 00:11:35.319
+00:12:52.432 --> 00:12:55.969
 render-check the whole catalog as a gate.
 
-00:11:36.097 --> 00:11:38.918
+00:12:56.747 --> 00:12:59.568
 Code example omitted.
 
-00:11:39.690 --> 00:11:42.514
+00:13:00.340 --> 00:13:03.164
 Every export carries Content Credentials
 
-00:11:42.575 --> 00:11:45.619
+00:13:03.225 --> 00:13:06.269
 by default, signed on-device.
 
-00:11:46.388 --> 00:11:49.869
+00:13:07.038 --> 00:13:10.519
 To sign as you - so a recipient who pins
 
-00:11:49.931 --> 00:11:52.738
+00:13:10.581 --> 00:13:13.388
 your root reads Verified with your address
 
-00:11:52.828 --> 00:11:55.552
+00:13:13.478 --> 00:13:16.202
 on it rather than an anonymous signer -
 
-00:11:55.612 --> 00:11:58.445
+00:13:16.262 --> 00:13:19.095
 point it at your own key and certificate
 
-00:11:58.505 --> 00:11:59.595
+00:13:19.155 --> 00:13:20.245
 chain:
 
-00:12:00.372 --> 00:12:03.193
+00:13:21.022 --> 00:13:23.843
 Code example omitted.
 
-00:12:03.974 --> 00:12:07.652
+00:13:24.624 --> 00:13:28.302
 Full command surface in docs/cli-md; the
 
-00:12:07.742 --> 00:12:10.434
+00:13:28.392 --> 00:13:31.084
 setup path from a clean machine to a
 
-00:12:10.495 --> 00:12:13.409
+00:13:31.145 --> 00:13:34.059
 working, trusted signing identity is
 
-00:12:13.484 --> 00:12:16.119
+00:13:34.134 --> 00:13:36.769
 docs/cli-signing-md.
 
-00:12:17.247 --> 00:12:18.578
+00:13:37.897 --> 00:13:39.228
 Development
 
-00:12:19.488 --> 00:12:21.794
+00:13:40.138 --> 00:13:42.444
 New contributor?
 
-00:12:22.572 --> 00:12:25.321
+00:13:43.222 --> 00:13:45.971
 Start at CONTRIBUTING-md - it routes you
 
-00:12:25.408 --> 00:12:27.751
+00:13:46.058 --> 00:13:48.401
 through the recursive clone, content
 
-00:12:27.811 --> 00:12:32.415
+00:13:48.461 --> 00:13:53.065
 profiles, the tools//catalog/ symlink-view
 
-00:12:32.476 --> 00:12:35.477
+00:13:53.126 --> 00:13:56.127
 trap, which repo owns which file and the
 
-00:12:35.537 --> 00:12:38.595
+00:13:56.187 --> 00:13:59.245
 commands to run before a PR.
 
-00:12:39.363 --> 00:12:42.572
+00:14:00.013 --> 00:14:03.222
 Auditors and anyone touching a parser or a
 
-00:12:42.634 --> 00:12:44.544
+00:14:03.284 --> 00:14:05.194
 crypto module should read
 
-00:12:44.615 --> 00:12:47.038
+00:14:05.265 --> 00:14:07.688
 docs/threat-model-md and
 
-00:12:47.099 --> 00:12:49.944
+00:14:07.749 --> 00:14:10.594
 docs/parser-inventory-md.
 
-00:12:50.325 --> 00:12:57.500
+00:14:10.975 --> 00:14:18.150
 Lolly is an umbrella repo composed of git submodules «see Repository layout».
 
-00:12:57.850 --> 00:13:03.900
+00:14:18.500 --> 00:14:24.550
 That changes two things: how you clone, and where each change is committed.
 
-00:13:04.647 --> 00:13:06.967
+00:14:25.297 --> 00:14:27.617
 Clone / update
 
-00:13:07.947 --> 00:13:10.768
+00:14:28.597 --> 00:14:31.418
 Code example omitted.
 
-00:13:11.526 --> 00:13:14.149
+00:14:32.176 --> 00:14:34.799
 Each submodule is checked out on its own
 
-00:13:14.210 --> 00:13:16.501
+00:14:34.860 --> 00:14:37.151
 main, tracking its repo under
 
-00:13:16.564 --> 00:13:20.169
+00:14:37.214 --> 00:14:40.819
 github-com/lolly-tools/*.
 
-00:13:20.942 --> 00:13:24.010
+00:14:41.592 --> 00:14:44.660
 Where your changes go - the umbrella pins
 
-00:13:24.106 --> 00:13:27.511
+00:14:44.756 --> 00:14:48.161
 a specific commit of each submodule, so a
 
-00:13:27.573 --> 00:13:30.450
+00:14:48.223 --> 00:14:51.100
 change is committed to the repo that owns
 
-00:13:30.509 --> 00:13:33.466
+00:14:51.159 --> 00:14:54.116
 the file, then the umbrella records the
 
-00:13:33.526 --> 00:13:34.995
+00:14:54.176 --> 00:14:55.645
 new pointer.
 
-00:13:35.760 --> 00:13:38.248
+00:14:56.410 --> 00:14:58.898
 The full path-to-repo ownership table
 
-00:13:38.318 --> 00:13:41.912
+00:14:58.968 --> 00:15:02.562
 lives in CONTRIBUTING-md section 4, which
 
-00:13:41.979 --> 00:13:45.344
+00:15:02.629 --> 00:15:05.994
 is the single source of truth for it.
 
-00:13:45.725 --> 00:13:55.450
+00:15:06.375 --> 00:15:16.100
 ⚠️ Committing from the umbrella root does not capture edits made inside a submodule - git only sees the pointer.
 
-00:13:55.800 --> 00:14:00.800
+00:15:16.450 --> 00:15:21.450
 Commit inside the submodule, or use loldev «below».
 
-00:14:01.150 --> 00:14:12.350
+00:15:21.800 --> 00:15:33.000
 The tools/ and catalog/ views are symlinks into the packs, so editing through them flows to the right pack checkout automatically.
 
-00:14:12.700 --> 00:14:27.700
+00:15:33.350 --> 00:15:48.350
 Editing a SUSE tool touches two repos «suse-lolly + umbrella pointer»; a community tool touches three «lolly-tools manifest, suse-lolly regenerated index, umbrella pointer».
 
-00:14:28.465 --> 00:14:32.269
+00:15:49.115 --> 00:15:52.919
 loldev - one command to ship a change.
 
-00:14:33.038 --> 00:14:35.899
+00:15:53.688 --> 00:15:56.549
 A helper that does the multi-repo dance
 
-00:14:35.999 --> 00:14:37.344
+00:15:56.649 --> 00:15:57.994
 for you.
 
-00:14:38.139 --> 00:14:41.068
+00:15:58.789 --> 00:16:01.718
 Install it on your PATH:
 
-00:14:41.847 --> 00:14:44.668
+00:16:02.497 --> 00:16:05.318
 Code example omitted.
 
-00:14:45.447 --> 00:14:48.268
+00:16:06.097 --> 00:16:08.918
 Code example omitted.
 
-00:14:48.650 --> 00:14:56.375
+00:16:09.300 --> 00:16:17.025
 loldev operates on ~/Build/lolly by default «override with LOLLY_ROOT».
 
-00:14:56.725 --> 00:15:10.225
+00:16:17.375 --> 00:16:30.875
 The underlying scripts live in scripts/subrepo/ - sync-sh, status-sh, verify-sh, plus migrate-sh/snap-history-sh «the one-time split».
 
-00:15:11.323 --> 00:15:12.851
+00:16:31.973 --> 00:16:33.501
 Current tools
 
-00:15:13.450 --> 00:15:23.950
+00:16:34.100 --> 00:16:44.600
 The SUSE catalog ships 66 tools today - 65 listed in the gallery, plus one unlisted helper «Asset Export».
 
-00:15:24.300 --> 00:15:32.650
+00:16:44.950 --> 00:16:53.300
 Generated from catalog/tools/index-json by npm run build:readme-tools:
 
-00:15:33.394 --> 00:15:36.666
+00:16:54.044 --> 00:16:57.316
 The utility "Offline Utilities" section
 
-00:15:36.768 --> 00:15:39.819
+00:16:57.418 --> 00:17:00.469
 always renders last in the gallery.
 
-00:15:40.978 --> 00:15:43.392
+00:17:01.628 --> 00:17:04.042
 Licensing & structure
 
-00:15:44.100 --> 00:15:55.675
+00:17:04.750 --> 00:17:16.325
 Every unit now lives in its own repo under github-com/lolly-tools, pinned as a submodule of this umbrella «see Repository layout».
 
-00:15:56.405 --> 00:16:00.925
+00:17:17.055 --> 00:17:21.575
 Code - engine/, shells/, services/, docs/
 
-00:16:00.958 --> 00:16:03.769
+00:17:21.608 --> 00:17:24.419
 - is MPL-2 point 0.
 
-00:16:04.150 --> 00:16:08.100
+00:17:24.800 --> 00:17:28.750
 Tool content ships as brand packs.
 
-00:16:08.450 --> 00:16:26.400
+00:17:29.100 --> 00:17:47.050
 community/ «public lolly-tools» holds the brand-agnostic tools; brands/suse/ «private suse-lolly» holds the SUSE tools and catalog - including its licensed PremiumBeat music, which stays private with the pack.
 
-00:16:26.750 --> 00:16:37.500
+00:17:47.400 --> 00:17:58.150
 The repo-root tools/ and catalog/ are gitignored profile views assembled from those packs; see each pack's NOTICE-md.
 
-00:16:37.850 --> 00:16:55.625
+00:17:58.500 --> 00:18:16.275
 Fonts ship inside each brand pack under the SIL Open Font License 1 point 1 - the SUSE pack carries the SUSE and SUSE Mono typefaces «neither the MPL nor SUSE-proprietary; "SUSE" is a SUSE trademark».
 
-00:16:55.975 --> 00:17:01.800
+00:18:16.625 --> 00:18:22.450
 They appear at catalog/fonts/ in a built profile view.
 
-00:17:02.542 --> 00:17:05.238
+00:18:23.192 --> 00:18:25.888
 Bundled third-party attributions are
 
-00:17:05.300 --> 00:17:08.694
+00:18:25.950 --> 00:18:29.344
 listed in THIRD-PARTY-NOTICES-md.

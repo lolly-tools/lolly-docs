@@ -60,9 +60,11 @@ Overviewは最初に到達するルームで、2つの顔を持っています�
 
 ## Colours
 
+![The Colours room after one colour - the two panes back, the generate offer, roles reading in three registers and the pane at one colour](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=840&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A900&format=svg&walker=1&dark=1&filename=bs-colour-first)
+
 最も内容の充実したルームで、2つのペインに分かれています。左側が作業する場所、右側があなたの**ライブパレット**です。両者の間の仕切りをドラッグしてサイズ変更できます(そこでEnterを押すとパレットを折りたたんで邪魔にならないようにできます)。
 
-![Coloursルーム - プライマリカラーからランプが導出され、コントラスト比付きの見本カードとライブパレットが表示されます](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![Coloursルーム - プライマリカラーからランプが導出され、コントラスト比付きの見本カードとライブパレットが表示されます](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 ### 色を追加し、役割を与える
 
@@ -91,13 +93,13 @@ Overviewは最初に到達するルームで、2つの顔を持っています�
 
 プライマリの下には、ライブの**Primary / Neutral / Secondary / Blend**ランプと、LightおよびDarkの見本カードが表示され、それぞれに独自のコントラスト読み取り値 - WCAG比とその横のAPCA `Lc`値 - が付きます。**NeutralまたはSecondaryランプのステップをクリック**すると、導出されたデフォルトの代わりにそのシェードを固定できます。
 
-![明暗のサンプルカードの上に積み重なった4つのランプ。各カードにはそれぞれのWCAGコントラスト比が付されている](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
+![明暗のサンプルカードの上に積み重なった4つのランプ。各カードにはそれぞれのWCAGコントラスト比が付されている](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
 
 ### パレットを作成する（ハーモニージェネレーター）
 
 同じウイングの中で、**パレットを作成する**は、プライマリカラーから調和するアクセントカラーを生成します。**ハーモニー**を選びます - **補色**、**近似色**、**トライアド**、**テトラード**、**アナロガス**（これは独自の**アクセント**数、2から5、そして10°から45°の色相**角度**を伴います）- そして各候補には自動生成された分かりやすい名前と**+ 追加**ボタンが付いてきます。1つ追加すると、その色は即座にパレットに入ります。1回の操作で1つのトークンです。*「あなたのパレット、適用済み」*は、実際のグラフィック上でセット全体をプレビューします。
 
-![生成されたアクセント。それぞれにスウォッチ、自動生成された名前、16進値、追加ボタンが付いている](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
+![生成されたアクセント。それぞれにスウォッチ、自動生成された名前、16進値、追加ボタンが付いている](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
 
 ### 生成したパレットを確定する
 
@@ -109,9 +111,9 @@ Overviewは最初に到達するルームで、2つの顔を持っています�
 
 右ペインには、ブランドが持つすべての色がグループ（プライマリ、ニュートラル、セカンダリ、スペクトラム、カスタム、ロール）ごとにリストされ、各グループは独自の**+ 追加**を持ち折りたたみ可能です。その下の**カラーチャート**は、同じスウォッチの2つのビューに折りたたまれています - **ホイール**（OKLCHホイール - ドットをドラッグして色を変え、ドットをクリックして編集するか、空いている場所をクリックして新しいスウォッチを追加）と**ガマット**チャート、表示可能な範囲が実際にどこで終わるかを示します。`#/start?area=color&focus=chart`は、`?wheel`が常にそうしているように、直接カードを開きます。
 
-![パレットペイン。すべてのグループが折りたたみ可能で、ダウンロードピルが下端に配置されている](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
+![パレットペイン。すべてのグループが折りたたみ可能で、ダウンロードピルが下端に配置されている](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=1000&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
 
-![OKLCHホイール - 角度が色相、外側への距離が彩度、グレーは側面のライトネスレールに沿って並ぶ](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor%26wheel&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
+![OKLCHホイール - 角度が色相、外側への距離が彩度、グレーは側面のライトネスレールに沿って並ぶ](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400%3Bclick%3A%5Bdata-be-chart%5D%20summary%3Bwait%3A900&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
 
 任意のスウォッチをクリックすると、そのエディタが開きます。
 
@@ -138,6 +140,8 @@ Overviewは最初に到達するルームで、2つの顔を持っています�
 
 ## タイプ
 
+![The compare stage open under its card, with the search row, the pinned families and the cards folded to a one-line strip](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dtype%26focus%3Dstage&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=bs-type-stage)
+
 このルームは**4つのロールカード**から始まります - アプリ、あなたのツール、そしてすべてのエクスポートが実際に参照する4つのフェイスです。各カードには、そのロールに現在設定されているものが、そのフェイスで表示され、実際のコピーが1行添えられています。
 
 - **プライマリ**- 本文コピー、ボタン、すべてのツール。
@@ -147,7 +151,7 @@ Overviewは最初に到達するルームで、2つの顔を持っています�
 
 見出し、コード、イタリックは、割り当てるまでそれぞれプライマリにフォールバックするため、フォント1種類のブランドはここで何も決める必要がありません。カード上の操作は何も確定しません。**変更**（または空のロールでは**フェイスを選ぶ**）は、そのロールに絞った**比較ステージ**を開きます。
 
-![タイプルーム - ロールカードと、各フェイスが実際に機能しているライブサンプル](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+![タイプルーム - ロールカードと、各フェイスが実際に機能しているライブサンプル](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
 
 ### 比較ステージ
 
@@ -162,13 +166,13 @@ Overviewは最初に到達するルームで、2つの顔を持っています�
 
 下部の**タイプロール**パネルには、各ロールのライブサンプルが表示されます - プライマリでの本文とUI、上位見出し用の任意のディスプレイフェイス、強調用のイタリック、コードとデータ用のモノ - セット全体が連携して機能する様子を確認できます。
 
-![タイプロールのサンプル - 見出し、本文、イタリック、コードがそれぞれ解決されたフェイスで組まれ、フェイス名が横に添えられている](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2600&css=.start-head%2C.be-custom-fonts%2C.be-fonts%7Bdisplay%3Anone%7D&walker=1&format=svg&dark=1&filename=bs-type-specimen)
+![タイプロールのサンプル - 見出し、本文、イタリック、コードがそれぞれ解決されたフェイスで組まれ、フェイス名が横に添えられている](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=1000&dpi=192&waitMs=2600&drive=click%3A%5Bdata-be-typemore-toggle%5D%3Bwait%3A600&cropSelector=.be-typecard-grid&walker=1&format=svg&dark=1&filename=bs-type-specimen)
 
 ## トークン
 
 デザインシステムの残りの部分を、コードに触れずに編集できます。
 
-![トークンルーム - 角丸スライダーに加え、スペーシング、サイジング、シャドウ、その他のシステム](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+![トークンルーム - 角丸スライダーに加え、スペーシング、サイジング、シャドウ、その他のシステム](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=740&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
 
 - **角丸**- アプリ全体のカード、ボタン、パネルが従う単一の半径スライダー（0〜1.5rem）。
 - **その他のトークン**- **スペーシング**、**サイジング**、**線幅**、**不透明度**、**回転**、プレーンな**数値**、**シャドウ**を追加・編集します。タイプを選び、名前を付け（*Gutter、Card shadowなど*）、値を設定します。これらは標準の[デザイントークン](/info/design-tokens.html)（DTCG）として保存され、ブランドと一緒に移動します。

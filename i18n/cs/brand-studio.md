@@ -60,9 +60,11 @@ To je osm volitelných slotů. Klikni na slot pro přidání PNG, SVG, JPEG nebo
 
 ## Colours
 
+![The Colours room after one colour - the two panes back, the generate offer, roles reading in three registers and the pane at one colour](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=840&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A900&format=svg&walker=1&dark=1&filename=bs-colour-first)
+
 Nejbohatší místnost, ve dvou panelech. Levý je tam, kde pracuješ; pravý je tvá **živá paleta**. Přetáhni oddělovač mezi nimi pro změnu velikosti (Enter na něm paletu sbalí z cesty).
 
-![Místnost Colours - primární barva odvozuje škály, karty vzorků s kontrastními poměry a živá paleta](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![Místnost Colours - primární barva odvozuje škály, karty vzorků s kontrastními poměry a živá paleta](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 ### Přidej barvu, pak jí dej úkol
 
@@ -91,13 +93,13 @@ Nic v tomto křídle nezapisuje nic do tvého brandu. Je to náhled, živý nap�
 
 Pod primární barvou uvidíš živé škály **Primary / Neutral / Secondary / Blend** a karty vzorků Light a Dark, každá se svým vlastním odečtem kontrastu - poměr WCAG s hodnotou APCA `Lc` vedle něj. **Klikni na krok ve škále Neutral nebo Secondary**, abys místo odvozeného výchozího nastavení ukotvil daný odstín.
 
-![Čtyři škály nastavené nad kartami vzorků light a dark, každá karta nese vlastní kontrastní poměr WCAG](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
+![Čtyři škály nastavené nad kartami vzorků light a dark, každá karta nese vlastní kontrastní poměr WCAG](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
 
 ### Sestav si paletu (generátor harmonie)
 
 Pořád ve stejném křídle **Build your palette** generuje odpovídající akcentové barvy z tvé primární. Vyber **Harmony** - **Complementary**, **Adjacent**, **Triad**, **Tetrad** nebo **Analogous** (což s sebou nese vlastní počet **Accents**, 2 až 5, a úhel **Angle** od 10° do 45°) - a každý kandidát přichází s automaticky vygenerovaným čitelným názvem a tlačítkem **+ Add**. Přidáním se daná barva okamžitě dostane do tvé palety, jedno stisknutí na jeden token. *"Your palette, applied"* předvádí náhled celé sady na reálné grafice.
 
-![Vygenerované akcenty, každý se vzorkem, automaticky vygenerovaným názvem, svým hex kódem a tlačítkem Add](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
+![Vygenerované akcenty, každý se vzorkem, automaticky vygenerovaným názvem, svým hex kódem a tlačítkem Add](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
 
 ### Potvrzení vygenerované palety
 
@@ -109,9 +111,9 @@ Pořád ve stejném křídle **Build your palette** generuje odpovídající akc
 
 Pravý panel vypisuje každou barvu, kterou tvůj brand nese, seskupenou (Primary, Neutral, Secondary, Spectrum, Custom, Roles), přičemž každou skupinu lze sbalit a má vlastní **+ Add**. Pod ním se **Colour chart** rozbalí na dva pohledy na tytéž vzorky: **Wheel** (kolo OKLCH - přetažením bodu ho přebarvíš, kliknutím na bod ho upravíš nebo kliknutím na prázdné místo přidáš nový vzorek) a graf **Gamut**, který ukazuje, kde zobrazitelný rozsah skutečně končí. `#/start?area=color&focus=chart` otevře kartu přímo, stejně jako to vždy dělá `?wheel`.
 
-![Panel palety, každá skupina sbalitelná, s pilulkou pro stažení zaparkovanou na jejím dolním okraji](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
+![Panel palety, každá skupina sbalitelná, s pilulkou pro stažení zaparkovanou na jejím dolním okraji](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=1000&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
 
-![Kolo OKLCH - úhel je odstín, vzdálenost od středu je sytost a šedé odstíny jedou po dráze jasu na okraji](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor%26wheel&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
+![Kolo OKLCH - úhel je odstín, vzdálenost od středu je sytost a šedé odstíny jedou po dráze jasu na okraji](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400%3Bclick%3A%5Bdata-be-chart%5D%20summary%3Bwait%3A900&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
 
 Kliknutím na kterýkoli vzorník otevřeš jeho editor:
 
@@ -138,6 +140,8 @@ Plovoucí pilulka zaparkovaná na spodním okraji panelu palety stáhne celou pa
 
 ## Typ
 
+![The compare stage open under its card, with the search row, the pinned families and the cards folded to a one-line strip](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dtype%26focus%3Dstage&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=bs-type-stage)
+
 Místnost vede se **čtyřmi kartami rolí** - čtyřmi tvářemi, které aplikace, tvé nástroje a každý export skutečně čtou. Každá karta ukazuje, co danou roli aktuálně obsluhuje, nastavené v daném řezu, s řádkem skutečného textu pod tím:
 
 - **Primární** - text těla, tlačítka a každý nástroj.
@@ -147,7 +151,7 @@ Místnost vede se **čtyřmi kartami rolí** - čtyřmi tvářemi, které aplika
 
 Nadpisy, kód a kurzíva se každý vrátí k primárnímu, dokud je nepřiřadíš, takže značka s jedním fontem tu nepotřebuje žádná rozhodnutí. Nic na kartě nic nezavazuje: **Změnit** (nebo **Vybrat řez** u prázdné role) otevře **srovnávací scénu** omezenou na danou roli.
 
-![Místnost Typ - karty rolí a živý vzorek každého řezu při práci](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+![Místnost Typ - karty rolí a živý vzorek každého řezu při práci](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
 
 ### Srovnávací scéna
 
@@ -162,13 +166,13 @@ Ať tak či onak, řez zůstává v tomto zařízení, vykresluje se v aplikaci,
 
 Panel **Role typu** v patě ukazuje živý vzorek každé role - tělo a UI v primárním, volitelný display řez pro horní nadpisy, kurzívu pro zdůraznění, mono pro kód a data - takže vidíš celou sadu, jak funguje pohromadě.
 
-![Vzorek Rolí typu - nadpis, tělo, kurzíva a kód, každý sazen v řezu, na který se daná role rozřeší, s názvem řezu vedle](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2600&css=.start-head%2C.be-custom-fonts%2C.be-fonts%7Bdisplay%3Anone%7D&walker=1&format=svg&dark=1&filename=bs-type-specimen)
+![Vzorek Rolí typu - nadpis, tělo, kurzíva a kód, každý sazen v řezu, na který se daná role rozřeší, s názvem řezu vedle](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=1000&dpi=192&waitMs=2600&drive=click%3A%5Bdata-be-typemore-toggle%5D%3Bwait%3A600&cropSelector=.be-typecard-grid&walker=1&format=svg&dark=1&filename=bs-type-specimen)
 
 ## Tokeny
 
 Zbytek designového systému, upravitelný bez zásahu do kódu:
 
-![Místnost Tokeny - posuvník rádiusu rohů plus rozestupy, velikosti, stíny a zbytek systému](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+![Místnost Tokeny - posuvník rádiusu rohů plus rozestupy, velikosti, stíny a zbytek systému](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=740&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
 
 - **Zaoblené rohy** - jediný posuvník rádiusu (0-1,5rem), který sledují karty, tlačítka a panely napříč aplikací.
 - **Další tokeny** - přidávej a uprav **rozestupy**, **velikosti**, **tloušťku tahu**, **průhlednost**, **rotaci**, obyčejná **čísla** a **stíny**. Vyber typ, pojmenuj ho (*Mezera, Stín karty…*) a nastav jeho hodnotu. Ty se ukládají jako standardní [design tokeny](/info/design-tokens.html) (DTCG) a cestují s tvou značkou.

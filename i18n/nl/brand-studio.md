@@ -60,9 +60,11 @@ Dat zijn acht optionele slots. Klik op een slot om een PNG, SVG, JPEG of WebP to
 
 ## Colours
 
+![The Colours room after one colour - the two panes back, the generate offer, roles reading in three registers and the pane at one colour](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=840&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A900&format=svg&walker=1&dark=1&filename=bs-colour-first)
+
 De rijkste room, in twee vlakken. Links werk je; rechts staat je **live palette**. Sleep de scheiding ertussen om te herschalen (Enter erop klapt het palet uit de weg).
 
-![De Colours-room - een primaire kleur leidt ramps af, specimenkaarten met contrastratio's en een live palet](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![De Colours-room - een primaire kleur leidt ramps af, specimenkaarten met contrastratio's en een live palet](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 ### Voeg een kleur toe en geef hem een taak
 
@@ -91,13 +93,13 @@ Niets in deze vleugel schrijft iets naar je merk. Het is een voorvertoning, live
 
 Onder de primaire kleur zie je live **Primary / Neutral / Secondary / Blend**-ramps en Light- en Dark-specimenkaarten, elk met een eigen contrastuitlezing - de WCAG-ratio met het APCA `Lc`-cijfer ernaast. **Klik op een stap in de Neutral- of Secondary-ramp** om die tint te verankeren in plaats van de afgeleide standaardwaarde.
 
-![De vier ramps gestapeld boven light- en dark-specimenkaarten, elke kaart met een eigen WCAG-contrastratio](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
+![De vier ramps gestapeld boven light- en dark-specimenkaarten, elke kaart met een eigen WCAG-contrastratio](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
 
 ### Bouw je palet (harmoniegenerator)
 
 Nog in dezelfde vleugel genereert **Build your palette** bijpassende accentkleuren uit je primaire kleur. Kies een **Harmony** - **Complementary**, **Adjacent**, **Triad**, **Tetrad** of **Analogous** (die zijn eigen **Accents**-aantal meebrengt, 2 tot 5, en een hue-**Angle** van 10° tot 45°) - en elke kandidaat komt met een automatisch gegenereerde, leesbare naam en een **+ Add**-knop. Eentje toevoegen zet die kleur meteen in je palet, één druk op de knop voor één token. *"Your palette, applied"* toont een voorvertoning van de hele set op echte graphics.
 
-![Gegenereerde accenten, elk met een swatch, een automatisch gegenereerde naam, zijn hexwaarde en een Add-knop](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
+![Gegenereerde accenten, elk met een swatch, een automatisch gegenereerde naam, zijn hexwaarde en een Add-knop](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
 
 ### Een gegenereerd palet doorvoeren
 
@@ -109,9 +111,9 @@ Nog in dezelfde vleugel genereert **Build your palette** bijpassende accentkleur
 
 Het rechtervlak toont elke kleur die je merk heeft, gegroepeerd (Primary, Neutral, Secondary, Spectrum, Custom, Roles), elke groep inklapbaar met een eigen **+ Add**. Daaronder klapt **Colour chart** open naar twee weergaven van dezelfde swatches: de **Wheel** (het OKLCH-wiel - sleep een punt om hem te herkleuren, klik op een punt om hem te bewerken of klik op lege ruimte om een nieuwe swatch neer te zetten) en de **Gamut**-chart, die laat zien waar het weergeefbare bereik daadwerkelijk eindigt. `#/start?area=color&focus=chart` opent de kaart direct, net als `?wheel` altijd al deed.
 
-![Het paletvlak, elke groep inklapbaar, met de downloadpil onderaan geparkeerd](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
+![Het paletvlak, elke groep inklapbaar, met de downloadpil onderaan geparkeerd](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=1000&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
 
-![Het OKLCH-wiel - hoek is tint, afstand naar buiten is verzadiging en de grijstinten lopen langs een helderheidsrail aan de zijkant](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor%26wheel&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
+![Het OKLCH-wiel - hoek is tint, afstand naar buiten is verzadiging en de grijstinten lopen langs een helderheidsrail aan de zijkant](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400%3Bclick%3A%5Bdata-be-chart%5D%20summary%3Bwait%3A900&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
 
 Klik op een kleurstaal om de editor ervan te openen:
 
@@ -138,6 +140,8 @@ De zwevende pil onderaan het paletvenster downloadt het hele palet als **Design 
 
 ## Typografie
 
+![The compare stage open under its card, with the search row, the pinned families and the cards folded to a one-line strip](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dtype%26focus%3Dstage&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=bs-type-stage)
+
 De ruimte begint met **vier rolkaarten** - de vier lettertypes die de app, je tools en elke export daadwerkelijk gebruiken. Elke kaart toont wat die rol nu vervult, ingesteld in dat lettertype, met een regel echte tekst eronder:
 
 - **Primair** - hoofdtekst, knoppen en elke tool.
@@ -147,7 +151,7 @@ De ruimte begint met **vier rolkaarten** - de vier lettertypes die de app, je to
 
 Koppen, code en cursief vallen elk terug op het primaire lettertype totdat je ze toewijst, dus een merk met één lettertype hoeft hier helemaal geen keuzes te maken. Niets op een kaart legt iets vast: **Wijzigen** (of **Kies een lettertype** bij een lege rol) opent het **vergelijkingsscherm** afgestemd op die rol.
 
-![De Typografie-ruimte - de rolkaarten en een live specimen van elk lettertype in actie](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+![De Typografie-ruimte - de rolkaarten en een live specimen van elk lettertype in actie](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
 
 ### Het vergelijkingsscherm
 
@@ -162,13 +166,13 @@ Hoe dan ook blijft het lettertype op dit apparaat, wordt het weergegeven in de a
 
 Het paneel **Typografierollen** onderaan toont een live specimen van elke rol - hoofdtekst en UI in het primaire lettertype, een optioneel weergavelettertype voor de bovenste koppen, een cursief voor nadruk, een niet-proportioneel lettertype voor code en gegevens - zodat je de hele set samen ziet werken.
 
-![Het specimen van de Typografierollen - kop, hoofdtekst, cursief en code, elk ingesteld in het lettertype waar die rol naar resolveert, met de naam van het lettertype ernaast](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2600&css=.start-head%2C.be-custom-fonts%2C.be-fonts%7Bdisplay%3Anone%7D&walker=1&format=svg&dark=1&filename=bs-type-specimen)
+![Het specimen van de Typografierollen - kop, hoofdtekst, cursief en code, elk ingesteld in het lettertype waar die rol naar resolveert, met de naam van het lettertype ernaast](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=1000&dpi=192&waitMs=2600&drive=click%3A%5Bdata-be-typemore-toggle%5D%3Bwait%3A600&cropSelector=.be-typecard-grid&walker=1&format=svg&dark=1&filename=bs-type-specimen)
 
 ## Tokens
 
 De rest van het ontwerpsysteem, te bewerken zonder code aan te raken:
 
-![De Tokens-ruimte - een hoekstraal-schuifregelaar plus tussenruimte, formaat, schaduwen en de rest van het systeem](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+![De Tokens-ruimte - een hoekstraal-schuifregelaar plus tussenruimte, formaat, schaduwen en de rest van het systeem](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=740&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
 
 - **Afgeronde hoeken** - één straalschuifregelaar (0-1,5rem) die kaarten, knoppen en panelen door de hele app volgen.
 - **Meer tokens** - voeg **tussenruimte**, **formaat**, **lijndikte**, **dekking**, **rotatie**, gewone **getallen** en **schaduwen** toe en bewerk ze. Kies een type, geef het een naam (*Gutter, Kaartschaduw...*) en stel de waarde in. Deze worden opgeslagen als standaard [design tokens](/info/design-tokens.html) (DTCG) en reizen mee met je merk.

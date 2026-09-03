@@ -60,9 +60,11 @@ Sono otto slot opzionali. Clicca su uno slot per aggiungere un PNG, SVG, JPEG o 
 
 ## Colori
 
+![The Colours room after one colour - the two panes back, the generate offer, roles reading in three registers and the pane at one colour](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=840&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A900&format=svg&walker=1&dark=1&filename=bs-colour-first)
+
 La stanza più ricca, in due riquadri. Il sinistro è dove lavori; il destro è la tua **palette dal vivo**. Trascina il divisore tra i due per ridimensionare (Invio su di esso richiude la palette fuori dai piedi).
 
-![La stanza Colori - un colore primario deriva rampe, schede campione con rapporti di contrasto e una palette dal vivo](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![La stanza Colori - un colore primario deriva rampe, schede campione con rapporti di contrasto e una palette dal vivo](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 ### Aggiungi un colore, poi assegnagli un compito
 
@@ -91,13 +93,13 @@ Niente in questa ala scrive nulla sul tuo brand. È un'anteprima, dal vivo in tu
 
 Sotto il primario vedrai le rampe dal vivo **Primario / Neutro / Secondario / Miscela** e le schede campione Chiara e Scura, ognuna con la propria lettura di contrasto - il rapporto WCAG con la cifra APCA `Lc` accanto. **Clicca un passaggio nella rampa Neutro o Secondario** per ancorare quella sfumatura invece del valore derivato predefinito.
 
-![I quattro ramp impilati sopra le card campione chiare e scure, ognuna con il proprio rapporto di contrasto WCAG](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
+![I quattro ramp impilati sopra le card campione chiare e scure, ognuna con il proprio rapporto di contrasto WCAG](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
 
 ### Build your palette (generatore di armonie)
 
 Sempre in questa sezione, **Build your palette** genera colori di accento abbinati al tuo primario. Scegli un'**Armonia** - **Complementare**, **Adiacente**, **Triade**, **Tetrade** o **Analoga** (che porta con sé un proprio numero di **Accenti**, da 2 a 5, e un **Angolo** di tonalità da 10° a 45°) - e ogni candidato arriva con un nome leggibile generato automaticamente e un pulsante **+ Add**. Aggiungerne uno inserisce subito quel colore nella tua palette, una pressione per un token. *"La tua palette, applicata"* mostra in anteprima l'intero set su grafiche reali.
 
-![Accenti generati, ciascuno con uno swatch, un nome generato automaticamente, il suo hex e un pulsante Add](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
+![Accenti generati, ciascuno con uno swatch, un nome generato automaticamente, il suo hex e un pulsante Add](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
 
 ### Confermare una palette generata
 
@@ -109,9 +111,9 @@ Sempre in questa sezione, **Build your palette** genera colori di accento abbina
 
 Il pannello a destra elenca ogni colore che il tuo brand possiede, raggruppato (Primario, Neutro, Secondario, Spettro, Personalizzato, Ruoli), ogni gruppo richiudibile con il proprio **+ Add**. Sotto, **Colour chart** si apre su due viste degli stessi swatch: la **Wheel** (la ruota OKLCH - trascina un punto per ricolorarlo, clicca un punto per modificarlo o clicca uno spazio vuoto per aggiungere un nuovo swatch) e il grafico **Gamut**, che mostra dove termina davvero l'intervallo visualizzabile. `#/start?area=color&focus=chart` apre direttamente la card, come fa sempre `?wheel`.
 
-![Il pannello della palette, ogni gruppo richiudibile, con la pillola di download posizionata sul bordo inferiore](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
+![Il pannello della palette, ogni gruppo richiudibile, con la pillola di download posizionata sul bordo inferiore](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=1000&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
 
-![La ruota OKLCH - l'angolo è la tonalità, la distanza dal centro è la crominanza e i grigi scorrono lungo un binario di luminosità sul lato](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor%26wheel&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
+![La ruota OKLCH - l'angolo è la tonalità, la distanza dal centro è la crominanza e i grigi scorrono lungo un binario di luminosità sul lato](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400%3Bclick%3A%5Bdata-be-chart%5D%20summary%3Bwait%3A900&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
 
 Clicca su qualsiasi swatch per aprirne l'editor:
 
@@ -138,6 +140,8 @@ La pillola flottante posizionata sul bordo inferiore del pannello della palette 
 
 ## Type
 
+![The compare stage open under its card, with the search row, the pinned families and the cards folded to a one-line strip](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dtype%26focus%3Dstage&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=bs-type-stage)
+
 La sezione si apre con **quattro card di ruolo** - i quattro caratteri che l'app, i tuoi strumenti e ogni esportazione leggono davvero. Ogni card mostra cosa serve quel ruolo in questo momento, impostato in quel carattere, con una riga di testo reale sotto:
 
 - **Primary** - testo del corpo, pulsanti e ogni strumento.
@@ -147,7 +151,7 @@ La sezione si apre con **quattro card di ruolo** - i quattro caratteri che l'app
 
 Headings, code e italic ricadono ciascuno sul primario finché non li assegni, quindi un brand a un solo font non richiede nessuna decisione qui. Nulla in una card conferma alcunché: **Change** (o **Choose a face** su un ruolo vuoto) apre il **palco di confronto** ristretto a quel ruolo.
 
-![La sezione Type - le card di ruolo e un campione dal vivo di ogni carattere al lavoro](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+![La sezione Type - le card di ruolo e un campione dal vivo di ogni carattere al lavoro](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
 
 ### Il palco di confronto
 
@@ -162,13 +166,13 @@ In entrambi i casi il carattere resta su questo dispositivo, viene renderizzato 
 
 Il pannello **Type roles** in fondo mostra un campione dal vivo di ogni ruolo - corpo e interfaccia nel primario, un carattere di visualizzazione opzionale per i titoli principali, un corsivo per l'enfasi, un mono per codice e dati - così puoi vedere l'intero set funzionare insieme.
 
-![Il campione di Type roles - titolo, corpo, corsivo e codice, ciascuno impostato nel carattere a cui quel ruolo si risolve, con il nome del carattere accanto](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2600&css=.start-head%2C.be-custom-fonts%2C.be-fonts%7Bdisplay%3Anone%7D&walker=1&format=svg&dark=1&filename=bs-type-specimen)
+![Il campione di Type roles - titolo, corpo, corsivo e codice, ciascuno impostato nel carattere a cui quel ruolo si risolve, con il nome del carattere accanto](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=1000&dpi=192&waitMs=2600&drive=click%3A%5Bdata-be-typemore-toggle%5D%3Bwait%3A600&cropSelector=.be-typecard-grid&walker=1&format=svg&dark=1&filename=bs-type-specimen)
 
 ## Tokens
 
 Il resto del design system, modificabile senza toccare il codice:
 
-![La sezione Tokens - uno slider per il raggio degli angoli più spaziatura, dimensionamento, ombre e il resto del sistema](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+![La sezione Tokens - uno slider per il raggio degli angoli più spaziatura, dimensionamento, ombre e il resto del sistema](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=740&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
 
 - **Rounded corners** - un unico slider del raggio (0-1.5rem) che le card, i pulsanti e i pannelli in tutta l'app seguono.
 - **More tokens** - aggiungi e modifica **spaziatura**, **dimensionamento**, **spessore del tratto**, **opacità**, **rotazione**, semplici **numeri** e **ombre**. Scegli un tipo, dagli un nome (*Gutter, Card shadow...*) e imposta il suo valore. Sono salvati come [design token](/info/design-tokens.html) standard (DTCG) e viaggiano con il tuo brand.

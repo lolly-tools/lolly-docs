@@ -46,6 +46,13 @@ Multi-edit is still a destination you can search your way *to*, from any screen
 that does show the bar - they're in the Places group below, and Ask Lolly gets
 a group of its own. Multi-edit is the one place search doesn't know about yet.
 
+Search also reaches Lolly from outside the app. The installed apps own the
+`lolly://` URL scheme, so a launcher's "open URL" action (Raycast, Alfred,
+PowerToys Run), a macOS Shortcut or a terminal `open` opens an exact tool
+with its inputs filled, and on Linux the GNOME Shell search provider and KRunner
+list Lolly's tools by name. The scheme and its grammar are in
+[URL mode](/info/url-mode.html), under "The lolly:// scheme".
+
 ## What it finds
 
 A match is sorted into groups, always shown in the same order:

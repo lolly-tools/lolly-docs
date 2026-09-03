@@ -60,9 +60,11 @@ Overview وہ کمرہ ہے جہاں آپ پہنچتے ہیں، اور اس کے
 
 ## Colours
 
+![The Colours room after one colour - the two panes back, the generate offer, roles reading in three registers and the pane at one colour](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=840&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A900&format=svg&walker=1&dark=1&filename=bs-colour-first)
+
 سب سے بھرپور کمرہ، دو پینز میں۔ بائیں طرف آپ کام کرتے ہیں؛ دائیں طرف آپ کا **live palette** ہے۔ دونوں کے درمیان تقسیم کار کو کھینچ کر سائز بدلیں (اس پر Enter دبانے سے پیلیٹ راستے سے ہٹ کر سمٹ جاتا ہے)۔
 
-![Colours کمرہ - ایک بنیادی رنگ سے ریمپس اخذ ہوتے ہیں، کنٹراسٹ تناسب والے نمونہ کارڈز اور ایک لائیو پیلیٹ](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![Colours کمرہ - ایک بنیادی رنگ سے ریمپس اخذ ہوتے ہیں، کنٹراسٹ تناسب والے نمونہ کارڈز اور ایک لائیو پیلیٹ](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 ### ایک رنگ شامل کریں، پھر اسے ایک کام دیں
 
@@ -91,13 +93,13 @@ Overview وہ کمرہ ہے جہاں آپ پہنچتے ہیں، اور اس کے
 
 بنیادی رنگ کے نیچے آپ کو لائیو **Primary / Neutral / Secondary / Blend** ریمپس اور Light اور Dark نمونہ کارڈز نظر آئیں گے، ہر ایک اپنا کنٹراسٹ ریڈ آؤٹ رکھتا ہے - WCAG تناسب اور اس کے ساتھ APCA `Lc` عدد۔ اخذ کردہ ڈیفالٹ کے بجائے وہ شیڈ لنگر کرنے کے لیے **Neutral یا Secondary ریمپ میں کوئی قدم کلک کریں**۔
 
-![چاروں ریمپس روشن اور تاریک نمونہ کارڈز کے اوپر اسٹیک کیے گئے ہیں، ہر کارڈ اپنا WCAG کنٹراسٹ تناسب رکھتا ہے](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
+![چاروں ریمپس روشن اور تاریک نمونہ کارڈز کے اوپر اسٹیک کیے گئے ہیں، ہر کارڈ اپنا WCAG کنٹراسٹ تناسب رکھتا ہے](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
 
 ### اپنا پیلیٹ بنائیں (ہارمنی جنریٹر)
 
 اسی ونگ میں، **Build your palette** آپ کے پرائمری رنگ سے ملتے جلتے ایکسنٹ رنگ تیار کرتا ہے۔ ایک **Harmony** منتخب کریں - **Complementary**، **Adjacent**، **Triad**، **Tetrad** یا **Analogous** (جو اپنا **Accents** شمار لاتا ہے، 2 سے 5 تک، اور 10° سے 45° تک کا ہیو **Angle**) - اور ہر امیدوار کے ساتھ ایک خودکار طور پر تیار کردہ انسانی پڑھنے کے قابل نام اور ایک **+ Add** بٹن آتا ہے۔ کسی کو شامل کرنے سے وہ رنگ فوراً آپ کے پیلیٹ میں شامل ہو جاتا ہے، ایک پریس ایک ٹوکن کے برابر۔ *"Your palette, applied"* پورے سیٹ کو حقیقی گرافکس پر پیش کرتا ہے۔
 
-![تیار کردہ ایکسنٹس، ہر ایک سویچ، ایک خودکار طور پر تیار کردہ نام، اس کا ہیکس اور ایک Add بٹن کے ساتھ](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
+![تیار کردہ ایکسنٹس، ہر ایک سویچ، ایک خودکار طور پر تیار کردہ نام، اس کا ہیکس اور ایک Add بٹن کے ساتھ](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
 
 ### تیار شدہ پیلیٹ کو کمٹ کرنا
 
@@ -109,9 +111,9 @@ Overview وہ کمرہ ہے جہاں آپ پہنچتے ہیں، اور اس کے
 
 دائیں پین آپ کے برانڈ کے ہر رنگ کی فہرست دیتا ہے، گروپس میں (Primary، Neutral، Secondary، Spectrum، Custom، Roles)، ہر گروپ اپنے **+ Add** کے ساتھ فولڈ ایبل ہے۔ اس کے نیچے، **Colour chart** انہی سویچز کے دو ویوز پر فولڈ کھلتا ہے: **Wheel** (OKLCH وہیل - کسی ڈاٹ کو گھسیٹ کر اس کا رنگ بدلیں، کسی ڈاٹ پر کلک کر کے اسے ایڈٹ کریں یا خالی جگہ پر کلک کر کے نیا سویچ ڈراپ کریں) اور **Gamut** چارٹ، جو دکھاتا ہے کہ ڈسپلے کے قابل رینج اصل میں کہاں ختم ہوتی ہے۔ `#/start?area=color&focus=chart` کارڈ کو براہ راست کھولتا ہے، جیسا کہ `?wheel` ہمیشہ سے کرتا ہے۔
 
-![پیلیٹ پین، ہر گروپ فولڈ ایبل، ڈاؤن لوڈ پِل اس کے نیچے کنارے پر رکھا ہوا](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
+![پیلیٹ پین، ہر گروپ فولڈ ایبل، ڈاؤن لوڈ پِل اس کے نیچے کنارے پر رکھا ہوا](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=1000&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
 
-![OKLCH وہیل - زاویہ ہیو ہے، باہر کا فاصلہ کروما ہے اور گرے رنگ سائیڈ پر ایک لائٹنس ریل کے ساتھ چلتے ہیں](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor%26wheel&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
+![OKLCH وہیل - زاویہ ہیو ہے، باہر کا فاصلہ کروما ہے اور گرے رنگ سائیڈ پر ایک لائٹنس ریل کے ساتھ چلتے ہیں](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400%3Bclick%3A%5Bdata-be-chart%5D%20summary%3Bwait%3A900&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
 
 کسی بھی سویچ پر کلک کر کے اس کا ایڈیٹر کھولیں:
 
@@ -138,6 +140,8 @@ Overview وہ کمرہ ہے جہاں آپ پہنچتے ہیں، اور اس کے
 
 ## Type
 
+![The compare stage open under its card, with the search row, the pinned families and the cards folded to a one-line strip](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dtype%26focus%3Dstage&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=bs-type-stage)
+
 یہ روم **چار رول کارڈز** سے شروع ہوتا ہے - چار فیسز جنہیں ایپ، آپ کے ٹولز اور ہر ایکسپورٹ اصل میں پڑھتے ہیں۔ ہر کارڈ دکھاتا ہے کہ اس وقت اس رول کی خدمت کیا کر رہا ہے، اسی فیس میں سیٹ، اس کے نیچے حقیقی کاپی کی ایک لائن کے ساتھ:
 
 - **Primary** - باڈی کاپی، بٹنز اور ہر ٹول۔
@@ -147,7 +151,7 @@ Overview وہ کمرہ ہے جہاں آپ پہنچتے ہیں، اور اس کے
 
 Headings، Code اور Italic میں سے ہر ایک، جب تک آپ انہیں تفویض نہ کریں، Primary پر واپس چلا جاتا ہے، تو ایک-فونٹ برانڈ کو یہاں کوئی فیصلہ کرنے کی ضرورت ہی نہیں۔ کارڈ پر کچھ بھی کمٹ نہیں ہوتا: **Change** (یا خالی رول پر **Choose a face**) اسی رول تک محدود **compare stage** کھولتا ہے۔
 
-![Type روم - رول کارڈز اور ہر فیس کا اپنا کام کرتا ہوا ایک لائیو نمونہ](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+![Type روم - رول کارڈز اور ہر فیس کا اپنا کام کرتا ہوا ایک لائیو نمونہ](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
 
 ### کمپیئر اسٹیج
 
@@ -162,13 +166,13 @@ Headings، Code اور Italic میں سے ہر ایک، جب تک آپ انہی�
 
 نیچے **Type roles** پینل ہر رول کا ایک لائیو نمونہ دکھاتا ہے - Primary میں باڈی اور UI، اوپر کی ہیڈنگز کے لیے ایک اختیاری ڈسپلے فیس، زور کے لیے ایک اٹالک، کوڈ اور ڈیٹا کے لیے ایک مونو - تاکہ آپ پورے سیٹ کو ایک ساتھ کام کرتا دیکھ سکیں۔
 
-![Type roles کا نمونہ - ہیڈنگ، باڈی، اٹالک اور کوڈ، ہر ایک اس فیس میں سیٹ جس پر وہ رول حل ہوتا ہے، فیس کا نام ساتھ ہی درج](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2600&css=.start-head%2C.be-custom-fonts%2C.be-fonts%7Bdisplay%3Anone%7D&walker=1&format=svg&dark=1&filename=bs-type-specimen)
+![Type roles کا نمونہ - ہیڈنگ، باڈی، اٹالک اور کوڈ، ہر ایک اس فیس میں سیٹ جس پر وہ رول حل ہوتا ہے، فیس کا نام ساتھ ہی درج](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=1000&dpi=192&waitMs=2600&drive=click%3A%5Bdata-be-typemore-toggle%5D%3Bwait%3A600&cropSelector=.be-typecard-grid&walker=1&format=svg&dark=1&filename=bs-type-specimen)
 
 ## Tokens
 
 باقی ڈیزائن سسٹم، کوڈ چھوئے بغیر ایڈٹ کے قابل:
 
-![Tokens روم - ایک کارنر ریڈیس سلائیڈر جمع اسپیسنگ، سائزنگ، شیڈوز اور باقی نظام](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+![Tokens روم - ایک کارنر ریڈیس سلائیڈر جمع اسپیسنگ، سائزنگ، شیڈوز اور باقی نظام](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=740&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
 
 - **Rounded corners** - ایک واحد ریڈیس سلائیڈر (0–1.5rem) جسے ایپ بھر میں کارڈز، بٹنز اور پینلز فالو کرتے ہیں۔
 - **More tokens** - **spacing**، **sizing**، **stroke width**، **opacity**، **rotation**، سادہ **numbers** اور **shadows** شامل اور ایڈٹ کریں۔ ایک ٹائپ چنیں، اسے نام دیں (*Gutter، Card shadow…*) اور اس کی ویلیو سیٹ کریں۔ یہ معیاری [design tokens](/info/design-tokens.html) (DTCG) کے طور پر محفوظ ہوتے ہیں اور آپ کے برانڈ کے ساتھ سفر کرتے ہیں۔

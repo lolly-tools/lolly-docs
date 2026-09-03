@@ -16,7 +16,7 @@ Lolly 把你的規範（色彩、字體、版面、邏輯）變成任何人都�
 
 首次啟動會直接把你帶到**工具庫**，上面疊著一個簡短的歡迎對話框，提供三條入口：**Make it yours**（位於 `#/start` 的 Brand Studio）、**Bring your design**（丟進 Figma、Penpot、InDesign 或 PDF 檔案，它會以可編輯的版面打開，這是通往下方[把你既有的資產帶進來](#2-bring-in-what-you-already-have)最快的路徑），以及 **Explore the community tools**；如果英文不是你的語言，還有一排語言可選。選第一張卡，你會來到 [**Brand Studio**](/info/brand-studio.html)。給它一個名字和一個主色，Lolly 就會從中*推導*出一整套無障礙色盤（淺色／深色底、文字、強調色），用的是引擎在其他地方所用的同一套色彩運算。
 
-![Brand Studio 的色彩區：一個主色，以及 Lolly 從它推導出的無障礙色盤](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours) 挑一個字型，不到一分鐘你就有一套可用的品牌。接下來工作室的六個區域（總覽、色彩、字體、標誌、Tokens、檔案）讓你想做多深就做多深、順序隨你，之後任何時候回來都能再修改。儀表板的 **Design system** 分頁（`#/d`）以唯讀方式呈現結果，並指回 `#/start`，編輯是在那裡進行（除非你用的是品牌鎖定版的 Lolly，此時品牌是固定的，沒有東西可改）。
+![Brand Studio 的色彩區：一個主色，以及 Lolly 從它推導出的無障礙色盤](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours) 挑一個字型，不到一分鐘你就有一套可用的品牌。接下來工作室的六個區域（總覽、色彩、字體、標誌、Tokens、檔案）讓你想做多深就做多深、順序隨你，之後任何時候回來都能再修改。儀表板的 **Design system** 分頁（`#/d`）以唯讀方式呈現結果，並指回 `#/start`，編輯是在那裡進行（除非你用的是品牌鎖定版的 Lolly，此時品牌是固定的，沒有東西可改）。
 
 ### 匯入你已經有的品牌
 

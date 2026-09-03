@@ -12,7 +12,7 @@ The studio is a set of **rooms** listed in a rail down the side - not steps. Not
 
 - **Overview** - the hub. What exists right now, at a glance, with a door into each room.
 - **Colours** - add colours one at a time, assign roles or generate a whole palette from one.
-- **Type** - the four faces the app, your tools and every export read.
+- **Type** - the four faces the app, the tools and every export read.
 - **Logos** - your marks, in every orientation and treatment.
 - **Tokens** - corner radius, spacing, shadows and the rest of the system.
 - **Files** - the image, audio and motion files your brand keeps.
@@ -33,11 +33,11 @@ Pinned to the **foot of the rail** are the actions that belong to the whole desi
 
 ## Overview
 
-Overview is the room you land in, and it has two faces.
+Overview is the first room, and it has two faces.
 
-With **nothing set up yet** it offers two doors - **Start from a file** (design tokens, a Penpot project, a design system pack or an SVG) and **Start from scratch** (add one colour, then keep going whenever you like) - and a quiet **Explore the tools** exit under them, because leaving is a legitimate answer too.
+With **nothing chosen yet** it says **Nothing here yet** and offers three doors, in the order they cost: **Pick a colour** (one press), **Choose a face** (a search) and **Add a logo** (a file). Each opens its room with the control that makes the decision already up, rather than changing the room and leaving you to find it - `#/start?area=color&focus=pick` opens the Colours room with the picker on the chip, `#/start?area=type&focus=stage` opens the Type room's stage for the primary face, and `#/start?area=logos` opens the Logos room. None of the three writes anything. Under the doors sits one quiet line: **Bring a file** for design tokens, a Penpot project, a PDF or an SVG, and **explore the tools**, because leaving is a legitimate answer too.
 
-Once a design system exists, the same room shows **what you have**: the palette and its colour count, the type families in force, how many logo slots are filled, how many tokens there are and the Files room. Every block is a door into its room. There are counts here, never a progress bar and never a finish card - nothing in this studio is owed.
+Once anything is your own, the same room shows **what you have**, with the counts you made leading. Colours reads the number of colours the design system carries, and adds a muted `· N starter` only where there are inherited colours on show; the strip beside it puts the colours you chose first, then a hairline and the faded starter ones. Type reads by role (*Inter for headings*, with *Starter for the rest · SUSE, SUSE Mono* under it). Logos reads how many slots are filled, or **Not set**. Tokens carries the corner radius, tagged *starter* until you move it. Files says **Nothing yet** while the library is empty. Every block is a door into its room. There are counts here, never a progress bar and never a finish card - nothing in this studio is owed.
 
 ## Logos
 
@@ -60,19 +60,52 @@ That's eight optional slots. Click a slot to add a PNG, SVG, JPEG or WebP; click
 
 ## Colours
 
-The richest room, in two panes. The left is where you work; the right is your **live palette**. Drag the divider between them to resize (Enter on it collapses the palette out of the way).
+The room grows with the design system. Nothing you have not needed yet is on the page, so a first visit is one decision and the rest arrives as the palette does.
 
-![The Colours room - a primary colour derives ramps, specimen cards with contrast ratios and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+### The first colour
 
-### Add a colour, then give it a job
+A design system with no colours of its own opens on one centred column: **Start with one colour**, a large live chip, a field, and a quiet line saying that roles, shades and print settings arrive as the system grows.
 
-**Add a colour** is the whole of the simple path: paste or pick a colour in any notation and it becomes exactly one token. Nothing is derived from it, nothing is suggested into it, nothing else is demanded. Paste a whole *list* of colours and each one becomes a chip you can add on its own.
+- **The chip is the picker.** Press it and the studio's own OKLCH card opens on the chip, seeded with whatever the field is holding: a name, the wheel, the four dials, alpha and **Stored as**, with **Cancel** and **Add colour** at the foot. Dragging a dial paints the chip and rewrites the field as you go, and nothing reaches the design system until you press **Add colour**.
+- **The field takes any notation** - `#e0452b`, `rgb(224 69 43)`, `oklch(58% .19 32)` or a plain colour name - and a whole *list* of colours becomes a row of chips you add one at a time.
+- **Two more doors sit beside it.** The eyedropper (on a browser that has one) takes a colour off the screen, and **From an image** reads a screenshot or a photo on this device and offers the colours it finds.
+- **Add is never disabled.** With nothing readable in the field it opens the picker, which is what an empty press usually means; text it cannot parse gets a line under the field saying so, rather than a dead button.
 
-**Roles** is the layer over the top - which colour plays each part. Roles are optional (a design system of three loose colours and no roles is a perfectly good one), any swatch can take one and the contrast readout is measured against the surface, APCA first.
+The first colour becomes the **primary**, and the chip that answers the add says so - *"Primary is now Vivid Violet"* - with **Fine-tune** beside it.
+
+![The Colours room with nothing chosen yet - one big live chip, one field and one line about what arrives later](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+
+### Starter
+
+**Starter** is the word for anything that came with the app instead of being chosen. A fresh install carries no colour at all: what it has is one neutral ramp, ink through paper, so surfaces, text and hairlines render before anybody has decided anything. Those neutrals are scaffolding, so they are not counted as colours and they are not drawn in the palette pane. They live in the [Tokens](#tokens) room as **Neutrals · starter · 9**, with an **Open** that shows them in the Colours pane as one folded, tagged group (`#/start?area=color&group=neutral`).
+
+The same word carries through every room: a role standing on a starter colour reads *"Starter Paper stands in"* and its picker offers **Choose…**; a starter face wears a **Starter** tag and no tint; a starter corner radius is tagged on the Overview. Inherited material is never drawn with a dashed border, because a dashed border means a drop target here.
+
+### As the palette grows
+
+One colour brings the room's two panes back. The left is where you work, the right is the live palette; drag the divider between them to resize (Enter on it collapses the palette out of the way). At one colour the left pane holds three things - the compact add row, a panel offering **Generate a palette from *Vivid Violet*** with one line about what that would do, and **Roles** - while the right pane holds the colours the design system carries, their count, and a line about what arrives later.
+
+Generate a set of shades, or add six colours by hand, and the rest of the room opens: the four expert wings, the colour chart, gradients, the download pill and selection across the whole pane.
+
+![The Colours room after one colour - the two panes back, the generate offer, roles reading in three registers and the pane at one colour](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=840&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A900&format=svg&walker=1&dark=1&filename=bs-colour-first)
+
+### Roles - what tools read
+
+**Roles** are the layer over the swatches: which colour plays each part in every tool and export. Roles are optional (a design system of three loose colours and no roles is a perfectly good one), any swatch can take one and the contrast readout is measured against the surface, APCA first.
+
+A row reads in one of three registers, so the strip never claims a decision nobody made:
+
+- an own colour serving the role, at full strength;
+- **Starter *Paper* stands in** - muted, with **Choose…** on its picker;
+- **↳ follows Primary** - the role resolves through the primary rather than to a colour of its own.
+
+Once the palette has shades, the strip grows to all seven slots a tool can read: Primary, Secondary, Surface, Text, Muted, Edge and On primary. On primary is derived from the primary, reads as **Derived** and carries no picker.
+
+**The app's own accent is a preference, not a token.** By default the interface follows the design system and the chrome accent takes the primary colour. That is an Appearance setting on [your profile](/info/profile.html) - **Interface follows the design system** - and turning it off leaves the chrome neutral. Tools, canvases and exports are unaffected either way, and the fonts and the corner radius follow the design system whether the setting is on or off.
 
 ### The expert wings
 
-Four folded sections sit beneath those two. Open the one you want; each is deep-linkable as `#/start?area=color&focus=<wing>`:
+Four folded sections sit under the add row and the roles, once the palette has shades. Open the one you want; each is deep-linkable as `#/start?area=color&focus=<wing>`, which opens it whatever the room is otherwise showing:
 
 - **Generate a starter palette** (`focus=generate`) - one colour into a full set of shades. Described below.
 - **Shade curves** (`focus=curves`) - reshape a ramp point by point. Lightness, chroma and hue each get their own curve, switched with L / C / H, and the shades below rebake live as you drag.
@@ -83,21 +116,21 @@ Four folded sections sit beneath those two. Open the one you want; each is deep-
 
 Inside **Generate a starter palette**, pick a **Primary colour** and Lolly works out a complete palette - light and dark surfaces, text, accents and full tint/shade ramps - using the same perceptual colour maths (OKLCH) the engine uses everywhere. Tune the derivation:
 
-- **Scheme** - Mono, Complement, Analogous or Triad - sets how the secondary colour relates to your primary.
+- **Scheme** - Mono, Complement, Analogous or Triad - sets how the secondary colour relates to the primary.
 - **Shades** - a slider from 3 to 20 (default 5) controls how many steps each ramp generates.
 - **Fine-tune** (folded) - **UI intensity** (Muted / Deep), **Contrast** (Comfort / High) and **Text on brand** (Auto / Light / Dark).
 
-Nothing in this wing writes anything to your brand. It is a preview, live across the app so you can judge it, right up until you press **Replace palette** (below).
+Nothing in this wing writes anything to the design system. It is a preview, live across the app so you can judge it, right up until you press **Replace palette** (below).
 
 Below the primary you'll see live **Primary / Neutral / Secondary / Blend** ramps and Light and Dark specimen cards, each carrying its own contrast readout - the WCAG ratio with the APCA `Lc` figure beside it. **Click a step in the Neutral or Secondary ramp** to anchor that shade instead of the derived default.
 
-![The four ramps stacked above light and dark specimen cards, each card carrying its own WCAG contrast ratio](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
+![The four ramps stacked above light and dark specimen cards, each card carrying its own WCAG contrast ratio](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
 
-### Build your palette (harmony generator)
+### Build the palette (harmony generator)
 
-Still in the same wing, **Build your palette** generates matching accent colours from your primary. Pick a **Harmony** - **Complementary**, **Adjacent**, **Triad**, **Tetrad** or **Analogous** (which brings its own **Accents** count, 2 to 5, and a hue **Angle** from 10° to 45°) - and each candidate arrives with an auto-generated human-readable name and a **+ Add** button. Adding one puts that colour in your palette immediately, one press to one token. *"Your palette, applied"* previews the whole set on real graphics.
+Still in the same wing, **Build the palette** generates matching accent colours from the primary. Pick a **Harmony** - **Complementary**, **Adjacent**, **Triad**, **Tetrad** or **Analogous** (which brings its own **Accents** count, 2 to 5, and a hue **Angle** from 10° to 45°) - and each candidate arrives with an auto-generated human-readable name and a **+ Add** button. Adding one puts that colour in the palette immediately, one press to one token. *"The palette, applied"* previews the whole set on real graphics.
 
-![Generated accents, each with a swatch, an auto-generated name, its hex and an Add button](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
+![Generated accents, each with a swatch, an auto-generated name, its hex and an Add button](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
 
 ### Committing a generated palette
 
@@ -107,11 +140,11 @@ Still in the same wing, **Build your palette** generates matching accent colours
 
 ### The palette, the chart and each swatch
 
-The right pane lists every colour your brand carries, grouped (Primary, Neutral, Secondary, Spectrum, Custom, Roles), each group foldable with its own **+ Add**. Below it, **Colour chart** folds open on two views of the same swatches: the **Wheel** (the OKLCH wheel - drag a dot to recolour it, click a dot to edit it or click empty space to drop a new swatch) and the **Gamut** chart, which shows where the displayable range actually ends. `#/start?area=color&focus=chart` opens the card directly, as `?wheel` always has.
+The right pane lists every colour the design system carries, grouped (Primary, Neutral, Secondary, Spectrum, Custom), each group foldable with its own **+ Add**. A role never makes a second tile: one token is one tile, and a tile a role points at wears a small corner mark instead (**P**, **S**, **Su**, **T**). Below the tiles, **Colour chart** folds open on two views of the same swatches: the **Wheel** (the OKLCH wheel - drag a dot to recolour it, click a dot to edit it or click empty space to drop a new swatch) and the **Gamut** chart, which shows where the displayable range actually ends. `#/start?area=color&focus=chart` opens the card directly, as `?wheel` always has.
 
-![The palette pane, every group foldable, with the download pill parked at its bottom edge](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
+![The palette pane, every group foldable, with the download pill parked at its bottom edge](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=1000&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
 
-![The OKLCH wheel - angle is hue, distance out is chroma and the greys ride a lightness rail down the side](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor%26wheel&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
+![The OKLCH wheel - angle is hue, distance out is chroma and the greys ride a lightness rail down the side](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400%3Bclick%3A%5Bdata-be-chart%5D%20summary%3Bwait%3A900&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
 
 Click any swatch to open its editor:
 
@@ -128,50 +161,78 @@ These print locks are what a press uses when you export a CMYK PDF or TIFF - see
 
 **Deleting a swatch** is safe: derived ramp steps and theme roles are *hidden* (the underlying token keeps resolving, so nothing downstream breaks), while colours you added yourself are removed outright.
 
+### Working with many swatches
+
+Selection in the palette pane is a gesture, not a mode. There is no button to press first, and the bar arrives with the first selected tile and leaves with the last.
+
+- **Drag on the pane's empty space** to draw a rectangle: every tile it touches joins the selection, across group boundaries. A folded section contributes nothing, and a drag that never moves clears the selection.
+- **Shift-click** takes the range in reading order; **Cmd/Ctrl-click** toggles one tile; a plain click still opens that tile's editor.
+- Every group header carries **Select all**, and **Cmd-A** with a tile focused takes every colour the design system owns - never a starter one.
+- The grid has one tab stop. Arrows walk it, Shift-arrows extend the selection, Space toggles a tile, Delete removes the selection and Escape clears it. (Arrows only move the focus: to nudge a channel, press `l`, `c` or `h` first, as the readout says.)
+- On a touch screen there is no rectangle. Press and hold a tile to start a selection, then tap to add; per-group **Select all** carries the rest.
+
+The bar itself reads **{n} selected**, then **Move to** (an existing group, or a new one you name inside the menu), **Give a role** (each selected colour takes the next role in turn, so four tiles fill all four roles in one press), **Download** (the selection in any of the six palette formats), **Copy values** (one line per colour in its stored notation) and **Delete**. Move to and Give a role appear once the palette has shades to move around. One Ctrl/Cmd-Z undoes a whole bulk action - a move of forty, a role walk, a delete - and a delete says what it kept, because a selection reaches tiles this room does not remove.
+
 ### Gradients
 
-An optional **Gradients** panel builds blend tokens from your palette for backgrounds and accents. Skip it entirely if your brand doesn't do gradients. Each gradient has a preview, named stops (2–8) and an angle. The key behaviour: **a stop references a swatch**, so recolour that swatch and the gradient follows. Interpolation runs in OKLCH for clean blends. Delete a stop to trim the run.
+An optional **Gradients** panel builds blend tokens from the palette for backgrounds and accents. Skip it entirely if the design system doesn't do gradients. Each gradient has a preview, named stops (2–8) and an angle. The key behaviour: **a stop references a swatch**, so recolour that swatch and the gradient follows. Interpolation runs in OKLCH for clean blends. Delete a stop to trim the run.
 
 ### Take the palette elsewhere
 
-The floating pill parked at the bottom edge of the palette pane downloads the whole palette as **Design tokens (JSON)**, **CSS variables**, **CSS classes**, **SCSS variables**, a **GIMP palette (.gpl)** or an **Adobe Swatch Exchange (.ase)** - so the brand drops straight into Illustrator, Figma, GIMP or a stylesheet. It sits outside the pane's scroller, so it keeps its seat however far the palette scrolls. (You can also download the palette from the [Catalogue](/info/using.html) view.)
+The floating pill parked at the bottom edge of the palette pane downloads the whole palette as **Design tokens (JSON)**, **CSS variables**, **CSS classes**, **SCSS variables**, a **GIMP palette (.gpl)** or an **Adobe Swatch Exchange (.ase)** - so the design system drops straight into Illustrator, Figma, GIMP or a stylesheet. It sits outside the pane's scroller, so it keeps its seat however far the palette scrolls, and it appears once the palette has shades. (You can also download the palette from the [Catalogue](/info/using.html) view.)
 
 ## Type
 
-The room leads with **four role cards** - the four faces the app, your tools and every export actually read. Each card shows what serves that role right now, set in that face, with a line of real copy under it:
+This room grows the same way. With no face of its own it is one card and one decision: **Primary**, set at reading size in the face serving it today, a **Starter** tag beside the name, a filled **Choose a face** and the line *"Nothing installs until you choose one."* Under the card sits *"Headings, code and italic follow the primary until you choose them"*, with **Choose them separately** revealing the other three cards for the rest of the visit.
+
+![The Type room with no face chosen yet - one card at reading size, a Starter tag on it, and one filled Choose a face](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+
+Choose one face and the room opens out into **four role cards**, the Fonts list and the live specimen. The four faces are the ones the app, the tools and every export actually read:
 
 - **Primary** - body copy, buttons and every tool.
 - **Headings** - the display face for `h1`/`h2`.
 - **Code** - a monospace face for code and data.
 - **Italic** - a true italic companion for emphasis, quotations and asides.
 
-Headings, code and italic each fall back to the primary until you assign them, so a one-font brand needs no decisions here at all. Nothing on a card commits anything: **Change** (or **Choose a face** on an empty role) opens the **compare stage** scoped to that role.
+Headings, code and italic each fall back to the primary until you assign them, so a one-face design system needs no decisions here at all.
 
-![The Type room - the role cards and a live specimen of each face doing its job](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+**A tint means you chose it.** A card is tinted only where you installed that face. A starter face carries the same **Starter** tag the palette's inherited groups wear, in the muted register and with no tint, and a role nobody has chosen reads **↳ follows Primary** rather than repeating the primary's name as though it had been picked. The button says **Change** on a face of your own and **Choose a face** everywhere else. Nothing on a card commits anything: the button opens the **compare stage** scoped to that role.
+
+![The four role cards revealed - each set in the face that serves it, with a Starter tag where nobody chose one and Italic following the primary](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=1000&dpi=192&waitMs=2600&drive=click%3A%5Bdata-be-typemore-toggle%5D%3Bwait%3A600&cropSelector=.be-typecard-grid&walker=1&format=svg&dark=1&filename=bs-type-specimen)
 
 ### The compare stage
 
-The stage opens **inline in the room**, not in a dialog, so the cards you came from stay on screen. Search a Google Fonts family (Inter, Fraunces, Space Grotesk…) or drop a font file, press **Add to the comparison** and the candidates stand side by side in the same words before any of them installs. Escape cancels and hands the keyboard back to the card you opened it from.
+![The compare stage open under its card, with the search row, the pinned families and the cards folded to a one-line strip](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dtype%26focus%3Dstage&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=bs-type-stage)
 
-That is the one door in, which is why nothing enters your brand unseen. Below the stage sit the two management panels:
+The stage opens **inline in the room**, not in a dialog, and directly under the card you pressed. While it is up the cards fold to a one-line strip of role and face, so the stage is on the first screen even on a phone. Escape cancels and hands the keyboard back to the card you opened it from.
 
-- **Fonts on this device** - every installed family, the roles it serves and a delete. **Add a face** here opens the same compare stage unscoped.
-- **Your fonts** - upload a **TTF**, **OTF** or **WOFF** off your own machine. That's the path for a licensed corporate typeface you already own.
+Choosing a face is three presses:
 
-Either way the face stays on this device, renders in the app, in your tools and in every export, offline forever and travels in your brand pack - nothing is fetched at render time. Everything on Google Fonts ships under an open licence (OFL/Apache/UFL).
+1. **Choose a face** on the card.
+2. Type a family name and press **Preview** - or press one of the six **Pinned** families under the field, one press each. The card appears already loading, with a skeleton bar where the specimen will be instead of the interface face standing in for a face you have not seen yet.
+3. **Use this face**.
 
-The **Type roles** panel at the foot shows a live specimen of each role - body and UI in the primary, an optional display face for the top headings, an italic for emphasis, a mono for code and data - so you can see the whole set working together.
+**Consent is asked once, on the press you made.** The first time a preview reaches Google Fonts, a dialog says what happens: *Google learns the family name and your IP address. The file is then kept on this device and used offline. This is the one step in the studio that reaches a third party.* **Fetch from Google** goes ahead and is remembered. **Cancel** leaves the card saying *"Not fetched. Nothing was sent to Google."* with its own live **Fetch from Google**, so changing your mind is one press on the card itself. No card ever shows a dead button: whatever state it is in, its one primary names the next step.
 
-![The Type roles specimen - heading, body, italic and code, each set in the face that role resolves to, with the face name beside it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2600&css=.start-head%2C.be-custom-fonts%2C.be-fonts%7Bdisplay%3Anone%7D&walker=1&format=svg&dark=1&filename=bs-type-specimen)
+**Drop a font file on the stage** and it previews at once - **TTF**, **OTF** or **WOFF** off your own machine, which is the path for a licensed corporate typeface you already own. That drop zone is the only file door in the room.
+
+Either way the face stays on this device, renders in the app, in the tools and in every export, offline forever, and travels in the design system file - nothing is fetched at render time. Everything on Google Fonts ships under an open licence (OFL/Apache/UFL).
+
+### Fonts on this device
+
+The **Fonts** panel lists every face this device holds and the role it serves. Faces you added lead under **In the design system**, each with its roles and a delete, and the one serving Primary carries the badge. The starter faces follow in one folded row - *Starter · SUSE, SUSE Mono · serving Primary and Code until you choose* - muted, with no delete and nothing to promote, because neither is a decision anybody made. **Add a face** opens the same compare stage unscoped.
+
+The **Type roles** panel at the foot shows a live specimen of each role - body and UI in the primary, an optional display face for the top headings, an italic for emphasis, a mono for code and data - with the family and its state beside each one (*Inter*, *SUSE · starter*, *SUSE · follows Primary*), so the whole set can be read at once.
 
 ## Tokens
 
 The rest of the design system, editable without touching code:
 
-![The Tokens room - a corner-radius slider plus spacing, sizing, shadows and the rest of the system](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+![The Tokens room - a corner-radius slider plus spacing, sizing, shadows and the rest of the system](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=740&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
 
 - **Rounded corners** - a single radius slider (0–1.5rem) that cards, buttons and panels across the app follow.
-- **More tokens** - add and edit **spacing**, **sizing**, **stroke width**, **opacity**, **rotation**, plain **numbers** and **shadows**. Pick a type, name it (*Gutter, Card shadow…*) and set its value. These are stored as standard [design tokens](/info/design-tokens.html) (DTCG) and travel with your brand.
+- **Neutrals** - the ink-through-paper ramp a fresh install ships with, listed as **Neutrals · starter · 9** with its nine steps and an **Open** into the Colours pane. It is the one place the starter neutrals are managed, and the *starter* tag goes the moment the ramp is generated rather than inherited.
+- **More tokens** - add and edit **spacing**, **sizing**, **stroke width**, **opacity**, **rotation**, plain **numbers** and **shadows**. Pick a type, name it (*Gutter, Card shadow…*) and set its value. These are stored as standard [design tokens](/info/design-tokens.html) (DTCG) and travel with the design system.
 
 ## Files
 

@@ -60,9 +60,11 @@ Eso son ocho ranuras opcionales. Haz clic en una ranura para añadir un PNG, SVG
 
 ## Colores
 
+![The Colours room after one colour - the two panes back, the generate offer, roles reading in three registers and the pane at one colour](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=840&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A900&format=svg&walker=1&dark=1&filename=bs-colour-first)
+
 La sala más rica, en dos paneles. El izquierdo es donde trabajas; el derecho es tu **paleta en vivo**. Arrastra el divisor entre ambos para redimensionar (Intro sobre él pliega la paleta a un lado).
 
-![La sala Colores - un color primario deriva rampas, tarjetas de muestra con ratios de contraste y una paleta en vivo](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![La sala Colores - un color primario deriva rampas, tarjetas de muestra con ratios de contraste y una paleta en vivo](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 ### Añade un color, luego dale un cometido
 
@@ -91,13 +93,13 @@ Nada en esta ala escribe nada en tu marca. Es una vista previa, en vivo en toda 
 
 Debajo del primario verás rampas en vivo **Primario / Neutro / Secundario / Mezcla** y tarjetas de muestra Claro y Oscuro, cada una con su propia lectura de contraste - el ratio WCAG con la cifra APCA `Lc` al lado. **Haz clic en un paso de la rampa Neutro o Secundario** para anclar ese tono en lugar del valor derivado por defecto.
 
-![Las cuatro rampas apiladas sobre tarjetas de muestra claras y oscuras, cada tarjeta con su propio ratio de contraste WCAG](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
+![Las cuatro rampas apiladas sobre tarjetas de muestra claras y oscuras, cada tarjeta con su propio ratio de contraste WCAG](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
 
 ### Construye tu paleta (generador de armonías)
 
 Todavía en la misma ala, **Construye tu paleta** genera colores de acento a juego a partir de tu primario. Elige una **Armonía** - **Complementaria**, **Adyacente**, **Tríada**, **Tétrada** o **Análoga** (que trae su propio número de **Acentos**, de 2 a 5, y un **Ángulo** de matiz de 10° a 45°) - y cada candidato llega con un nombre legible generado automáticamente y un botón **+ Añadir**. Añadir uno pone ese color en tu paleta de inmediato, una pulsación a un token. *"Tu paleta, aplicada"* muestra el conjunto completo sobre gráficos reales.
 
-![Acentos generados, cada uno con una muestra, un nombre generado automáticamente, su hex y un botón Añadir](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
+![Acentos generados, cada uno con una muestra, un nombre generado automáticamente, su hex y un botón Añadir](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
 
 ### Confirmar una paleta generada
 
@@ -109,9 +111,9 @@ Todavía en la misma ala, **Construye tu paleta** genera colores de acento a jue
 
 El panel derecho lista todos los colores que lleva tu marca, agrupados (Primario, Neutro, Secundario, Espectro, Personalizado, Roles), cada grupo plegable con su propio **+ Añadir**. Debajo, **Gráfico de color** se despliega en dos vistas de las mismas muestras: la **Rueda** (la rueda OKLCH - arrastra un punto para recolorearlo, haz clic en un punto para editarlo o haz clic en un espacio vacío para soltar una muestra nueva) y el gráfico de **Gamut**, que muestra dónde termina realmente el rango representable. `#/start?area=color&focus=chart` abre la tarjeta directamente, igual que `?wheel` siempre ha hecho.
 
-![El panel de la paleta, cada grupo plegable, con la píldora de descarga situada en su borde inferior](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
+![El panel de la paleta, cada grupo plegable, con la píldora de descarga situada en su borde inferior](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=1000&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
 
-![La rueda OKLCH - el ángulo es el tono, la distancia hacia fuera es el croma y los grises recorren un carril de luminosidad en el lateral](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor%26wheel&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
+![La rueda OKLCH - el ángulo es el tono, la distancia hacia fuera es el croma y los grises recorren un carril de luminosidad en el lateral](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400%3Bclick%3A%5Bdata-be-chart%5D%20summary%3Bwait%3A900&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
 
 Haz clic en cualquier muestra para abrir su editor:
 
@@ -138,6 +140,8 @@ La píldora flotante situada en el borde inferior del panel de paleta descarga l
 
 ## Tipografía
 
+![The compare stage open under its card, with the search row, the pinned families and the cards folded to a one-line strip](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dtype%26focus%3Dstage&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=bs-type-stage)
+
 La sala empieza con **cuatro tarjetas de rol** - las cuatro fuentes que la app, tus herramientas y cada exportación realmente leen. Cada tarjeta muestra qué sirve ese rol ahora mismo, tipografiado en esa fuente, con una línea de texto real debajo:
 
 - **Principal** - texto de cuerpo, botones y todas las herramientas.
@@ -147,7 +151,7 @@ La sala empieza con **cuatro tarjetas de rol** - las cuatro fuentes que la app, 
 
 Titulares, código y cursiva recurren cada uno a la principal hasta que se los asignas, así que una marca de una sola fuente no necesita ninguna decisión aquí. Nada en una tarjeta compromete nada: **Cambiar** (o **Elegir una fuente** en un rol vacío) abre el **escenario de comparación** centrado en ese rol.
 
-![La sala de Tipografía - las tarjetas de rol y un espécimen en vivo de cada fuente haciendo su trabajo](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+![La sala de Tipografía - las tarjetas de rol y un espécimen en vivo de cada fuente haciendo su trabajo](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
 
 ### El escenario de comparación
 
@@ -162,13 +166,13 @@ En ambos casos, la fuente permanece en este dispositivo, se representa en la app
 
 El panel **Roles de tipografía** al pie muestra un espécimen en vivo de cada rol - cuerpo e interfaz en la principal, una fuente de visualización opcional para los titulares superiores, una cursiva para énfasis, una monoespaciada para código y datos - así puedes ver todo el conjunto funcionando junto.
 
-![El espécimen de Roles de tipografía - titular, cuerpo, cursiva y código, cada uno tipografiado en la fuente a la que resuelve ese rol, con el nombre de la fuente al lado](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2600&css=.start-head%2C.be-custom-fonts%2C.be-fonts%7Bdisplay%3Anone%7D&walker=1&format=svg&dark=1&filename=bs-type-specimen)
+![El espécimen de Roles de tipografía - titular, cuerpo, cursiva y código, cada uno tipografiado en la fuente a la que resuelve ese rol, con el nombre de la fuente al lado](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=1000&dpi=192&waitMs=2600&drive=click%3A%5Bdata-be-typemore-toggle%5D%3Bwait%3A600&cropSelector=.be-typecard-grid&walker=1&format=svg&dark=1&filename=bs-type-specimen)
 
 ## Tokens
 
 El resto del sistema de diseño, editable sin tocar código:
 
-![La sala de Tokens - un control deslizante de radio de esquina más espaciado, tamaño, sombras y el resto del sistema](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+![La sala de Tokens - un control deslizante de radio de esquina más espaciado, tamaño, sombras y el resto del sistema](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=740&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
 
 - **Esquinas redondeadas** - un único control deslizante de radio (0-1.5rem) que siguen las tarjetas, botones y paneles de toda la app.
 - **Más tokens** - añade y edita **espaciado**, **tamaño**, **grosor de trazo**, **opacidad**, **rotación**, **números** simples y **sombras**. Elige un tipo, dale un nombre (*Espacio, Sombra de tarjeta…*) y define su valor. Se almacenan como [tokens de diseño](/info/design-tokens.html) estándar (DTCG) y viajan con tu marca.

@@ -60,9 +60,11 @@ Acestea sunt opt sloturi opționale. Apasă un slot pentru a adăuga un PNG, SVG
 
 ## Colours
 
+![The Colours room after one colour - the two panes back, the generate offer, roles reading in three registers and the pane at one colour](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=840&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A900&format=svg&walker=1&dark=1&filename=bs-colour-first)
+
 Cea mai bogată cameră, în două panouri. Cel din stânga este unde lucrezi; cel din dreapta este **paleta ta live**. Trage delimitatorul dintre ele pentru a redimensiona (Enter pe el pliază paleta din cale).
 
-![Camera Colours - o culoare primară derivă ramp-uri, carduri specimen cu rapoarte de contrast și o paletă live](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![Camera Colours - o culoare primară derivă ramp-uri, carduri specimen cu rapoarte de contrast și o paletă live](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 ### Adaugă o culoare, apoi dă-i un rol
 
@@ -91,13 +93,13 @@ Nimic în această aripă nu scrie ceva în brandul tău. Este o previzualizare,
 
 Sub culoarea primară vei vedea ramp-urile live **Primary / Neutral / Secondary / Blend** și carduri specimen Light și Dark, fiecare purtând propria citire de contrast - raportul WCAG cu cifra APCA `Lc` lângă el. **Apasă o treaptă din ramp-ul Neutral sau Secondary** pentru a ancora acea nuanță în locul celei derivate implicit.
 
-![Cele patru rampe suprapuse deasupra cardurilor demonstrative deschise și întunecate, fiecare card purtându-și propriul raport de contrast WCAG](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
+![Cele patru rampe suprapuse deasupra cardurilor demonstrative deschise și întunecate, fiecare card purtându-și propriul raport de contrast WCAG](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
 
 ### Creează-ți paleta (generator de armonii)
 
 Tot în această aripă, **Creează-ți paleta** generează culori de accent asortate din culoarea ta primară. Alege o **Armonie** - **Complementară**, **Adiacentă**, **Triadă**, **Tetradă** sau **Analogă** (care aduce propriul număr de **Accente**, de la 2 la 5, și un **Unghi** de nuanță de la 10° la 45°) - iar fiecare candidat vine cu un nume generat automat, ușor de citit, și un buton **+ Adaugă**. Adăugarea uneia pune imediat acea culoare în paleta ta, o apăsare pentru un token. *„Paleta ta, aplicată”* previzualizează întregul set pe grafice reale.
 
-![Accente generate, fiecare cu un eșantion, un nume generat automat, codul hex și un buton Adaugă](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
+![Accente generate, fiecare cu un eșantion, un nume generat automat, codul hex și un buton Adaugă](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
 
 ### Confirmarea unei palete generate
 
@@ -109,9 +111,9 @@ Tot în această aripă, **Creează-ți paleta** generează culori de accent aso
 
 Panoul din dreapta listează fiecare culoare din brandul tău, grupată (Primary, Neutral, Secondary, Spectrum, Custom, Roles), fiecare grup putând fi restrâns, cu propriul **+ Add**. Dedesubt, **Colour chart** se deschide pe două vizualizări ale acelorași eșantioane: **Wheel** (roata OKLCH - trage un punct pentru a-i schimba culoarea, apasă un punct pentru a-l edita sau apasă un spațiu gol pentru a adăuga un eșantion nou) și graficul **Gamut**, care arată unde se termină de fapt intervalul afișabil. `#/start?area=color&focus=chart` deschide direct cardul, la fel ca `?wheel` dintotdeauna.
 
-![Panoul paletei, fiecare grup putând fi restrâns, cu pastila de descărcare fixată la marginea de jos](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
+![Panoul paletei, fiecare grup putând fi restrâns, cu pastila de descărcare fixată la marginea de jos](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=1000&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
 
-![Roata OKLCH - unghiul este nuanța, distanța spre exterior este saturația, iar gri-urile urmează o bandă de luminozitate pe lateral](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor%26wheel&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
+![Roata OKLCH - unghiul este nuanța, distanța spre exterior este saturația, iar gri-urile urmează o bandă de luminozitate pe lateral](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400%3Bclick%3A%5Bdata-be-chart%5D%20summary%3Bwait%3A900&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
 
 Apasă pe orice eșantion pentru a-i deschide editorul:
 
@@ -138,6 +140,8 @@ Pastila plutitoare fixată la marginea de jos a panoului paletei descarcă într
 
 ## Tipografie
 
+![The compare stage open under its card, with the search row, the pinned families and the cards folded to a one-line strip](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dtype%26focus%3Dstage&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=bs-type-stage)
+
 Camera începe cu **patru carduri de rol** - cele patru fonturi pe care aplicația, uneltele tale și fiecare export chiar le citesc. Fiecare card arată ce servește acel rol chiar acum, setat în acel font, cu o linie de text real dedesubt:
 
 - **Primary** (Principal) - text de bază, butoane și fiecare unealtă.
@@ -147,7 +151,7 @@ Camera începe cu **patru carduri de rol** - cele patru fonturi pe care aplicaț
 
 Titlurile, codul și italicul revin implicit la fontul principal până le atribui, deci un brand cu un singur font nu are nicio decizie de luat aici. Nimic de pe un card nu confirmă ceva: **Change** (Schimbă) (sau **Choose a face** (Alege un font) pe un rol gol) deschide **scena de comparație** limitată la acel rol.
 
-![Camera Type - cardurile de rol și un specimen live al fiecărui font în acțiune](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+![Camera Type - cardurile de rol și un specimen live al fiecărui font în acțiune](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
 
 ### Scena de comparație
 
@@ -162,13 +166,13 @@ Oricum ar fi, fontul rămâne pe acest dispozitiv, se randează în aplicație, 
 
 Panoul **Type roles** (Roluri de font) de la bază arată un specimen live al fiecărui rol - text de bază și UI în fontul principal, un font de afișare opțional pentru titlurile de sus, un italic pentru accentuare, un monospațiat pentru cod și date - astfel încât poți vedea tot setul funcționând împreună.
 
-![Specimenul rolurilor de font - titlu, text de bază, italic și cod, fiecare setat în fontul spre care se rezolvă rolul respectiv, cu numele fontului alături](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2600&css=.start-head%2C.be-custom-fonts%2C.be-fonts%7Bdisplay%3Anone%7D&walker=1&format=svg&dark=1&filename=bs-type-specimen)
+![Specimenul rolurilor de font - titlu, text de bază, italic și cod, fiecare setat în fontul spre care se rezolvă rolul respectiv, cu numele fontului alături](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=1000&dpi=192&waitMs=2600&drive=click%3A%5Bdata-be-typemore-toggle%5D%3Bwait%3A600&cropSelector=.be-typecard-grid&walker=1&format=svg&dark=1&filename=bs-type-specimen)
 
 ## Tokenuri
 
 Restul sistemului de design, editabil fără să atingi codul:
 
-![Camera Tokens - un cursor pentru raza colțurilor plus spațiere, dimensionare, umbre și restul sistemului](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+![Camera Tokens - un cursor pentru raza colțurilor plus spațiere, dimensionare, umbre și restul sistemului](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=740&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
 
 - **Rounded corners** (Colțuri rotunjite) - un singur cursor de rază (0-1.5rem) pe care îl urmează cardurile, butoanele și panourile din întreaga aplicație.
 - **More tokens** (Mai multe tokenuri) - adaugă și editează **spacing** (spațiere), **sizing** (dimensionare), **stroke width** (grosime contur), **opacity** (opacitate), **rotation** (rotație), **numbers** (numere) simple și **shadows** (umbre). Alege un tip, dă-i un nume (*Gutter, Card shadow...*) și setează-i valoarea. Acestea sunt stocate ca [tokenuri de design](/info/design-tokens.html) standard (DTCG) și călătoresc împreună cu brandul tău.

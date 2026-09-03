@@ -60,9 +60,11 @@
 
 ## 颜色
 
+![The Colours room after one colour - the two panes back, the generate offer, roles reading in three registers and the pane at one colour](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=840&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A900&format=svg&walker=1&dark=1&filename=bs-colour-first)
+
 最丰富的房间,分为两个面板。左侧是你工作的地方;右侧是你的**实时调色板**。拖动两者之间的分隔条可调整大小(在其上按 Enter 会把调色板收起到一旁)。
 
-![颜色房间 - 一个主色派生出色阶,带对比度比值的样本卡片,以及一个实时调色板](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![颜色房间 - 一个主色派生出色阶,带对比度比值的样本卡片,以及一个实时调色板](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 ### 添加一个颜色,再赋予它一个用途
 
@@ -91,13 +93,13 @@
 
 在主色下方,你会看到实时的**主色 / 中性色 / 次色 / 混合**色阶,以及浅色和深色样本卡片,各自带有自己的对比度读数 - WCAG 比值旁边附带 APCA `Lc` 数值。**点击中性色或次色色阶中的某一级**,即可将该色调锁定为固定值,而不是使用派生的默认值。
 
-![堆叠在浅色和深色样本卡上方的四条渐变带,每张卡都带有自己的 WCAG 对比度](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
+![堆叠在浅色和深色样本卡上方的四条渐变带,每张卡都带有自己的 WCAG 对比度](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
 
 ### 构建你的调色板(和谐生成器)
 
 仍在同一区域,**构建你的调色板** 会根据你的主色生成匹配的强调色。选择一种 **和谐方式** - **互补**、**邻近**、**三角**、**四角** 或 **类比**(后者自带 2 到 5 的 **强调色** 数量,以及 10° 到 45° 的色相 **角度**)- 每个候选色都带有自动生成的可读名称和一个 **+ 添加** 按钮。添加一个即可立即将该颜色纳入你的调色板,一次按下对应一个令牌。*"你的调色板,应用效果"* 会在真实图形上预览整套配色。
 
-![生成的强调色,每个都带有色块、自动生成的名称、十六进制值和一个添加按钮](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
+![生成的强调色,每个都带有色块、自动生成的名称、十六进制值和一个添加按钮](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
 
 ### 提交生成的调色板
 
@@ -109,9 +111,9 @@
 
 右侧面板列出你的品牌拥有的每一种颜色,按分组(主色、中性色、辅助色、光谱、自定义、角色)排列,每组都可折叠,并各自带有 **+ 添加**。其下方,**色彩图表** 展开后是同一批色块的两种视图:**色轮**(OKLCH 色轮 - 拖动一个点可为其重新上色,点击一个点可编辑它,或点击空白处添加新色块)和 **色域** 图,显示可显示范围实际终止的位置。`#/start?area=color&focus=chart` 会直接打开该卡片,`?wheel` 也一直如此。
 
-![调色板面板,每组都可折叠,下载按钮固定在其底部边缘](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
+![调色板面板,每组都可折叠,下载按钮固定在其底部边缘](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=1000&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
 
-![OKLCH 色轮 - 角度代表色相,距离代表彩度,灰色沿侧边的明度轨道排列](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor%26wheel&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
+![OKLCH 色轮 - 角度代表色相,距离代表彩度,灰色沿侧边的明度轨道排列](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400%3Bclick%3A%5Bdata-be-chart%5D%20summary%3Bwait%3A900&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
 
 点击任意色块以打开其编辑器:
 
@@ -138,6 +140,8 @@
 
 ## 字体
 
+![The compare stage open under its card, with the search row, the pinned families and the cards folded to a one-line strip](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dtype%26focus%3Dstage&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=bs-type-stage)
+
 该区域以 **四张角色卡** 开头 - 这是应用、你的工具以及每一次导出实际读取的四种字体。每张卡都会展示该角色当前使用的字体、以该字体呈现的样式,以及卡片下方的一行真实文案:
 
 - **主体** - 正文文案、按钮和所有工具。
@@ -147,7 +151,7 @@
 
 标题、代码和斜体在你未指定之前都会回退到主体字体,因此单字体品牌在这里完全不需要做任何决定。卡片上的任何操作都不会立即提交:**更改**(空角色上为 **选择字体**)会打开限定于该角色的 **对比舞台**。
 
-![字体区域 - 角色卡以及每种字体实际效果的实时样张](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+![字体区域 - 角色卡以及每种字体实际效果的实时样张](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
 
 ### 对比舞台
 
@@ -162,13 +166,13 @@
 
 面板底部的 **字体角色** 面板展示了每个角色的实时样张 - 以主体字体呈现的正文与界面文字、顶部标题的可选展示字体、用于强调的斜体、用于代码和数据的等宽字体 - 让你能看到整套字体协同工作的效果。
 
-![字体角色样张 - 标题、正文、斜体和代码,各自以其角色所解析到的字体呈现,并在旁边标注字体名称](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2600&css=.start-head%2C.be-custom-fonts%2C.be-fonts%7Bdisplay%3Anone%7D&walker=1&format=svg&dark=1&filename=bs-type-specimen)
+![字体角色样张 - 标题、正文、斜体和代码,各自以其角色所解析到的字体呈现,并在旁边标注字体名称](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=1000&dpi=192&waitMs=2600&drive=click%3A%5Bdata-be-typemore-toggle%5D%3Bwait%3A600&cropSelector=.be-typecard-grid&walker=1&format=svg&dark=1&filename=bs-type-specimen)
 
 ## 令牌
 
 设计系统的其余部分,无需接触代码即可编辑:
 
-![令牌区域 - 一个圆角滑块,以及间距、尺寸、阴影和系统的其余部分](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+![令牌区域 - 一个圆角滑块,以及间距、尺寸、阴影和系统的其余部分](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=740&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
 
 - **圆角** - 一个单一的半径滑块(0-1.5rem),应用中的卡片、按钮和面板都会跟随它。
 - **更多令牌** - 添加和编辑 **间距**、**尺寸**、**描边宽度**、**不透明度**、**旋转角度**、普通 **数字** 和 **阴影**。选择一种类型,为其命名(例如 *Gutter、Card shadow……*),然后设置其值。这些以标准[设计令牌](/info/design-tokens.html)(DTCG)形式存储,并随你的品牌一同携带。

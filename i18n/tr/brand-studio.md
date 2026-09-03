@@ -60,9 +60,11 @@ Bu, sekiz isteğe bağlı yuva demek. Bir PNG, SVG, JPEG ya da WebP eklemek içi
 
 ## Colours
 
+![The Colours room after one colour - the two panes back, the generate offer, roles reading in three registers and the pane at one colour](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=840&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A900&format=svg&walker=1&dark=1&filename=bs-colour-first)
+
 En zengin oda, iki bölmeli. Sol taraf çalıştığın yer; sağ taraf ise **canlı palet**in. Aralarındaki ayırıcıyı sürükleyerek boyutlandır (üzerinde Enter'a basmak paleti kenara katlar).
 
-![Colours odası - bir birincil renk tonlar türetir, kontrast oranlı numune kartları ve canlı bir palet](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![Colours odası - bir birincil renk tonlar türetir, kontrast oranlı numune kartları ve canlı bir palet](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 ### Bir renk ekle, sonra ona bir görev ver
 
@@ -91,13 +93,13 @@ Bu kanattaki hiçbir şey markana yazılmaz. Bu, **Replace palette**'e basana ka
 
 Birincilin altında canlı **Primary / Neutral / Secondary / Blend** tonlarını ve her biri kendi kontrast okumasını taşıyan Light ve Dark numune kartlarını görürsün - yanında APCA `Lc` değeriyle birlikte WCAG oranı. Türetilmiş varsayılan yerine o tonu sabitlemek için **Neutral ya da Secondary tonunda bir adıma tıkla**.
 
-![Açık ve koyu numune kartlarının üzerinde istiflenmiş dört rampa, her kart kendi WCAG kontrast oranını taşıyor](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
+![Açık ve koyu numune kartlarının üzerinde istiflenmiş dört rampa, her kart kendi WCAG kontrast oranını taşıyor](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
 
 ### Paletini oluştur (uyum üretici)
 
 Aynı kanatta, **Paletini oluştur** birincil renginden eşleşen vurgu renkleri üretir. Bir **Uyum** seç - **Tümleyici**, **Komşu**, **Üçlü**, **Dörtlü** ya da **Analog** (kendi **Vurgular** sayısını, 2 ila 5 arası, ve 10°-45° arasında bir ton **Açısı** getirir) - ve her aday, otomatik oluşturulmuş okunabilir bir adla ve bir **+ Ekle** düğmesiyle gelir. Birini eklemek o rengi paletine anında koyar, bir basış bir token'a karşılık gelir. *"Paletin, uygulanmış hali"* bütün seti gerçek grafikler üzerinde önizler.
 
-![Üretilen vurgular, her biri bir renk örneği, otomatik oluşturulmuş bir ad, hex kodu ve bir Ekle düğmesiyle](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
+![Üretilen vurgular, her biri bir renk örneği, otomatik oluşturulmuş bir ad, hex kodu ve bir Ekle düğmesiyle](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
 
 ### Üretilen bir paleti onaylamak
 
@@ -109,9 +111,9 @@ O kart üzerindeki **Paleti değiştir** işlemi onaylar; **İptal** vazgeçer v
 
 Sağ bölme markanın taşıdığı her rengi listeler, gruplanmış halde (Birincil, Nötr, İkincil, Spektrum, Özel, Roller), her grup kendi **+ Ekle** düğmesiyle katlanabilir. Altında, **Renk çizelgesi** aynı renk örneklerinin iki görünümüyle açılır: **Çark** (OKLCH çarkı - yeniden renklendirmek için bir noktayı sürükle, düzenlemek için bir noktaya tıkla ya da yeni bir renk örneği koymak için boş alana tıkla) ve **Gamut** çizelgesi, görüntülenebilir aralığın gerçekte nerede bittiğini gösterir. `#/start?area=color&focus=chart`, kartı `?wheel`'in her zaman yaptığı gibi doğrudan açar.
 
-![Palet bölmesi, her grup katlanabilir, indirme hapı alt kenarda park etmiş](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
+![Palet bölmesi, her grup katlanabilir, indirme hapı alt kenarda park etmiş](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=1000&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
 
-![OKLCH çarkı - açı ton, dıştaki mesafe doygunluk ve griler yan tarafta bir açıklık rayında ilerliyor](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor%26wheel&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
+![OKLCH çarkı - açı ton, dıştaki mesafe doygunluk ve griler yan tarafta bir açıklık rayında ilerliyor](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400%3Bclick%3A%5Bdata-be-chart%5D%20summary%3Bwait%3A900&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
 
 Düzenleyicisini açmak için herhangi bir renk örneğine tıkla:
 
@@ -138,6 +140,8 @@ Palet bölmesinin alt kenarında park etmiş yüzen hap, bütün paleti **Tasar�
 
 ## Tip
 
+![The compare stage open under its card, with the search row, the pinned families and the cards folded to a one-line strip](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dtype%26focus%3Dstage&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=bs-type-stage)
+
 Oda **dört rol kartıyla** başlar - uygulamanın, araçlarının ve her dışa aktarımın gerçekte okuduğu dört yüz. Her kart o role şu anda ne hizmet ettiğini, o yüzde ayarlanmış olarak, altında gerçek bir metin satırıyla gösterir:
 
 - **Birincil** - gövde metni, düğmeler ve her araç.
@@ -147,7 +151,7 @@ Oda **dört rol kartıyla** başlar - uygulamanın, araçlarının ve her dışa
 
 Başlıklar, kod ve italik, sen onları atayana kadar birincile geri döner, böylece tek fontluk bir marka burada hiçbir karar gerektirmez. Bir kart üzerindeki hiçbir şey bir şey onaylamaz: **Değiştir** (ya da boş bir rolde **Bir yüz seç**), o role kapsamlanmış **karşılaştırma sahnesini** açar.
 
-![Tip odası - rol kartları ve her yüzün işini yaparken canlı bir numunesi](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+![Tip odası - rol kartları ve her yüzün işini yaparken canlı bir numunesi](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
 
 ### Karşılaştırma sahnesi
 
@@ -162,13 +166,13 @@ Her iki durumda da yüz bu cihazda kalır, uygulamada, araçlarında ve her dı�
 
 Altta yer alan **Tip rolleri** paneli her rolün canlı bir numunesini gösterir - birincil yüzde gövde ve arayüz, üst başlıklar için isteğe bağlı bir gösterim yüzü, vurgu için bir italik, kod ve veri için bir mono - böylece bütün seti birlikte çalışırken görebilirsin.
 
-![Tip rolleri numunesi - başlık, gövde, italik ve kod, her biri o rolün çözüldüğü yüzde ayarlanmış, yanında yüz adıyla](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2600&css=.start-head%2C.be-custom-fonts%2C.be-fonts%7Bdisplay%3Anone%7D&walker=1&format=svg&dark=1&filename=bs-type-specimen)
+![Tip rolleri numunesi - başlık, gövde, italik ve kod, her biri o rolün çözüldüğü yüzde ayarlanmış, yanında yüz adıyla](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=1000&dpi=192&waitMs=2600&drive=click%3A%5Bdata-be-typemore-toggle%5D%3Bwait%3A600&cropSelector=.be-typecard-grid&walker=1&format=svg&dark=1&filename=bs-type-specimen)
 
 ## Token'lar
 
 Tasarım sisteminin geri kalanı, koda dokunmadan düzenlenebilir:
 
-![Token'lar odası - bir köşe yarıçapı kaydırıcısı ile boşluk, boyutlandırma, gölgeler ve sistemin geri kalanı](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+![Token'lar odası - bir köşe yarıçapı kaydırıcısı ile boşluk, boyutlandırma, gölgeler ve sistemin geri kalanı](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=740&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
 
 - **Yuvarlatılmış köşeler** - uygulama genelinde kartların, düğmelerin ve panellerin izlediği tek bir yarıçap kaydırıcısı (0-1.5rem).
 - **Daha fazla token** - **boşluk**, **boyutlandırma**, **çizgi genişliği**, **saydamlık**, **döndürme**, düz **sayılar** ve **gölgeler** ekle ve düzenle. Bir tür seç, adlandır (*Gutter, Kart gölgesi…*) ve değerini ayarla. Bunlar standart [tasarım token'ları](/info/design-tokens.html) (DTCG) olarak saklanır ve markanla birlikte seyahat eder.

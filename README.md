@@ -119,6 +119,7 @@ The fifth pathway, and the one the other four link into whenever a claim needs i
 | [ai-features.md](ai-features.md) | end user | Text-to-speech, upscaling and background removal - generated once under guard-rails, then rendered identically everywhere, and why inventing pixels is marked AI while removing them is not. |
 | [eu-ai-act.md](eu-ai-act.md) | end user | Article 50 and AI-content marking since 2 August 2026, and what Lolly honestly does: preserving arriving marks, declaring its own AI operations, verifying any file on-device. |
 | [beatrice-warde.md](beatrice-warde.md) | end user | The typographer whose 1932 lines this project adapted, what we changed, and who she was. |
+| [shoulders-of-giants.md](shoulders-of-giants.md) | end user | The open source projects Lolly is built from, named and thanked - the free-desktop lineage first, then sound, type, maps, models and the toolchain. |
 | [verify-yourself.md](verify-yourself.md) | security | Falsifiable procedures with exact commands and expected output for the privacy and security claims. |
 | [security-verification.md](security-verification.md) | security | A reviewer's summary of the cryptography behind Content Credentials, verification and encryption, and the tests behind each claim. |
 | [threat-model.md](threat-model.md) | security | Trust boundaries, the residual-risk register, what is explicitly *not* a boundary, and the commands to verify each claim. An index into module headers, with file and line for every row. |

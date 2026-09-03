@@ -60,9 +60,11 @@ Iyon ay walong opsyonal na slots. I-click ang isang slot para magdagdag ng PNG, 
 
 ## Colours
 
+![The Colours room after one colour - the two panes back, the generate offer, roles reading in three registers and the pane at one colour](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=840&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A900&format=svg&walker=1&dark=1&filename=bs-colour-first)
+
 Ang pinakamayamang silid, sa dalawang pane. Ang kaliwa ay kung saan ka nagtatrabaho; ang kanan ay ang iyong **live palette**. Hilahin ang divider sa pagitan nila para i-resize (ang Enter dito ay tinitiklop ang palette palayo).
 
-![Ang Colours room - isang primary colour na naglalabas ng ramps, mga specimen card na may contrast ratios at isang live palette](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![Ang Colours room - isang primary colour na naglalabas ng ramps, mga specimen card na may contrast ratios at isang live palette](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 ### Magdagdag ng kulay, tapos bigyan ito ng trabaho
 
@@ -91,13 +93,13 @@ Walang isinusulat sa iyong brand ang wing na ito. Isa itong preview, live sa buo
 
 Sa ilalim ng primary makikita mo ang live na **Primary / Neutral / Secondary / Blend** ramps at Light at Dark specimen cards, bawat isa ay may sariling contrast readout - ang WCAG ratio na may APCA `Lc` figure sa tabi nito. **I-click ang isang hakbang sa Neutral o Secondary ramp** para i-anchor ang shade na iyon sa halip ng derived default.
 
-![Ang apat na ramp na nakapatong sa itaas ng light at dark specimen cards, bawat card may sariling WCAG contrast ratio](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
+![Ang apat na ramp na nakapatong sa itaas ng light at dark specimen cards, bawat card may sariling WCAG contrast ratio](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
 
 ### Buuin ang iyong palette (harmony generator)
 
 Nasa parehong wing pa rin, ang **Build your palette** ay bumubuo ng magkatugmang accent colours mula sa iyong primary. Pumili ng **Harmony** - **Complementary**, **Adjacent**, **Triad**, **Tetrad** o **Analogous** (na may sariling **Accents** count, 2 hanggang 5, at isang hue **Angle** mula 10° hanggang 45°) - at bawat candidate ay may kasamang auto-generated na human-readable na pangalan at isang **+ Add** button. Kapag idinagdag ang isa, agad itong napupunta sa iyong palette, isang pindot para sa isang token. Ang *"Your palette, applied"* ay nagpapakita ng preview ng buong set sa aktwal na mga graphic.
 
-![Mga nabuong accent, bawat isa may swatch, auto-generated na pangalan, hex nito at isang Add button](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
+![Mga nabuong accent, bawat isa may swatch, auto-generated na pangalan, hex nito at isang Add button](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
 
 ### Pagkumpirma ng isang nabuong palette
 
@@ -109,9 +111,9 @@ Ang **Replace palette** sa card na iyon ang siyang kumukumpirma nito; ang **Canc
 
 Nakalista sa right pane ang bawat kulay na taglay ng iyong brand, naka-grupo (Primary, Neutral, Secondary, Spectrum, Custom, Roles), bawat grupo ay maaaring i-fold, may sariling **+ Add**. Sa ibaba nito, ang **Colour chart** ay bumubukas sa dalawang view ng parehong mga swatch: ang **Wheel** (ang OKLCH wheel - i-drag ang isang dot para baguhin ang kulay nito, i-click ang isang dot para i-edit ito o i-click ang bakanteng espasyo para maglagay ng bagong swatch) at ang **Gamut** chart, na nagpapakita kung saan talaga nagtatapos ang displayable range. Binubuksan ng `#/start?area=color&focus=chart` ang card nang direkta, gaya ng lagi nang ginagawa ng `?wheel`.
 
-![Ang palette pane, bawat grupo ay maaaring i-fold, may download pill na nakalagay sa ibabang gilid](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
+![Ang palette pane, bawat grupo ay maaaring i-fold, may download pill na nakalagay sa ibabang gilid](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=1000&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
 
-![Ang OKLCH wheel - ang angle ay hue, ang distansya palabas ay chroma at ang mga grey ay sumasakay sa isang lightness rail sa gilid](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor%26wheel&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
+![Ang OKLCH wheel - ang angle ay hue, ang distansya palabas ay chroma at ang mga grey ay sumasakay sa isang lightness rail sa gilid](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400%3Bclick%3A%5Bdata-be-chart%5D%20summary%3Bwait%3A900&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
 
 I-click ang alinmang swatch para buksan ang editor nito:
 
@@ -138,6 +140,8 @@ Ang floating pill na nakalagay sa ibabang gilid ng palette pane ay nagda-downloa
 
 ## Type
 
+![The compare stage open under its card, with the search row, the pinned families and the cards folded to a one-line strip](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dtype%26focus%3Dstage&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=bs-type-stage)
+
 Ang silid ay nangunguna sa **apat na role card** - ang apat na face na aktwal na binabasa ng app, ng iyong mga tool at ng bawat export. Ipinapakita ng bawat card kung ano ang naglilingkod sa role na iyon ngayon, nakatakda sa face na iyon, may linya ng aktwal na copy sa ilalim nito:
 
 - **Primary** - body copy, mga button at bawat tool.
@@ -147,7 +151,7 @@ Ang silid ay nangunguna sa **apat na role card** - ang apat na face na aktwal na
 
 Ang headings, code at italic ay bumabalik sa primary hanggang italaga mo sila, kaya ang isang one-font brand ay walang kailangang desisyon dito. Walang kumukumpirma ng anuman sa card: ang **Change** (o **Choose a face** sa isang walang laman na role) ay nagbubukas ng **compare stage** na naka-focus sa role na iyon.
 
-![Ang Type room - ang mga role card at isang live specimen ng bawat face na ginagampanan ang trabaho nito](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+![Ang Type room - ang mga role card at isang live specimen ng bawat face na ginagampanan ang trabaho nito](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
 
 ### Ang compare stage
 
@@ -162,13 +166,13 @@ Alinman sa dalawang paraan, ang face ay mananatili sa device na ito, nagre-rende
 
 Ang **Type roles** panel sa ibaba ay nagpapakita ng live specimen ng bawat role - body at UI sa primary, opsyonal na display face para sa mga pinakaitaas na heading, isang italic para sa emphasis, isang mono para sa code at data - para makita mo ang buong set na magkakasamang gumagana.
 
-![Ang Type roles specimen - heading, body, italic at code, bawat isa naka-set sa face na kinakatawan ng role na iyon, may pangalan ng face sa tabi nito](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2600&css=.start-head%2C.be-custom-fonts%2C.be-fonts%7Bdisplay%3Anone%7D&walker=1&format=svg&dark=1&filename=bs-type-specimen)
+![Ang Type roles specimen - heading, body, italic at code, bawat isa naka-set sa face na kinakatawan ng role na iyon, may pangalan ng face sa tabi nito](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=1000&dpi=192&waitMs=2600&drive=click%3A%5Bdata-be-typemore-toggle%5D%3Bwait%3A600&cropSelector=.be-typecard-grid&walker=1&format=svg&dark=1&filename=bs-type-specimen)
 
 ## Tokens
 
 Ang natitirang bahagi ng design system, na maaaring i-edit nang hindi humihipo ng code:
 
-![Ang Tokens room - isang corner-radius slider dagdag ang spacing, sizing, shadows at ang natitirang bahagi ng system](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+![Ang Tokens room - isang corner-radius slider dagdag ang spacing, sizing, shadows at ang natitirang bahagi ng system](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=740&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
 
 - **Rounded corners** - isang solong radius slider (0-1.5rem) na sinusunod ng mga card, button at panel sa buong app.
 - **More tokens** - magdagdag at mag-edit ng **spacing**, **sizing**, **stroke width**, **opacity**, **rotation**, plain **numbers** at **shadows**. Pumili ng type, bigyan ito ng pangalan (*Gutter, Card shadow...*) at itakda ang value nito. Ang mga ito ay iniimbak bilang standard [design tokens](/info/design-tokens.html) (DTCG) at sumasama sa iyong brand.

@@ -60,9 +60,11 @@ Itulah lapan slot pilihan. Klik satu slot untuk menambah PNG, SVG, JPEG atau Web
 
 ## Colours
 
+![The Colours room after one colour - the two panes back, the generate offer, roles reading in three registers and the pane at one colour](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=840&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A900&format=svg&walker=1&dark=1&filename=bs-colour-first)
+
 Bilik yang paling kaya, dalam dua panel. Sebelah kiri ialah tempat anda bekerja; sebelah kanan ialah **palet langsung** anda. Seret pembahagi antara kedua-duanya untuk mengubah saiz (Enter padanya melipat palet ke tepi).
 
-![Bilik Colours - satu warna primer menerbitkan ramp, kad spesimen dengan nisbah kontras dan satu palet langsung](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![Bilik Colours - satu warna primer menerbitkan ramp, kad spesimen dengan nisbah kontras dan satu palet langsung](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 ### Tambah satu warna, kemudian berikannya satu peranan
 
@@ -91,13 +93,13 @@ Tiada apa-apa dalam sayap ini menulis apa-apa kepada jenama anda. Ia adalah satu
 
 Di bawah warna primer anda akan melihat ramp **Primary / Neutral / Secondary / Blend** langsung serta kad spesimen Light dan Dark, setiap satu membawa bacaan kontras tersendiri - nisbah WCAG berserta angka APCA `Lc` di sebelahnya. **Klik satu langkah dalam ramp Neutral atau Secondary** untuk menambatkan warna gelap-terang itu selain daripada lalai terbitan.
 
-![Empat rangkaian gred disusun di atas kad spesimen terang dan gelap, setiap kad membawa nisbah kontras WCAG tersendiri](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
+![Empat rangkaian gred disusun di atas kad spesimen terang dan gelap, setiap kad membawa nisbah kontras WCAG tersendiri](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
 
 ### Bina palet anda (penjana harmoni)
 
 Masih dalam sayap yang sama, **Build your palette** menjana warna aksen yang sepadan daripada warna utama anda. Pilih satu **Harmony** - **Complementary**, **Adjacent**, **Triad**, **Tetrad** atau **Analogous** (yang membawa bilangan **Accents** tersendiri, 2 hingga 5, dan **Angle** rona dari 10° hingga 45°) - dan setiap calon tiba dengan nama boleh baca yang dijana secara automatik serta butang **+ Add**. Menambah satu terus meletakkan warna itu dalam palet anda, satu tekan untuk satu token. *"Your palette, applied"* mempratonton keseluruhan set pada grafik sebenar.
 
-![Aksen yang dijana, setiap satu dengan swatch, nama yang dijana secara automatik, kod heksnya dan butang Add](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
+![Aksen yang dijana, setiap satu dengan swatch, nama yang dijana secara automatik, kod heksnya dan butang Add](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
 
 ### Mengesahkan palet yang dijana
 
@@ -109,9 +111,9 @@ Masih dalam sayap yang sama, **Build your palette** menjana warna aksen yang sep
 
 Anak tetingkap kanan menyenaraikan setiap warna yang dibawa jenama anda, dikumpulkan (Primary, Neutral, Secondary, Spectrum, Custom, Roles), setiap kumpulan boleh dilipat dengan **+ Add** tersendiri. Di bawahnya, **Colour chart** membuka kepada dua paparan swatch yang sama: **Wheel** (roda OKLCH - seret satu titik untuk menukar warnanya, klik satu titik untuk menyuntingnya atau klik ruang kosong untuk menjatuhkan swatch baharu) dan carta **Gamut**, yang menunjukkan di mana julat yang boleh dipaparkan sebenarnya berakhir. `#/start?area=color&focus=chart` membuka kad itu terus, sepertimana `?wheel` sentiasa lakukan.
 
-![Anak tetingkap palet, setiap kumpulan boleh dilipat, dengan pil muat turun diletakkan di tepi bawahnya](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
+![Anak tetingkap palet, setiap kumpulan boleh dilipat, dengan pil muat turun diletakkan di tepi bawahnya](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=1000&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
 
-![Roda OKLCH - sudut ialah rona, jarak keluar ialah kroma dan warna kelabu bergerak mengikut landasan kecerahan di tepi](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor%26wheel&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
+![Roda OKLCH - sudut ialah rona, jarak keluar ialah kroma dan warna kelabu bergerak mengikut landasan kecerahan di tepi](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400%3Bclick%3A%5Bdata-be-chart%5D%20summary%3Bwait%3A900&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
 
 Klik mana-mana swatch untuk membuka penyuntingnya:
 
@@ -138,6 +140,8 @@ Pil terapung yang diletakkan di tepi bawah anak tetingkap palet memuat turun kes
 
 ## Type
 
+![The compare stage open under its card, with the search row, the pinned families and the cards folded to a one-line strip](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dtype%26focus%3Dstage&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=bs-type-stage)
+
 Bilik ini bermula dengan **empat kad peranan** - empat muka taip yang sebenarnya dibaca oleh aplikasi, alat anda dan setiap eksport. Setiap kad menunjukkan apa yang berkhidmat untuk peranan itu sekarang, ditetapkan dalam muka taip itu, dengan satu baris teks sebenar di bawahnya:
 
 - **Primary** - teks badan, butang dan setiap alat.
@@ -147,7 +151,7 @@ Bilik ini bermula dengan **empat kad peranan** - empat muka taip yang sebenarnya
 
 Headings, code dan italic masing-masing kembali kepada primary sehingga anda menetapkannya, jadi jenama satu fon tidak memerlukan sebarang keputusan di sini. Tiada apa-apa pada kad yang mengesahkan apa-apa: **Change** (atau **Choose a face** pada peranan kosong) membuka **peringkat perbandingan** yang terhad kepada peranan itu.
 
-![Bilik Type - kad peranan dan spesimen langsung setiap muka taip menjalankan tugasnya](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+![Bilik Type - kad peranan dan spesimen langsung setiap muka taip menjalankan tugasnya](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
 
 ### Peringkat perbandingan
 
@@ -162,13 +166,13 @@ Walau apa pun caranya, muka taip itu kekal pada peranti ini, terpapar dalam apli
 
 Panel **Type roles** di bahagian bawah menunjukkan spesimen langsung setiap peranan - badan dan UI dalam primary, muka taip paparan pilihan untuk tajuk atas, satu italic untuk penekanan, satu mono untuk kod dan data - jadi anda boleh melihat keseluruhan set berfungsi bersama.
 
-![Spesimen Type roles - tajuk, badan, italic dan kod, setiap satu ditetapkan dalam muka taip yang diselesaikan oleh peranan itu, dengan nama muka taip di sebelahnya](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2600&css=.start-head%2C.be-custom-fonts%2C.be-fonts%7Bdisplay%3Anone%7D&walker=1&format=svg&dark=1&filename=bs-type-specimen)
+![Spesimen Type roles - tajuk, badan, italic dan kod, setiap satu ditetapkan dalam muka taip yang diselesaikan oleh peranan itu, dengan nama muka taip di sebelahnya](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=1000&dpi=192&waitMs=2600&drive=click%3A%5Bdata-be-typemore-toggle%5D%3Bwait%3A600&cropSelector=.be-typecard-grid&walker=1&format=svg&dark=1&filename=bs-type-specimen)
 
 ## Tokens
 
 Selebihnya sistem reka bentuk, boleh disunting tanpa menyentuh kod:
 
-![Bilik Tokens - gelongsor jejari sudut ditambah jarak, saiz, bayang dan selebihnya sistem](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+![Bilik Tokens - gelongsor jejari sudut ditambah jarak, saiz, bayang dan selebihnya sistem](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=740&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
 
 - **Rounded corners** - satu gelongsor jejari tunggal (0–1.5rem) yang diikuti oleh kad, butang dan panel di seluruh aplikasi.
 - **More tokens** - tambah dan sunting **spacing**, **sizing**, **stroke width**, **opacity**, **rotation**, **numbers** biasa dan **shadows**. Pilih satu jenis, namakannya (*Gutter, Card shadow…*) dan tetapkan nilainya. Ini disimpan sebagai [token reka bentuk](/info/design-tokens.html) (DTCG) standard dan turut serta dengan jenama anda.

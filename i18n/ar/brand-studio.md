@@ -60,9 +60,11 @@
 
 ## الألوان
 
+![The Colours room after one colour - the two panes back, the generate offer, roles reading in three registers and the pane at one colour](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=840&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A900&format=svg&walker=1&dark=1&filename=bs-colour-first)
+
 أغنى غرفة، في جزأين. الجزء الأيسر هو حيث تعمل؛ الأيمن هو **لوحتك الحية**. اسحب الفاصل بينهما لتغيير الحجم (Enter عليه يطوي اللوحة جانبا).
 
-![غرفة الألوان - لون أساسي يشتق تدرجات، بطاقات عينات بنسب تباين ولوحة حية](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![غرفة الألوان - لون أساسي يشتق تدرجات، بطاقات عينات بنسب تباين ولوحة حية](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 ### أضف لونا، ثم امنحه دورا
 
@@ -91,13 +93,13 @@
 
 أسفل اللون الأساسي سترى تدرجات **أساسي / محايد / ثانوي / مزيج** حية وبطاقات عينات فاتحة وداكنة، تحمل كل منها قراءة تباين خاصة بها - نسبة WCAG مع رقم `Lc` الخاص بـ APCA بجانبها. **انقر على خطوة في تدرج المحايد أو الثانوي** لتثبيت تلك الدرجة بدلا من الافتراضي المشتق.
 
-![المدرجات الأربعة مكدسة فوق بطاقات عينات فاتحة وداكنة، كل بطاقة تحمل نسبة تباين WCAG الخاصة بها](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
+![المدرجات الأربعة مكدسة فوق بطاقات عينات فاتحة وداكنة، كل بطاقة تحمل نسبة تباين WCAG الخاصة بها](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
 
 ### ابنِ نطاقك اللوني (مولّد التناغم)
 
 في الجناح نفسه، تُنشئ **ابنِ نطاقك اللوني** ألوانًا مكمّلة مطابقة من لونك الأساسي. اختر **تناغمًا** - **متكامل**، **متجاور**، **ثلاثي**، **رباعي** أو **متشابه** (الذي يجلب عدد **لهجات** خاصًا به، من 2 إلى 5، و**زاوية** تدرّج لوني من 10° إلى 45°) - ويصل كل مرشح باسم مقروء يُولَّد تلقائيًا وزر **+ إضافة**. إضافة أحدها تضع ذلك اللون في نطاقك اللوني فورًا، ضغطة واحدة لرمز واحد. *"نطاقك اللوني، مطبَّقًا"* يعرض المجموعة كاملة على رسومات حقيقية.
 
-![لهجات مولَّدة، لكل منها عيّنة واسم مولَّد تلقائيًا وقيمته السداسية عشرية وزر إضافة](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
+![لهجات مولَّدة، لكل منها عيّنة واسم مولَّد تلقائيًا وقيمته السداسية عشرية وزر إضافة](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
 
 ### اعتماد نطاق لوني مولَّد
 
@@ -109,9 +111,9 @@
 
 تسرد اللوحة اليمنى كل لون يحمله علامتك التجارية، مجمّعًا (أساسي، محايد، ثانوي، طيف، مخصص، أدوار)، وكل مجموعة قابلة للطي ولها زر **+ إضافة** خاص بها. تحتها، تُفتح **مخطط الألوان** على عرضين للعيّنات نفسها: **العجلة** (عجلة OKLCH - اسحب نقطة لإعادة تلوينها، انقر نقطة لتحريرها أو انقر مساحة فارغة لإسقاط عيّنة جديدة) و**مخطط النطاق اللوني**، الذي يُظهر أين ينتهي النطاق القابل للعرض فعليًا. `#/start?area=color&focus=chart` يفتح البطاقة مباشرة، كما تفعل `?wheel` دائمًا.
 
-![لوحة النطاق اللوني، كل مجموعة قابلة للطي، مع حبة التنزيل متمركزة عند حافتها السفلية](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
+![لوحة النطاق اللوني، كل مجموعة قابلة للطي، مع حبة التنزيل متمركزة عند حافتها السفلية](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=1000&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
 
-![عجلة OKLCH - الزاوية هي التدرّج اللوني، والمسافة للخارج هي الإشباع، والرماديات تسير على مسار سطوع على الجانب](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor%26wheel&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
+![عجلة OKLCH - الزاوية هي التدرّج اللوني، والمسافة للخارج هي الإشباع، والرماديات تسير على مسار سطوع على الجانب](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400%3Bclick%3A%5Bdata-be-chart%5D%20summary%3Bwait%3A900&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
 
 انقر أي عيّنة لفتح محررها:
 
@@ -138,6 +140,8 @@
 
 ## الخط
 
+![The compare stage open under its card, with the search row, the pinned families and the cards folded to a one-line strip](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dtype%26focus%3Dstage&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=bs-type-stage)
+
 تتصدّر الغرفة **أربع بطاقات دور** - الأوجه الأربعة التي يقرؤها التطبيق وأدواتك وكل تصدير فعليًا. تُظهر كل بطاقة ما يخدم ذلك الدور الآن، مضبوطًا بذلك الوجه، مع سطر من نص حقيقي تحته:
 
 - **أساسي** - نص المحتوى، والأزرار وكل أداة.
@@ -147,7 +151,7 @@
 
 العناوين والكود والمائل يعود كل منها إلى الأساسي إلى أن تعيّنه، فعلامة تجارية بخط واحد لا تحتاج أي قرارات هنا إطلاقًا. لا شيء على البطاقة يعتمد أي شيء: **تغيير** (أو **اختر وجهًا** على دور فارغ) يفتح **مسرح المقارنة** محصورًا بذلك الدور.
 
-![غرفة الخط - بطاقات الأدوار وعيّنة حيّة لكل وجه وهو يؤدي عمله](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+![غرفة الخط - بطاقات الأدوار وعيّنة حيّة لكل وجه وهو يؤدي عمله](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
 
 ### مسرح المقارنة
 
@@ -162,13 +166,13 @@
 
 لوحة **أدوار الخط** في الأسفل تُظهر عيّنة حيّة لكل دور - المحتوى والواجهة بالوجه الأساسي، ووجه عرض اختياري للعناوين العلوية، ومائل للتأكيد، وأحادي المسافة للكود والبيانات - بحيث ترى المجموعة كاملة تعمل معًا.
 
-![عيّنة أدوار الخط - العنوان والمحتوى والمائل والكود، كل منها بالوجه الذي يُحلّ إليه ذلك الدور، مع اسم الوجه بجانبه](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2600&css=.start-head%2C.be-custom-fonts%2C.be-fonts%7Bdisplay%3Anone%7D&walker=1&format=svg&dark=1&filename=bs-type-specimen)
+![عيّنة أدوار الخط - العنوان والمحتوى والمائل والكود، كل منها بالوجه الذي يُحلّ إليه ذلك الدور، مع اسم الوجه بجانبه](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=1000&dpi=192&waitMs=2600&drive=click%3A%5Bdata-be-typemore-toggle%5D%3Bwait%3A600&cropSelector=.be-typecard-grid&walker=1&format=svg&dark=1&filename=bs-type-specimen)
 
 ## الرموز
 
 بقية نظام التصميم، قابلة للتحرير دون لمس الكود:
 
-![غرفة الرموز - منزلق نصف قطر الزوايا بالإضافة إلى المسافات والأحجام والظلال وبقية النظام](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+![غرفة الرموز - منزلق نصف قطر الزوايا بالإضافة إلى المسافات والأحجام والظلال وبقية النظام](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=740&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
 
 - **زوايا مدوّرة** - منزلق نصف قطر واحد (0-1.5rem) تتبعه البطاقات والأزرار واللوحات عبر التطبيق.
 - **رموز إضافية** - أضف وحرّر **المسافات**، **الأحجام**، **عرض الخط**، **الشفافية**، **الدوران**، **أرقامًا** عادية و**ظلالًا**. اختر نوعًا، سمِّه (*هامش، ظل بطاقة...*) واضبط قيمته. تُخزَّن هذه كـ[رموز تصميم](/info/design-tokens.html) معيارية (DTCG) وتنتقل مع علامتك التجارية.

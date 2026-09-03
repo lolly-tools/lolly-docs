@@ -60,9 +60,11 @@ Det er åtte valgfrie plasser. Klikk en plass for å legge til en PNG, SVG, JPEG
 
 ## Farger
 
+![The Colours room after one colour - the two panes back, the generate offer, roles reading in three registers and the pane at one colour](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=840&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A900&format=svg&walker=1&dark=1&filename=bs-colour-first)
+
 Det rikeste rommet, i to felt. Venstre er der du jobber; høyre er din **live palett**. Dra skillelinjen mellom dem for å endre størrelse (Enter på den slår sammen paletten av veien).
 
-![Rommet Farger - en primærfarge avleder skalaer, prøvekort med kontrastforhold og en live palett](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![Rommet Farger - en primærfarge avleder skalaer, prøvekort med kontrastforhold og en live palett](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 ### Legg til en farge, gi den så en jobb
 
@@ -91,13 +93,13 @@ Ingenting i denne fløyen skriver noe til merkevaren din. Det er en forhåndsvis
 
 Under primærfargen ser du live **Primær-/Nøytral-/Sekundær-/Blande**-skalaer og prøvekort for Lys og Mørk, hver med sin egen kontrastavlesning - WCAG-forholdet med APCA-tallet `Lc` ved siden av. **Klikk et trinn i Nøytral- eller Sekundær-skalaen** for å forankre den nyansen i stedet for den avledede standarden.
 
-![De fire trinnene stablet over lyse og mørke prøvekort, hvert kort med sin egen WCAG-kontrastverdi](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
+![De fire trinnene stablet over lyse og mørke prøvekort, hvert kort med sin egen WCAG-kontrastverdi](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
 
 ### Bygg paletten din (harmonigenerator)
 
 Fortsatt i samme fløy genererer **Bygg paletten din** matchende aksentfarger fra primærfargen din. Velg en **Harmoni** - **Komplementær**, **Tilstøtende**, **Triade**, **Tetrade** eller **Analog** (som har sin egen **Aksenter**-telling, 2 til 5, og en nyanse-**Vinkel** fra 10° til 45°) - og hver kandidat kommer med et automatisk generert, lesbart navn og en **+ Legg til**-knapp. Å legge til en setter fargen rett inn i paletten din, ett trykk til ett token. *«Paletten din, i bruk»* forhåndsviser hele settet på ekte grafikk.
 
-![Genererte aksenter, hver med en fargeprøve, et automatisk generert navn, sin hex-verdi og en Legg til-knapp](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
+![Genererte aksenter, hver med en fargeprøve, et automatisk generert navn, sin hex-verdi og en Legg til-knapp](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
 
 ### Å ta i bruk en generert palett
 
@@ -109,9 +111,9 @@ Fortsatt i samme fløy genererer **Bygg paletten din** matchende aksentfarger fr
 
 Panelet til høyre lister opp hver farge merkevaren din har, gruppert (Primær, Nøytral, Sekundær, Spektrum, Egendefinert, Roller), og hver gruppe kan foldes sammen med sin egen **+ Legg til**. Under det folder **Fargediagram** seg ut til to visninger av de samme fargeprøvene: **Hjulet** (OKLCH-hjulet - dra en prikk for å fargelegge den om, klikk en prikk for å redigere den, eller klikk på tomt område for å slippe en ny fargeprøve) og **Fargeromskartet**, som viser hvor det visbare området faktisk slutter. `#/start?area=color&focus=chart` åpner kortet direkte, slik `?wheel` alltid har gjort.
 
-![Palettpanelet, hver gruppe kan foldes sammen, med nedlastingspillen plassert nederst](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
+![Palettpanelet, hver gruppe kan foldes sammen, med nedlastingspillen plassert nederst](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=1000&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
 
-![OKLCH-hjulet - vinkel er nyanse, avstand ut er metning, og gråtonene følger en lyshetsskinne nedover siden](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor%26wheel&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
+![OKLCH-hjulet - vinkel er nyanse, avstand ut er metning, og gråtonene følger en lyshetsskinne nedover siden](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400%3Bclick%3A%5Bdata-be-chart%5D%20summary%3Bwait%3A900&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
 
 Klikk på en fargeprøve for å åpne redigeringsverktøyet:
 
@@ -138,6 +140,8 @@ Den flytende pillen plassert nederst på palettpanelet laster ned hele paletten 
 
 ## Skrift
 
+![The compare stage open under its card, with the search row, the pinned families and the cards folded to a one-line strip](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dtype%26focus%3Dstage&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=bs-type-stage)
+
 Rommet ledes av **fire rollekort** - de fire skriftene appen, verktøyene dine og all eksport faktisk leser. Hvert kort viser hva som tjener den rollen akkurat nå, satt i den skriften, med en linje ekte tekst under:
 
 - **Primær** - brødtekst, knapper og alle verktøy.
@@ -147,7 +151,7 @@ Rommet ledes av **fire rollekort** - de fire skriftene appen, verktøyene dine o
 
 Overskrifter, kode og kursiv faller hver tilbake til primærskriften til du tildeler dem, så en merkevare med én skrift trenger ingen valg her i det hele tatt. Ingenting på et kort tar noe i bruk med en gang: **Endre** (eller **Velg en skrift** på en tom rolle) åpner **sammenligningsstadiet** avgrenset til den rollen.
 
-![Skrift-rommet - rollekortene og et levende eksempel på hver skrift i arbeid](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+![Skrift-rommet - rollekortene og et levende eksempel på hver skrift i arbeid](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
 
 ### Sammenligningsstadiet
 
@@ -162,13 +166,13 @@ Uansett hvilken vei blir skriften værende på denne enheten, tegnes i appen, i 
 
 **Skriftroller**-panelet nederst viser et levende eksempel på hver rolle - brødtekst og grensesnitt i primærskriften, en valgfri visningsskrift for toppoverskriftene, en kursiv for uthevelse, en fastbreddeskrift for kode og data - slik at du kan se hele settet fungere sammen.
 
-![Eksemplet for skriftroller - overskrift, brødtekst, kursiv og kode, hver satt i skriften rollen løses til, med skriftnavnet ved siden av](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2600&css=.start-head%2C.be-custom-fonts%2C.be-fonts%7Bdisplay%3Anone%7D&walker=1&format=svg&dark=1&filename=bs-type-specimen)
+![Eksemplet for skriftroller - overskrift, brødtekst, kursiv og kode, hver satt i skriften rollen løses til, med skriftnavnet ved siden av](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=1000&dpi=192&waitMs=2600&drive=click%3A%5Bdata-be-typemore-toggle%5D%3Bwait%3A600&cropSelector=.be-typecard-grid&walker=1&format=svg&dark=1&filename=bs-type-specimen)
 
 ## Tokens
 
 Resten av designsystemet, redigerbart uten å røre kode:
 
-![Tokens-rommet - en glidebryter for hjørneradius pluss avstand, størrelse, skygger og resten av systemet](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+![Tokens-rommet - en glidebryter for hjørneradius pluss avstand, størrelse, skygger og resten av systemet](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=740&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
 
 - **Avrundede hjørner** - en enkelt radiusglidebryter (0-1,5rem) som kort, knapper og paneler i hele appen følger.
 - **Flere tokens** - legg til og rediger **avstand**, **størrelse**, **strekbredde**, **gjennomsiktighet**, **rotasjon**, vanlige **tall** og **skygger**. Velg en type, gi den navn (*Mellomrom, Kortskygge...*) og angi verdien. Disse lagres som standard [designtokens](/info/design-tokens.html) (DTCG) og følger med merkevaren din.

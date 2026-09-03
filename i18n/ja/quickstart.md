@@ -16,7 +16,7 @@ Lolly におけるブランドとは、色、フォント、いくつかのル�
 
 初回起動では **gallery**（ギャラリー）が開き、その上に短いウェルカムダイアログが重なって、3つの入り口を示します。**Make it yours**（`#/start` の Brand Studio）、**Bring your design**（Figma、Penpot、InDesign、PDF のファイルをドロップすると編集できるレイアウトとして開きます。後述の [すでにお持ちのものを取り込む](#2-bring-in-what-you-already-have) への最短ルートです）、そして **Explore the community tools** の3つで、英語が母語でない方のために言語の並びも添えられています。1枚目のカードを選ぶと [**Brand Studio**](/info/brand-studio.html) に着きます。名前とプライマリカラーを与えれば、Lolly はそこから、ライト／ダークの面、テキスト、アクセントまで含む完全でアクセシブルなパレットを*導出*します。エンジンが他のどこでも使っているのと同じ色の計算によるものです。
 
-![Brand Studio の Colours ルーム。プライマリカラーと、そこから Lolly が導出したアクセシブルなパレット](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours) フォントを選べば、1分とかからず使えるブランドができあがります。そこから先は、スタジオの6つのルーム、Overview、Colours、Type、Logos、Tokens、Files で、好きな順に、好きなところまで作り込めます。あとから戻っていつでも手直しできます。ダッシュボードの **Design system** タブ（`#/d`）は結果を読み取り専用で表示し、編集の場である `#/start` を指し示します（ブランドが固定されたブランドロック版の Lolly では、変更できるものはありません）。
+![Brand Studio の Colours ルーム。プライマリカラーと、そこから Lolly が導出したアクセシブルなパレット](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours) フォントを選べば、1分とかからず使えるブランドができあがります。そこから先は、スタジオの6つのルーム、Overview、Colours、Type、Logos、Tokens、Files で、好きな順に、好きなところまで作り込めます。あとから戻っていつでも手直しできます。ダッシュボードの **Design system** タブ（`#/d`）は結果を読み取り専用で表示し、編集の場である `#/start` を指し示します（ブランドが固定されたブランドロック版の Lolly では、変更できるものはありません）。
 
 ### すでにあるブランドをインポートする
 

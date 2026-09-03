@@ -275,6 +275,7 @@ const pages: Page[] = [
   { slug: 'ai-features',      title: 'Generated once, rendered the same', src: 'ai-features.md', pathway: 'trust', description: "Text-to-speech, upscaling and background removal: generated once under guard-rails, then rendered identically everywhere. Why inventing pixels is marked AI and removing them is not." },
   { slug: 'eu-ai-act',        title: 'AI marking and the EU AI Act', src: 'eu-ai-act.md', pathway: 'trust', description: "Article 50 has applied since 2 August 2026, and its Code of Practice points at C2PA. Lolly's honest fit: it preserves arriving AI marks, declares its own AI operations and verifies files on-device." },
   { slug: 'beatrice-warde',   title: 'Beatrice Warde',    src: 'beatrice-warde.md',  pathway: 'trust', description: "The typographer whose 1932 lines this project adapted, who proved that the types the whole trade called Garamond had been cut by somebody else entirely." },
+  { slug: 'shoulders-of-giants', title: 'Shoulders of giants', src: 'shoulders-of-giants.md', pathway: 'trust', description: "The open source projects Lolly is built from, named and thanked: three decades of free-desktop text shaping, speech and formats, and the newer giants beside them." },
 ];
 
 // ── Door-structured URLs (plans/177 P1) ──────────────────────────────────────
@@ -570,7 +571,8 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
         { slug: 'ai-stance',                    label: 'Our AI Stance' },
         { slug: 'ai-features',                  label: 'AI features' },
         { slug: 'eu-ai-act',                    label: 'The EU AI Act' },
-        { slug: 'beatrice-warde',               label: 'Beatrice Warde' } ] },
+        { slug: 'beatrice-warde',               label: 'Beatrice Warde' },
+        { slug: 'shoulders-of-giants',          label: 'Shoulders of giants' } ] },
       { label: 'Check it yourself', items: [
         { slug: 'verify-yourself', label: 'Verify It Yourself' },
         { slug: 'security',        label: 'Security & Verification' } ] },
@@ -3712,11 +3714,14 @@ const LIQUID_GLASS_SCRIPT = `<script>(function(){
     // Clear any filters from a previous pass so a re-run (e.g. after webfonts change
     // the button size) rebuilds cleanly instead of stacking duplicate-id filters.
     document.querySelectorAll('svg.lg-svg').forEach(function(s){ s.remove(); });
-    // .btn-compact (the persona lanes, plans/177) opts OUT: over the pane's flat
-    // ground the displacement backdrop paints the button blank in some renderers,
-    // and the glass reads as hero jewellery anyway - small utility buttons keep
-    // their plain fill.
-    document.querySelectorAll('.btn-primary:not(.btn-compact),.btn-secondary:not(.btn-compact)').forEach(function(btn,i){
+    // PRIMARY only. The displacement backdrop paints the button blank in some
+    // renderers (Chromium at rest, recovering only on the hover transform), which
+    // is a nuisance under the primary's black-on-white label and a blank white
+    // box under the secondary's white-on-glass one - so the secondary keeps the
+    // stylesheet's plain blur and never takes the SVG filter. .btn-compact (the
+    // persona lanes, plans/177) opts out for the same reason over the pane's flat
+    // ground; small utility buttons keep their plain fill.
+    document.querySelectorAll('.btn-primary:not(.btn-compact)').forEach(function(btn,i){
       try{ buildGlass(btn,i); }catch(e){ if(window.console)console.warn('liquid-glass failed',e); }
     });
   }
@@ -4597,7 +4602,8 @@ const FOOTER_SECTIONS: SitemapSection[] = [
     'contributing-setup', 'ios-build', 'about'] },
   { hub: 'trust', label: 'Trust', slugs: [
     'status-quo', 'input-not-impersonation', 'content-credentials-identity',
-    'content-credentials-engineering', 'ai-stance', 'ai-features', 'eu-ai-act', 'beatrice-warde'] },
+    'content-credentials-engineering', 'ai-stance', 'ai-features', 'eu-ai-act', 'beatrice-warde',
+    'shoulders-of-giants'] },
   { hub: 'trust', label: 'Check it yourself', slugs: [
     'verify-yourself', 'security', 'threat-model', 'parser-inventory', 'server-surface'] },
   { hub: 'trust', label: 'Your data', slugs: ['privacy', 'inclusive-design'] },
@@ -4719,6 +4725,7 @@ const SIDEBAR_ICON: Record<string, string> = {
   'content-credentials-identity': 'seal', 'content-credentials-engineering': 'cpu', 'ai-stance': 'sparkle',
   'ai-features': 'sparkle', 'eu-ai-act': 'document',
   'beatrice-warde': 'font',
+  'shoulders-of-giants': 'people',
   // Trust - check it yourself
   'verify-yourself': 'check', security: 'shieldcheck', 'threat-model': 'lock',
   'parser-inventory': 'code', 'server-surface': 'server',
@@ -5116,8 +5123,8 @@ function mastheadArt(slug: string, heading: string): string {
 // target is absent. CHIP_FIELD_JS assigns `window.__lollyChipField` and is included
 // ONCE here (its two consumers, HERO/MASTHEAD, dropped their inline copies above).
 // LIQUID_GLASS_SCRIPT is the one without an early-return; it only touches
-// `.btn-primary`/`.btn-secondary`, which exist on the landing page alone today, so on
-// every other page its querySelectorAll is an empty-set no-op. THEME_INIT_SCRIPT and
+// `.btn-primary`, which exists on the landing page alone today, so on every other
+// page its querySelectorAll is an empty-set no-op. THEME_INIT_SCRIPT and
 // SHOT_MOTION_INIT stay inline in <head> (FOUC-critical, must run before paint);
 // LISTEN_STYLE stays in body (injected by listenButtonHtml). CSP allows both 'self'
 // and 'unsafe-inline' for script/style, so external same-origin + the head inits both

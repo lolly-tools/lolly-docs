@@ -60,9 +60,11 @@ Das sind acht optionale Plätze. Klicken Sie auf einen Platz, um ein PNG, SVG, J
 
 ## Colours
 
+![The Colours room after one colour - the two panes back, the generate offer, roles reading in three registers and the pane at one colour](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=840&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A900&format=svg&walker=1&dark=1&filename=bs-colour-first)
+
 Der reichhaltigste Raum, in zwei Bereichen. Links arbeiten Sie; rechts ist Ihre **Live-Palette**. Ziehen Sie die Trennlinie zwischen ihnen, um die Größe anzupassen (Enter darauf klappt die Palette aus dem Weg).
 
-![Der Colours-Raum - eine Primärfarbe leitet Verläufe ab, Musterkarten mit Kontrastverhältnissen und eine Live-Palette](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![Der Colours-Raum - eine Primärfarbe leitet Verläufe ab, Musterkarten mit Kontrastverhältnissen und eine Live-Palette](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 ### Fügen Sie eine Farbe hinzu und geben Sie ihr dann eine Aufgabe
 
@@ -91,13 +93,13 @@ Nichts in diesem Flügel schreibt irgendetwas in Ihre Marke. Es ist eine Vorscha
 
 Unter der Primärfarbe sehen Sie die Live-Verläufe **Primary / Neutral / Secondary / Blend** sowie Light- und Dark-Musterkarten, jede mit ihrem eigenen Kontrastwert - das WCAG-Verhältnis mit der APCA-`Lc`-Zahl daneben. **Klicken Sie auf eine Stufe im Neutral- oder Secondary-Verlauf**, um diese Schattierung statt des abgeleiteten Standards zu verankern.
 
-![Die vier Verläufe übereinander, über den Light- und Dark-Musterkarten, jede mit eigenem WCAG-Kontrastverhältnis](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
+![Die vier Verläufe übereinander, über den Light- und Dark-Musterkarten, jede mit eigenem WCAG-Kontrastverhältnis](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
 
 ### Bauen Sie Ihre Palette (Harmonie-Generator)
 
 Noch im selben Flügel erzeugt **Build your palette** passende Akzentfarben aus Ihrer Primärfarbe. Wählen Sie eine **Harmony** - **Complementary**, **Adjacent**, **Triad**, **Tetrad** oder **Analogous** (was seine eigene **Accents**-Anzahl von 2 bis 5 sowie einen Farbton-**Angle** von 10° bis 45° mitbringt) - und jeder Kandidat kommt mit einem automatisch erzeugten, menschenlesbaren Namen und einer **+ Add**-Schaltfläche. Das Hinzufügen legt diese Farbe sofort in Ihre Palette, ein Druck für ein Token. *"Your palette, applied"* zeigt den gesamten Satz an echten Grafiken in der Vorschau.
 
-![Erzeugte Akzente, jeder mit einer Farbfläche, einem automatisch erzeugten Namen, seinem Hex-Wert und einer Add-Schaltfläche](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
+![Erzeugte Akzente, jeder mit einer Farbfläche, einem automatisch erzeugten Namen, seinem Hex-Wert und einer Add-Schaltfläche](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
 
 ### Eine erzeugte Palette übernehmen
 
@@ -109,9 +111,9 @@ Noch im selben Flügel erzeugt **Build your palette** passende Akzentfarben aus 
 
 Der rechte Bereich listet jede Farbe auf, die Ihre Marke trägt, gruppiert (Primary, Neutral, Secondary, Spectrum, Custom, Roles), jede Gruppe einklappbar mit eigenem **+ Add**. Darunter klappt **Colour chart** auf zwei Ansichten derselben Farbflächen auf: das **Wheel** (das OKLCH-Rad - ziehen Sie einen Punkt, um ihn umzufärben, klicken Sie auf einen Punkt, um ihn zu bearbeiten, oder klicken Sie auf leeren Raum, um eine neue Farbfläche abzulegen) und das **Gamut**-Diagramm, das zeigt, wo der darstellbare Bereich tatsächlich endet. `#/start?area=color&focus=chart` öffnet die Karte direkt, ebenso wie `?wheel` es immer schon tat.
 
-![Der Palettenbereich, jede Gruppe einklappbar, mit der Download-Pille am unteren Rand](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
+![Der Palettenbereich, jede Gruppe einklappbar, mit der Download-Pille am unteren Rand](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=1000&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
 
-![Das OKLCH-Rad - der Winkel steht für den Farbton, der Abstand von der Mitte für das Chroma, und die Grautöne verlaufen seitlich auf einer Helligkeitsschiene](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor%26wheel&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
+![Das OKLCH-Rad - der Winkel steht für den Farbton, der Abstand von der Mitte für das Chroma, und die Grautöne verlaufen seitlich auf einer Helligkeitsschiene](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400%3Bclick%3A%5Bdata-be-chart%5D%20summary%3Bwait%3A900&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
 
 Klicken Sie auf eine beliebige Farbfläche, um deren Editor zu öffnen:
 
@@ -138,6 +140,8 @@ Die schwebende Pille am unteren Rand des Paletten-Bereichs lädt die gesamte Pal
 
 ## Schrift
 
+![The compare stage open under its card, with the search row, the pinned families and the cards folded to a one-line strip](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dtype%26focus%3Dstage&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=bs-type-stage)
+
 Der Raum beginnt mit **vier Rollenkarten** - den vier Schriftarten, die die App, Ihre Tools und jeder Export tatsächlich verwenden. Jede Karte zeigt, was diese Rolle gerade bedient, gesetzt in dieser Schriftart, mit einer Zeile echtem Text darunter:
 
 - **Primär** - Fließtext, Buttons und jedes Tool.
@@ -147,7 +151,7 @@ Der Raum beginnt mit **vier Rollenkarten** - den vier Schriftarten, die die App,
 
 Überschriften, Code und Kursiv fallen jeweils auf die primäre Schriftart zurück, bis Sie sie zuweisen, sodass eine Marke mit nur einer Schriftart hier gar keine Entscheidungen treffen muss. Nichts auf einer Karte legt etwas fest: **Change** (Ändern; bzw. **Choose a face** bei einer leeren Rolle) öffnet die **Vergleichsbühne**, beschränkt auf diese Rolle.
 
-![Der Schrift-Raum - die Rollenkarten und eine Live-Schriftprobe jeder Schriftart bei der Arbeit](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+![Der Schrift-Raum - die Rollenkarten und eine Live-Schriftprobe jeder Schriftart bei der Arbeit](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
 
 ### Die Vergleichsbühne
 
@@ -162,13 +166,13 @@ So oder so bleibt die Schriftart auf diesem Gerät, wird in der App, in Ihren To
 
 Das Panel **Type roles** (Schriftrollen) am unteren Ende zeigt eine Live-Schriftprobe jeder Rolle - Fließtext und UI in der Primärschrift, eine optionale Display-Schrift für die obersten Überschriften, eine Kursive für Betonungen, eine Monospace-Schrift für Code und Daten - sodass Sie das gesamte Set im Zusammenspiel sehen können.
 
-![Die Schriftrollen-Probe - Überschrift, Fließtext, Kursiv und Code, jeweils in der Schriftart gesetzt, die dieser Rolle zugeordnet ist, mit dem Schriftnamen daneben](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2600&css=.start-head%2C.be-custom-fonts%2C.be-fonts%7Bdisplay%3Anone%7D&walker=1&format=svg&dark=1&filename=bs-type-specimen)
+![Die Schriftrollen-Probe - Überschrift, Fließtext, Kursiv und Code, jeweils in der Schriftart gesetzt, die dieser Rolle zugeordnet ist, mit dem Schriftnamen daneben](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=1000&dpi=192&waitMs=2600&drive=click%3A%5Bdata-be-typemore-toggle%5D%3Bwait%3A600&cropSelector=.be-typecard-grid&walker=1&format=svg&dark=1&filename=bs-type-specimen)
 
 ## Tokens
 
 Der Rest des Design-Systems, bearbeitbar ohne Code anzufassen:
 
-![Der Tokens-Raum - ein Regler für Eckenradien sowie Abstände, Größen, Schatten und der Rest des Systems](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+![Der Tokens-Raum - ein Regler für Eckenradien sowie Abstände, Größen, Schatten und der Rest des Systems](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=740&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
 
 - **Abgerundete Ecken** - ein einzelner Radius-Regler (0–1.5rem), dem Karten, Buttons und Panels in der gesamten App folgen.
 - **Weitere Tokens** - fügen Sie **Abstände**, **Größen**, **Strichstärke**, **Deckkraft**, **Rotation**, einfache **Zahlen** und **Schatten** hinzu und bearbeiten Sie sie. Wählen Sie einen Typ, benennen Sie ihn (*Gutter, Card shadow…*) und legen Sie seinen Wert fest. Diese werden als standardmäßige [Design Tokens](/info/design-tokens.html) (DTCG) gespeichert und reisen mit Ihrer Marke.

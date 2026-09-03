@@ -60,9 +60,11 @@ Overview হলো যে room-এ আপনি প্রথম পৌঁছা�
 
 ## Colours
 
+![The Colours room after one colour - the two panes back, the generate offer, roles reading in three registers and the pane at one colour](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=840&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A900&format=svg&walker=1&dark=1&filename=bs-colour-first)
+
 সবচেয়ে সমৃদ্ধ room, দুটি প্যানে। বাঁদিকে আপনি কাজ করেন; ডানদিকে আপনার **live palette**। আকার বদলাতে তাদের মধ্যেকার divider টেনে নিন (তাতে Enter চাপলে palette সরে গিয়ে জায়গা ছেড়ে দেয়)।
 
-![Colours room - একটি primary রং থেকে ramp তৈরি হয়, contrast ratio-সহ specimen কার্ড এবং একটি live palette](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![Colours room - একটি primary রং থেকে ramp তৈরি হয়, contrast ratio-সহ specimen কার্ড এবং একটি live palette](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 ### একটি রং যোগ করুন, তারপর তাকে একটি কাজ দিন
 
@@ -91,13 +93,13 @@ Overview হলো যে room-এ আপনি প্রথম পৌঁছা�
 
 Primary-র নিচে আপনি লাইভ **Primary / Neutral / Secondary / Blend** ramp এবং Light ও Dark specimen কার্ড দেখতে পাবেন, প্রতিটি তার নিজস্ব contrast readout বহন করে - WCAG অনুপাত এবং তার পাশে APCA `Lc` সংখ্যা। ডেরাইভড ডিফল্টের বদলে সেই shade-কে anchor করতে **Neutral বা Secondary ramp-এ একটি ধাপে ক্লিক করুন**।
 
-![চারটি র‍্যাম্প হালকা ও গাঢ় নমুনা কার্ডের উপরে সাজানো, প্রতিটি কার্ডে নিজস্ব WCAG কনট্রাস্ট অনুপাত রয়েছে](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
+![চারটি র‍্যাম্প হালকা ও গাঢ় নমুনা কার্ডের উপরে সাজানো, প্রতিটি কার্ডে নিজস্ব WCAG কনট্রাস্ট অনুপাত রয়েছে](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
 
 ### আপনার প্যালেট তৈরি করুন (হারমনি জেনারেটর)
 
 এখনও একই উইংয়ে, **Build your palette** আপনার প্রাইমারি রঙ থেকে মিলিয়ে অ্যাকসেন্ট রঙ তৈরি করে। একটি **Harmony** বেছে নিন - **Complementary**, **Adjacent**, **Triad**, **Tetrad** বা **Analogous** (যেখানে নিজস্ব **Accents** সংখ্যা থাকে, 2 থেকে 5, এবং একটি hue **Angle** 10° থেকে 45° পর্যন্ত) - এবং প্রতিটি প্রার্থী রঙ আসে একটি স্বয়ংক্রিয়ভাবে তৈরি মানুষ-পঠনযোগ্য নাম এবং একটি **+ Add** বাটন সহ। একটি যোগ করলে সেই রঙ তৎক্ষণাৎ আপনার প্যালেটে যুক্ত হয়ে যায়, এক চাপে এক টোকেন। *"Your palette, applied"* পুরো সেটটিকে আসল গ্রাফিক্সে প্রিভিউ করে।
 
-![জেনারেট করা অ্যাকসেন্ট, প্রতিটির সাথে একটি সোয়াচ, স্বয়ংক্রিয়ভাবে তৈরি নাম, এর হেক্স এবং একটি Add বাটন](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
+![জেনারেট করা অ্যাকসেন্ট, প্রতিটির সাথে একটি সোয়াচ, স্বয়ংক্রিয়ভাবে তৈরি নাম, এর হেক্স এবং একটি Add বাটন](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
 
 ### একটি জেনারেট করা প্যালেট কমিট করা
 
@@ -109,9 +111,9 @@ Primary-র নিচে আপনি লাইভ **Primary / Neutral / Seconda
 
 ডান প্যানেলে আপনার ব্র্যান্ডের প্রতিটি রঙ তালিকাভুক্ত থাকে, গ্রুপ করা (Primary, Neutral, Secondary, Spectrum, Custom, Roles), প্রতিটি গ্রুপ ভাঁজযোগ্য এবং নিজস্ব **+ Add** সহ। এর নিচে, **Colour chart** একই সোয়াচগুলোর দুটি ভিউ-এ খোলে: **Wheel** (OKLCH চাকা - একটি ডট টেনে তার রঙ বদলান, একটি ডট ক্লিক করে সম্পাদনা করুন বা খালি জায়গায় ক্লিক করে নতুন সোয়াচ ফেলুন) এবং **Gamut** চার্ট, যা দেখায় প্রদর্শনযোগ্য রেঞ্জ আসলে কোথায় শেষ হয়। `#/start?area=color&focus=chart` কার্ডটি সরাসরি খোলে, যেমন `?wheel` সবসময় করে এসেছে।
 
-![প্যালেট প্যানেল, প্রতিটি গ্রুপ ভাঁজযোগ্য, ডাউনলোড পিলটি নিচের প্রান্তে পার্ক করা](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
+![প্যালেট প্যানেল, প্রতিটি গ্রুপ ভাঁজযোগ্য, ডাউনলোড পিলটি নিচের প্রান্তে পার্ক করা](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=1000&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
 
-![OKLCH চাকা - কোণ হলো hue, বাইরের দূরত্ব হলো chroma এবং ধূসরগুলো পাশের একটি lightness রেল বরাবর চলে](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor%26wheel&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
+![OKLCH চাকা - কোণ হলো hue, বাইরের দূরত্ব হলো chroma এবং ধূসরগুলো পাশের একটি lightness রেল বরাবর চলে](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400%3Bclick%3A%5Bdata-be-chart%5D%20summary%3Bwait%3A900&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
 
 যেকোনো সোয়াচে ক্লিক করে এর এডিটর খুলুন:
 
@@ -138,6 +140,8 @@ Primary-র নিচে আপনি লাইভ **Primary / Neutral / Seconda
 
 ## টাইপ
 
+![The compare stage open under its card, with the search row, the pinned families and the cards folded to a one-line strip](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dtype%26focus%3Dstage&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=bs-type-stage)
+
 রুমটি শুরু হয় **চারটি রোল কার্ড** দিয়ে - এই চারটি ফেস যা অ্যাপ, আপনার টুল এবং প্রতিটি এক্সপোর্ট আসলে পড়ে। প্রতিটি কার্ড দেখায় এই মুহূর্তে সেই রোলে কী কাজ করছে, সেই ফেসে সেট করা, নিচে আসল কপির একটি লাইন সহ:
 
 - **Primary** - বডি কপি, বাটন এবং প্রতিটি টুল।
@@ -147,7 +151,7 @@ Primary-র নিচে আপনি লাইভ **Primary / Neutral / Seconda
 
 Headings, code এবং italic প্রতিটি আপনি নির্ধারণ না করা পর্যন্ত primary-তে ফলব্যাক করে, তাই একটি ওয়ান-ফন্ট ব্র্যান্ডের এখানে কোনো সিদ্ধান্তেরই দরকার নেই। কার্ডের কোনো কিছুই কমিট করে না: **Change** (অথবা একটি খালি রোলে **Choose a face**) সেই রোলে সীমাবদ্ধ **compare stage** খোলে।
 
-![টাইপ রুম - রোল কার্ড এবং প্রতিটি ফেসের কাজের একটি লাইভ নমুনা](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+![টাইপ রুম - রোল কার্ড এবং প্রতিটি ফেসের কাজের একটি লাইভ নমুনা](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
 
 ### কম্পেয়ার স্টেজ
 
@@ -162,13 +166,13 @@ Headings, code এবং italic প্রতিটি আপনি নির্�
 
 নিচে **Type roles** প্যানেল প্রতিটি রোলের একটি লাইভ নমুনা দেখায় - primary-তে body এবং UI, শীর্ষ হেডিংয়ের জন্য একটি ঐচ্ছিক ডিসপ্লে ফেস, এমফ্যাসিসের জন্য একটি ইতালিক, কোড এবং ডেটার জন্য একটি মনো - যাতে আপনি পুরো সেটটি একসাথে কাজ করতে দেখতে পান।
 
-![টাইপ রোল নমুনা - heading, body, italic এবং code, প্রতিটি সেই ফেসে সেট করা যেখানে রোলটি রিজলভ হয়, পাশে ফেসের নাম সহ](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2600&css=.start-head%2C.be-custom-fonts%2C.be-fonts%7Bdisplay%3Anone%7D&walker=1&format=svg&dark=1&filename=bs-type-specimen)
+![টাইপ রোল নমুনা - heading, body, italic এবং code, প্রতিটি সেই ফেসে সেট করা যেখানে রোলটি রিজলভ হয়, পাশে ফেসের নাম সহ](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=1000&dpi=192&waitMs=2600&drive=click%3A%5Bdata-be-typemore-toggle%5D%3Bwait%3A600&cropSelector=.be-typecard-grid&walker=1&format=svg&dark=1&filename=bs-type-specimen)
 
 ## টোকেন
 
 ডিজাইন সিস্টেমের বাকি অংশ, কোড স্পর্শ না করেই এডিটযোগ্য:
 
-![টোকেন রুম - একটি কর্নার-রেডিয়াস স্লাইডার প্লাস স্পেসিং, সাইজিং, শ্যাডো এবং সিস্টেমের বাকি অংশ](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+![টোকেন রুম - একটি কর্নার-রেডিয়াস স্লাইডার প্লাস স্পেসিং, সাইজিং, শ্যাডো এবং সিস্টেমের বাকি অংশ](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=740&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
 
 - **Rounded corners** - একটি একক radius স্লাইডার (0–1.5rem) যা অ্যাপ জুড়ে কার্ড, বাটন এবং প্যানেল অনুসরণ করে।
 - **More tokens** - **spacing**, **sizing**, **stroke width**, **opacity**, **rotation**, সাধারণ **numbers** এবং **shadows** যোগ ও এডিট করুন। একটি টাইপ বেছে নিন, নাম দিন (*Gutter, Card shadow…*) এবং এর মান সেট করুন। এগুলো স্ট্যান্ডার্ড [design tokens](/info/design-tokens.html) (DTCG) হিসেবে সংরক্ষিত হয় এবং আপনার ব্র্যান্ডের সাথে ভ্রমণ করে।

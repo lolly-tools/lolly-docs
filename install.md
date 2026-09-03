@@ -144,8 +144,8 @@ cd lolly-desktop/linux/arch && makepkg -si
 ```
 
 The package repacks the official 1.0.5 desktop build and installs the whole
-desktop integration - the `.lolly` MIME type, the thumbnailer, the GNOME Shell
-search provider, the D-Bus services, and the KDE service menu.
+desktop integration - the `.lolly` MIME type, `lolly://` links, the thumbnailer,
+the GNOME Shell search provider, the D-Bus services, and the KDE service menu.
 
 On Hyprland and other wlroots compositors the colour picker and the wallpaper
 feature go through the desktop portal, so an `xdg-desktop-portal` backend must

@@ -60,9 +60,11 @@
 
 ## Цветове
 
+![The Colours room after one colour - the two panes back, the generate offer, roles reading in three registers and the pane at one colour](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=840&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A900&format=svg&walker=1&dark=1&filename=bs-colour-first)
+
 Най-богатата стая, в два панела. Левият е мястото за работа; десният е твоята **палитра на живо**. Плъзни разделителя между тях, за да ги преоразмериш (Enter върху него скрива палитрата встрани).
 
-![Стаята Цветове - основен цвят извежда степени, специмен карти с коефициенти на контраст и палитра на живо](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![Стаята Цветове - основен цвят извежда степени, специмен карти с коефициенти на контраст и палитра на живо](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 ### Добави цвят, после му дай задача
 
@@ -91,13 +93,13 @@
 
 Под основния цвят ще видиш живи степени **Основна / Неутрална / Вторична / Смесена** и специмен карти за светла и тъмна тема, всяка с отчет на собствения си контраст - съотношението по WCAG заедно с фигурата `Lc` по APCA. **Кликни стъпка в Неутралната или Вторичната степен**, за да фиксираш този нюанс вместо изведения по подразбиране.
 
-![Четирите степени, подредени над светли и тъмни примерни карти, всяка карта носеща собствено съотношение на контраста WCAG](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
+![Четирите степени, подредени над светли и тъмни примерни карти, всяка карта носеща собствено съотношение на контраста WCAG](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
 
 ### Изгради своята палитра (генератор на хармонии)
 
 Все още в същото крило, **Изгради своята палитра** генерира съответстващи акцентни цветове от твоя основен. Избери **Хармония** - **Комплементарна**, **Съседна**, **Триада**, **Тетрада** или **Аналогична** (която носи собствен брой **Акценти**, от 2 до 5, и **Ъгъл** на нюанса от 10° до 45°) - и всеки кандидат пристига с автоматично генерирано, четимо от човек име и бутон **+ Добави**. Добавянето поставя този цвят в палитрата ти веднага, едно натискане към един токен. *"Твоята палитра, приложена"* показва целия набор върху реални графики.
 
-![Генерирани акценти, всеки с образец, автоматично генерирано име, шестнайсетичния му код и бутон Добави](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
+![Генерирани акценти, всеки с образец, автоматично генерирано име, шестнайсетичния му код и бутон Добави](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate%26seed%3D%2523e0452b&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
 
 ### Потвърждаване на генерирана палитра
 
@@ -109,9 +111,9 @@
 
 Дясното поле изброява всеки цвят, който твоят бранд носи, групирани (Основни, Неутрални, Вторични, Спектър, Персонализирани, Роли), всяка група сгъваема със собствен **+ Добави**. Под нея **Цветова диаграма** се разгъва в два изгледа на едни и същи образци: **Колело** (OKLCH колелото - завлечи точка, за да я пребоядисаш, кликни точка, за да я редактираш, или кликни на празно място, за да добавиш нов образец) и диаграмата **Гама**, която показва къде реално свършва показваемият диапазон. `#/start?area=color&focus=chart` отваря картата директно, както винаги прави `?wheel`.
 
-![Полето с палитрата, всяка група сгъваема, с хапчето за изтегляне закотвено в долния му край](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
+![Полето с палитрата, всяка група сгъваема, с хапчето за изтегляне закотвено в долния му край](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=1000&dpi=192&waitMs=1800&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
 
-![OKLCH колелото - ъгълът е нюанс, разстоянието навън е наситеност, а сивите се движат по релса на светлината отстрани](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor%26wheel&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
+![OKLCH колелото - ъгълът е нюанс, разстоянието навън е наситеност, а сивите се движат по релса на светлината отстрани](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dpick&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&drive=click%3A%5Bdata-be-editor-add%5D%3Bwait%3A500%3Bclick%3A%5Bdata-be-generate-cta-go%5D%3Bwait%3A900%3Bclick%3A%5Bdata-be-replace-palette%5D%3Bwait%3A800%3Bclick%3A%5Bdata-be-review-go%5D%3Bwait%3A1400%3Bclick%3A%5Bdata-be-chart%5D%20summary%3Bwait%3A900&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
 
 Кликни всеки образец, за да отвориш неговия редактор:
 
@@ -138,6 +140,8 @@
 
 ## Шрифт
 
+![The compare stage open under its card, with the search row, the pinned families and the cards folded to a one-line strip](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dtype%26focus%3Dstage&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=bs-type-stage)
+
 Стаята започва с **четири карти на роли** - четирите начертания, които приложението, твоите инструменти и всеки износ реално четат. Всяка карта показва какво обслужва тази роля в момента, зададено в това начертание, с ред реален текст под нея:
 
 - **Основен** - основен текст, бутони и всеки инструмент.
@@ -147,7 +151,7 @@
 
 Заглавията, кодът и курсивът всеки поотделно отпадат към основния, докато не ги зададеш, така че бранд с един шрифт не изисква никакви решения тук. Нищо на карта не потвърждава нещо: **Промени** (или **Избери начертание** за празна роля) отваря **сцената за сравнение**, ограничена до тази роля.
 
-![Стаята Шрифт - картите с роли и жив образец на всяко начертание, изпълняващо своята работа](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+![Стаята Шрифт - картите с роли и жив образец на всяко начертание, изпълняващо своята работа](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=740&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
 
 ### Сцената за сравнение
 
@@ -162,13 +166,13 @@
 
 Панелът **Роли на шрифта** в основата показва жив образец на всяка роля - основен текст и потребителски интерфейс в основното начертание, незадължително дисплейно начертание за горните заглавия, курсив за акцент, равноширок шрифт за код и данни - така че да видиш целия набор да работи заедно.
 
-![Образецът на ролите на шрифта - заглавие, основен текст, курсив и код, всеки зададен в начертанието, до което се разрешава ролята му, с името на начертанието до него](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2600&css=.start-head%2C.be-custom-fonts%2C.be-fonts%7Bdisplay%3Anone%7D&walker=1&format=svg&dark=1&filename=bs-type-specimen)
+![Образецът на ролите на шрифта - заглавие, основен текст, курсив и код, всеки зададен в начертанието, до което се разрешава ролята му, с името на начертанието до него](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=1000&dpi=192&waitMs=2600&drive=click%3A%5Bdata-be-typemore-toggle%5D%3Bwait%3A600&cropSelector=.be-typecard-grid&walker=1&format=svg&dark=1&filename=bs-type-specimen)
 
 ## Токени
 
 Останалата част от дизайн системата, редактируема без докосване на код:
 
-![Стаята Токени - плъзгач за радиус на ъглите плюс отстояния, размери, сенки и останалата част от системата](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+![Стаята Токени - плъзгач за радиус на ъглите плюс отстояния, размери, сенки и останалата част от системата](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=740&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
 
 - **Заоблени ъгли** - единичен плъзгач за радиус (0–1.5rem), който картите, бутоните и панелите в цялото приложение следват.
 - **Още токени** - добавяй и редактирай **отстояния**, **размери**, **дебелина на щриха**, **прозрачност**, **завъртане**, обикновени **числа** и **сенки**. Избери тип, именувай го (*Отстъп, Сянка на карта…*) и задай стойността му. Те се съхраняват като стандартни [дизайн токени](/info/design-tokens.html) (DTCG) и пътуват с твоя бранд.
