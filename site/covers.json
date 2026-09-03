@@ -6,76 +6,135 @@
   "pick": "Pick a cover",
   "covers": [
     {
-      "img": "design.png",
+      "img": "covers/darkroom.webp",
+      "hue": 0,
+      "name": "Darkroom",
+      "href": "#/tool/darkroom",
+      "promise": "Film looks, LUTs and grading for photos",
+      "alt": "A lorikeet portrait washed in the brand red, open in the Darkroom"
+    },
+    {
+      "img": "covers/filter.webp",
+      "hue": 22.5,
+      "name": "Filter",
+      "href": "#/tool/filter",
+      "promise": "Halftone, dither, duotone, ASCII and more, on a picture or live camera",
+      "alt": "A halftone treatment over the lorikeet portrait, in the brand orange"
+    },
+    {
+      "img": "covers/gradient.webp",
+      "hue": 45,
+      "name": "Gradient",
+      "href": "#/tool/gradient",
+      "promise": "Five ways to build a gradient from the swatches you set",
+      "alt": "A mesh gradient built from amber brand swatches"
+    },
+    {
+      "img": "covers/chart.webp",
+      "hue": 67.5,
+      "name": "Chart",
+      "href": "#/tool/chart",
+      "promise": "Paste a table and get a chart in your palette, vector-clean",
+      "alt": "A bar chart drawn in a yellow brand palette"
+    },
+    {
+      "img": "covers/qr-code.webp",
+      "hue": 90,
+      "name": "QR code",
+      "href": "#/tool/qr-code",
+      "promise": "A QR code in your colours, from a link, a card or a Wi-Fi network",
+      "alt": "A QR code for lolly.tools drawn in the brand green"
+    },
+    {
+      "img": "covers/backdrop-poster.webp",
+      "video": "covers/backdrop.webm",
+      "hue": 112.5,
+      "name": "Backdrop",
+      "href": "#/tool/backdrop",
+      "promise": "Living backgrounds in the colours you set",
+      "alt": "Metaballs drifting in a generated green backdrop"
+    },
+    {
+      "img": "covers/lab.webp",
+      "hue": 135,
+      "name": "Colour Lab",
+      "href": "#/lab",
+      "promise": "One colour, reported in full: contrast, harmonies, screen and print",
+      "alt": "The Colour Lab's report on a green, with its contrast checks and harmonies"
+    },
+    {
+      "img": "covers/design.webp",
+      "hue": 157.5,
       "name": "Design",
       "href": "#/tool/design",
       "promise": "Free-form layouts on an open canvas, held to the design system",
       "alt": "The Design canvas with a finished poster layout"
     },
     {
-      "img": "seq-studio-timeline.svg",
+      "img": "covers/sequence.webp",
+      "hue": 180,
       "name": "Sequence",
       "href": "#/tool/design",
       "promise": "Design's video timeline: clips, music and voiceover, cut in place",
-      "alt": "The Sequence timeline with clips laid out"
+      "alt": "The Sequence timeline with clips laid out, in a teal brand"
     },
     {
-      "img": "aif-audiogram.svg",
+      "img": "covers/audiogram-poster.webp",
       "video": "covers/audiogram.webm",
+      "hue": 202.5,
       "name": "Audiogram",
       "href": "#/tool/audiogram",
-      "promise": "A voice note becomes a finished video that moves with the sound",
-      "alt": "An audiogram cover with a waveform moving to the voice"
+      "promise": "A clip becomes a finished video that moves with the sound, MilkDrop included",
+      "alt": "An audiogram card running a MilkDrop visualiser to a loop, in a sky-blue brand"
     },
     {
-      "img": "bs-colour-wheel.svg",
-      "name": "Colours",
-      "href": "#/start",
-      "promise": "A palette built on a real colour wheel, kept in step everywhere",
-      "alt": "The colour wheel in the Brand Studio"
+      "img": "covers/street-map.webp",
+      "hue": 225,
+      "name": "Street map",
+      "href": "#/tool/street-map",
+      "promise": "Any city as a poster, its streets in your colours",
+      "alt": "Melbourne's streets drawn in a blue brand palette"
     },
     {
-      "img": "covers/darkroom.webp",
-      "name": "Darkroom",
-      "href": "#/tool/darkroom",
-      "promise": "Film looks, LUTs and grading for photos",
-      "alt": "A photo graded with a film look in the Darkroom"
-    },
-    {
-      "img": "covers/filter.webp",
-      "name": "Filter",
-      "href": "#/tool/filter",
-      "promise": "Halftone, dither, duotone, ASCII and more, on a picture or live camera",
-      "alt": "A halftone treatment over a photo"
-    },
-    {
-      "img": "um-color-mesh.svg",
-      "name": "Gradient",
-      "href": "#/tool/gradient",
-      "promise": "Five ways to build a gradient from the swatches you set",
-      "alt": "A mesh gradient built from brand swatches"
-    },
-    {
-      "img": "covers/backdrop.webp",
-      "name": "Backdrop",
-      "href": "#/tool/backdrop",
-      "promise": "Living backgrounds in the colours you set",
-      "alt": "Metaballs drifting in a generated backdrop"
-    },
-    {
-      "img": "catalogue.svg",
-      "name": "Catalogue",
-      "href": "#/c",
-      "promise": "Every file, font and colour in one place",
-      "alt": "The Catalogue grid of files, fonts and colours"
-    },
-    {
-      "img": "covers/3d-poster.png",
+      "img": "covers/3d-poster.webp",
       "video": "covers/3d.webm",
+      "hue": 247.5,
       "name": "3D",
       "href": "#/tool/3d",
       "promise": "Pose a model, render a still or a turntable",
-      "alt": "A 3D model turning on a turntable"
+      "alt": "A 3D model turning on a turntable, in an indigo brand"
+    },
+    {
+      "img": "covers/colours.webp",
+      "hue": 270,
+      "name": "Colours",
+      "href": "#/start",
+      "promise": "A palette built on a real colour wheel, kept in step everywhere",
+      "alt": "The Colours room of the design system studio, in violet"
+    },
+    {
+      "img": "covers/snippet.webp",
+      "hue": 292.5,
+      "name": "Snippet",
+      "href": "#/tool/snippet",
+      "promise": "Code as a card: syntax highlighted, in your theme, ready to post",
+      "alt": "A TypeScript snippet card highlighted in a purple brand theme"
+    },
+    {
+      "img": "covers/catalogue.webp",
+      "hue": 315,
+      "name": "Catalogue",
+      "href": "#/c",
+      "promise": "Every file, font and colour in one place",
+      "alt": "The Catalogue's swatches in a magenta brand"
+    },
+    {
+      "img": "covers/gallery.webp",
+      "hue": 337.5,
+      "name": "Tools",
+      "href": "#/",
+      "promise": "Every tool on one shelf, each preview already in your colours",
+      "alt": "The tool gallery with its previews recoloured to a rose brand"
     }
   ]
 }

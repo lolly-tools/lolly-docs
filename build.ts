@@ -1785,7 +1785,9 @@ interface HeroChrome {
   cycle: Array<{ word: string; slug: string }>;
   ctas: Array<{ href: string; label: string; class: string }>;
 }
-interface LandingCover { img: string; video?: string; name: string; promise: string; href: string; alt: string }
+/** `hue`: the OKLCH hue the cover was posed in (scripts/build-covers.ts) - the
+ *  fan opens on the cover nearest the reader's own accent (lib/covers-flow.ts). */
+interface LandingCover { img: string; video?: string; hue?: number; name: string; promise: string; href: string; alt: string }
 interface CoversJson { label: string; open: string; prev: string; next: string; pick: string; covers: LandingCover[] }
 interface WhatWhyJson {
   what: { eyebrow: string; heading: string; body: string; more: { label: string; slug: string } };
@@ -1958,7 +1960,7 @@ function buildLandingContent(md: string, lang: Lang = 'en') {
   <div class="covers-inner">
     <div class="covers" id="coversRoot" role="region" aria-roledescription="carousel" aria-label="${esc(cv.label)}" tabindex="0">
       <div class="covers-strip" id="coversStrip">
-        ${cv.covers.map((c, i) => `<a class="cover-card${i === 0 ? ' is-cur' : ''}" data-i="${i}" href="${esc(appHref(lang, c.href))}">
+        ${cv.covers.map((c, i) => `<a class="cover-card${i === 0 ? ' is-cur' : ''}" data-i="${i}"${typeof c.hue === 'number' ? ` data-hue="${c.hue}"` : ''} href="${esc(appHref(lang, c.href))}">
           ${coverMedia(c)}
           <span class="cover-cap"><b>${esc(c.name)}</b><i>${esc(c.promise)}</i></span>
         </a>`).join('\n        ')}
@@ -2364,7 +2366,7 @@ a:hover{text-decoration:underline}
    text-sized square; sized contexts (.icon-*, .assure-card-ic, illustrations, …) override
    this with a more specific selector. Keeps a missing/renamed rule from ever ballooning. */
 svg{width:1em;height:1em;flex:none}
-code{font-family:'SUSE Mono','SF Mono','Fira Code',monospace;font-size:.875em;background:hsl(var(--muted));padding:.15em .35em;border-radius:3px}
+code{font-family:var(--brand-font),'SUSE Mono','SF Mono','Fira Code',monospace;font-size:.875em;background:hsl(var(--muted));padding:.15em .35em;border-radius:3px}
 pre{background:hsl(var(--muted));color:hsl(var(--foreground));padding:1.25rem 1.5rem;border-radius:8px;overflow-x:auto;white-space:pre-wrap;overflow-wrap:anywhere;font-size:.875rem;line-height:1.5;margin-bottom:1.25rem; box-shadow: inset 0 .2rem .4rem #0002, 0 1px #fff2}
 pre code{background:none;padding:0;color:inherit;font-size:1em}
 h1,h2,h3,h4{line-height:1.25;font-weight:700}
