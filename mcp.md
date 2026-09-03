@@ -17,7 +17,7 @@ The render path has two tiers, so there are two endpoints. **They share the same
 
 Use the **full** endpoint (`mcp.lolly.tools`) unless you have a reason not to - it is a superset. The lightweight endpoint runs browser-free on the same infrastructure as `lolly.tools`, and is handy for quick vector/data work.
 
-> A render on either endpoint runs **the same render path a user's export runs** - the server honours the full parameter contract (width/height/unit/dpi/colour profile/PDF password), and never watermarks or embeds anything a user's own download wouldn't. Same path and same settings does not mean the same bytes for every format; see [Reproducibility](#reproducibility-what-is-and-is-not-byte-stable).
+> A render on either endpoint runs **the same render path a user's export runs** - the server honours the full parameter contract (width/height/unit/dpi/colour profile/PDF password, and for the motion formats `fps`/`seconds`/`wait`/`codec`/`vq`), and never watermarks or embeds anything a user's own download wouldn't. Same path and same settings does not mean the same bytes for every format; see [Reproducibility](#reproducibility-what-is-and-is-not-byte-stable).
 
 ## Hot-linkable render URLs (no auth)
 
@@ -44,6 +44,10 @@ This is the same "raw render URL" `lolly_build_url` returns - drop it into a REA
 - Responses are marked **`noindex`**, so search engines don't index your renders.
 
 Operators who don't want a public render surface switch the route off entirely with `LOLLY_DISABLE_RENDER_GET=1` - every `/tool/<id>.<ext>` URL then returns 404. That is what lolly.tools itself currently does.
+
+## The parameter contract is the URL
+
+Every tool input and every export control an agent can set is a URL query parameter, and the one table that defines them is [URL mode](/info/url-mode.html): inputs by id (or `urlKey`), and the reserved export names - `format`, `width`/`height`/`unit`/`dpi`, `profile`, `password`, `bleed`/`marks`, `c2pa`/`imprint`/`durable`/`meta`, `hdr`/`depth`, `cuts`, `s`, `lang`, and for the motion formats `fps`, `seconds`, `wait`, `codec` and `vq`. The MCP `query` argument, a share link, the CLI's `--flag=value` pairs and the hot-linkable render URL are that one contract under four transports, so an agent that has learnt the table has learnt all four; `lolly_list_tools` and `lolly_describe_tool` return each tool's inputs in the same vocabulary. Nothing here is a second API to memorise.
 
 ## The seven tools
 
