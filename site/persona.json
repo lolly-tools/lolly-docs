@@ -14,11 +14,11 @@
         "pitch": "Record a clean take with live coaching, or turn a voice note into a finished video with Audiogram. No camera, no makeup needed.",
         "cta": { "label": "Open Record ↗", "href": "#/tool/record" },
         "doc": { "label": "Using Lolly", "slug": "using" } },
-      { "tab": "Collaborate",
+      { "tab": "Collaborate", "mascot": "dolphin",
         "pitch": "Two people, two devices, one design, edited live. Scan a code across the table and both screens hold the same session: there is no server in the middle.",
         "cta": { "label": "Start in Design ↗", "href": "#/tool/design" },
         "doc": { "label": "Working together", "slug": "collaborate" } },
-      { "tab": "Post",
+      { "tab": "Post", "mascot": "whale",
         "pitch": "Send it where it was asked for: a link that carries the design, one .lolly file, print-true PDF, video or slides - or straight to Discord, Google Drive and the places you already post.",
         "cta": { "label": "Open the app ↗", "href": "#/" },
         "doc": { "label": "Exporting", "slug": "exporting" } }
