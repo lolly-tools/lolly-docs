@@ -816,6 +816,26 @@
       }
     },
     {
+      "token": "SCORM",
+      "name": "SCORM",
+      "full": "Sharable Content Object Reference Model course package",
+      "category": "Document",
+      "dir": "out",
+      "features": [
+        "multi-file-bundle",
+        "audio",
+        "animation",
+        "provenance"
+      ],
+      "desc": "The course-package format every learning management system imports: Moodle, Canvas, Blackboard, SAP SuccessFactors and the rest. From a Design deck, Lolly writes a zip with the SCORM 1.2 manifest every LMS imports, a launch page that steps through the slides and reports completion to the LMS, the slides themselves (as vector where the artboards allow it), and the narrated film with its caption track - speaker notes read by an on-device voice. Export-only, and built in the browser: the desktop and web apps make it, the CLI does not.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "n/a",
+        "note": "The imsmanifest.xml carries the deck's title and the package identifier; the slide images and film inside keep whatever Content Credentials their exports carried."
+      }
+    },
+    {
       "token": "CSV",
       "name": "CSV",
       "full": "Comma-Separated Values",

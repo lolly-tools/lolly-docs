@@ -43,6 +43,7 @@ The filename and the format picker sit at the top of the panel as one `name.form
 | Vector for print / design apps | **EPS**, or **EPS (CMYK)** | PostScript vector for Illustrator / press workflows |
 | Vector for cutting / CAD machines | **DXF** | Laser cutters, vinyl plotters, CNC - outline paths in millimetres |
 | An editable slide deck | **PowerPoint** (PPTX) | Native editable text + shapes, with images and vectors kept extractable |
+| A course an LMS can import | **SCORM** (LMS) | A zip with the manifest, a launch page, the slides and the narrated film with captions - from a Design deck |
 | An editable text document | **Word** (DOCX) or **OpenDocument** (ODT) | Real paragraphs and headings a word processor can keep editing (Doc Studio) |
 | A photo or general-purpose image | **PNG** (lossless) or **JPG** (smaller) | Universal raster |
 | Smaller modern images | **WebP** / **AVIF** | Better compression, alpha |
@@ -134,6 +135,17 @@ Any tool that can export SVG can also export a **Penpot file** (`.penpot`) - the
 - <!--i:palette--> The brand's colours and typographies land in the file's **Assets** panel, and the brand's design tokens land in its **Tokens** panel - the same DTCG token set Lolly's own palette uses. Penpot keeps its own copy from there: an edit made in its Tokens panel comes back into the brand through [Brand Studio's import](/info/design-import.html), not on its own.
 
 To open it, start Penpot, pick a project and choose **Import**. Signed in to Penpot from the export panel, **Send to Penpot** does that step for you - pick a project there and the file goes straight into it.
+
+## SCORM (course packages)
+
+A Design deck can leave as a **SCORM package** - the zip a learning management system imports, whether that is Moodle, Canvas, Blackboard or a corporate LMS. Pick **SCORM (LMS)** in the format picker and the export writes:
+
+- <!--i:layout--> **The slides**, one image per artboard, as vector where the artboard allows it and as pixels only where it does not.
+- <!--i:play--> **The narrated film** with its caption track - the speaker notes read by an on-device voice, exactly as [Presenting](/info/create/using.html#presenting) plays them.
+- <!--i:file--> **A launch page** that steps through the slides, plays the film and reports completion back to the LMS through the SCORM 1.2 runtime, the version every LMS accepts.
+- <!--i:font--> The fonts the deck uses, so the launch page renders the same offline.
+
+Nothing in the package calls home: it is files in a zip, and it runs inside the LMS with no bundler, no CDN and no account. The web and desktop apps build it; the CLI does not, because photographing the artboards and encoding the film need the browser.
 
 ## DXF (cut files)
 
@@ -296,7 +308,7 @@ Every id the host can render, grouped. These are also the values for the URL `fo
 |---|---|
 | Raster | `png` · `jpg`/`jpeg` · `webp` · `avif` · `tiff` (RGB TIFF) · `cmyk-tiff` (Print TIFF) · `bmp` · `ico` |
 | Vector | `svg` · `svgz` (gzipped SVG) · `emf` · `wmf` · `eps` · `eps-cmyk` (EPS CMYK) · `dxf` (cut file) |
-| Page & document | `pdf` · `pdf-cmyk` (Print PDF) · `pptx` (PowerPoint) · `penpot` (Penpot design file) · `docx` (Word) · `odt` (OpenDocument Text) |
+| Page & document | `pdf` · `pdf-cmyk` (Print PDF) · `pptx` (PowerPoint) · `scorm` (SCORM course package, a zip) · `penpot` (Penpot design file) · `docx` (Word) · `odt` (OpenDocument Text) |
 | Motion | `gif` · `apng` (Animated PNG) · `webp-anim` (Animated WebP) · `svg-anim` (Animated SVG) · `webm` · `mp4` |
 | Audio | `wav` · `mp3` · `m4a` · `opus` |
 | Text & data | `html` · `md` · `txt` · `json` · `csv` · `ics` · `vcf` · `css` · `scss` · `gpl` (GIMP palette) |
