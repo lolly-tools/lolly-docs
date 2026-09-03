@@ -57,7 +57,7 @@ sudo zypper install https://lolli.li/lolly-latest.rpm
 
 Or download [`lolly-latest.rpm`](https://lolli.li/lolly-latest.rpm) and install the
 file directly. The versioned build sits beside it, for example
-`https://lolli.li/lolly-desktop-1.0.5-0.x86_64.rpm`.
+`https://lolli.li/lolly-desktop-1.0.6-0.x86_64.rpm`.
 
 A signed OBS repository - so updates arrive with the rest of your system - is
 planned; until it is live a direct `.rpm` does not auto-update, so check back here
@@ -78,7 +78,7 @@ Leap 16 has its own build, and you need it: the Tumbleweed `.rpm`
 (`lolly-latest.rpm`) is compiled against a newer glibc and refuses to install
 here with `nothing provides 'libm.so.6(GLIBC_2.43)'`. The versioned build sits
 beside the alias, for example
-`https://lolli.li/lolly-desktop-1.0.5-0.leap16.x86_64.rpm`.
+`https://lolli.li/lolly-desktop-1.0.6-0.leap16.x86_64.rpm`.
 
 The two packages are otherwise identical in content; only the toolchain they
 were built against differs.
@@ -143,7 +143,7 @@ git clone https://github.com/lolly-tools/lolly-desktop.git
 cd lolly-desktop/linux/arch && makepkg -si
 ```
 
-The package repacks the official 1.0.5 desktop build and installs the whole
+The package repacks the official 1.0.6 desktop build and installs the whole
 desktop integration - the `.lolly` MIME type, `lolly://` links, the thumbnailer,
 the GNOME Shell search provider, the D-Bus services, and the KDE service menu.
 
@@ -171,8 +171,8 @@ curl -LO https://lolli.li/lolly-latest-arm64.deb && sudo apt install ./lolly-lat
 ```
 
 Versioned files sit beside them, for example
-`https://lolli.li/lolly-desktop-1.0.5_amd64.deb` and
-`lolly-desktop-1.0.5_arm64.deb`. A direct `.deb` does not auto-update, so check
+`https://lolli.li/lolly-desktop-1.0.6_amd64.deb` and
+`lolly-desktop-1.0.6_arm64.deb`. A direct `.deb` does not auto-update, so check
 back here for a newer build, or use the Flatpak above, which updates in place
 once its Flathub listing is live.
 
