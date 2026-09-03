@@ -139,6 +139,16 @@ Boxes with no timeline yet are given one: each becomes a clip from the start of 
 
 ![The timeline after a Buildup: nine clips from 0 to 3 s, one lane each, every one carrying its own diamonds, and the playhead parked mid-arc](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D17ZjNj5pAFMD_Gi8mkjdvPjn0sKLuoWnT7qFJTwR1mpooNMAm6l_f-QBFdLMkLWQPiAwz7803v7w3j_XxUwETjNbZ0aQE4ZIic6nL2zvPXtOt3jqNFUUUMbK1wWrNf5OlZbJLTS7N8kOy99IJcjnfZPssDwp9SNJytwlKfSytfGH0TNmmOi11bjKH3Xa71ybDXa9FkhZ2iIBgNYsyf7XqX8m-0PUAke1iq_-Uv20l9-O8qu_WA80hbpuCm2561nlWlWjdymv09cHcnHx624vbm8azMXh934xYreK2-7te68qExzqLjzOCGHAen2aEsICq-GxeVFyQOIN4LaYlwVCYYgDITEExHh8hPkF89pVIvIY3RmnIGjpyV1tcF0ImclmQCzisOzgU5k9SjeAMAI704IBFBvGOF8orXmwhhP55wQsvsjsvyDhdrUZehjA0MnTAvGdomAAHDgmnJQKEvYNDWx7Kb8074KyWMqIjOEOAg_ziokJHQgsYTr2lIcICo_q3NKzlmToBs1zZawRmAGCosSq1a0J2x4sgofdMyvBChOqdF97yTJ14ISGCxJGXAXhhFCvP9NC-SEI9L9TwggJ750W0HJJQXRwSr3Zu5KVvXjhTtzHTGycZhQ1DQ2X_hka2HFMncJYcCV-O4AwAjmCsdkyPQqYQuefFnnyZZL3zolqOqRMvks6fkI-8DBFiGz6aIdNjO2OCJOK54VN7WIa-uQHyhayQ_fzx_WUBavXtmYoFRJ9fvj7b7U4OOk9an_uoj8XhgpTelFYpJh_pK1_1Ov4JpKvs42AEtdExTMxMdJ2bfH6CaUnNOq-wVOL_yMpf%26w%3D1100%26h%3D1040%26_t%3D1.1&width=1440&height=1000&dpi=192&waitMs=5000&waitSelector=.tl-clip&css=.tl-panel%7Bheight%3A420px%21important%7D&cropSelector=.tl-panel&format=png&dark=1&filename=anim-timeline-choreographed)
 
+## Text that arrives in pieces
+
+A text box can enter and leave as a whole, or a piece at a time. In the timeline's **Animate** section, **Text** chooses the tier - **Whole text**, **Letter**, **Word** or **Line** - and every piece then plays the box's own **Enter** and **Exit** with its curve. **Offset starts by** is the gap between one piece starting and the next, in milliseconds, so a heading can drop in letter by letter or a list can fade in line by line. **Text order** decides who goes first: **First to last**, **Last to first**, **From the centre** or **Random**.
+
+Pieces are shaped glyphs, not a span per character, so a letter that kerns into its neighbour keeps that kerning while it moves, and the exported video, animated SVG and PowerPoint deck all play the same split. In PowerPoint the split becomes native per-letter, per-word or per-paragraph animation, so a deck stays editable in PowerPoint and still moves.
+
+## While on screen
+
+Between its entrance and its exit a box usually sits still. **While on screen** gives it something to do in the meantime: **Pulse**, **Bob**, **Sway** or **Flicker**, at a **Hold speed** in cycles per second. It is the same feature whether the box is a heading or a call-to-action sticker, and it plays in every motion export.
+
 ## Exporting a move
 
 The preview and the file are the same arithmetic, so what you see is what you get.
