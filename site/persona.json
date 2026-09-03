@@ -6,11 +6,11 @@
         "pitch": "Pick a tool and fill in a few fields, or lay it out yourself on an open canvas. The finished file comes out right either way: colours, fonts and layout are already sorted.",
         "cta": { "label": "Open the app ↗", "href": "#/" },
         "doc": { "label": "Make something", "slug": "make-something" } },
-      { "tab": "Animate",
+      { "tab": "Animate", "mascot": "pelican",
         "pitch": "Text that moves, scenes on a timeline, motion that stays on-brand. Cut clips, music and voiceover in Sequence, then export video, GIF or animated SVG.",
         "cta": { "label": "Open Design ↗", "href": "#/tool/design" },
         "doc": { "label": "Animating", "slug": "animating" } },
-      { "tab": "Record",
+      { "tab": "Record", "mascot": "wombat",
         "pitch": "Record a clean take with live coaching, or turn a voice note into a finished video with Audiogram. No camera, no makeup needed.",
         "cta": { "label": "Open Record ↗", "href": "#/tool/record" },
         "doc": { "label": "Using Lolly", "slug": "using" } },
@@ -51,7 +51,7 @@
         "doc": { "label": "For Operators", "slug": "operators" } }
     ] },
     { "id": "operators", "name": "Operators", "sub": "I answer for it", "mascot": "echidna", "lanes": [
-      { "tab": "AI",
+      { "tab": "AI", "mascot": "bin-chicken",
         "pitch": "Agents are first-class users. Anything a person can make in the app, an agent can make through the MCP server or the CLI: the same tools, the same brand rules, the same render path, and the file still says who made it.",
         "links": [
           { "label": "MCP Server", "slug": "mcp", "note": "agents" },
