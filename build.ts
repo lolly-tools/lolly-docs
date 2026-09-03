@@ -1945,8 +1945,8 @@ function buildLandingContent(md: string, lang: Lang = 'en') {
 
   // ── beat 2: the covers ─────────────────────────────────────────────────────
   // Ten studios in the app's own Cover Flow. Day-one images are committed docs
-  // shots (/info/shots/); a cover with `video` becomes a WebM loop with `img`
-  // as its poster (the posed-cover follow-up drops files in and edits JSON).
+  // shots (/info/shots/); a cover with `video` becomes a muted loop (WebM or
+  // MP4) with `img` as its poster - the posed covers drop files in and edit JSON.
   // The base layout is a scroll-snap filmstrip that swipes natively (and works
   // with scripts stripped); coversScript() upgrades it to the 3-D fan from
   // 720px up. `href` is an app route (appHref carries the reader's locale).
@@ -5380,12 +5380,12 @@ async function build() {
       if (/\.(png|svg|jpg)$/.test(f)) copyFileSync(resolve(shotsSrc, f), resolve(outDir, 'shots', f));
     }
     // The landing's cover media (plans/177): stills AND the short animated loops
-    // (webp/webm), one subdirectory, mirrored like the shots above it.
+    // (webp/svg/webm/mp4), one subdirectory, mirrored like the shots above it.
     const coversSrc = resolve(shotsSrc, 'covers');
     if (existsSync(coversSrc)) {
       mkdirSync(resolve(outDir, 'shots', 'covers'), { recursive: true });
       for (const f of readdirSync(coversSrc)) {
-        if (/\.(png|svg|jpg|webp|webm)$/.test(f)) copyFileSync(resolve(coversSrc, f), resolve(outDir, 'shots', 'covers', f));
+        if (/\.(png|svg|jpg|webp|webm|mp4)$/.test(f)) copyFileSync(resolve(coversSrc, f), resolve(outDir, 'shots', 'covers', f));
       }
     }
   }

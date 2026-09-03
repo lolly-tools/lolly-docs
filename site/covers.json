@@ -14,20 +14,21 @@
       "alt": "A lorikeet portrait washed in the brand red, open in the Darkroom"
     },
     {
-      "img": "covers/filter.webp",
+      "img": "covers/filter.svg",
       "hue": 22.5,
       "name": "Filter",
       "href": "#/tool/filter",
       "promise": "Halftone, dither, duotone, ASCII and more, on a picture or live camera",
-      "alt": "A halftone treatment over the lorikeet portrait, in the brand orange"
+      "alt": "The Lolly logo as a halftone dot screen in the brand orange, exported as SVG"
     },
     {
-      "img": "covers/gradient.webp",
+      "img": "covers/gradient-poster.webp",
+      "video": "covers/gradient.mp4",
       "hue": 45,
       "name": "Gradient",
       "href": "#/tool/gradient",
       "promise": "Five ways to build a gradient from the swatches you set",
-      "alt": "A mesh gradient built from amber brand swatches"
+      "alt": "A flowing mesh gradient in amber brand swatches, moving"
     },
     {
       "img": "covers/chart.webp",
@@ -47,12 +48,12 @@
     },
     {
       "img": "covers/backdrop-poster.webp",
-      "video": "covers/backdrop.webm",
+      "video": "covers/backdrop.mp4",
       "hue": 112.5,
       "name": "Backdrop",
       "href": "#/tool/backdrop",
       "promise": "Living backgrounds in the colours you set",
-      "alt": "Metaballs drifting in a generated green backdrop"
+      "alt": "Metaballs drifting through a muted green backdrop with one warm accent"
     },
     {
       "img": "covers/lab.webp",
@@ -80,12 +81,12 @@
     },
     {
       "img": "covers/audiogram-poster.webp",
-      "video": "covers/audiogram.webm",
+      "video": "covers/audiogram.mp4",
       "hue": 202.5,
       "name": "Audiogram",
       "href": "#/tool/audiogram",
       "promise": "A clip becomes a finished video that moves with the sound, MilkDrop included",
-      "alt": "An audiogram card running a MilkDrop visualiser to a loop, in a sky-blue brand"
+      "alt": "A MilkDrop visualiser filling the frame to a loop, in a sky-blue brand, with the track title centred"
     },
     {
       "img": "covers/street-map.webp",
