@@ -3245,8 +3245,9 @@ footer .founded-badge{margin-top:.5rem}
      anchors, which are also <a> inside <nav> (the results panel lives in .docs-search).
      Without the exemption this rule hid every hit, collapsing the results panel to an
      empty strip on any viewport ≤1100px, and neither the jump nav's section links
-     (.doc-jump-nav), for the same reason. */
-  nav:not(.quicknav):not(.doc-jump-nav) a:not(.brand):not(.docs-search-hit){display:none}
+     (.doc-jump-nav), for the same reason. The GitHub mark beside the theme switch is
+     an <a> too, and stays: it is a control of the bar, not a link of the row. */
+  nav:not(.quicknav):not(.doc-jump-nav) a:not(.brand):not(.docs-search-hit):not(.nav-github){display:none}
   nav .nav-group{display:none}
   .nav-hamburger{display:flex}
 }
@@ -3289,6 +3290,11 @@ footer .founded-badge{margin-top:.5rem}
 .nav-theme-toggle{background:none;border:none;cursor:pointer;color:hsl(var(--on-band-dark) / .65);width:2rem;height:2rem;display:flex;align-items:center;justify-content:center;border-radius:5px;padding:.25rem;flex-shrink:0;margin-left:.25rem}
 .nav-theme-toggle:hover{color:hsl(var(--on-band-dark));background:rgba(255,255,255,.1)}
 .nav-theme-toggle svg{width:1.1rem;height:1.1rem;pointer-events:none}
+/* The repository, one glyph beside the theme switch (Andy, 2026-09-04): same footprint,
+   same colour ramp, a plain link - the code is the product's proof and belongs in the chrome. */
+.nav-github{color:hsl(var(--on-band-dark) / .65);width:2rem;height:2rem;display:flex;align-items:center;justify-content:center;border-radius:5px;padding:.25rem;flex-shrink:0;margin-left:.25rem;text-decoration:none}
+.nav-github:hover{color:hsl(var(--on-band-dark));background:rgba(255,255,255,.1)}
+.nav-github svg{width:1.1rem;height:1.1rem;pointer-events:none}
 /* Show the ACTIVE theme's glyph. Default (light, incl. no [data-theme]) = sun;
    dark = moon; brand = palette. Each theme hides the other two. */
 .nav-theme-toggle .icon-moon,.nav-theme-toggle .icon-brand{display:none}
@@ -3359,6 +3365,9 @@ const THEME_SVG_BRAND = `<svg class="icon-brand" viewBox="0 0 24 24" fill="none"
 // off [data-theme]) - matching the app's createThemeToggle. Clicking steps
 // light → dark → brand → light (THEME_INTERACT_SCRIPT).
 const THEME_TOGGLE   = `<button class="nav-theme-toggle" aria-label="Switch theme (light, dark, brand)" title="Switch theme - light / dark / brand">${THEME_SVG_SUN}${THEME_SVG_MOON}${THEME_SVG_BRAND}</button>`;
+// The source, next to the theme switch. The GitHub mark is a proper noun's glyph, so the
+// label is not a t() key (the site corpus would otherwise ask 26 translators for "GitHub").
+const GITHUB_LINK    = `<a class="nav-github" href="https://github.com/lolly-tools/lolly" aria-label="Lolly on GitHub" title="GitHub" rel="noopener" target="_blank"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>`;
 
 // The theme lives on [data-theme] (the app's mechanism, so the inlined tokens.css themes),
 // and the legacy `.dark` CLASS is kept in lock-step with it - purely so the banked masthead
@@ -4511,7 +4520,7 @@ function buildNav(lang: Lang, slug: string, activeHref: string, isLanding: boole
   // Search joins the right-hand cluster of whole-site controls, ahead of the
   // language picker. Docs pages only - there is no index behind the landing page,
   // and a box that returns nothing is worse than no box.
-  return `<nav${navClass}><a href="${localeHref(lang, 'index')}" class="brand">Lolly</a>${draft}${groups}<div class="gap"></div>${isLanding ? '' : searchBox(lang)}${langPickerHtml(lang, slug)}${THEME_TOGGLE}${HAM_BTN}<a href="${launchHref}" class="nav-launch">${launch}</a></nav>
+  return `<nav${navClass}><a href="${localeHref(lang, 'index')}" class="brand">Lolly</a>${draft}${groups}<div class="gap"></div>${isLanding ? '' : searchBox(lang)}${langPickerHtml(lang, slug)}${THEME_TOGGLE}${GITHUB_LINK}${HAM_BTN}<a href="${launchHref}" class="nav-launch">${launch}</a></nav>
 <div class="nav-mobile-menu" id="navMobileMenu">${mobileLinks}${pageNav}<a href="${launchHref}" class="nav-launch">${launch}</a></div>`;
 }
 
