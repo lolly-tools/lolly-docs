@@ -60,6 +60,8 @@ Two ways in:
 - In **Design**, open **Import a design** from the canvas menu and choose the file.
 - Drop the file anywhere on the gallery or dashboard and pick **Make a video from its frames**.
 
+A deck that stays a click deck can still leave as a video. **Export slides as video** in the Present menu opens the export sheet on MP4, and the render places the slides on a timeline in order for that export only: each slide plays for its own dwell, or for the Duration in the export sheet when it has none, and the deck's slide transition plays between them as a dissolve. The document itself is not changed.
+
 Each frame is baked through the Design tool's own renderer into a crisp vector still (text as outlines, images embedded), so scenes stay sharp at any export size and need no fonts at playback. A storyboard drawn in Penpot or Figma becomes a finished cut - titles, soundtrack, provenance and all - without a video editor in sight.
 
 ## From a one-off design to a reusable template
