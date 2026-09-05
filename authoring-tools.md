@@ -504,6 +504,27 @@ Handlebars-flavoured. **Logic-less by design.**
 
 The data-format helpers `{{icsStamp}}`, `{{rfcText}}` and `{{csvCell}}` are for the sibling text templates - see [Data formats](#data-formats-json-csv-ics-vcf) below.
 
+### Canvas tools: readiness, the frame clock and GPU rendering
+
+A template may paint into a `<canvas>` instead of markup (`3d`, `synth`, `gradient` and `spatial-photo` do). The export path reads that canvas back as pixels, so three small contracts keep exports correct:
+
+- **Readiness.** If the first frame arrives asynchronously (a model or a library load), set `window.__toolHasReadySignal = true` at the top of the template script and dispatch `tool:ready` on `document` once the first frame is painted. The shell waits for it before capturing; without it a slow first frame exports blank.
+- **The frame clock.** For animated output (gif, apng, webp-anim and frame-by-frame video) store a function on the canvas element: `canvas.__lollyFrameRender = function (t) { … }` renders the exact frame at normalised loop time `t` in `[0, 1)`. The shell sets `canvas.__lollyFrameDriven = true` while it drives frames, so the tool's own `requestAnimationFrame` loop should stop advancing while that flag is set. Stills call it with `0`. Store it on the canvas, never on `window`: a global leaks across tool navigation.
+- **Real-time video.** Mark the canvas `data-capture-stream` and webm/mp4 record it live through `captureStream()` instead of frame by frame, so a self-looping animation records as one continuous loop with no cut at the join.
+
+**GPU rendering (WebGL, WebGPU).** Never let the export path read a GPU canvas directly. A WebGPU canvas is cleared as soon as its frame is presented and has no `preserveDrawingBuffer`, so anything read later is blank, and a WebGL canvas only survives the read with `preserveDrawingBuffer: true`, which costs memory and a copy per frame. Render into a detached scratch canvas instead and, inside the same frame callback, draw it onto the visible 2D canvas:
+
+```js
+var view = document.getElementById('my-canvas');   // the template's canvas, plain 2D
+var ctx = view.getContext('2d');
+var gpu = document.createElement('canvas');         // never enters the DOM
+gpu.width = view.width; gpu.height = view.height;
+// … create the WebGPU or WebGL context on `gpu` and render into it …
+function present() { ctx.clearRect(0, 0, view.width, view.height); ctx.drawImage(gpu, 0, 0); }
+```
+
+Call `present()` at the end of every render, including inside `__lollyFrameRender`. The visible canvas then always holds the last frame, every export reader sees pixels, and the tool is free to pick WebGPU where the browser offers it and fall back to WebGL 2 where it does not. `3d` does this with three.js's `WebGPURenderer({ forceWebGL })` and reports its choice as `data-backend` on the canvas. Feature-detect with `navigator.gpu.requestAdapter()`: an adapter that resolves to `null` means no WebGPU, whatever `navigator.gpu` says.
+
 ## Styles (`styles.css`)
 
 Scoped automatically. Write top-level selectors targeting your own classes. Don't write global rules (`body`, `html`); they'll be scoped to `#tool-canvas` and probably won't do what you want.

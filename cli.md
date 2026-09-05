@@ -2,15 +2,43 @@
 
 `lolly` runs any tool from the terminal - same engine, same render path, same output as the web shell. It's **URL mode under a different transport**: `--foo=bar` argv pairs become the exact values the web shell parses from `?foo=bar`, so the CLI can never drift from the GUI. Great for build pipelines, CI, scripting and batch generation.
 
-> Want an **interactive** terminal experience instead of one-shot commands - browse tools, tweak inputs, save projects, all from the keyboard? See the [TUI](/info/tui.html). It shares this same engine and render path.
+> Want an **interactive** terminal experience instead of one-shot commands - browse tools, tweak inputs, save projects, all from the keyboard? Run `lolly tui`, or see the [TUI](/info/tui.html). It shares this same engine and render path.
 
-From the repo it's wired as an npm script (note the `--` to pass args through):
+## Install
+
+Three routes to the same program.
+
+**npm.** The published package carries both terminal doors, `lolly` and `lolly-tui`:
+
+```bash
+npm i -g @lolly-tools/cli
+lolly --help
+```
+
+**The desktop app.** Lolly for macOS, Windows and Linux carries its own tools,
+catalog, and this same CLI, so installing the app is enough. `run` uses the
+app's native off-screen WebView; the other verbs are forwarded to the bundled
+Node package.
+
+**A checkout.** In the repo it's wired as an npm script (note the `--` to pass args through):
 
 ```bash
 npm run cli -- <tool-id> [--input=value ...] [--export=fmt] [--output=file]
-# or, if installed as a binary:
+# or, once installed as a binary:
 lolly <tool-id> [--input=value ...] [--export=fmt] [--output=file]
 ```
+
+### The npm package ships no tools and no catalog
+
+Tools and brand assets are content, not code, and a full set runs well past 100 MB. The package carries none of it, so point it at a root:
+
+```bash
+LOLLY_ROOT=/path/to/lolly lolly list
+```
+
+Any directory holding `tools/` and `catalog/` works; a checkout has both once `npm install` has built its profile views. The desktop app brings its own, so nothing needs pointing there. `lolly system import <pack.lolly>` is the third route, and it is a different thing: it imports **your design system** (colours, fonts, logos), which every render then uses, and it adds no tools, so it wants one of the other two beside it.
+
+Run a command that needs content without any and the CLI prints those three routes and exits **3** (`UNAVAILABLE_HERE`), the retry-somewhere-else code. It never downloads anything on its own.
 
 > **Redirecting or piping? Use `npm run --silent cli`.** npm prints its own two-line run banner (`> lolly@0.1.0 cli` …) on **stdout**, ahead of anything the CLI writes, so `npm run cli -- qr-code --export=png > qr.png` produces a file whose PNG magic starts 95 bytes in and `file` reports as `data`. The CLI's own rule holds - stdout is the payload - but npm's wrapper breaks it before the CLI runs. `--silent` suppresses the banner; an installed `lolly` binary never has it. Every redirecting example below is written that way.
 
@@ -43,6 +71,30 @@ Any listed **asset id** can be passed to an `asset`-type input (the engine resol
 npm run cli -- asset-export --src=suse/logo/hor-neg-green --export=svg --output=logo.svg
 npm run cli -- asset-export --src='https://lolly.tools/tool/qr-code.svg?url=x' --output=qr.svg
 ```
+
+### Document/compiler verbs
+
+The versioned document API is available without rasterising a tool:
+
+```bash
+lolly schema qr-code
+lolly compile qr-code --inputs=inputs.json > document.json
+lolly validate document.json --document
+lolly inspect document.json
+lolly measure document.json
+lolly diff before.json after.json
+lolly optimize export.png --format=png --output=clean.png
+lolly package document.json --output=session.lolly
+```
+
+`compile` emits the hydrated, typed document plus warnings; `schema` emits JSON
+Schema; `inspect`, `measure` and `diff` are semantic reads. `optimize` reports
+the immutable stages it ran when writing a file, and `package` writes an
+`application/vnd.lolly+zip` share envelope. A logical asset input such as
+`image://brand/logo`, `catalog://suse/logo/primary` or
+`library://user/upload/…` is resolved by the same host bridge used for an
+ordinary render. Device CLI runs deliberately leave credentialled `cms://` and
+governed `net://` refs to Lolly Work.
 
 ### Verbs, and why they exist
 
@@ -133,7 +185,7 @@ npm run cli -- quotes --quote="Ship it." --width=210 --height=297 --unit=mm --ex
 
 ## What the CLI can render
 
-The CLI renders in a headless DOM (jsdom), so **vector and structured** formats - **SVG (and SVGZ), EMF, WMF, EPS (and EPS-CMYK), DXF, BMP, HTML, plus the data formats JSON, CSV, ICS, VCF, MD** (the engine hydrates those payloads) - work natively and reproducibly, no browser needed. The float formats **EXR** and **HDR** join them, over a resvg-rasterised frame, when a render asks for the headroom (`--hdr=1`). EMF, EPS and DXF are emitted straight from the template's vector primitives (no rasteriser), and the CLI carries the **same HarfBuzz text-shaping as the web shell** (`host.text`), so live `<text>` runs are outlined to true vector paths at export - EPS and DXF ship real text as geometry with no fonts needed on the receiving end, EMF keeps plain runs as live, editable text records by default (`--text=outline` forces paths), and font-driven tools (a wordmark lockup built on `host.text`, say) render headlessly too. Shaping resolves sfnt fonts (ttf/otf) under the repo root - catalog and tool-local faces; a browser-only woff2 face is rejected with a clear error rather than silently shaping blanks. **PNG** from an `<svg>`-based tool is also browser-free - resvg rasterises the engine's own SVG (Tier A), and so are the two **HDR stills** over that same frame (`--hdr=1` with `png` or `jpg`): the 16-bit Rec.2100-PQ PNG and the ISO 21496-1 gain-map JPEG are written by the engine's own encoders, which is why a JPEG that would otherwise need the paint tier comes out of a plain install here. **`penpot`** from an `<svg>`-based tool is browser-free the same way, and for the same reason as EMF/EPS/DXF above - it is built straight from the template's vector primitives, with the brand's colours and design tokens packed in alongside. No rasteriser and no browser sit in that path, so it needs neither the resvg tier PNG uses nor a Chromium; type styles come from the app's own font-role read, so a CLI archive carries no library typographies. An HTML-layout tool has no root `<svg>` to build from, so it goes to the browser tier below and says so before it does. The remaining raster formats - **JPG, WebP, PDF, PPTX and video (GIF, APNG, WebM, MP4)**, plus HTML-layout PNG - need a real paint engine, so the CLI drives its **own scoped headless Chromium** (Tier B): install it once with `lolly install-browser` (or `npm run install:browser`) and they export straight from the CLI. Those are measured rather than assumed - [Video and timelines](#video-and-timelines) has the wall times and the file sizes. **ZIP** is the one format the lean CLI leaves out - no zip dependency - so its batch writes a folder instead. `ico` (favicons) and `txt` are browser-tier formats like the raster set: `txt` is not a data format the engine hydrates, it is the *rendered* page serialised to plain text, which is why it needs the paint tier and not just jsdom. `jpg` and `jpeg` are one format with two spellings and either flag works on either kind of tool - manifests are split between the two, and `--export=` resolves to whichever the tool declared. (Requesting a format a tool doesn't declare prints a clear error listing what it supports - and so does asking for one via the `--output` extension.)
+The CLI renders in a headless DOM (jsdom), so **vector and structured** formats - **SVG (and SVGZ), EMF, WMF, EPS (and EPS-CMYK), DXF, BMP, HTML, plus the data formats JSON, CSV, ICS, VCF, MD** (the engine hydrates those payloads) - work natively and reproducibly, no browser needed. The float formats **EXR** and **HDR** join them, over a resvg-rasterised frame, when a render asks for the headroom (`--hdr=1`). EMF, EPS and DXF are emitted straight from the template's vector primitives (no rasteriser), and the CLI carries the **same HarfBuzz text-shaping as the web shell** (`host.text`), so live `<text>` runs are outlined to true vector paths at export - EPS and DXF ship real text as geometry with no fonts needed on the receiving end, EMF keeps plain runs as live, editable text records by default (`--text=outline` forces paths), and font-driven tools (a wordmark lockup built on `host.text`, say) render headlessly too. Shaping resolves sfnt fonts (ttf/otf) under the repo root - catalog and tool-local faces; a browser-only woff2 face is rejected with a clear error rather than silently shaping blanks. **PNG** from an `<svg>`-based tool is also browser-free - resvg rasterises the engine's own SVG (Tier A), and so are the two **HDR stills** over that same frame (`--hdr=1` with `png` or `jpg`): the 16-bit Rec.2100-PQ PNG and the ISO 21496-1 gain-map JPEG are written by the engine's own encoders, which is why a JPEG that would otherwise need the paint tier comes out of a plain install here. **`penpot`** from an `<svg>`-based tool is browser-free the same way, and for the same reason as EMF/EPS/DXF above - it is built straight from the template's vector primitives, with the brand's colours and design tokens packed in alongside. No rasteriser and no browser sit in that path, so it needs neither the resvg tier PNG uses nor a Chromium; type styles come from the app's own font-role read, so a CLI archive carries no library typographies. An HTML-layout tool has no root `<svg>` to build from, so it goes to the full-fidelity tiers below and says so before it does. The remaining raster formats - **JPG, WebP, PDF, PPTX and video (GIF, APNG, WebM, MP4)**, plus HTML-layout PNG - need a real paint engine. `LOLLY_RENDERER=auto` (the default) walks three rungs: a Lolly desktop app that is **already listening** (the app writes its loopback port and a per-launch token to `render.json` in its data directory, and the CLI sends the job there and reads the bytes back on the same connection), then an **installed** app that is not listening yet, started in its hidden `--render-server` mode and given a bounded wait to answer (an app that predates the endpoint is never started, since it would read the flag as a request for a window; `lolly list --json` says so by name), then the CLI's own **scoped headless Chromium**, unchanged. `LOLLY_RENDERER=desktop` or `chromium` pins one of those, and `desktop` reports the app's failure rather than quietly rendering somewhere else; `LOLLY_DESKTOP_BIN` names an app executable in an unusual place and `LOLLY_RENDER_SERVER` points at a `render.json` directly. If Chromium is selected, install it once with `lolly install-browser` (or `npm run install:browser`). `lolly list --json` names the chosen renderer as `result.environment.renderer` (`desktop-running`, `desktop-installed`, `chromium` or `none`) and the resolved order under `result.environment.tiers.desktop`. Those paths are measured rather than assumed - [Video and timelines](#video-and-timelines) has the wall times and the file sizes. **ZIP** is the one format the lean CLI leaves out - no zip dependency - so its batch writes a folder instead. `ico` (favicons) and `txt` are full-fidelity formats like the raster set: `txt` is not a data format the engine hydrates, it is the *rendered* page serialised to plain text, which is why it needs a paint tier and not just jsdom. `jpg` and `jpeg` are one format with two spellings and either flag works on either kind of tool - manifests are split between the two, and `--export=` resolves to whichever the tool declared. (Requesting a format a tool doesn't declare prints a clear error listing what it supports - and so does asking for one via the `--output` extension.)
 
 Which tier is available here is not a guess: `lolly list --json` reports it per tier, with a reason for each one that is missing. See [Discovery, for an agent](#discovery-for-an-agent).
 
@@ -342,7 +394,7 @@ it. Looked in /…/models/upscale.
 - **`lolly reword "<sentence>" [--style=plain] [--samples=N] [--json] [--in=<file.txt>]`** - on-device rewrites, shorter and plainer, one per line. Only `--style=plain` is accepted; anything else is a usage error that says why, because the prompt is engine data asking for exactly one thing and a silently ignored style would be the class of quiet failure this shell exists to remove. No candidate passing the gate (longer, off-topic, or a changed fact) is exit `5`, not a crash.
 - **`lolly depth <image> [--max-edge=N] [--out=<file.png>]`** - a greyscale depth map, white nearest. It refuses today, by name: no depth model is published, so there is nothing to fetch and nothing to run.
 
-Two things to know about these six. They write **plain files**: they are not a `lolly run`, so the export pipeline's Content Credentials and Imprint do not apply, and an upscaled PNG from the terminal carries no credential naming the model. And the execution provider is **CPU by default**, because that is what the app's WASM kernels match numerically and what every model on the roster is verified against. `LOLLY_ORT_EP=coreml` (or `=cuda`) opts into the accelerated provider, which is faster and can move the numbers on some graphs - an opt-in, never a default.
+Two things to know about these six. They write **plain files**: they are not a `lolly run`, so the export pipeline's Content Credentials and Imprint do not apply, and an upscaled PNG from the terminal carries no credential naming the model. And the execution provider is **CPU by default**, because that is what the app's WASM kernels match numerically and what every model on the roster is verified against. `LOLLY_ORT_EP=coreml` (or `=cuda`) opts into the accelerated provider, which is faster and can move the numbers on some graphs - an opt-in, never a default. `LOLLY_ORT_THREADS=<n>` caps the threads each model session may use (unset means every core); `1` runs a graph on the calling thread with no pool, which is slower but keeps the cost predictable on a shared machine.
 
 ## Composed tools
 
@@ -638,6 +690,18 @@ Honesty rules this output holds to, because a person decides what to send based 
 
 With `--strict`, a finding that would matter before sharing - hidden text, a GPS fix, or undeclared bytes appended past the container - exits 4 (REFUSED). Without `--metadata` those passes never run, so `--strict` cannot fire on them.
 
+## Shell completion (`lolly completion`)
+
+`lolly completion bash|zsh|fish` prints a completion script to stdout. It completes verbs, flags, and tool ids read from the active profile's catalog at the moment the script is generated:
+
+```bash
+lolly completion bash > /usr/local/etc/bash_completion.d/lolly   # Homebrew bash-completion
+lolly completion zsh  > ~/.zsh/completions/_lolly                # then: autoload -U compinit && compinit
+lolly completion fish > ~/.config/fish/completions/lolly.fish
+```
+
+The tool-id list is a snapshot. Install new tools, then run `lolly completion <shell>` again to pick them up - there is no live catalog read from inside a shell's completion function.
+
 ## Point it at another brand pack (`LOLLY_ROOT`)
 
 The CLI reads tools and the asset catalog from the repo root it finds itself in. Set `LOLLY_ROOT` to render from any directory with the same layout - a `tools/` directory of tool folders and a built `catalog/`:
@@ -647,6 +711,19 @@ LOLLY_ROOT=/path/to/brand-pack npm run cli -- qr-code --url=https://example.com 
 ```
 
 The override is **marker-validated**: the directory must hold a generated catalog index (`catalog/tools/index.json` or `catalog/assets/index.json`), and a `LOLLY_ROOT` without one is ignored - resolution falls back to walking up from the CLI itself, then the working directory. That makes the CLI a generic brand-pack renderer: build a pack's `tools/` + `catalog/` and every command here - render, batch, smoke, assets - runs against it, with zero code change.
+
+## Where saved sessions live
+
+A `lolly` run is ephemeral: state a tool saves stays in memory for that run and is gone when it exits. What it does read is the saved sessions this machine already has. One directory serves all three local shells - the desktop app, the TUI and the CLI - and they pick it in this order:
+
+1. `$LOLLY_STATE_DIR`, when you name one.
+2. `$LOLLY_TUI_DIR`, the old name for the same thing. It still works and prints a one-line note saying which name replaced it.
+3. The desktop app's own data directory, when the app is installed here: `~/Library/Application Support/tools.lolly.Desktop` on macOS, `$XDG_DATA_HOME/tools.lolly.Desktop` (or `~/.local/share/...`) on Linux, `%APPDATA%\tools.lolly.Desktop` on Windows.
+4. `~/.lolly`.
+
+Sessions sit in `saved-state/<slot>.json` there, in the record the desktop app writes, so a project saved in the app loads in the terminal by its slot and a project saved in the TUI opens in the app.
+
+Writing is the one asymmetry, and it is deliberate: `lolly` only writes state to disk when rungs 1 or 2 name the directory. A headless render should not leave files in your home directory, or in the app's store, that nobody asked for. Name a directory and a state-saving tool becomes scriptable across runs.
 
 ## Related
 

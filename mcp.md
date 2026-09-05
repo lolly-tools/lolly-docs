@@ -38,12 +38,14 @@ This is the same "raw render URL" `lolly_build_url` returns - drop it into a REA
 
 - **No auth, no accounts, no state.** It renders public tool + catalog data only; the inputs are whatever the URL says, and nothing is stored per request. Fetching one of these URLs sends the server nothing but what's written in the URL itself - your on-device documents, sessions and uploads can never appear in one. The inputs are public by construction, so don't put secrets in a shared link. (The [privacy policy](/info/privacy.html) covers this surface in its own words.)
 - **Official and community tools only** - anything else is a 404.
-- **Browser-free formats only**: the vector and data set - `svg`, `emf`, `eps`, `eps-cmyk`, `dxf`, `html`, `md`, `txt`, `json`, `csv`, `ics`, `vcf` - plus `png` for SVG-native tools such as `qr-code`. Formats that need the browser tier return an honest `400` - use `lolly_render` or the app for those.
+- **Browser-free formats only**: the vector, float-raster and data set - `svg`, `emf`, `eps`, `eps-cmyk`, `dxf`, `exr`, `hdr`, `penpot`, `html`, `md`, `txt`, `json`, `csv`, `ics`, `vcf` - plus `png` for SVG-native tools such as `qr-code`. Formats that need the browser tier return an honest `400` - use `lolly_render` or the app for those.
 - **Content Credentials are off here**, because a credential is signed with a fresh timestamp and nothing signed is cacheable. With them off, the vector and PNG formats this route serves are byte-stable run to run, which is what makes responses cacheable (a day at the CDN, `ETag` revalidation after that). `ics` is the exception in the list below: RFC 5545 requires a `DTSTAMP`, so an `.ics` differs between any two requests a second apart. A credentialed render is one `lolly_render` call away.
 - Renders are **rate-limited per address**; heavy automation belongs on the MCP endpoints.
 - Responses are marked **`noindex`**, so search engines don't index your renders.
 
 Operators who don't want a public render surface switch the route off entirely with `LOLLY_DISABLE_RENDER_GET=1` - every `/tool/<id>.<ext>` URL then returns 404. That is what lolly.tools itself currently does.
+
+The route's parameters, refusals and headers are described in OpenAPI 3.1 at [`/openapi.json`](/openapi.json); the other machine-readable entry points (the discovery record, `llms.txt`, `llms-full.txt`, `agents.md`) are listed on [AI Agents](/info/ai-agents.html).
 
 ## The parameter contract is the URL
 

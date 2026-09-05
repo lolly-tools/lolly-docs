@@ -25,7 +25,7 @@ Pinned to the **foot of the rail** are the actions that belong to the whole desi
 
 - **Add from…** - the source picker, for bringing a brand in from a file, a PDF, an image, a font or a website. See [Bring a brand in](#bring-a-brand-in) below.
 - **Tray** - the candidates a scan turned up but hasn't committed. It stays hidden until a scan actually keeps something, and carries a count when it does; nothing in it changes your brand until you press Add on that row.
-- **Export** - writes the whole brand as one `LollyBrand-…zip`.
+- **Export** - writes the whole design system as one `LollyBrand-….lolly`.
 - **Tokens (.json)** - the plain design-tokens document on its own, for a repo, a build step or another tokens tool.
 - **Versions** - publish, activate and restore named copies of the design system. Hidden until there's something of your own to publish (or a `?area=versions` link asks for it by name).
 
@@ -254,7 +254,7 @@ Pick the design-file source and the second stage is the card below: the accepted
 
 What each design file gives you:
 
-- a **LollyBrand** pack (`.zip`) - installs in one step;
+- a **Lolly design-system pack** (`.lolly`; legacy `.zip` is still accepted) - installs in one step;
 - a **Penpot** export (`.penpot`) - pulls in its design tokens;
 - a **Design Tokens** file (`.json`) - W3C DTCG;
 - a **Tokens Studio** file (`.json`) - Tokens Studio;
@@ -266,7 +266,7 @@ A source install takes a **checkpoint first**, so "revert to before the import" 
 
 ## Move a brand between devices
 
-**Export** at the foot of the rail writes a single **`LollyBrand-…zip`** - your tokens, fonts, logos and theme preference, with an integrity manifest it verifies on the way back in. Beside it, **Tokens (.json)** writes the plain design-tokens document on its own: no fonts, no logos, just the tokens, which is what a repo, a CI step or another tokens tool actually reads.
+**Export** at the foot of the rail writes a single **`LollyBrand-….lolly`** - your tokens, fonts, logos and theme preference, with an integrity manifest it verifies on the way back in. Web releases before 1.0.7 named the same payload `.zip`; that legacy spelling is still accepted. Beside it, **Tokens (.json)** writes the plain design-tokens document on its own: no fonts, no logos, just the tokens, which is what a repo, a CI step or another tokens tool actually reads.
 
 Bringing one back is **Add from… → Design tokens or a design file** (above), or a drag-and-drop onto the studio. This is how a colleague hands you a brand, or how you carry one to a second install - no account, no cloud. To bring in a brand from the command line instead, see [`ingest:brand`](/info/configuration.html#brand-packs).
 

@@ -173,7 +173,7 @@ The interactive terminal shell runs straight from the repo - it needs a real TTY
 npm run tui
 ```
 
-It's the CLI's engine and render path under an interactive, keyboard-first UI (built on Ink, run through `tsx`). The DOM-free formats - **SVG, EMF, EPS, HTML and the text/data formats** - render with nothing extra. State (saved sessions, project folders, profile) persists on disk under `~/.lolly` (override with `$LOLLY_TUI_DIR`); exports default to `~/Desktop`. See the [TUI guide](/info/tui.html) for the full key map and views.
+It's the CLI's engine and render path under an interactive, keyboard-first UI (built on Ink, run through `tsx`). The DOM-free formats - **SVG, EMF, EPS, HTML and the text/data formats** - render with nothing extra. State (saved sessions, project folders, profile) persists on disk in the directory all three local shells share - `$LOLLY_STATE_DIR`, else the desktop app's data directory when the app is installed here, else `~/.lolly`; exports default to `~/Desktop`. See the [TUI guide](/info/tui.html) for the full key map and views.
 
 ### Browser render tier (raster / PDF / video / URL capture)
 

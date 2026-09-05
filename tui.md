@@ -5,10 +5,13 @@ The **TUI** (text user interface) is Lolly's interactive **terminal shell** - th
 It runs the **same engine and the same render path** as the web shell and the CLI, so its output can never drift from the GUI.
 
 ```bash
-npm run tui
+lolly tui        # from the installed CLI (npm i -g @lolly-tools/cli)
+npm run tui      # from a checkout
 ```
 
-It takes over the whole screen (like `vim` or `htop`) and restores your terminal on exit. It needs a real interactive terminal (a TTY).
+`lolly tui` and `lolly-tui` start the same thing: the CLI hands the terminal straight to it, so one install gives you both doors. See [Install](/info/cli.html#install) for the three ways to get the command.
+
+It takes over the whole screen (like `vim` or `htop`) and restores your terminal on exit. It needs a real interactive terminal (a TTY); with output piped it says so and stops.
 
 ## How it relates to the CLI
 
@@ -69,7 +72,7 @@ Preview is **opt-in** (`p`) and secondary - seeing inputs, files, projects and e
 Two tiers, picked automatically per format:
 
 - **DOM-free (always available):** **SVG (and SVGZ), EMF, WMF, EPS (and EPS-CMYK), DXF, BMP, HTML, plus the data formats** (JSON, CSV, ICS, VCF, MD) render through the same headless engine path as the CLI - instant, no browser.
-- **Browser tier (opt-in, on demand):** everything that needs a real layout/paint engine - **raster (PNG/JPG), PDF, video**, **live-URL capture** and **TXT** - is produced by a scoped headless **Chromium**. TXT belongs here because it is the *rendered* page serialised to plain text, so something has to lay the page out first. For an ordinary tool the TUI drives a built copy of the web shell so the bytes are *identical* to a web/desktop Download; there is no second render path to drift. The browser launches only when you first export one of these formats, never at startup.
+- **Browser tier (opt-in, on demand):** everything that needs a real layout/paint engine - **raster (PNG/JPG), PDF, video**, **live-URL capture** and **TXT** - is produced by a scoped headless **Chromium**. TXT belongs here because it is the *rendered* page serialised to plain text, so something has to lay the page out first. For an ordinary tool the TUI drives a built copy of the web shell so the bytes are *identical* to a web/desktop Download; there is no second render path to drift. The browser launches only when you first export one of these formats, never at startup. The TUI shares the CLI's renderer selection, so when a Lolly desktop app is running or installed here it renders through the app instead and needs no Chromium at all - see [What the CLI can render](/info/cli.html#what-the-cli-can-render) for the three rungs and `LOLLY_RENDERER`.
 
 Set the browser tier up once:
 
@@ -97,7 +100,18 @@ The crop and recolor controls are ordinary tool inputs, so they're editable from
 
 ## Persistence
 
-Unlike the ephemeral CLI, the TUI keeps state on disk under `~/.lolly` (override with `$LOLLY_TUI_DIR`): saved sessions, project folders and your profile. A saved session stores the tool's serialised URL-state, so reopening it round-trips through the same parser the web shell and CLI use - not a lossy snapshot of raw values.
+Unlike the ephemeral CLI, the TUI keeps state on disk: saved sessions, project folders and your profile. It uses the same directory the desktop app and the CLI use, picked in this order:
+
+1. `$LOLLY_STATE_DIR`, when you name one.
+2. `$LOLLY_TUI_DIR`, the old name for the same thing. It still works and prints a one-line note saying which name replaced it.
+3. The desktop app's own data directory, when the app is installed here: `~/Library/Application Support/tools.lolly.Desktop` on macOS, `$XDG_DATA_HOME/tools.lolly.Desktop` (or `~/.local/share/...`) on Linux, `%APPDATA%\tools.lolly.Desktop` on Windows.
+4. `~/.lolly`.
+
+Saved projects live in `saved-state/<slot>.json`, in the record the desktop app writes. So a project you saved in the app is in the terminal's Projects list, and a project you save here opens in the app. Each record keeps both halves of its state: the tool's serialised URL-state, which reopens through the same parser the web shell and CLI use, and the resolved input values, which is what a session saved in the app carries.
+
+Projects the TUI saved before this move sat in `sessions/<slot>.json`. They are copied into the shared layout the first time you open Projects, with their names and dates intact. The old files are left where they were, and a marker beside the new ones stops the copy running twice.
+
+Project folders and your profile stay terminal-only files beside them, `folders.json` and `profile.json`. The app keeps both of those in its browser database, so there is nothing on disk to share yet.
 
 ## Related
 

@@ -10,6 +10,8 @@ import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { generateOgImages } from './og-image.ts';
 import { LANGS, LANG_META, sortedLangs } from '../engine/src/lang.ts';
+import { ENGINE_VERSION } from '../engine/src/version.ts';
+import { buildAgentDocs, AGENT_FILES } from './agents-pages.ts';
 import { readShotProvenance } from './shot-provenance.ts';
 import { scan as scanVernacular, staleAllows as staleVernacularAllows } from '../scripts/check-docs-vernacular.ts';
 
@@ -5331,6 +5333,11 @@ Every page below is also served as plain markdown - a twin of the HTML page at
 the same slug under ${SITE_URL}/info/ - so fetch the .md URL directly. English
 only. Product landing copy: ${SITE_URL}/info/index.md
 
+The whole corpus in one file: ${SITE_URL}/llms-full.txt. The short guide for
+agents (entry points, URL grammar, how to get bytes): ${SITE_URL}/agents.md. The
+HTTP surface as OpenAPI 3.1: ${SITE_URL}/openapi.json. Discovery record:
+${SITE_URL}/.well-known/lolly.json
+
 Reading this as an agent? Lolly speaks MCP, so you can act, not just read:
 connect at https://mcp.lolly.tools/mcp (full render tier) or
 ${SITE_URL}/api/mcp (browser-free tier: vector and data output). Access
@@ -5638,6 +5645,20 @@ async function build() {
   writeFileSync(resolve(outDir, 'llms.txt'), buildLlmsTxt(mdBySlug), 'utf-8');
   console.log(`✓  /info/llms.txt (+${mdBySlug.size} markdown twins)`);
 
+  // The agent-facing set beside it (docs/agents-pages.ts): the full-text twin, the
+  // short guide, the OpenAPI description and the discovery record. Root URLs for
+  // each are vercel.json rewrites (ROOT_ALIASES there, held to vercel.json by test).
+  const agentDocs = buildAgentDocs({
+    url: SITE_URL,
+    description: SITE_DESCRIPTION,
+    engineVersion: ENGINE_VERSION,
+    pages: pages.map((p) => ({ slug: p.slug, title: p.title, pathway: p.pathway ?? 'builders', path: pathSlug(p.slug), isLanding: !!p.isLanding })),
+    mdBySlug,
+    sections: LLMS_SECTIONS,
+  });
+  for (const [file, text] of Object.entries(agentDocs)) writeFileSync(resolve(outDir, file), text, 'utf-8');
+  console.log(`✓  /info/{${Object.keys(agentDocs).join(',')}} (agent set; root aliases via vercel.json)`);
+
   // ── Page seals (plans/105 section 7) ──────────────────────────────────────────────
   // LAST, and after every page is on disk: C2PA 2.4 section A.7.1.3 hashes the whole
   // document, so anything that rewrote a page after this point would silently
@@ -5665,6 +5686,7 @@ async function build() {
 // share cards read by scrapers, never by a person browsing offline (and they're
 // rasterised AFTER build(), so listing them here would race their generation).
 // `version` hashes the listing - the manager's re-download watermark.
+const AGENT_SET_URLS = new Set(Object.values(AGENT_FILES).map((f) => `/info/${f}`));
 function writeInfoManifest(): void {
   interface ManifestFile { url: string; size: number; hash: string }
   const walk = (dir: string): ManifestFile[] => {
@@ -5694,6 +5716,9 @@ function writeInfoManifest(): void {
   for (const f of walk(outDir).sort((a, b) => a.url.localeCompare(b.url))) {
     const seg = f.url.split('/')[2] ?? '';
     if (seg === 'og' || f.url === '/info/manifest.json') continue;
+    // The agent set is for machine readers fetching over HTTP; llms-full.txt alone is
+    // the whole corpus a second time, so none of it belongs in "Available offline: Docs".
+    if (AGENT_SET_URLS.has(f.url)) continue;
     if (seg === 'shots') shots.push(f);
     // Narration + its player travel as their own group, which docsFileList()
     // deliberately EXCLUDES from the default docs part (plan section 7): audio grows

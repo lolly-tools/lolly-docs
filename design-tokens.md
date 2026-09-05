@@ -51,6 +51,46 @@ Two deliberate choices keep us interoperable with Penpot while serving Lolly's p
 
 **4. Bridge - `host.tokens`.** An additive, optional v1 capability (like `net`/`text`): `get` / `colors` / `resolve` / `themes`. Each shell implements it over the engine model and its sources; a shell that doesn't is simply not token-driven. Loading is offline-safe (prefers the core-prefetched blob, falls back to a direct fetch, then to the built-in palette).
 
+## Lolly UI tokens
+
+Your brand describes identity. Lolly also carries a small **application UI** system
+so menus, fields, panels and editor chrome remain coherent even when a brand has
+no complete component library. It travels under a reserved namespace:
+
+```text
+lolly.foundation.*  # Lolly’s compatible base scale
+lolly.ui.*          # stable application roles a design system may override
+brand.*             # your identity tokens
+```
+
+The Tokens room shows the Lolly roles as **placeholders**. They affect the app
+and the Penpot UI-library export, but they do not bloat a brand document merely
+because it was opened. Changing one value saves only that owned `lolly.ui.*`
+leaf; Reset removes it and restores Lolly’s stock role.
+
+The supported UI contract is deliberately narrow: semantic text/surface/action,
+selection, border and focus colours; control/panel/page spacing; role-based
+radius; elevation/edge/focus effects; UI fonts/type sizes; feedback/overlay/
+navigation motion; and chrome/overlay/toast layers. Lolly validates each value
+before it reaches CSS. Unknown paths, unsafe CSS, incompatible types and
+unresolved aliases stay out of the live app rather than partially applying.
+
+Two foundation values are especially useful when starting with a token library:
+
+- `shape.radius` drives the derived radius scale. Set it to `0px` for square
+  UI; set it high for rounded controls. The pill/round roles derive from it too.
+- `space.base` drives Lolly’s spacing rhythm (`.25×`, `.5×`, `.75×`, `1×`,
+  `1.25×`, `1.5×`, `2×`, `3×`), so a system’s base unit reaches panels and
+  controls without copying individual gaps.
+
+Choose **Export Lolly UI to Penpot** in [Components](/#/components) to get the
+stock library as editable frames plus both token layers and the active brand.
+The archive names every declared app component/pattern and uses sample data by
+default. Token records are present in `tokens.json`; a property that Penpot
+cannot bind natively remains an editable resolved value rather than a misleading
+claim of a live binding. Lolly does not export personal sessions or current
+content as an app surface unless that surface explicitly records consent.
+
 ## How tools consume tokens
 
 **Platform hydration (the common case).** Most tools never mention tokens. The platform feeds them:

@@ -216,9 +216,11 @@ If you do enrol, here is exactly what happens:
    identifier, and exists only to stop the OAuth redirect being forged. It is
    cleared as soon as sign-in completes.
 3. **Your IP address is used, briefly, to prevent abuse** of the sign-in
-   endpoints (so one script can't spam an inbox or exhaust the email quota) - held
-   in server memory only, for a sliding window of about a minute, never written
-   to a log or persisted anywhere.
+   endpoints (so one script can't spam an inbox or exhaust the email quota).
+   Lolly hashes it before creating a short-lived abuse-control bucket; the raw
+   address is not sent to that store. The bucket expires after about a minute
+   and is not used for tracking. Ordinary hosting access logs are separate and
+   described below.
 4. **The certificate service issues a short-lived certificate** (7, 30, 90 or 365
    days, your choice, capped by the operator's policy) binding your verified
    email to the public half of the keypair generated on your device. The private
@@ -306,12 +308,14 @@ completeness, the entire list:
 |---|---|---|
 | Everything on your device (documents, prefs, cache, counters) | **Not our processing at all** - it never reaches us. Storage on your device is strictly necessary for the service you requested (ePrivacy Art. 5(3)), so it needs no consent | Until you delete it |
 | Your email address during Content Credentials enrolment | **Art. 6(1)(b)**, performance of a service you explicitly requested | Not retained. Present in memory for the duration of the request only |
-| Your IP address on the sign-in endpoints, for rate limiting | **Art. 6(1)(f)**, our legitimate interest in preventing abuse of a free service and of a third party's email quota. We consider this to pass a balancing test because it is in memory only, never written down and discarded within about a minute | ~1 minute, in server memory, never persisted |
+| A one-way-derived bucket key made from your IP address on sign-in endpoints, for rate limiting | **Art. 6(1)(f)**, our legitimate interest in preventing abuse of a free service and of a third party's email quota. We consider this to pass a balancing test because the raw address is not sent to the limiter, the bucket is used only for abuse control and it expires automatically | About 1 minute in the abuse-control store; not retained afterwards |
 | Hosting access logs (IP, path, timestamp, user agent) | **Art. 6(1)(f)**, our legitimate interest in service security, abuse prevention and diagnosing faults | Vercel's platform default for our plan. We add no drain or export |
 
 **Recipients.** The categories of recipient are: our hosting provider (Vercel
-Inc.), and - only if you use the email sign-in option - a transactional email
-provider (Resend). If you sign in with GitHub, Google or SUSE (id.suse.com), you
+Inc.); our abuse-control store provider, which receives only short-lived,
+one-way-derived bucket keys and never the raw IP address; and - only if you use
+the email sign-in option - a transactional email provider (Resend). If you sign
+in with GitHub, Google or SUSE (id.suse.com), you
 interact with that provider directly under their own privacy policy. They tell
 us a verified email address and nothing else. We share personal data with no one
 else, and we do not sell data, run advertising or profile users.
@@ -322,9 +326,9 @@ processing happens in the EU, but as US-headquartered providers they may still
 access data as processors from the US. Those transfers rely on the European
 Commission's Standard Contractual Clauses and/or the EU-US Data Privacy
 Framework, as set out in each provider's data processing agreement. Because the
-personal data reaching either provider is so limited - an email address passed
-through to send one message, and ordinary access logs - the exposure is
-correspondingly small.
+personal data reaching these providers is so limited - an email address passed
+through to send one message, ordinary access logs, and a short-lived derived
+abuse-control bucket - the exposure is correspondingly small.
 
 **Automated decision-making.** None. There is no profiling and no automated
 decision producing legal or similarly significant effects (Art. 22).

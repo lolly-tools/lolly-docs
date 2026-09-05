@@ -321,12 +321,13 @@ kompletuhin, narito ang buong listahan:
 |---|---|---|
 | Lahat sa iyong device (mga dokumento, preferences, cache, counters) | **Hindi namin talaga pagproseso** - hindi ito kailanman umaabot sa amin. Ang storage sa iyong device ay mahigpit na kailangan para sa serbisyong hiniling mo (ePrivacy Art. 5(3)), kaya hindi ito nangangailangan ng consent | Hanggang burahin mo ito |
 | Ang iyong email address sa panahon ng Content Credentials enrolment | **Art. 6(1)(b)**, pagganap ng serbisyong tahasang hiniling mo | Hindi pinapanatili. Naroroon sa memory lamang habang tumatagal ang request |
-| Ang iyong IP address sa mga sign-in endpoint, para sa rate limiting | **Art. 6(1)(f)**, ang aming lehitimong interes sa pagpigil ng abuso sa isang libreng serbisyo at sa email quota ng third party. Itinuturing naming ito na pumapasa sa isang balancing test dahil nasa memory lamang ito, hindi kailanman isinusulat, at itinatapon sa loob ng humigit-kumulang isang minuto | ~1 minuto, sa server memory, hindi kailanman pinepersist |
+| Isang one-way na bucket key na hinango mula sa iyong IP address sa mga sign-in endpoint, para sa rate limiting | **Art. 6(1)(f)**, ang aming lehitimong interes sa pagpigil ng abuso sa isang libreng serbisyo at sa email quota ng third party. Hindi ipinapadala sa limiter ang mismong IP address; ginagamit lamang ang bucket para sa pagpigil ng abuso at awtomatiko itong nag-e-expire | Humigit-kumulang 1 minuto sa abuse-control store; hindi pinananatili pagkatapos |
 | Hosting access logs (IP, path, timestamp, user agent) | **Art. 6(1)(f)**, ang aming lehitimong interes sa seguridad ng serbisyo, pagpigil ng abuso, at pag-diagnose ng mga problema | Default ng platform ng Vercel para sa aming plan. Wala kaming idinaragdag na drain o export |
 
 **Mga Tatanggap.** Ang mga kategorya ng tatanggap ay: ang aming hosting provider (Vercel
-Inc.), at - kapag ginamit mo lamang ang opsyon na email sign-in - isang transactional email
-provider (Resend). Kung mag-sign in ka gamit ang GitHub, Google o SUSE (id.suse.com), direkta kang
+Inc.); ang aming abuse-control store provider, na tumatanggap lamang ng panandalian at one-way
+na hinangong bucket key at hindi kailanman ng mismong IP address; at - kapag ginamit mo lamang
+ang opsyon na email sign-in - isang transactional email provider (Resend). Kung mag-sign in ka gamit ang GitHub, Google o SUSE (id.suse.com), direkta kang
 nakikipag-ugnayan sa provider na iyon sa ilalim ng sarili nilang privacy policy. Sinasabi nila
 sa amin ang isang na-verify na email address at wala nang iba. Hindi namin ibinabahagi ang personal na data sa kahit sino
 pa, at hindi kami nagbebenta ng data, nagpapatakbo ng advertising, o nagpo-profile ng mga user.
@@ -337,9 +338,9 @@ naganap ang pagproseso sa EU, ngunit dahil sila ay mga provider na naka-base sa 
 i-access ang data bilang mga processor mula sa US. Umaasa ang mga paglilipat na iyon sa Standard Contractual Clauses ng European
 Commission at/o sa EU-US Data Privacy
 Framework, gaya ng nakasaad sa data processing agreement ng bawat provider. Dahil napakalimitado
-ng personal na data na umaabot sa alinmang provider - isang email address na ipinapasa
-para magpadala ng isang mensahe, at ordinaryong access logs - katumbas na maliit
-ang exposure.
+ng personal na data na umaabot sa mga provider na ito - isang email address na ipinapasa
+para magpadala ng isang mensahe, ordinaryong access logs, at isang panandaliang hinangong
+abuse-control bucket - katumbas na maliit ang exposure.
 
 **Awtomatikong paggawa ng desisyon.** Wala. Walang profiling at walang awtomatikong
 desisyon na gumagawa ng legal o katulad na makabuluhang epekto (Art. 22).
