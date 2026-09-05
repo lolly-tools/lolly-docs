@@ -106,7 +106,7 @@ export const RENDER_GET_TEXT: readonly string[] = ['svg', 'html', 'md', 'txt', '
 export const RENDER_GET_BYTE_STABLE: readonly string[] = ['svg', 'emf', 'eps', 'eps-cmyk', 'dxf', 'md', 'txt', 'json', 'csv', 'vcf', 'png'];
 
 export const MCP_TOOLS: readonly string[] = [
-  'lolly_compile', 'lolly_inspect', 'lolly_measure', 'lolly_diff', 'lolly_package',
+  'lolly_compile', 'lolly_inspect', 'lolly_measure', 'lolly_validate', 'lolly_diff', 'lolly_package',
   'lolly_list_tools', 'lolly_describe_tool', 'lolly_build_url', 'lolly_render',
   'lolly_transform', 'lolly_redact', 'lolly_verify',
 ];

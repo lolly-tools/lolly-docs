@@ -8,11 +8,21 @@ A tool is data - a manifest, a template, inputs that live in the URL - so it sav
 
 That trade buys the things a tool cannot have. A view can use the shell's own controls (the Colour Lab is built on the app's multi-space colour picker), it can simply be a very tall page instead of a fixed canvas and it can hold a 200,000-row grid or a 400-page document that no render path would want. The cost is honest and easy to name before you start: no saved sessions, and nothing to keep offline per view, since they ship inside the app shell and are available whenever it is.
 
-They live in the **Utilities** tab (`#/u`), alongside the on-device utility *tools* - Strip Hidden Data, Compress PDF, Convert Image, Convert Font, Redact, Screen Capture, Text Helper and the rest - because to anyone using them they are the same kind of thing: something you open from that grid. A view's tile can be starred like a tool's ([Your favourites](/info/favourites.html) covers the strip that puts starred things on top), and each carries a details dialog. What a view's tile does not offer is *keep offline* or *saved sessions*, for the reasons above.
+They live in the **Utilities** tab (`#/u`), alongside the on-device utility *tools* - Strip Hidden Data, Compress PDF, Pages, Trim, Sign, Clean, Convert Image, Convert Font, Redact, Screen Capture, Text Helper and the rest - because to anyone using them they are the same kind of thing: something you open from that grid. A view's tile can be starred like a tool's ([Your favourites](/info/favourites.html) covers the strip that puts starred things on top), and each carries a details dialog. What a view's tile does not offer is *keep offline* or *saved sessions*, for the reasons above.
 
 ![Strip Hidden Data: the file arrives on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
 
 > **Verify & Inspect** (`#/verify`) is the sixth member of the family and has pages of its own: [Verify It Yourself](/info/verify-yourself.html) and [Security & Verification](/info/security.html).
+
+## Everyday file tools
+
+**Pages** is the PDF page manager: give it a 1-based expression such as `1-3,7,10-` to reorder, rotate, extract or delete those pages, append a second PDF, or split comma-separated ranges into separate files. The page strip shows the selection before download. It preserves the primary document's own metadata, adds none of Lolly's, and refuses encrypted PDFs and XFA forms rather than risking a partial document.
+
+**Trim** cuts audio and video at exact in and out points, keeps or changes the container, removes sound, extracts an audio track, and makes short GIFs. It uses packet copy when the chosen boundary and container permit it; when an exact video boundary sits between keyframes it re-encodes that span instead of silently moving the cut. The result names the real container and any codec the device could not handle.
+
+**Sign** places a transparent signature on a chosen PDF page in PDF-point coordinates; drag it on the page or enter the numbers. Initials and today's date are optional. A Content Credential is on by default and names the profile signer only when **Use my details** is enabled; a password lock is available at download time, but cannot be combined with that credential because encrypting afterwards would invalidate it. This is a visible signed document with optional provenance, not a regulated e-signature or identity-verification service.
+
+**Clean** reduces voice noise with the on-device speech model, trims silent edges sample-exactly, normalises to podcast, streaming or broadcast loudness, and holds the output under a -1 dBTP ceiling. Audio can leave as WAV, MP3, M4A or Opus. For a video, the picture is carried into the new container while the cleaned audio replaces its original track. The terminal path accepts WAV without pretending Node has codecs it does not; other containers move to the browser tier or are refused by name.
 
 ## Spreadsheet - `#/data`
 

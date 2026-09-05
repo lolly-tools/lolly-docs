@@ -98,17 +98,53 @@ A few tools won't hand back a file this way:
 
 Beyond building URLs by hand, Lolly ships an optional **[Model Context Protocol](https://modelcontextprotocol.io) server** - a native endpoint any MCP client (an agent runtime, an IDE, a CLI, a hosted assistant) connects to directly. It exposes the catalogue and the render path as callable tools, so an agent can discover a tool, fill its declared inputs and get back a finished file plus an editable `lolly.tools` link - with no app update, because tools sync to the server as data.
 
-Seven verbs:
+Core workflow verbs:
 
 | Tool | Does |
 |---|---|
 | `lolly_list_tools` | List / search the catalogue (by text, status, category, format, capability). |
-| `lolly_describe_tool` | One tool's full input JSON Schema, supported formats, canvas size, examples. |
+| `lolly_describe_tool` | One tool's full input JSON Schema, built-in templates/presets, supported formats, canvas size and examples. |
+| `lolly_validate` | Validate inputs and return path-specific errors before a compile, URL build or render. Design also returns its artboard/layer tree and structural findings. |
+| `lolly_compile` / `lolly_inspect` / `lolly_measure` | Compile once, inspect the semantic document and measure it without rasterising. |
 | `lolly_build_url` | Build a shareable, editable link + raw render URL - without rendering. |
 | `lolly_render` | Render a tool to a file (returns the bytes plus the editable link). |
 | `lolly_transform` | Run an on-device file utility (`strip-data`, `compress-pdf`) on a file you supply. |
 | `lolly_redact` | Redact regions of an image, SVG or PDF on-device - covered content is destroyed and the file rebuilt, so nothing is recoverable underneath. |
 | `lolly_verify` | Verify a file's Content Credentials (C2PA) - the verdict, signer identity, edit history and embedded metadata. Checked in-process, never stored. |
+
+For Design, prefer `templateId` plus an optional `presetId` and a small set of
+input overrides. `lolly_describe_tool` lists those starting points; the same
+arguments work with validate, compile, inspect, measure, URL building and render.
+Inspect the template once to discover its stable layer IDs, then send
+`layerPatches: [{ "id": "s1title", "set": { "text": "Your title" } }]` to
+replace content without resending layer geometry. This lets an agent start from,
+for example, a slide deck or square poster without inventing raw coordinates.
+
+Use `layerOperations` to change the layer set itself. It supports strict
+stable-ID `add`, `duplicate`, `remove`, `reparent` and `reorder` operations.
+Reorder anchors must be siblings. Reparent preserves the layer's geometry and
+accepts a destination `artboardId` (`null` means the pasteboard), plus an optional
+destination sibling anchor. Every duplicate takes an explicit `newId`; duplicating
+a non-empty artboard also requires a complete `childIds` map. Removing a non-empty
+artboard requires `cascade: true`. Operations run before `layerPatches`, so a newly
+created or moved layer can be patched in the same call:
+
+```json
+{
+  "toolId": "design",
+  "templateId": "slide-deck",
+  "layerOperations": [
+    {
+      "op": "add",
+      "layer": { "id": "s1-kicker", "kind": "text", "frame": "slide1", "text": "Draft" },
+      "afterId": "s1title"
+    }
+  ],
+  "layerPatches": [
+    { "id": "s1-kicker", "set": { "text": "Agent-added context" } }
+  ]
+}
+```
 
 ### Any format, transparently
 
@@ -164,7 +200,7 @@ The MCP server is the one part of Lolly that is a **server-side add-on**, not an
 
 - **Pin `_v`** in automation so a tool update can't silently change output.
 - **Compact encodings:** some tools define short `urlKey` aliases and tilde-delimited arrays to keep links short - see [URL Mode](/info/url-mode.html).
-- **Validate against the schema** before emitting a URL; unknown params are ignored and bad input values fall back to defaults, so a malformed call fails quietly rather than loudly.
+- **Call `lolly_validate` before rendering.** MCP compile/build/render calls now reject unknown fields and invalid values with exact paths. Hand-authored URL mode remains tolerant for backward compatibility, so validate explicitly before emitting a raw URL yourself.
 - **Device-local images** (user uploads) can't travel in a URL - agents should reference catalog assets by id, not local uploads.
 - **One tool, many outputs:** change `format`/`unit`/`width` to emit the same design as SVG, print PDF and social MP4 from one set of inputs.
 - **Portable embed URL:** an agent can emit `https://lolly.tools/tool/<id>.<ext>?<inputs>` (image extensions `png`, `jpg`, `jpeg`, `webp`, `svg`, plus animated `gif` and `apng`) and drop it straight into HTML as an `<img src=…>`. Inside the live web view it renders locally - nothing fetched. On the open web the same URL is served for real by deployments that leave hot-link renders enabled - live on `lolly.art`, switched off on `lolly.tools` - for the browser-free formats (`svg` for every tool, `png` for SVG-native ones), so those links work as plain hot-linked images in READMEs and wikis - see [MCP Server](/info/mcp.html) for that endpoint's scope and current state.
